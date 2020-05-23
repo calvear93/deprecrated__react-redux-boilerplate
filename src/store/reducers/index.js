@@ -1,10 +1,8 @@
 import { combineReducers } from 'redux';
-import { MasterDataAction, TransactionAction } from '../actions';
-import MasterDataReducer from './master-data';
-import TransactionReducer from './transaction';
+import { SampleAction } from '../actions';
+import SampleReducer from './sample';
 
 // combine all reducers for store initialization.
 export default combineReducers({
-    [MasterDataAction.Key]: MasterDataReducer,
-    [TransactionAction.Key]: TransactionReducer
+    [SampleAction.Key]: SampleReducer
 });

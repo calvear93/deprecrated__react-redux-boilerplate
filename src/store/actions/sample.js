@@ -37,7 +37,7 @@ const SampleAction =
     State: {
         PREPARING: 'PREPARING',
         READY: 'READY',
-        CORRUPT: 'CORRUPT'
+        FAILED: 'FAILED'
     },
 
     /**
@@ -54,6 +54,6 @@ const SampleAction =
 };
 
 // makes types unique.
-MakeUnique(SampleAction.Types);
+MakeUnique(SampleAction.Type);
 
 export default Object.freeze(SampleAction);

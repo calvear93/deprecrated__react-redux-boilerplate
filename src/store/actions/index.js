@@ -1,7 +1,5 @@
-import MasterDataAction from './master-data';
-import TransactionAction from './transaction';
+import SampleAction from './sample';
 
 export {
-    MasterDataAction,
-    TransactionAction
+    SampleAction
 };
