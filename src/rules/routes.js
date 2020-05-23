@@ -8,7 +8,7 @@
  * @author Alvear Candia, Cristopher Alejandro <caalvearc@achs.cl>
  *
  * Created at     : 2020-05-16 16:24:07
- * Last modified  : 2020-05-23 16:26:56
+ * Last modified  : 2020-05-23 17:01:47
  */
 
 import { lazy } from 'react';
@@ -26,7 +26,7 @@ const Pages = {
 export default {
     Main: {
         key: 'Main',
-        title: 'Pago Electrónico',
+        title: 'Main Page',
         path: '/main',
         Layout: Layouts.BaseLayout,
         Page: Pages.MainPage

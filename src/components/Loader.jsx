@@ -7,16 +7,27 @@ import color from '../styles/vars/_colors.scss';
  * Loader component for React Suspense and lazy.
  * Renders the loading component.
  *
- * @param {string} message message for show in loading.
- * @param {JSX} children component for show on no loading.
+ * @param {JSX} children component for show on loading finished.
+ * @param {string} message message for show on loading.
+ * @param {bool} absolute whether loading has fixed centered position.
+ * @param {bool} blur whether loading backdrop has a blur filter (slow).
  * @param {bool} loading whether loading is active.
  *
  * @returns {JSX} loader.
  */
-export default function Loader({ message, children, loading = true })
+export default function Loader({ children, message, absolute = true, blur = false, loading = true })
 {
-    return loading ? (
-        <div className='loader-container unselectable'>
+    // container classes.
+    const classes = [ 'loader-container', 'unselectable' ];
+
+    absolute && classes.push('absolute');
+    blur && classes.push('blur');
+
+    if (!loading)
+        return children ?? null;
+
+    return (
+        <div className={ classes.join(' ') }>
             <div className='loader'>
                 <BounceLoader
                     color={ color.brand }
@@ -24,7 +35,5 @@ export default function Loader({ message, children, loading = true })
                 {message && <label>{message}</label>}
             </div>
         </div>
-    ) : children ? (
-        children
-    ) : (null);
+    );
 }

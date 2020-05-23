@@ -14,11 +14,9 @@ html {
 
 body {
     margin: 0;
+    background: $background;
     font-family: 'Roboto', sans-serif;
     letter-spacing: .025em;
-}
-
-body {
     line-height: 1.5;
 }
 
@@ -28,10 +26,8 @@ body,
     height: auto;
 }
 
-body {
-    background: $white;
-}
-
 .page-container {
-    margin: 1em 2em;
+    display: flex;
+    flex-direction: column;
+    overflow-wrap: break-word;
 }

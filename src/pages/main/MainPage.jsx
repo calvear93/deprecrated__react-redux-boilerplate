@@ -16,7 +16,7 @@ export default function MainPage()
             </div>
 
             <div className='main-page-body'>
-                <Loader message='test' />
+                BODY
             </div>
         </div>
     );

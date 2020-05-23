@@ -1,17 +1,24 @@
 @import '../vars';
 
-$animation-duration: 2500ms;
-
 .loader-container {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
+    background-color: rgba($white, .4);
     font-size: 1.2em;
 
-    lottie-player {
-        width: 8em;
-        height: 8em;
+    @include z-index(loader);
+
+    &.absolute {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    &.blur {
+        backdrop-filter: blur(2px);
     }
 
     .loader {
@@ -22,8 +29,12 @@ $animation-duration: 2500ms;
 
         label {
             margin-top: .8em;
+            max-width: 25vw;
             color: $dark-gray;
             font-weight: bold;
+            text-align: center;
+
+            @include text-shadow(emphasis);
         }
     }
 }
