@@ -12,151 +12,151 @@ $schemes: (
         background-color: $white,
         font-color: $dark,
         color: $info,
-        icon: '\F2FD'
+        icon: '\F02FD' // mdi-information-outline
     ),
     success: (
         background-color: $white,
         font-color: $dark,
         color: $success,
-        icon: '\F134'
+        icon: '\F0134' // mdi-checkbox-marked-circle-outline
     ),
     warning: (
         background-color: $white,
         font-color: $dark,
         color: $warning,
-        icon: '\F5D6'
+        icon: '\F05D6' // mdi-alert-circle-outline
     ),
     error: (
         background-color: $white,
         font-color: $dark,
         color: $danger,
-        icon: '\F15A'
+        icon: '\F015A' // mdi-close-circle-outline
     ),
     save-success: (
         background-color: $white,
         font-color: $dark,
         color: $success,
-        icon: '\F817'
+        icon: '\F0818' // mdi-content-save-outline
     ),
     save-warning: (
         background-color: $white,
         font-color: $dark,
         color: $warning,
-        icon: '\F817'
+        icon: '\F0818' // mdi-content-save-outline
     ),
     save-error: (
         background-color: $white,
         font-color: $dark,
         color: $danger,
-        icon: '\F817'
+        icon: '\F0818' // mdi-content-save-outline
     ),
     send-success: (
         background-color: $white,
         font-color: $dark,
         color: $success,
-        icon: '\FE59'
+        icon: '\F0DF9' // mdi-send-circle-outline
     ),
     send-warning: (
         background-color: $white,
         font-color: $dark,
         color: $warning,
-        icon: '\FE59'
+        icon: '\F0DF9' // mdi-send-circle-outline
     ),
     send-error: (
         background-color: $white,
         font-color: $dark,
         color: $danger,
-        icon: '\FE59'
+        icon: '\F0DF9' // mdi-send-circle-outline
     ),
     key-success: (
         background-color: $white,
         font-color: $dark,
         color: $success,
-        icon: '\FBA1'
+        icon: '\F0BC5' // mdi-shield-key-outline
     ),
     key-warning: (
         background-color: $white,
         font-color: $dark,
         color: $warning,
-        icon: '\FBA1'
+        icon: '\F0BC5' // mdi-shield-key-outline
     ),
     key-error: (
         background-color: $white,
         font-color: $dark,
         color: $danger,
-        icon: '\FBA1'
+        icon: '\F0BC5' // mdi-shield-key-outline
     ),
     security-success: (
         background-color: $white,
         font-color: $dark,
         color: $success,
-        icon: '\FCA4'
+        icon: '\F0CC8' // mdi-shield-check-outline
     ),
     security-warning: (
         background-color: $white,
         font-color: $dark,
         color: $warning,
-        icon: '\FEEA'
+        icon: '\F0ECD' // mdi-shield-alert-outline
     ),
     security-error: (
         background-color: $white,
         font-color: $dark,
         color: $danger,
-        icon: '\FADC'
+        icon: '\F0ADD' // mdi-shield-remove-outline
     ),
     notification-success: (
         background-color: $white,
         font-color: $dark,
         color: $success,
-        icon: '\FD37'
+        icon: '\F0D5B' // mdi-bell-circle-outline
     ),
     notification-warning: (
         background-color: $white,
         font-color: $dark,
         color: $warning,
-        icon: '\FD37'
+        icon: '\F0D5B' // mdi-bell-circle-outline
     ),
     notification-error: (
         background-color: $white,
         font-color: $dark,
         color: $danger,
-        icon: '\FD37'
+        icon: '\F0D5B' // mdi-bell-circle-outline
     ),
     form-error: (
         background-color: $white,
         font-color: $dark,
         color: $danger,
-        icon: '\FECA'
+        icon: '\F1037' // mdi-file-remove-outline
     ),
     smiley-happy: (
         background-color: $white,
         font-color: $dark,
         color: $brand,
-        icon: '\F1F5'
+        icon: '\F01F5' // mdi-emoticon-happy-outline
     ),
     smiley-neutral: (
         background-color: $white,
         font-color: $dark,
         color: $secondary,
-        icon: '\F1F6'
+        icon: '\F01F6' // mdi-emoticon-neutral-outline
     ),
     smiley-sad: (
         background-color: $white,
         font-color: $dark,
         color: $danger,
-        icon: '\F1F8'
+        icon: '\F01F8' // mdi-emoticon-sad-outline
     ),
     smiley-wink: (
         background-color: $white,
         font-color: $dark,
         color: $info,
-        icon: '\FC55'
+        icon: '\F0C79' // mdi-emoticon-wink-outline
     ),
     smiley-confused: (
         background-color: $white,
         font-color: $dark,
         color: $tomato,
-        icon: '\F010A'
+        icon: '\F10DF' // mdi-emoticon-confused-outline
     )
 );
 
@@ -208,7 +208,7 @@ i.close.toastify-close-icon {
     transition: .4s ease;
 
     &:before {
-        content: '\F156';
+        content: '\F0159'; // mdi-close-circle
         font-family: 'Material Design Icons';
     }
 
