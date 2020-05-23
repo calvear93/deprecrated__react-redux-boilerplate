@@ -25,13 +25,19 @@ export default function Router()
                 {
                     // maps every rule for route.
                     Object.values(Routes)
-                        .map(r => (
-                            <Route key={ r.key } exact path={ r.path }>
-                                <r.Layout title={ r.title }>
-                                    <r.Page />
-                                </r.Layout>
-                            </Route>
-                        ))
+                        .map(route =>
+                        {
+                            // route values.
+                            const { key, title, path, config, Layout, Page, ...props } = route;
+
+                            return (
+                                <Route key={ key } path={ path } { ...config }>
+                                    <Layout title={ title }>
+                                        <Page { ...props } />
+                                    </Layout>
+                                </Route>
+                            );
+                        })
                 }
 
                 <Route component={ NotFoundPage } />

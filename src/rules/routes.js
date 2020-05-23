@@ -8,7 +8,7 @@
  * @author Alvear Candia, Cristopher Alejandro <caalvearc@achs.cl>
  *
  * Created at     : 2020-05-16 16:24:07
- * Last modified  : 2020-05-23 17:01:47
+ * Last modified  : 2020-05-23 18:49:31
  */
 
 import { lazy } from 'react';
@@ -28,6 +28,9 @@ export default {
         key: 'Main',
         title: 'Main Page',
         path: '/main',
+        config: {
+            exact: true
+        },
         Layout: Layouts.BaseLayout,
         Page: Pages.MainPage
     }
