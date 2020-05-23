@@ -1,0 +1,252 @@
+@import '~react-toastify/dist/ReactToastify.css';
+@import '../vars';
+
+// Toast schemes.
+$schemes: (
+    default: (
+        background-color: $white,
+        font-color: $dark,
+        color: $primary
+    ),
+    info: (
+        background-color: $white,
+        font-color: $dark,
+        color: $info,
+        icon: '\F2FD'
+    ),
+    success: (
+        background-color: $white,
+        font-color: $dark,
+        color: $success,
+        icon: '\F134'
+    ),
+    warning: (
+        background-color: $white,
+        font-color: $dark,
+        color: $warning,
+        icon: '\F5D6'
+    ),
+    error: (
+        background-color: $white,
+        font-color: $dark,
+        color: $danger,
+        icon: '\F15A'
+    ),
+    save-success: (
+        background-color: $white,
+        font-color: $dark,
+        color: $success,
+        icon: '\F817'
+    ),
+    save-warning: (
+        background-color: $white,
+        font-color: $dark,
+        color: $warning,
+        icon: '\F817'
+    ),
+    save-error: (
+        background-color: $white,
+        font-color: $dark,
+        color: $danger,
+        icon: '\F817'
+    ),
+    send-success: (
+        background-color: $white,
+        font-color: $dark,
+        color: $success,
+        icon: '\FE59'
+    ),
+    send-warning: (
+        background-color: $white,
+        font-color: $dark,
+        color: $warning,
+        icon: '\FE59'
+    ),
+    send-error: (
+        background-color: $white,
+        font-color: $dark,
+        color: $danger,
+        icon: '\FE59'
+    ),
+    key-success: (
+        background-color: $white,
+        font-color: $dark,
+        color: $success,
+        icon: '\FBA1'
+    ),
+    key-warning: (
+        background-color: $white,
+        font-color: $dark,
+        color: $warning,
+        icon: '\FBA1'
+    ),
+    key-error: (
+        background-color: $white,
+        font-color: $dark,
+        color: $danger,
+        icon: '\FBA1'
+    ),
+    security-success: (
+        background-color: $white,
+        font-color: $dark,
+        color: $success,
+        icon: '\FCA4'
+    ),
+    security-warning: (
+        background-color: $white,
+        font-color: $dark,
+        color: $warning,
+        icon: '\FEEA'
+    ),
+    security-error: (
+        background-color: $white,
+        font-color: $dark,
+        color: $danger,
+        icon: '\FADC'
+    ),
+    notification-success: (
+        background-color: $white,
+        font-color: $dark,
+        color: $success,
+        icon: '\FD37'
+    ),
+    notification-warning: (
+        background-color: $white,
+        font-color: $dark,
+        color: $warning,
+        icon: '\FD37'
+    ),
+    notification-error: (
+        background-color: $white,
+        font-color: $dark,
+        color: $danger,
+        icon: '\FD37'
+    ),
+    form-error: (
+        background-color: $white,
+        font-color: $dark,
+        color: $danger,
+        icon: '\FECA'
+    ),
+    smiley-happy: (
+        background-color: $white,
+        font-color: $dark,
+        color: $brand,
+        icon: '\F1F5'
+    ),
+    smiley-neutral: (
+        background-color: $white,
+        font-color: $dark,
+        color: $secondary,
+        icon: '\F1F6'
+    ),
+    smiley-sad: (
+        background-color: $white,
+        font-color: $dark,
+        color: $danger,
+        icon: '\F1F8'
+    ),
+    smiley-wink: (
+        background-color: $white,
+        font-color: $dark,
+        color: $info,
+        icon: '\FC55'
+    ),
+    smiley-confused: (
+        background-color: $white,
+        font-color: $dark,
+        color: $tomato,
+        icon: '\F010A'
+    )
+);
+
+.Toastify__toast-container {
+    @include z-index(toast);
+}
+
+.Toastify__toast {
+    border-radius: 8px;
+    cursor: pointer;
+    direction: ltr;
+
+    -ms-flex-pack: justify;
+    -webkit-box-shadow: 0 1px 6px 0 rgba(0, 0, 0, .2);
+    -moz-box-shadow: 0 1px 6px 0 rgba(0, 0, 0, .2);
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, .2);
+}
+
+// .Toastify__toast-container--top-center,
+// .Toastify__toast-container--bottom-center {
+//     margin-left: -190px;
+// }
+
+// .Toastify__toast-container--top-right,
+// .Toastify__toast-container--bottom-right {
+//     right: 6em;
+// }
+
+// .toastify-container {
+//     margin: .6rem auto !important;
+//     width: 380px;
+// }
+
+.toastify-body {
+    padding: 0 .6em;
+}
+
+i.close.toastify-close-icon {
+    display: inline-block;
+    margin: 0;
+    margin-top: -.2em;
+    width: .9em;
+    height: .9em;
+    color: $light-gray;
+    font-size: .9em;
+    font-style: normal;
+    text-align: center;
+    text-decoration: inherit;
+    transition: .4s ease;
+
+    &:before {
+        content: '\F156';
+        font-family: 'Material Design Icons';
+    }
+
+    &:hover {
+        color: $primary;
+    }
+}
+
+.toastify-container {
+    @each $scheme, $attr in $schemes {
+        &.#{$scheme} {
+            background-color: map-get($attr, 'background-color');
+            color: map-get($attr, 'font-color');
+
+            @if map-get($attr, 'icon') {
+                .toastify-body {
+                    display: flex;
+                    align-items: center;
+                    justify-content: left;
+                    margin-left: 2.8em;
+                    text-align: left;
+
+                    &:before {
+                        content: map-get($attr, 'icon');
+                        position: absolute;
+                        left: 12px;
+                        color: map-get($attr, 'color');
+                        font-family: 'Material Design Icons';
+                        font-size: 2.4em;
+                    }
+                }
+            }
+
+            i.close.toastify-close-icon {
+                &:hover {
+                    color: map-get($attr, 'color');
+                }
+            }
+        }
+    }
+}

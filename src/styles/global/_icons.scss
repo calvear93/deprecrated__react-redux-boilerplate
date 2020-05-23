@@ -1,0 +1,24 @@
+// https://dev.materialdesignicons.com/icons
+// https://cdn.materialdesignicons.com/4.3.95/
+@import 'icons/materialdesignicons', 'icons/materialdesignicons-animation';
+
+button.ui.icon.mdi {
+    margin: 0;
+    padding: .65em .5em;
+
+    i.mdi.icon {
+        font-size: 1.4em;
+    }
+}
+
+button.ui.icon {
+    &:disabled {
+        opacity: .2 !important;
+    }
+
+    &:hover:not(:disabled) {
+        -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .2);
+        -moz-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .2);
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .2);
+    }
+}

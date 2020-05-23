@@ -1,0 +1,96 @@
+{
+  "version": "0.1.0",
+  "name": "react-redux-boilerplate",
+  "description": "React with Redux Single-page application boilerplate",
+  "author": "Alvear Candia, Cristopher Alejandro <calvear93@gmail.cl>",
+  "license": "GPL3",
+  "private": true,
+  "keywords": [
+    "react",
+    "react-redux",
+    "boilerplate"
+  ],
+  "repository": "https://github.com/calvear93/react-redux-boilerplate",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "devextreme": "^20.1.3",
+    "devextreme-react": "^20.1.3",
+    "fast-deep-equal": "^3.1.1",
+    "http-status-codes": "^1.4.0",
+    "imask": "^6.0.3",
+    "js-cookie": "^2.2.1",
+    "js-storage": "^1.1.0",
+    "jwt-decode": "^2.2.0",
+    "mathjs": "^7.0.0",
+    "mime-types": "^2.1.27",
+    "moment": "^2.25.3",
+    "mout": "^1.2.2",
+    "msal": "^1.3.1",
+    "node-sass": "^4.14.1",
+    "query-string": "^6.12.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-flexbox-grid": "^2.1.2",
+    "react-imask": "^6.0.3",
+    "react-redux": "^7.2.0",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-spinners": "^0.8.3",
+    "react-timekeeper": "^2.1.1",
+    "react-toastify": "^6.0.4",
+    "react-use": "^15.0.1",
+    "redux": "^4.0.5",
+    "redux-saga": "^1.1.3",
+    "sass-mq": "^5.0.1",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.88.2",
+    "sweetalert2": "^9.10.13",
+    "sweetalert2-react-content": "^3.0.1",
+    "tippy.js": "^6.2.3",
+    "typeface-roboto": "0.0.75",
+    "use-debounce": "^3.4.2",
+    "uuid": "^8.0.0",
+    "validate.js": "^0.13.1",
+    "voca": "^1.4.0"
+  },
+  "devDependencies": {
+    "@craco/craco": "^5.6.4",
+    "env-cmd": "^10.1.0",
+    "eslint-plugin-react-hooks": "^4.0.2",
+    "eslint-plugin-react-redux": "^3.0.3",
+    "prettier-stylelint": "^0.4.2",
+    "react-scripts": "^3.4.1",
+    "stylelint": "^13.3.3",
+    "stylelint-order": "^4.0.0",
+    "stylelint-scss": "^3.17.2"
+  },
+  "cracoConfig": "webpack.config.js",
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "scripts": {
+    "start:debug": "env-cmd -e default,debug craco start --verbose",
+    "start:development": "env-cmd -e default,development craco start",
+    "start:qa": "env-cmd -e default,qa craco start",
+    "build:development": "env-cmd -e default,development craco build",
+    "build:qa": "env-cmd -e default,qa craco build",
+    "build:production": "env-cmd -e default,production craco build",
+    "lint": "eslint --fix --ext .js,.jsx ./src",
+    "postbuild": "rimraf build/static/js/*.map",
+    "packages:update": "npm update --save/--save-dev",
+    "packages:update-force": "npm update --save/--save-dev -f"
+  },
+  "browserslist": {
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all",
+      "not ie <= 8"
+    ]
+  }
+}

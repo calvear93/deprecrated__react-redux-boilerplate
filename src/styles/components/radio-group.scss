@@ -1,0 +1,33 @@
+@import '../vars';
+
+.radio-group-container {
+    position: relative;
+    padding: .2em;
+    padding-right: 1em;
+
+    i.link.icon.radio-group-clear {
+        position: absolute;
+        top: .2em;
+        right: .4em;
+        color: $light;
+        font-size: .9em;
+    }
+
+    .radio-group-item {
+        padding: .4em .6em;
+
+        .ui.radio.checkbox {
+            input:disabled + label:before {
+                border-color: $light-gray;
+            }
+
+            label {
+                color: $slate-gray-dark;
+
+                &:after {
+                    background-color: $brand !important;
+                }
+            }
+        }
+    }
+}

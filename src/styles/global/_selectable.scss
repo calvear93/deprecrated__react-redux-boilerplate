@@ -1,0 +1,25 @@
+.selectable {
+    // Firefox
+    -moz-user-select: all;
+    // Internet Explorer
+    -ms-user-select: all;
+    // KHTML browsers (e.g. Konqueror).
+    -khtml-user-select: all;
+    // Chrome, Safari, Edge Chromium & Opera
+    -webkit-user-select: all;
+    // Enable Android and iOS call-outs.
+    -webkit-touch-callout: all;
+}
+
+.unselectable {
+    // Firefox
+    -moz-user-select: none;
+    // Internet Explorer
+    -ms-user-select: none;
+    // KHTML browsers (e.g. Konqueror).
+    -khtml-user-select: none;
+    // Chrome, Safari, Edge Chromium & Opera
+    -webkit-user-select: none;
+    // Disable Android and iOS call-outs.
+    -webkit-touch-callout: none;
+}

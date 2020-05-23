@@ -1,0 +1,29 @@
+@import '../vars';
+
+$animation-duration: 2500ms;
+
+.loader-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-size: 1.2em;
+
+    lottie-player {
+        width: 8em;
+        height: 8em;
+    }
+
+    .loader {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        label {
+            margin-top: .8em;
+            color: $dark-gray;
+            font-weight: bold;
+        }
+    }
+}

@@ -1,0 +1,36 @@
+@import '../vars';
+
+.ui.popup.time-picker-container {
+    padding: 0;
+}
+
+.input-item {
+    i.link.icon.time-picker-clear {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        margin-right: 4em;
+        height: 100%;
+        color: $light;
+        font-size: .9em;
+    }
+}
+
+.react-timekeeper {
+    .react-timekeeper__top-bar {
+        .react-timekeeper__tb-minute-wrapper > .react-timekeeper__tb-hour--active,
+        .react-timekeeper__tb-hour-wrapper > .react-timekeeper__tb-minute--active {
+            color: $brand;
+        }
+    }
+}
+
+// .react-timekeeper__clock-hand,
+// .react-timekeeper__hand-circle-center,
+// .react-timekeeper__hand-circle-outer {
+//     fill: $brand;
+//     stroke: $brand;
+//     opacity: .6;
+// }
