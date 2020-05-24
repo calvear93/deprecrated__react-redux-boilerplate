@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import Loader from './components/Loader';
-import Routes from './constants/routes';
+import Routes from './rules/routes';
 
 // lazy loaded components.
 const NotFoundPage = lazy(() => import('./pages/notfound'));
