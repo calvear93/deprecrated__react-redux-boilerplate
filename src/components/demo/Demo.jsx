@@ -5,9 +5,11 @@ import Tippy from '../../utils/libs/tippy';
 import Toast from '../../utils/libs/toast';
 import { CheckBox, RadioGroup, InputMasked, Mask, TextArea, TimePicker } from '../input';
 import { PhoneAdvancedMask, RutMask } from '../../utils/masks';
-import { Row } from 'react-flexbox-grid';
+import { Row, Col } from 'react-flexbox-grid';
 import { useFormik } from 'formik';
 import Swal from '../../utils/libs/swal';
+import { useDispatch } from 'react-redux';
+import { AzureActiveDirectoryAction } from '../../store/actions';
 
 /**
  * Main page.
@@ -16,6 +18,8 @@ import Swal from '../../utils/libs/swal';
  */
 export default function Demo()
 {
+    const dispatch = useDispatch();
+
     const formik = useFormik({
         initialValues: {},
         onSubmit: values =>
@@ -29,6 +33,11 @@ export default function Demo()
         Toast.show(<b>Welcome to demo view</b>, 6000, Toast.TYPE.SUCCESS);
         Tippy();
     }, []);
+
+    function logout()
+    {
+        // dispatch(AzureActiveDirectoryAction.Action(AzureActiveDirectoryAction.Type.LOGOUT));
+    }
 
     return (
         <Container fluid text textAlign='justified'>
@@ -110,6 +119,15 @@ export default function Demo()
                 </Row>
             </form>
 
+            {/* <Row>
+                <Col>
+                    <Button
+                        color='red'
+                        content='Logout'
+                        onClick={ logout }
+                    />
+                </Col>
+            </Row> */}
         </Container>
     );
 }

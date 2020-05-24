@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-23 19:53:33
- * Last modified  : 2020-05-23 19:53:52
+ * Last modified  : 2020-05-24 19:10:58
  */
 
 import axios from 'axios';
@@ -121,6 +121,14 @@ export default {
     logout()
     {
         AuthenticationContext.logout();
+    },
+
+    /**
+     * Clear all access tokens in the cache.
+     */
+    clearCache()
+    {
+        AuthenticationContext.clearCache();
     },
 
     /**

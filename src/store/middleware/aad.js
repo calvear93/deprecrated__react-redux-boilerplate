@@ -1,7 +1,7 @@
+import Storage from 'js-storage';
 import { all, call, put, takeLatest } from 'redux-saga/effects';
 import { AuthenticationService, Graph } from '../../services/auth';
 import { AzureActiveDirectoryAction } from '../actions';
-import Storage from 'js-storage';
 
 /**
  * Executes azure active directory authentication.
@@ -45,9 +45,11 @@ function* authenticate()
 /**
  * Finishes azure session.
  */
-function* logout()
+function logout()
 {
-    yield call(AuthenticationService.logout);
+    // logouts user by AAD service.
+    AuthenticationService.logout();
+    AuthenticationService.clearCache();
 }
 
 /**

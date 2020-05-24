@@ -42,7 +42,7 @@ export default function AzureActiveDirectoryReducer(store = AzureActiveDirectory
         // on authentication success.
         case AzureActiveDirectoryAction.Type.LOGOUT:
             return {
-                authenticated: false
+                authenticated: true // for avoid re-authentication on logout.
             };
 
         // default doesn't changes the store,
