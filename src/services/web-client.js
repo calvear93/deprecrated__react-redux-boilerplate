@@ -1,19 +1,9 @@
-/**
- * Axios instance with base configurations
- * for web service client.
- *
- * @summary Pre-configured axios instance.
- * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
- *
- * Created at     : 2020-05-17 10:32:34
- * Last modified  : 2020-05-17 12:54:07
- */
-
 import axios from 'axios';
 import mime from 'mime-types';
+import HttpMethod from '../constants/http-methods';
 
-// Default axios instance.
-export default axios.create({
+// axios instance pre-configured.
+const request = axios.create({
     baseURL: process.env.REACT_APP_WEB_API_HOST,
     headers: {
         'Content-Type': 'application/json; charset=utf-8'
@@ -24,3 +14,21 @@ export default axios.create({
     responseType: mime.lookup('json'),
     responseEncoding: 'utf8'
 });
+
+export default {
+    // demo service.
+    Demo: {
+        /**
+         * Returns users list.
+         *
+         * @returns {any} users list.
+         */
+        Users()
+        {
+            return request({
+                url: '/api/users',
+                method: HttpMethod.GET
+            });
+        }
+    }
+};

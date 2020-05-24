@@ -6,7 +6,6 @@ const KEY = 'SAMPLE';
 /**
  * Redux Action Vault.
  *
- * @class SampleAction
  * @export SampleAction
  */
 const SampleAction =

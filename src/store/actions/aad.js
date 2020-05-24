@@ -6,7 +6,6 @@ const KEY = 'AAD';
 /**
  * Redux Action Vault.
  *
- * @class AzureActiveDirectoryAction
  * @export AzureActiveDirectoryAction
  */
 const AzureActiveDirectoryAction =
@@ -36,7 +35,6 @@ const AzureActiveDirectoryAction =
      * @memberof AzureActiveDirectoryAction
      */
     Persistence: {
-        Key: 'aad-session',
         Type: 'localStorage'
     },
 

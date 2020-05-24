@@ -1,5 +1,5 @@
 import { all, call, put, takeLatest } from 'redux-saga/effects';
-import AuthenticationService, { Graph } from '../../services/auth/aad-service';
+import { AuthenticationService, Graph } from '../../services/auth';
 import { AzureActiveDirectoryAction } from '../actions';
 import Storage from 'js-storage';
 
@@ -36,7 +36,7 @@ function* authenticate()
             AzureActiveDirectoryAction.Type.AUTHENTICATE_ERROR,
             {
                 error: e,
-                message: 'Authentication cannot be completed'
+                message: 'Authentication denied'
             }
         ));
     }

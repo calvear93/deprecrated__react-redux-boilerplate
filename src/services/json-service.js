@@ -5,13 +5,15 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-18 13:34:27
- * Last modified  : 2020-05-23 16:31:05
+ * Last modified  : 2020-05-23 21:15:42
  */
 
-// preloaded data animation modules.
-// modules with path should be
-// declared here.
-const Source = {
+/**
+ * preloaded data animation modules.
+ * modules with path should be
+ * declared here.
+ */
+const Modules = {
     JSON: import('./test-file.json')
 };
 
@@ -22,12 +24,12 @@ const Source = {
  * @param {string} module module name.
  * @returns {JSON} json animation data.
  */
-export function GetAnimation(module)
+export function GetJSON(module)
 {
     return new Promise(
         (resolve, reject) =>
         {
-            Source[module] // module declared in Animations.
+            Modules[module] // module declared in Modules.
                 .then((data) => resolve(data.default))
                 .catch((e) => reject(e));
         }

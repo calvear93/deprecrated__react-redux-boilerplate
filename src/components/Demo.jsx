@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import Loader from './Loader';
 import Toast from '../utils/Toast';
+import Loader from './Loader';
 
 /**
  * Main page.
@@ -17,6 +17,7 @@ export default function Demo()
     return (
         <div className=''>
             TEST
+            {/* <Loader message='test de tests' /> */}
         </div>
     );
 }

@@ -15,7 +15,13 @@ import color from '../styles/vars/_colors.scss';
  *
  * @returns {JSX} loader.
  */
-export default function Loader({ children, message, absolute = true, blur = false, loading = true })
+export default function Loader({
+    children,
+    message,
+    absolute = true,
+    blur = false,
+    loading = true
+})
 {
     // container classes.
     const classes = [ 'loader-container', 'unselectable' ];
