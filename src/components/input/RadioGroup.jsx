@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Col, Row } from 'react-flexbox-grid';
 import { Icon, Radio } from 'semantic-ui-react';
+import { CustomOnChangeEvent } from './shared';
 import '../../styles/components/radio-group.scss';
 
 /**
@@ -41,7 +42,12 @@ export default function RadioGroup({ id, group, options, onChange, checked = nul
     function onClear()
     {
         setValue(null);
-        onChange && onChange(null, { id: group, value: null });
+        // creates custom event.
+        let event = CustomOnChangeEvent({
+            id: group,
+            value: null
+        });
+        onChange && onChange(event, event.target);
     }
 
     return (

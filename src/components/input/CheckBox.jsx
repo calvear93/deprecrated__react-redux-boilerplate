@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Col, Row } from 'react-flexbox-grid';
 import { Checkbox, Icon } from 'semantic-ui-react';
+import { CustomOnChangeEvent } from './shared';
 import '../../styles/components/checkbox.scss';
 
 /**
@@ -47,7 +48,12 @@ export default function CheckBox({ id, group, options, onChange, checked = [], m
     function onClear()
     {
         setValues([]);
-        onChange && onChange(null, { id: group, value: [] });
+        // creates custom event.
+        let event = CustomOnChangeEvent({
+            id: group,
+            value: []
+        });
+        onChange && onChange(event, event.target);
     }
 
     return (

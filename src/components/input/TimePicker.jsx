@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import TimeKeeper from 'react-timekeeper';
 import { useClickAway } from 'react-use';
 import { Icon, Input, Popup, Ref } from 'semantic-ui-react';
+import { CustomOnChangeEvent } from './shared';
 import '../../styles/components/time-picker.scss';
 
 /**
@@ -47,7 +48,12 @@ export default function TimePicker({
         const val = hour24Mode ? newTime.formatted24 : newTime.formatted12;
         setValue(val);
         setTime(val);
-        onChange && onChange(newTime, { id: props.id, value: val });
+        // creates custom event.
+        let event = CustomOnChangeEvent({
+            id: props.id,
+            value: val
+        });
+        onChange && onChange(event, event.target);
     }
 
     /**
@@ -56,7 +62,12 @@ export default function TimePicker({
     function onClear()
     {
         setValue('');
-        onChange && onChange(null, { id: props.id, value: '' });
+        // creates custom event.
+        let event = CustomOnChangeEvent({
+            id: props.id,
+            value: ''
+        });
+        onChange && onChange(event, event.target);
     }
 
     return (

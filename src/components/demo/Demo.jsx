@@ -84,7 +84,7 @@ export default function Demo()
                 <InputMasked id='masked' mask={ PhoneAdvancedMask } onAccept={ (value, masker) => formik.setFieldValue(masker.el.input.id, value) } />
 
                 <Header as='h4'>Input Mask Wrapper</Header>
-                <Mask mask={ RutMask } onAccept={ (e, { id, value }) => formik.setFieldValue(id, value) }>
+                <Mask mask={ RutMask } onAccept={ formik.handleChange }>
                     <Input id='simple-input' placeholder='Simple Input Masked' />
                 </Mask>
 
@@ -93,7 +93,7 @@ export default function Demo()
                     id='time-sample'
                     time='14:17'
                     clearable
-                    onChange={ (e, { id, value }) => formik.setFieldValue(id, value) }
+                    onChange={ formik.handleChange }
                 />
 
                 <Row>

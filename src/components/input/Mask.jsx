@@ -3,6 +3,7 @@ import IMask from 'imask';
 import React from 'react';
 import { IMaskMixin } from 'react-imask';
 import { Ref } from 'semantic-ui-react';
+import { CustomOnChangeEvent } from './shared';
 
 /**
  * Attaches a mask (using imask) to an input.
@@ -30,7 +31,15 @@ export default function Mask({ mask, children, onAccept, ...props })
     function handleAccept(value, masker)
     {
         if (value !== props.value)
-            onAccept && onAccept(masker, { id: masker.el.input.id, value });
+        {
+            // creates custom event.
+            let event = CustomOnChangeEvent({
+                id: masker.el.input.id,
+                value,
+                masker
+            });
+            onAccept && onAccept(event, { id: masker.el.input.id, value });
+        }
     }
 
     return (
