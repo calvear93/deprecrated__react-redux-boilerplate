@@ -1,5 +1,5 @@
-import { SampleDefaults } from '../defaults';
-import { SampleAction } from '../actions';
+import { AzureActiveDirectoryAction } from '../actions';
+import { AzureActiveDirectoryDefaults } from '../defaults';
 
 /**
  * Redux Actions Reducer.
@@ -9,38 +9,41 @@ import { SampleAction } from '../actions';
  *
  * @returns {any} new store partition.
  */
-export default function SampleReducer(store = SampleDefaults, action)
+export default function AzureActiveDirectoryReducer(store = AzureActiveDirectoryDefaults, action)
 {
     // action destructuring. (key, type or payload).
     const { type, payload } = action;
 
     switch (type)
     {
-        case SampleAction.Type.EXEC:
+        // on authentication success.
+        case AzureActiveDirectoryAction.Type.AUTHENTICATE_SUCCESS:
             delete store.error;
 
             return {
                 ...store,
-                state: SampleAction.State.PREPARING
+                authenticated: true,
+                account: payload
             };
 
-        case SampleAction.Type.COMMIT:
-            return {
-                ...store,
-                state: SampleAction.State.READY
-            };
-
-        case SampleAction.Type.ROLLBACK:
+        // on login error.
+        case AzureActiveDirectoryAction.Type.AUTHENTICATE_ERROR:
         {
             const { error, message } = payload;
 
             return {
                 ...store,
-                state: SampleAction.State.CORRUPT,
+                authenticated: false,
                 error,
                 message
             };
         }
+
+        // on authentication success.
+        case AzureActiveDirectoryAction.Type.LOGOUT:
+            return {
+                authenticated: false
+            };
 
         // default doesn't changes the store,
         // so, components doesn't re-renders.

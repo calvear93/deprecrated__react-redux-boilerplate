@@ -8,6 +8,10 @@ import 'moment/locale/es-us';
 import { loadMessages, locale } from 'devextreme/localization';
 import esMessages from 'devextreme/localization/messages/es';
 import './styles/App.scss';
+import { AzureActiveDirectoryProvider } from './services/auth';
+
+// Whether AAD authentication is enabled.
+const authEnabled = process.env.REACT_APP_AAD_ENABLED === 'true';
 
 /**
  * App container.
@@ -30,8 +34,10 @@ export default function App()
     return (
         <BrowserRouter>
             <Provider store={ store }>
-                <Router />
-                <ToastContainer />
+                <AzureActiveDirectoryProvider enabled={ authEnabled } errorRoute='/notauthorized'>
+                    <Router />
+                    <ToastContainer />
+                </AzureActiveDirectoryProvider>
             </Provider>
         </BrowserRouter>
     );

@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../styles/pages/main-page.scss';
-import Test from '../../components/Test';
+import Demo from '../../components/Demo';
 
 /**
  * Main page.
@@ -17,7 +17,7 @@ export default function MainPage()
 
             <div className='main-page-body'>
                 BODY
-                <Test />
+                <Demo />
             </div>
         </div>
     );

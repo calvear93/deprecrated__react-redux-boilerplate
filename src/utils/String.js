@@ -3,7 +3,7 @@
  * features for process strings.
  *
  * @summary Improved voca (string processing library) utility.
- * @author Alvear Candia, Cristopher Alejandro <caalvearc@achs.cl>
+ * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:39:47
  * Last modified  : 2020-05-16 16:40:27

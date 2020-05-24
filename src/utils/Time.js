@@ -2,7 +2,7 @@
  * Exposes different formatters for time.
  *
  * @summary Time utility.
- * @author Alvear Candia, Cristopher Alejandro <caalvearc@achs.cl>
+ * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:37:10
  * Last modified  : 2020-05-16 16:38:27

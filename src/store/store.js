@@ -4,7 +4,7 @@
  * and apply Saga middleware.
  *
  * @summary Redux store initializer.
- * @author Alvear Candia, Cristopher Alejandro <caalvearc@achs.cl>
+ * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 22:41:11
  * Last modified  : 2020-05-16 22:42:38

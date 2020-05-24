@@ -2,7 +2,7 @@
  * Chilean RUT/RUN handling utility.
  *
  * @summary Chilean RUT/RUN utility.
- * @author Alvear Candia, Cristopher Alejandro <caalvearc@achs.cl>
+ * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:40:56
  * Last modified  : 2020-05-16 16:40:56

@@ -2,10 +2,10 @@
  * Utilities for Redux actions.
  *
  * @summary Shared utilities for Redux actions.
- * @author Alvear Candia, Cristopher Alejandro <caalvearc@achs.cl>
+ * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 22:42:56
- * Last modified  : 2020-05-16 22:43:22
+ * Last modified  : 2020-05-23 20:16:56
  */
 
 import { v1 as guid } from 'uuid';
@@ -41,7 +41,7 @@ export function CreateActionTypes(obj)
     let types = {};
 
     for (const key in obj)
-        types[key] = `${obj[key]}:${guid()}`; // Symbol(obj[key]);
+        types[key] = `${obj[key]}:${guid()}`;
 
     return Object.freeze(types);
 }

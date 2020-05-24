@@ -2,10 +2,10 @@
  * lRedux store default values.
  *
  * @summary Store default values for reducers.
- * @author Alvear Candia, Cristopher Alejandro <caalvearc@achs.cl>
+ * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 22:44:51
- * Last modified  : 2020-05-23 18:39:48
+ * Last modified  : 2020-05-23 20:26:40
  */
 
 import Cookies from 'js-cookie';
@@ -17,6 +17,7 @@ import Storage from 'js-storage';
 (() =>
 {
     const APP_BUILD_KEY = 'app_build';
+
     const APP_BUILD = Cookies.get(APP_BUILD_KEY);
     // cleans cached data if build changed.
     if (APP_BUILD !== process.env.REACT_APP_BUILD)
@@ -31,6 +32,10 @@ import Storage from 'js-storage';
 // sample data defaults.
 const SampleDefaults = {};
 
+// aad authentication defaults.
+const AzureActiveDirectoryDefaults = {};
+
 export {
-    SampleDefaults
+    SampleDefaults,
+    AzureActiveDirectoryDefaults
 };

@@ -6,7 +6,7 @@
  * https://github.com/facebook/create-react-app/issues/5707#issuecomment-503614767
  *
  * @summary short description for the file
- * @author Alvear Candia, Cristopher Alejandro <caalvearc@achs.cl>
+ * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:27:55
  * Last modified  : 2020-05-16 16:29:14

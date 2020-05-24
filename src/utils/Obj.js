@@ -3,7 +3,7 @@
  * with extra features.
  *
  * @summary Tweaked Object methods library.
- * @author Alvear Candia, Cristopher Alejandro <caalvearc@achs.cl>
+ * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:42:09
  * Last modified  : 2020-05-16 16:42:09

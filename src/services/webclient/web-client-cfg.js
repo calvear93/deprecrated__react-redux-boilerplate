@@ -3,7 +3,7 @@
  * for web service client.
  *
  * @summary Pre-configured axios instance.
- * @author Alvear Candia, Cristopher Alejandro <caalvearc@achs.cl>
+ * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-17 10:32:34
  * Last modified  : 2020-05-17 12:54:07

@@ -7,7 +7,7 @@ import Toast from '../utils/Toast';
  *
  * @returns {JSX} Main page.
  */
-export default function Test()
+export default function Demo()
 {
     useEffect(() =>
     {
