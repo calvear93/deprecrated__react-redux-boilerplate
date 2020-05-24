@@ -4,8 +4,8 @@
  * @summary Adal config file.
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
- * Created at     : 2020-05-23 19:51:39
- * Last modified  : 2020-05-23 19:52:54
+ * Created at     : 2020-04-15 19:51:39
+ * Last modified  : 2020-05-23 23:10:58
  */
 
 import AADTypes from './aad-types';
@@ -22,7 +22,6 @@ const tokenRefreshPeriod = parseInt(process.env.REACT_APP_AAD_TOKEN_RENEWAL_OFFS
  *  - redirectUri                 - The redirect URI of the application, this should be same as the value in the application registration portal.Defaults to `window.location.href`.
  *  - postLogoutRedirectUri       - Used to redirect the user to this location after logout. Defaults to `window.location.href`.
  *  - navigateToLoginRequestUrl   - Used to turn off default navigation to start page after login. Default is true. This is used only for redirect flows.
- *
  */
 const auth = {
     clientId: process.env.REACT_APP_AAD_CLIENT_ID,
