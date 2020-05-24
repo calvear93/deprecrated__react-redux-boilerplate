@@ -11,13 +11,13 @@ export default function Demo()
 {
     useEffect(() =>
     {
-        Toast('test', 20000, 'error');
+        Toast('Welcome', 8000, Toast.TYPE.SMILEY_WINK);
     }, []);
 
     return (
         <div className=''>
             TEST
-            {/* <Loader message='test de tests' /> */}
+            <Loader message='Loading' absolute={ false } />
         </div>
     );
 }

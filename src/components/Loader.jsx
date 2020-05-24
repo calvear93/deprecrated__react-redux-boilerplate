@@ -10,6 +10,7 @@ import color from '../styles/vars/_colors.scss';
  * @param {JSX} children component for show on loading finished.
  * @param {string} message message for show on loading.
  * @param {bool} absolute whether loading has fixed centered position.
+ * @param {bool} background whether loading has a transparent background.
  * @param {bool} blur whether loading backdrop has a blur filter (slow).
  * @param {bool} loading whether loading is active.
  *
@@ -19,6 +20,7 @@ export default function Loader({
     children,
     message,
     absolute = true,
+    background = false,
     blur = false,
     loading = true
 })
@@ -27,6 +29,7 @@ export default function Loader({
     const classes = [ 'loader-container', 'unselectable' ];
 
     absolute && classes.push('absolute');
+    background && classes.push('background');
     blur && classes.push('blur');
 
     if (!loading)
