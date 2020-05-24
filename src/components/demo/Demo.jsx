@@ -101,7 +101,10 @@ export default function Demo()
                         type='submit'
                         color='teal'
                         content= { (
-                            <span className='mdi-anim-flash mdi-anim-slow animated'>Submit</span>
+                            <div className='mdi-anim-flash mdi-anim-slow animated'>
+                                <i className='mdi mdi-check-circle' />
+                                <span>Submit</span>
+                            </div>
                         ) }
                     />
                 </Row>
