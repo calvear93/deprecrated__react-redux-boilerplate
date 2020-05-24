@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { BallTriangleLoader } from '../assets/loaders';
-import Toast from '../utils/Toast';
+import Toast from '../utils/libs/toast';
 
 /**
  * Main page.

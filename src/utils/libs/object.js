@@ -1,12 +1,11 @@
 /**
- * Exposes improved Object native library
- * with extra features.
+ * Object utility functions.
  *
- * @summary Tweaked Object methods library.
+ * @summary Object utility functions.
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:42:09
- * Last modified  : 2020-05-16 16:42:09
+ * Last modified  : 2020-05-24 11:21:26
  */
 
 /**
@@ -14,23 +13,25 @@
  * 'cause in many cases,  it's meaning is the same.
  *
  * @param {any} obj object for validate.
+ *
  * @returns {any} object if is not null, undefined or empty, undefined in otherwise.
  */
-Object.reduceEmptiness = (obj) =>
+export function reduceEmptiness(obj)
 {
     return Object.isEmpty(obj) ? undefined : obj;
-};
+}
 
 /**
  * Validates emptiness of an object.
  *
  * @param {any} obj object for validate.
+ *
  * @returns {bool} true if object is empty or null/undefined, false in otherwise.
  */
-Object.isEmpty = (obj) =>
+export function isEmpty(obj)
 {
     return !obj || Object.keys(obj).length === 0;
-};
+}
 
 /**
  * Safely calls a function over a object,
@@ -43,19 +44,20 @@ Object.isEmpty = (obj) =>
  *
  * @returns {bool} function result on object ok, def if object us null/undefined.
  */
-Object.callSafe = (func, obj, def, ...args) =>
+export function callSafe(func, obj, def, ...args)
 {
     return (obj && func(obj, ...args)) ?? def;
-};
+}
 
 /**
  * Filters object properties by keys array.
  *
  * @param {any} obj object for filter.
- * @param {any} func filter func.
+ * @param {any} func filter func for keys/attributes.
+ *
  * @returns {any} object with filtered props.
  */
-Object.filter = (obj, func) =>
+export function filter(obj, func)
 {
     return !obj ? obj : Object.keys(obj)
         .filter(func)
@@ -65,7 +67,7 @@ Object.filter = (obj, func) =>
 
             return mapper;
         }, {});
-};
+}
 
 /**
  * Validates whether a value contains data,
@@ -74,9 +76,10 @@ Object.filter = (obj, func) =>
  *
  * @param {any} value value for validation (undefined, null, NaN).
  * @param {any} allowEmpty whether allows empty as valid ({}, [], '' or ' ').
+ *
  * @returns {any} true if is valid, false in otherwise.
  */
-Object.isData = (value, allowEmpty = false) =>
+export function isData(value, allowEmpty = false)
 {
     if (value === undefined || value === null)
         return false;
@@ -100,6 +103,4 @@ Object.isData = (value, allowEmpty = false) =>
         return false;
 
     return true;
-};
-
-export default Object;
+}

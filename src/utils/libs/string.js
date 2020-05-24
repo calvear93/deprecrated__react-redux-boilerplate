@@ -6,7 +6,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:39:47
- * Last modified  : 2020-05-16 16:40:27
+ * Last modified  : 2020-05-24 11:26:09
  */
 
 import voca from 'voca';
@@ -29,6 +29,7 @@ voca.defaultOnFalsy = (str, filter, def = '-') =>
  * Removes the string underscores.
  *
  * @param {string} str string.
+ *
  * @returns {string} string without underscores.
  */
 voca.removeUnderscore = (str) =>
@@ -40,7 +41,8 @@ voca.removeUnderscore = (str) =>
  * Capitalizes first char after period symbol.
  *
  * @param {string} str string.
- * @returns {string} string normalized.
+ * @returns {string} string normal
+ * ized.
  */
 voca.capitalizeAfterPeriod = (str) =>
 {
@@ -54,6 +56,7 @@ voca.capitalizeAfterPeriod = (str) =>
  * Capitalizes every word in the string.
  *
  * @param {string} str string.
+ *
  * @returns {string} string capitalized.
  */
 voca.capitalizeEvery = (str) =>
@@ -71,6 +74,7 @@ voca.capitalizeEvery = (str) =>
  * Normalizes the string removing diacritics.
  *
  * @param {string} str string.
+ *
  * @returns {string} string without diacritics.
  */
 voca.removeDiacritics = (str) =>
@@ -86,6 +90,7 @@ voca.removeDiacritics = (str) =>
  * to every char for emphasize string,
  *
  * @param {string} str string.
+ *
  * @returns {string} string emphasized.
  */
 voca.empathize = (str) =>

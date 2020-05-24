@@ -1,4 +1,4 @@
-import Object from '../Obj';
+import { isData } from '../libs/object';
 
 // value, options, attributeName, values, constraints
 export default function(value, { allowEmpty = false, dependencies, message }, attributeName, values, { fullMessages })
@@ -12,7 +12,7 @@ export default function(value, { allowEmpty = false, dependencies, message }, at
         }
     }
 
-    if (!Object.isData(value, allowEmpty))
+    if (!isData(value, allowEmpty))
         return message ?? (fullMessages ? `${attributeName} es requerido` : 'es requerido');
 
     return null;
