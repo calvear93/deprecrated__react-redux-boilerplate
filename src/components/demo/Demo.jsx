@@ -101,7 +101,7 @@ export default function Demo()
                         type='submit'
                         color='teal'
                         content= { (
-                            <span className='mdi-anim mdi-anim-shake animated'>Submit</span>
+                            <span className='mdi-anim-flash mdi-anim-slow animated'>Submit</span>
                         ) }
                     />
                 </Row>
