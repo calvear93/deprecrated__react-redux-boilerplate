@@ -165,14 +165,12 @@ $schemes: (
 }
 
 .Toastify__toast {
+    justify-content: center;
     border-radius: 8px;
     cursor: pointer;
     direction: ltr;
-
     -ms-flex-pack: justify;
-    -webkit-box-shadow: 0 1px 6px 0 rgba(0, 0, 0, .2);
-    -moz-box-shadow: 0 1px 6px 0 rgba(0, 0, 0, .2);
-    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, .2);
+    @include box-shadow(normal);
 }
 
 // .Toastify__toast-container--top-center,
