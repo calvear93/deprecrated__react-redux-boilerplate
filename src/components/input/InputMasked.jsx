@@ -32,7 +32,7 @@ import { IMaskInput } from 'react-imask';
  *
  * @returns {JSX} masked input.
  */
-export default function InputMasked({ mask, props })
+export default function InputMasked({ mask, ...props })
 {
     return (
         <div className='ui input'>

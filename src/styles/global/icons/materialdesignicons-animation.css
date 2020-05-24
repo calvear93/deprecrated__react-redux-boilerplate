@@ -3,6 +3,11 @@
  * https://github.com/l-lin/font-awesome-animation
  * License: MIT
  */
+
+.mdi-anim {
+    display: inline-block;
+}
+
 @-webkit-keyframes wrench {
 
     0% {

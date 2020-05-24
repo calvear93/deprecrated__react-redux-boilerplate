@@ -81,10 +81,10 @@ export default function Demo()
                 <TextArea id='text-area-demo' placeholder='a simple textarea' onChange={ formik.handleChange } />
 
                 <Header as='h4'>Input Masked</Header>
-                <InputMasked mask={ PhoneAdvancedMask } />
+                <InputMasked id='masked' mask={ PhoneAdvancedMask } onAccept={ (value, masker) => formik.setFieldValue(masker.el.input.id, value) } />
 
                 <Header as='h4'>Input Mask Wrapper</Header>
-                <Mask mask={ RutMask } onAccept={ (e, values) => console.log(values) }>
+                <Mask mask={ RutMask } onAccept={ (e, { id, value }) => formik.setFieldValue(id, value) }>
                     <Input id='simple-input' placeholder='Simple Input Masked' />
                 </Mask>
 
@@ -93,11 +93,17 @@ export default function Demo()
                     id='time-sample'
                     time='14:17'
                     clearable
-                    onChange={ (nwTime, values) => console.log(nwTime, values) }
+                    onChange={ (e, { id, value }) => formik.setFieldValue(id, value) }
                 />
 
                 <Row>
-                    <Button type='submit' color='teal'>Submit</Button>
+                    <Button
+                        type='submit'
+                        color='teal'
+                        content= { (
+                            <span className='mdi-anim mdi-anim-shake animated'>Submit</span>
+                        ) }
+                    />
                 </Row>
             </form>
 

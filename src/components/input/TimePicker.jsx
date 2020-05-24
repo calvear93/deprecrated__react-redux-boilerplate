@@ -13,7 +13,7 @@ import '../../styles/components/time-picker.scss';
  * @param {bool} coarseMinutes rounds selected number to increments.
  * @param {bool} forceCoarseMinutes forces minutes to always round to coarseMinutes value.
  * @param {bool} clearable whether shows a clear button if any text.
- * @param {bool} onChange on time change.
+ * @param {bool} onChange on time change. Sends (newTime, {id, value}).
  * @param {array} props rest of props for input.
  *
  * @returns {JSX} time picker input.
