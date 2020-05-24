@@ -11,8 +11,8 @@ import { Form, TextArea as TextAreaSemantic } from 'semantic-ui-react';
 export default function TextArea(props)
 {
     return (
-        <Form>
+        <div className='ui form'>
             <TextAreaSemantic { ...props } />
-        </Form>
+        </div>
     );
 }
