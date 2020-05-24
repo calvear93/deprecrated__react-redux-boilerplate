@@ -1,3 +1,12 @@
+/**
+ * Chilean Id (RUT/RUN) definition for IMask.
+ *
+ * @summary RUT/RUN mask for IMask.
+ * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
+ *
+ * Created at     : 2020-05-24 10:58:32
+ * Last modified  : 2020-05-24 10:59:03
+ */
 
 import IMask from 'imask';
 

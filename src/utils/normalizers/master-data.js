@@ -1,3 +1,14 @@
+/**
+ * Data normalizer utilities for
+ * dropdown, select, dictionary, etc.
+ *
+ * @summary Data normalizer utilities.
+ * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
+ *
+ * Created at     : 2020-05-24 11:01:35
+ * Last modified  : 2020-05-24 11:03:26
+ */
+
 const MasterDataNormalizer = {
     /**
      * Transforms data as

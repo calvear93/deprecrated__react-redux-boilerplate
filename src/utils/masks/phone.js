@@ -1,3 +1,13 @@
+/**
+ * Chilean phone number mask definition for IMask.
+ *
+ * @summary Phone number mask for IMask.
+ * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
+ *
+ * Created at     : 2020-05-24 10:56:49
+ * Last modified  : 2020-05-24 10:57:57
+ */
+
 import IMask from 'imask';
 
 // mask.

@@ -1,3 +1,12 @@
+/**
+ * Datetime mask definition for IMask.
+ *
+ * @summary Datetime mask for IMask.
+ * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
+ *
+ * Created at     : 2020-05-24 10:50:51
+ * Last modified  : 2020-05-24 10:58:10
+ */
 
 import IMask from 'imask';
 
