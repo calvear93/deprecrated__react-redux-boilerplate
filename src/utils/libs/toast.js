@@ -7,7 +7,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:33:24
- * Last modified  : 2020-05-24 11:54:49
+ * Last modified  : 2020-05-24 12:10:42
  */
 
 import React from 'react';
@@ -65,38 +65,42 @@ const Toast = {
             position,
             hideProgressBar: !showProgressBar
         });
-    }
-};
+    },
 
-// Toast types.
-// for define new one,
-// you should add specification on _toast.scss
-Toast.TYPE = {
-    ...toast.TYPE,
-    SAVE_SUCCESS: 'save-success',
-    SAVE_WARNING: 'save-warning',
-    SAVE_ERROR: 'save-error',
-    SEND_SUCCESS: 'send-success',
-    SEND_WARNING: 'send-warning',
-    SEND_ERROR: 'send-error',
-    KEY_SUCCESS: 'key-success',
-    KEY_WARNING: 'key-warning',
-    KEY_ERROR: 'key-error',
-    SECURITY_SUCCESS: 'security-success',
-    SECURITY_WARNING: 'security-warning',
-    SECURITY_ERROR: 'security-error',
-    NOTIFICATION_SUCCESS: 'notification-success',
-    NOTIFICATION_WARNING: 'notification-warning',
-    NOTIFICATION_ERROR: 'notification-error',
-    FORM_ERROR: 'form-error',
-    SMILEY_HAPPY: 'smiley-happy',
-    SMILEY_NEUTRAL: 'smiley-neutral',
-    SMILEY_SAD: 'smiley-sad',
-    SMILEY_WINK: 'smiley-wink',
-    SMILEY_CONFUSED: 'smiley-confused'
-};
+    /**
+     * Toast types.
+     * for define new one,
+     * you should add specification on _toast.scss
+     */
+    TYPE: {
+        ...toast.TYPE,
+        SAVE_SUCCESS: 'save-success',
+        SAVE_WARNING: 'save-warning',
+        SAVE_ERROR: 'save-error',
+        SEND_SUCCESS: 'send-success',
+        SEND_WARNING: 'send-warning',
+        SEND_ERROR: 'send-error',
+        KEY_SUCCESS: 'key-success',
+        KEY_WARNING: 'key-warning',
+        KEY_ERROR: 'key-error',
+        SECURITY_SUCCESS: 'security-success',
+        SECURITY_WARNING: 'security-warning',
+        SECURITY_ERROR: 'security-error',
+        NOTIFICATION_SUCCESS: 'notification-success',
+        NOTIFICATION_WARNING: 'notification-warning',
+        NOTIFICATION_ERROR: 'notification-error',
+        FORM_ERROR: 'form-error',
+        SMILEY_HAPPY: 'smiley-happy',
+        SMILEY_NEUTRAL: 'smiley-neutral',
+        SMILEY_SAD: 'smiley-sad',
+        SMILEY_WINK: 'smiley-wink',
+        SMILEY_CONFUSED: 'smiley-confused'
+    },
 
-// Toast positions.
-Toast.POSITION = toast.POSITION;
+    /**
+     * Toast positions
+     */
+    POSITION: toast.POSITION
+};
 
 export default Toast;

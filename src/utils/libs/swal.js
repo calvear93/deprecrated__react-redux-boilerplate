@@ -1,11 +1,11 @@
 /**
- * Allows to show dialogs using Swal2.
+ * Swal2 wrapper for eases alert configuration.
  *
  * @summary Dialogs utility.
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:38:41
- * Last modified  : 2020-05-16 16:39:10
+ * Last modified  : 2020-05-24 12:07:25
  */
 
 import SwalDefault from 'sweetalert2';
@@ -23,7 +23,7 @@ const Swal = withReactContent(SwalDefault);
  *
  * @returns {any} Popup.
  */
-const Confirm = (type, content, confirmText = 'Aceptar') => Swal.fire({
+Swal.Confirm = (type, content, confirmText = 'Aceptar') => Swal.fire({
     icon: type,
     html: content,
     confirmButtonColor: color.primary,
@@ -40,12 +40,12 @@ const Confirm = (type, content, confirmText = 'Aceptar') => Swal.fire({
  *
  * @returns {Promise<any>} Popup asynchronous.
  */
-const ConfirmAsync = async (type, content, confirmText) =>
+Swal.ConfirmAsync = async (type, content, confirmText) =>
 {
     return new Promise(
         (resolve) =>
         {
-            Confirm(type, content, confirmText)
+            Swal.Confirm(type, content, confirmText)
                 .then((result) =>
                 {
                     resolve(result);
@@ -63,7 +63,7 @@ const ConfirmAsync = async (type, content, confirmText) =>
  *
  * @returns {any} Popup.
  */
-const Alert = (type, content, confirmText = 'Aceptar') => Swal.fire({
+Swal.Alert = (type, content, confirmText = 'Aceptar') => Swal.fire({
     icon: type,
     html: content,
     confirmButtonColor: color.primary,
@@ -81,12 +81,12 @@ const Alert = (type, content, confirmText = 'Aceptar') => Swal.fire({
  *
  * @returns {Promise<any>} Popup asynchronous.
  */
-const AlertAsync = async (type, content, confirmText) =>
+Swal.AlertAsync = async (type, content, confirmText) =>
 {
     return new Promise(
         (resolve) =>
         {
-            Alert(type, content, confirmText)
+            Swal.Alert(type, content, confirmText)
                 .then((result) =>
                 {
                     resolve(result);
@@ -105,7 +105,7 @@ const AlertAsync = async (type, content, confirmText) =>
  *
  * @returns {any} Popup.
  */
-const Dialog = (type, content, confirmText = 'Sí', cancelText = 'No') => Swal.fire({
+Swal.Dialog = (type, content, confirmText = 'Sí', cancelText = 'No') => Swal.fire({
     icon: type,
     html: content,
     confirmButtonColor: color.primary,
@@ -127,12 +127,12 @@ const Dialog = (type, content, confirmText = 'Sí', cancelText = 'No') => Swal.f
  *
  * @returns {Promise<any>} Popup asynchronous.
  */
-const DialogAsync = async (type, content, confirmText, cancelText) =>
+Swal.DialogAsync = async (type, content, confirmText, cancelText) =>
 {
     return new Promise(
         (resolve) =>
         {
-            Dialog(type, content, confirmText, cancelText)
+            Swal.Dialog(type, content, confirmText, cancelText)
                 .then((result) =>
                 {
                     resolve(result);
@@ -141,12 +141,4 @@ const DialogAsync = async (type, content, confirmText, cancelText) =>
     );
 };
 
-export {
-    Swal,
-    Alert,
-    AlertAsync,
-    Confirm,
-    ConfirmAsync,
-    Dialog,
-    DialogAsync
-};
+export default Swal;
