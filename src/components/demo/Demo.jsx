@@ -5,6 +5,7 @@ import Tippy from '../../utils/libs/tippy';
 import Toast from '../../utils/libs/toast';
 import { CheckBox, RadioGroup, InputMasked, Mask, TextArea, TimePicker } from '../input';
 import { PhoneAdvancedMask, RutMask } from '../../utils/masks';
+import { Row } from 'react-flexbox-grid';
 
 /**
  * Main page.

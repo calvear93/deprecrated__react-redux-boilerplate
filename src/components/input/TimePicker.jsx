@@ -67,24 +67,26 @@ export default function TimePicker({
                 className='time-picker-container'
                 open={ showTime }
                 trigger={
-                    <>
-                        <Input
-                            icon={ { name: 'time', circular: false } }
-                            { ...props }
-                            autoComplete='off'
-                            onClick={ () => setShowTime(true) }
-                            value={ value }
-                        />
-                        {clearable && value && (
-                            <Icon
-                                className='time-picker-clear'
-                                name='x'
-                                link
-                                title='Limpiar'
-                                onClick={ onClear }
-                            />
-                        )}
-                    </>
+                    <Input
+                        icon={ (
+                            <>
+                                {clearable && value && (
+                                    <Icon
+                                        className='time-picker-clear'
+                                        name='x'
+                                        link
+                                        title='Limpiar'
+                                        onClick={ onClear }
+                                    />
+                                )}
+                                <i aria-hidden='true' className='time icon' />
+                            </>
+                        ) }
+                        { ...props }
+                        autoComplete='off'
+                        onClick={ () => setShowTime(true) }
+                        value={ value }
+                    />
                 }
                 content={
                     <TimeKeeper
