@@ -1,11 +1,18 @@
 /**
  * Allows to attach a tooltip to DOM elements.
  *
+ * example: <input data-tooltip='this is a tooltip message!'>
+ * and initialize the tooltip in useEffect hook as:
+ *      useEffect(() =>
+ *      {
+ *          Tippy();
+ *      }, []);
+ *
  * @summary Tippy tooltip utility.
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:36:01
- * Last modified  : 2020-05-16 16:36:37
+ * Last modified  : 2020-05-24 12:00:42
  */
 
 import tippy from 'tippy.js';
