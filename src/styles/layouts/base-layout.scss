@@ -1,0 +1,8 @@
+@import '../vars';
+
+.base-container {
+    display: flex;
+    flex-direction: column;
+    overflow-wrap: break-word;
+    min-height: 100vh;
+}

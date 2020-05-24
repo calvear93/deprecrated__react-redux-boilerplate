@@ -17,7 +17,7 @@ export default function Demo()
     return (
         <div className=''>
             TEST
-            <Loader message='Loading' absolute={ false } />
+            {/* <Loader message='Loading' absolute={ false } /> */}
         </div>
     );
 }

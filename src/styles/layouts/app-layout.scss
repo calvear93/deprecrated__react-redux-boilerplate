@@ -1,0 +1,23 @@
+@import '~sass-mq';
+@import '../vars';
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    overflow-wrap: break-word;
+    min-height: 100vh;
+
+    header {
+        padding: .6em;
+    }
+
+    content {
+        display: flex;
+        flex-grow: 1;
+        padding: .6em;
+    }
+
+    footer {
+        padding: .6em;
+    }
+}

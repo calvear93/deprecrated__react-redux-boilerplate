@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
-import '../../styles/pages/base-layout.scss';
+import '../../styles/layouts/base-layout.scss';
 
 // defaults site title.
 const DEFAULT_TITLE = process.env.REACT_APP_TITLE;
 
 /**
- * Base layout (wrapper for pages without navbar/footer).
+ * Base layout (wrapper for pages without header/footer).
  *
  * @param {JSX} children component for render inside.
  * @param {any} props component props.
