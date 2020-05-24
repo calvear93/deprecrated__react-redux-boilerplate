@@ -12,18 +12,18 @@ import '../../styles/components/time-picker.scss';
  * @param {bool} hour24Mode time mode.
  * @param {bool} coarseMinutes rounds selected number to increments.
  * @param {bool} forceCoarseMinutes forces minutes to always round to coarseMinutes value.
- * @param {bool} showClearButton whether shows a clear button if any text.
+ * @param {bool} clearable whether shows a clear button if any text.
  * @param {bool} onChange on time change.
  * @param {array} props rest of props for input.
  *
  * @returns {JSX} time picker input.
  */
 export default function TimePicker({
-    time: inputTime,
+    time: inputTime = '',
     hour24Mode = true,
     coarseMinutes,
     forceCoarseMinutes,
-    showClearButton,
+    clearable,
     onChange,
     ...props
 })
@@ -75,7 +75,7 @@ export default function TimePicker({
                             onClick={ () => setShowTime(true) }
                             value={ value }
                         />
-                        {showClearButton && value && (
+                        {clearable && value && (
                             <Icon
                                 className='time-picker-clear'
                                 name='x'

@@ -78,7 +78,12 @@ export default function Demo()
             <TextArea placeholder='a simple textarea' />
 
             <Header as='h4'>Time Picker</Header>
-            <TimePicker showClearButton />
+            <TimePicker
+                id='time-sample'
+                time='14:17'
+                clearable
+                onChange={ (nwTime, values) => console.log(nwTime, values) }
+            />
         </Container>
     );
 }
