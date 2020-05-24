@@ -1,0 +1,2234 @@
+﻿[
+  {
+    "Codigo": "AF",
+    "CodigoTelefonico": 93,
+    "Disabled": false,
+    "Gentilicio": "afgana",
+    "ISOA3": "AFG",
+    "Name": "Afghanistan",
+    "Nombre": "Afganistán"
+  },
+  {
+    "Codigo": "AL",
+    "CodigoTelefonico": 355,
+    "Disabled": false,
+    "Gentilicio": "albanesa",
+    "ISOA3": "ALB",
+    "Name": "Albania",
+    "Nombre": "Albania"
+  },
+  {
+    "Codigo": "DE",
+    "CodigoTelefonico": 49,
+    "Disabled": false,
+    "Gentilicio": "alemana",
+    "ISOA3": "DEU",
+    "Name": "Germany",
+    "Nombre": "Alemania"
+  },
+  {
+    "Codigo": "DZ",
+    "CodigoTelefonico": 213,
+    "Disabled": false,
+    "Gentilicio": "argelina",
+    "ISOA3": "DZA",
+    "Name": "Algeria",
+    "Nombre": "Algeria"
+  },
+  {
+    "Codigo": "AD",
+    "CodigoTelefonico": 376,
+    "Disabled": false,
+    "Gentilicio": "andorrana",
+    "ISOA3": "AND",
+    "Name": "Andorra",
+    "Nombre": "Andorra"
+  },
+  {
+    "Codigo": "AO",
+    "CodigoTelefonico": 244,
+    "Disabled": false,
+    "Gentilicio": "angoleña",
+    "ISOA3": "AGO",
+    "Name": "Angola",
+    "Nombre": "Angola"
+  },
+  {
+    "Codigo": "AI",
+    "CodigoTelefonico": "1 264",
+    "Disabled": false,
+    "Gentilicio": "de Anguilla",
+    "ISOA3": "AIA",
+    "Name": "Anguilla",
+    "Nombre": "Anguila"
+  },
+  {
+    "Codigo": "AQ",
+    "CodigoTelefonico": 672,
+    "Disabled": false,
+    "Gentilicio": "de la Antártida",
+    "ISOA3": "ATA",
+    "Name": "Antarctica",
+    "Nombre": "Antártida"
+  },
+  {
+    "Codigo": "AG",
+    "CodigoTelefonico": "1 268",
+    "Disabled": false,
+    "Gentilicio": "de Antig.Barb.",
+    "ISOA3": "ATG",
+    "Name": "Antigua and Barbuda",
+    "Nombre": "Antigua y Barbuda"
+  },
+  {
+    "Codigo": "SA",
+    "CodigoTelefonico": 966,
+    "Disabled": false,
+    "Gentilicio": "saudí",
+    "ISOA3": "SAU",
+    "Name": "Saudi Arabia",
+    "Nombre": "Arabia Saudita"
+  },
+  {
+    "Codigo": "AR",
+    "CodigoTelefonico": 54,
+    "Disabled": false,
+    "Gentilicio": "argentina",
+    "ISOA3": "ARG",
+    "Name": "Argentina",
+    "Nombre": "Argentina"
+  },
+  {
+    "Codigo": "AM",
+    "CodigoTelefonico": 374,
+    "Disabled": false,
+    "Gentilicio": "armenia",
+    "ISOA3": "ARM",
+    "Name": "Armenia",
+    "Nombre": "Armenia"
+  },
+  {
+    "Codigo": "AW",
+    "CodigoTelefonico": 297,
+    "Disabled": false,
+    "Gentilicio": "arubeña",
+    "ISOA3": "ABW",
+    "Name": "Aruba",
+    "Nombre": "Aruba"
+  },
+  {
+    "Codigo": "AU",
+    "CodigoTelefonico": 61,
+    "Disabled": false,
+    "Gentilicio": "australiana",
+    "ISOA3": "AUS",
+    "Name": "Australia",
+    "Nombre": "Australia"
+  },
+  {
+    "Codigo": "AT",
+    "CodigoTelefonico": 43,
+    "Disabled": false,
+    "Gentilicio": "austríaca",
+    "ISOA3": "AUT",
+    "Name": "Austria",
+    "Nombre": "Austria"
+  },
+  {
+    "Codigo": "AZ",
+    "CodigoTelefonico": 994,
+    "Disabled": false,
+    "Gentilicio": "azerbaiyana",
+    "ISOA3": "AZE",
+    "Name": "Azerbaijan",
+    "Nombre": "Azerbaiyán"
+  },
+  {
+    "Codigo": "BS",
+    "CodigoTelefonico": "1 242",
+    "Disabled": false,
+    "Gentilicio": "bahameña",
+    "ISOA3": "BHS",
+    "Name": "Bahamas",
+    "Nombre": "Bahamas"
+  },
+  {
+    "Codigo": "BH",
+    "CodigoTelefonico": 973,
+    "Disabled": false,
+    "Gentilicio": "bahriní",
+    "ISOA3": "BHR",
+    "Name": "Bahrain",
+    "Nombre": "Bahrein"
+  },
+  {
+    "Codigo": "BD",
+    "CodigoTelefonico": 880,
+    "Disabled": false,
+    "Gentilicio": "bengalí",
+    "ISOA3": "BGD",
+    "Name": "Bangladesh",
+    "Nombre": "Bangladesh"
+  },
+  {
+    "Codigo": "BB",
+    "CodigoTelefonico": "1 246",
+    "Disabled": false,
+    "Gentilicio": "barbadense",
+    "ISOA3": "BRB",
+    "Name": "Barbados",
+    "Nombre": "Barbados"
+  },
+  {
+    "Codigo": "BE",
+    "CodigoTelefonico": 32,
+    "Disabled": false,
+    "Gentilicio": "belga",
+    "ISOA3": "BEL",
+    "Name": "Belgium",
+    "Nombre": "Bélgica"
+  },
+  {
+    "Codigo": "BZ",
+    "CodigoTelefonico": 501,
+    "Disabled": false,
+    "Gentilicio": "beliceña",
+    "ISOA3": "BLZ",
+    "Name": "Belize",
+    "Nombre": "Belice"
+  },
+  {
+    "Codigo": "BJ",
+    "CodigoTelefonico": 229,
+    "Disabled": false,
+    "Gentilicio": "beninesa",
+    "ISOA3": "BEN",
+    "Name": "Benin",
+    "Nombre": "Benín"
+  },
+  {
+    "Codigo": "BT",
+    "CodigoTelefonico": 975,
+    "Disabled": false,
+    "Gentilicio": "butanesa",
+    "ISOA3": "BTN",
+    "Name": "Bhutan",
+    "Nombre": "Bhután"
+  },
+  {
+    "Codigo": "BY",
+    "CodigoTelefonico": 375,
+    "Disabled": false,
+    "Gentilicio": "bielorrusa",
+    "ISOA3": "BLR",
+    "Name": "Belarus",
+    "Nombre": "Bielorrusia"
+  },
+  {
+    "Codigo": "MM",
+    "CodigoTelefonico": 95,
+    "Disabled": false,
+    "Gentilicio": "birmana",
+    "ISOA3": "MMR",
+    "Name": "Myanmar",
+    "Nombre": "Birmania"
+  },
+  {
+    "Codigo": "BO",
+    "CodigoTelefonico": 591,
+    "Disabled": false,
+    "Gentilicio": "boliviana",
+    "ISOA3": "BOL",
+    "Name": "Bolivia",
+    "Nombre": "Bolivia"
+  },
+  {
+    "Codigo": "BA",
+    "CodigoTelefonico": 387,
+    "Disabled": false,
+    "Gentilicio": "Bosnio",
+    "ISOA3": "BIH",
+    "Name": "Bosnia and Herzegovina",
+    "Nombre": "Bosnia y Herzegovina"
+  },
+  {
+    "Codigo": "BW",
+    "CodigoTelefonico": 267,
+    "Disabled": false,
+    "Gentilicio": "botsuanesa",
+    "ISOA3": "BWA",
+    "Name": "Botswana",
+    "Nombre": "Botsuana"
+  },
+  {
+    "Codigo": "BR",
+    "CodigoTelefonico": 55,
+    "Disabled": false,
+    "Gentilicio": "brasileña",
+    "ISOA3": "BRA",
+    "Name": "Brazil",
+    "Nombre": "Brasil"
+  },
+  {
+    "Codigo": "BN",
+    "CodigoTelefonico": 673,
+    "Disabled": false,
+    "Gentilicio": "de Brunéi",
+    "ISOA3": "BRN",
+    "Name": "Brunei",
+    "Nombre": "Brunéi"
+  },
+  {
+    "Codigo": "BG",
+    "CodigoTelefonico": 359,
+    "Disabled": false,
+    "Gentilicio": "búlgara",
+    "ISOA3": "BGR",
+    "Name": "Bulgaria",
+    "Nombre": "Bulgaria"
+  },
+  {
+    "Codigo": "BF",
+    "CodigoTelefonico": 226,
+    "Disabled": false,
+    "Gentilicio": "burkinesa",
+    "ISOA3": "BFA",
+    "Name": "Burkina Faso",
+    "Nombre": "Burkina Faso"
+  },
+  {
+    "Codigo": "BI",
+    "CodigoTelefonico": 257,
+    "Disabled": false,
+    "Gentilicio": "burundesa",
+    "ISOA3": "BDI",
+    "Name": "Burundi",
+    "Nombre": "Burundi"
+  },
+  {
+    "Codigo": "CV",
+    "CodigoTelefonico": 238,
+    "Disabled": false,
+    "Gentilicio": "caboverdiana",
+    "ISOA3": "CPV",
+    "Name": "Cape Verde",
+    "Nombre": "Cabo Verde"
+  },
+  {
+    "Codigo": "KH",
+    "CodigoTelefonico": 855,
+    "Disabled": false,
+    "Gentilicio": "camboyana",
+    "ISOA3": "KHM",
+    "Name": "Cambodia",
+    "Nombre": "Camboya"
+  },
+  {
+    "Codigo": "CM",
+    "CodigoTelefonico": 237,
+    "Disabled": false,
+    "Gentilicio": "camerunesa",
+    "ISOA3": "CMR",
+    "Name": "Cameroon",
+    "Nombre": "Camerún"
+  },
+  {
+    "Codigo": "CA",
+    "CodigoTelefonico": 1,
+    "Disabled": false,
+    "Gentilicio": "canadiense",
+    "ISOA3": "CAN",
+    "Name": "Canada",
+    "Nombre": "Canadá"
+  },
+  {
+    "Codigo": "TD",
+    "CodigoTelefonico": 235,
+    "Disabled": false,
+    "Gentilicio": "chadiana",
+    "ISOA3": "TCD",
+    "Name": "Chad",
+    "Nombre": "Chad"
+  },
+  {
+    "Codigo": "CL",
+    "CodigoTelefonico": 56,
+    "Disabled": false,
+    "Gentilicio": "chilena",
+    "ISOA3": "CHL",
+    "Name": "Chile",
+    "Nombre": "Chile"
+  },
+  {
+    "Codigo": "CN",
+    "CodigoTelefonico": 86,
+    "Disabled": false,
+    "Gentilicio": "china",
+    "ISOA3": "CHN",
+    "Name": "China",
+    "Nombre": "China"
+  },
+  {
+    "Codigo": "CY",
+    "CodigoTelefonico": 357,
+    "Disabled": false,
+    "Gentilicio": "chipriota",
+    "ISOA3": "CYP",
+    "Name": "Cyprus",
+    "Nombre": "Chipre"
+  },
+  {
+    "Codigo": "VA",
+    "CodigoTelefonico": 39,
+    "Disabled": false,
+    "Gentilicio": "Ciudad Vaticano",
+    "ISOA3": "VAT",
+    "Name": "Vatican City State",
+    "Nombre": "Ciudad del Vaticano"
+  },
+  {
+    "Codigo": "CO",
+    "CodigoTelefonico": 57,
+    "Disabled": false,
+    "Gentilicio": "colombiana",
+    "ISOA3": "COL",
+    "Name": "Colombia",
+    "Nombre": "Colombia"
+  },
+  {
+    "Codigo": "KM",
+    "CodigoTelefonico": 269,
+    "Disabled": false,
+    "Gentilicio": "comorana",
+    "ISOA3": "COM",
+    "Name": "Comoros",
+    "Nombre": "Comoras"
+  },
+  {
+    "Codigo": "KP",
+    "CodigoTelefonico": 850,
+    "Disabled": false,
+    "Gentilicio": "norcoreana",
+    "ISOA3": "PRK",
+    "Name": "North Korea",
+    "Nombre": "Corea del Norte"
+  },
+  {
+    "Codigo": "KR",
+    "CodigoTelefonico": 82,
+    "Disabled": false,
+    "Gentilicio": "norcoreana",
+    "ISOA3": "KOR",
+    "Name": "South Korea",
+    "Nombre": "Corea del Sur"
+  },
+  {
+    "Codigo": "CI",
+    "CodigoTelefonico": 225,
+    "Disabled": false,
+    "Gentilicio": "marfileña",
+    "ISOA3": "CIV",
+    "Name": "Ivory Coast",
+    "Nombre": "Costa de Marfil"
+  },
+  {
+    "Codigo": "CR",
+    "CodigoTelefonico": 506,
+    "Disabled": false,
+    "Gentilicio": "costarricense",
+    "ISOA3": "CRI",
+    "Name": "Costa Rica",
+    "Nombre": "Costa Rica"
+  },
+  {
+    "Codigo": "HR",
+    "CodigoTelefonico": 385,
+    "Disabled": false,
+    "Gentilicio": "croata",
+    "ISOA3": "HRV",
+    "Name": "Croatia",
+    "Nombre": "Croacia"
+  },
+  {
+    "Codigo": "CU",
+    "CodigoTelefonico": 53,
+    "Disabled": false,
+    "Gentilicio": "cubana",
+    "ISOA3": "CUB",
+    "Name": "Cuba",
+    "Nombre": "Cuba"
+  },
+  {
+    "Codigo": "CW",
+    "CodigoTelefonico": 5999,
+    "Disabled": false,
+    "Gentilicio": "de Curaçao",
+    "ISOA3": "CWU",
+    "Name": "Curaçao",
+    "Nombre": "Curazao"
+  },
+  {
+    "Codigo": "DK",
+    "CodigoTelefonico": 45,
+    "Disabled": false,
+    "Gentilicio": "danesa",
+    "ISOA3": "DNK",
+    "Name": "Denmark",
+    "Nombre": "Dinamarca"
+  },
+  {
+    "Codigo": "DM",
+    "CodigoTelefonico": "1 767",
+    "Disabled": false,
+    "Gentilicio": "de Dominica",
+    "ISOA3": "DMA",
+    "Name": "Dominica",
+    "Nombre": "Dominica"
+  },
+  {
+    "Codigo": "EC",
+    "CodigoTelefonico": 593,
+    "Disabled": false,
+    "Gentilicio": "ecuatoriana",
+    "ISOA3": "ECU",
+    "Name": "Ecuador",
+    "Nombre": "Ecuador"
+  },
+  {
+    "Codigo": "EG",
+    "CodigoTelefonico": 20,
+    "Disabled": false,
+    "Gentilicio": "egipcia",
+    "ISOA3": "EGY",
+    "Name": "Egypt",
+    "Nombre": "Egipto"
+  },
+  {
+    "Codigo": "SV",
+    "CodigoTelefonico": 503,
+    "Disabled": false,
+    "Gentilicio": "salvadoreña",
+    "ISOA3": "SLV",
+    "Name": "El Salvador",
+    "Nombre": "El Salvador"
+  },
+  {
+    "Codigo": "AE",
+    "CodigoTelefonico": 971,
+    "Disabled": false,
+    "Gentilicio": "de EAU",
+    "ISOA3": "ARE",
+    "Name": "United Arab Emirates",
+    "Nombre": "Emiratos Árabes Unidos"
+  },
+  {
+    "Codigo": "ER",
+    "CodigoTelefonico": 291,
+    "Disabled": false,
+    "Gentilicio": "eritrea",
+    "ISOA3": "ERI",
+    "Name": "Eritrea",
+    "Nombre": "Eritrea"
+  },
+  {
+    "Codigo": "SK",
+    "CodigoTelefonico": 421,
+    "Disabled": false,
+    "Gentilicio": "eslovaca",
+    "ISOA3": "SVK",
+    "Name": "Slovakia",
+    "Nombre": "Eslovaquia"
+  },
+  {
+    "Codigo": "SI",
+    "CodigoTelefonico": 386,
+    "Disabled": false,
+    "Gentilicio": "eslovenia",
+    "ISOA3": "SVN",
+    "Name": "Slovenia",
+    "Nombre": "Eslovenia"
+  },
+  {
+    "Codigo": "ES",
+    "CodigoTelefonico": 34,
+    "Disabled": false,
+    "Gentilicio": "española",
+    "ISOA3": "ESP",
+    "Name": "Spain",
+    "Nombre": "España"
+  },
+  {
+    "Codigo": "US",
+    "CodigoTelefonico": 1,
+    "Disabled": false,
+    "Gentilicio": "estadounidense",
+    "ISOA3": "USA",
+    "Name": "United States of America",
+    "Nombre": "Estados Unidos de América"
+  },
+  {
+    "Codigo": "EE",
+    "CodigoTelefonico": 372,
+    "Disabled": false,
+    "Gentilicio": "estonia",
+    "ISOA3": "EST",
+    "Name": "Estonia",
+    "Nombre": "Estonia"
+  },
+  {
+    "Codigo": "ET",
+    "CodigoTelefonico": 251,
+    "Disabled": false,
+    "Gentilicio": "etíope",
+    "ISOA3": "ETH",
+    "Name": "Ethiopia",
+    "Nombre": "Etiopía"
+  },
+  {
+    "Codigo": "PH",
+    "CodigoTelefonico": 63,
+    "Disabled": false,
+    "Gentilicio": "filipina",
+    "ISOA3": "PHL",
+    "Name": "Philippines",
+    "Nombre": "Filipinas"
+  },
+  {
+    "Codigo": "FI",
+    "CodigoTelefonico": 358,
+    "Disabled": false,
+    "Gentilicio": "finlandesa",
+    "ISOA3": "FIN",
+    "Name": "Finland",
+    "Nombre": "Finlandia"
+  },
+  {
+    "Codigo": "FJ",
+    "CodigoTelefonico": 679,
+    "Disabled": false,
+    "Gentilicio": "de Fiyi",
+    "ISOA3": "FJI",
+    "Name": "Fiji",
+    "Nombre": "Fiyi"
+  },
+  {
+    "Codigo": "FR",
+    "CodigoTelefonico": 33,
+    "Disabled": false,
+    "Gentilicio": "francesa",
+    "ISOA3": "FRA",
+    "Name": "France",
+    "Nombre": "Francia"
+  },
+  {
+    "Codigo": "GA",
+    "CodigoTelefonico": 241,
+    "Disabled": false,
+    "Gentilicio": "gabonesa",
+    "ISOA3": "GAB",
+    "Name": "Gabon",
+    "Nombre": "Gabón"
+  },
+  {
+    "Codigo": "GM",
+    "CodigoTelefonico": 220,
+    "Disabled": false,
+    "Gentilicio": "gambiana",
+    "ISOA3": "GMB",
+    "Name": "Gambia",
+    "Nombre": "Gambia"
+  },
+  {
+    "Codigo": "GE",
+    "CodigoTelefonico": 995,
+    "Disabled": false,
+    "Gentilicio": "georgiana",
+    "ISOA3": "GEO",
+    "Name": "Georgia",
+    "Nombre": "Georgia"
+  },
+  {
+    "Codigo": "GH",
+    "CodigoTelefonico": 233,
+    "Disabled": false,
+    "Gentilicio": "ghanesa",
+    "ISOA3": "GHA",
+    "Name": "Ghana",
+    "Nombre": "Ghana"
+  },
+  {
+    "Codigo": "GI",
+    "CodigoTelefonico": 350,
+    "Disabled": false,
+    "Gentilicio": "Gibraltar",
+    "ISOA3": "GIB",
+    "Name": "Gibraltar",
+    "Nombre": "Gibraltar"
+  },
+  {
+    "Codigo": "GD",
+    "CodigoTelefonico": "1 473",
+    "Disabled": false,
+    "Gentilicio": "granadina",
+    "ISOA3": "GRD",
+    "Name": "Grenada",
+    "Nombre": "Granada"
+  },
+  {
+    "Codigo": "GR",
+    "CodigoTelefonico": 30,
+    "Disabled": false,
+    "Gentilicio": "griega",
+    "ISOA3": "GRC",
+    "Name": "Greece",
+    "Nombre": "Grecia"
+  },
+  {
+    "Codigo": "GL",
+    "CodigoTelefonico": 299,
+    "Disabled": false,
+    "Gentilicio": "danesa",
+    "ISOA3": "GRL",
+    "Name": "Greenland",
+    "Nombre": "Groenlandia"
+  },
+  {
+    "Codigo": "GP",
+    "CodigoTelefonico": "",
+    "Disabled": false,
+    "Gentilicio": "francesa",
+    "ISOA3": "GLP",
+    "Name": "Guadeloupe",
+    "Nombre": "Guadalupe"
+  },
+  {
+    "Codigo": "GU",
+    "CodigoTelefonico": "1 671",
+    "Disabled": false,
+    "Gentilicio": "estadounidense",
+    "ISOA3": "GUM",
+    "Name": "Guam",
+    "Nombre": "Guam"
+  },
+  {
+    "Codigo": "GT",
+    "CodigoTelefonico": 502,
+    "Disabled": false,
+    "Gentilicio": "guatemalteca",
+    "ISOA3": "GTM",
+    "Name": "Guatemala",
+    "Nombre": "Guatemala"
+  },
+  {
+    "Codigo": "GF",
+    "CodigoTelefonico": "",
+    "Disabled": false,
+    "Gentilicio": "francesa",
+    "ISOA3": "GUF",
+    "Name": "French Guiana",
+    "Nombre": "Guayana Francesa"
+  },
+  {
+    "Codigo": "GG",
+    "CodigoTelefonico": "",
+    "Disabled": false,
+    "Gentilicio": "británica",
+    "ISOA3": "GGY",
+    "Name": "Guernsey",
+    "Nombre": "Guernsey"
+  },
+  {
+    "Codigo": "GN",
+    "CodigoTelefonico": 224,
+    "Disabled": false,
+    "Gentilicio": "guineana",
+    "ISOA3": "GIN",
+    "Name": "Guinea",
+    "Nombre": "Guinea"
+  },
+  {
+    "Codigo": "GQ",
+    "CodigoTelefonico": 240,
+    "Disabled": false,
+    "Gentilicio": "de Guinea Ecua.",
+    "ISOA3": "GNQ",
+    "Name": "Equatorial Guinea",
+    "Nombre": "Guinea Ecuatorial"
+  },
+  {
+    "Codigo": "GW",
+    "CodigoTelefonico": 245,
+    "Disabled": false,
+    "Gentilicio": "de Guinea-Bis.",
+    "ISOA3": "GNB",
+    "Name": "Guinea-Bissau",
+    "Nombre": "Guinea-Bissau"
+  },
+  {
+    "Codigo": "GY",
+    "CodigoTelefonico": 592,
+    "Disabled": false,
+    "Gentilicio": "guyanesa",
+    "ISOA3": "GUY",
+    "Name": "Guyana",
+    "Nombre": "Guyana"
+  },
+  {
+    "Codigo": "HT",
+    "CodigoTelefonico": 509,
+    "Disabled": false,
+    "Gentilicio": "haitiana",
+    "ISOA3": "HTI",
+    "Name": "Haiti",
+    "Nombre": "Haití"
+  },
+  {
+    "Codigo": "HN",
+    "CodigoTelefonico": 504,
+    "Disabled": false,
+    "Gentilicio": "hondureña",
+    "ISOA3": "HND",
+    "Name": "Honduras",
+    "Nombre": "Honduras"
+  },
+  {
+    "Codigo": "HK",
+    "CodigoTelefonico": 852,
+    "Disabled": false,
+    "Gentilicio": "hongkonesa",
+    "ISOA3": "HKG",
+    "Name": "Hong Kong",
+    "Nombre": "Hong kong"
+  },
+  {
+    "Codigo": "HU",
+    "CodigoTelefonico": 36,
+    "Disabled": false,
+    "Gentilicio": "húngara",
+    "ISOA3": "HUN",
+    "Name": "Hungary",
+    "Nombre": "Hungría"
+  },
+  {
+    "Codigo": "IN",
+    "CodigoTelefonico": 91,
+    "Disabled": false,
+    "Gentilicio": "india",
+    "ISOA3": "IND",
+    "Name": "India",
+    "Nombre": "India"
+  },
+  {
+    "Codigo": "ID",
+    "CodigoTelefonico": 62,
+    "Disabled": false,
+    "Gentilicio": "indonesia",
+    "ISOA3": "IDN",
+    "Name": "Indonesia",
+    "Nombre": "Indonesia"
+  },
+  {
+    "Codigo": "IQ",
+    "CodigoTelefonico": 964,
+    "Disabled": false,
+    "Gentilicio": "iraquí",
+    "ISOA3": "IRQ",
+    "Name": "Iraq",
+    "Nombre": "Irak"
+  },
+  {
+    "Codigo": "IR",
+    "CodigoTelefonico": 98,
+    "Disabled": false,
+    "Gentilicio": "iraní",
+    "ISOA3": "IRN",
+    "Name": "Iran",
+    "Nombre": "Irán"
+  },
+  {
+    "Codigo": "IE",
+    "CodigoTelefonico": 353,
+    "Disabled": false,
+    "Gentilicio": "irlandesa",
+    "ISOA3": "IRL",
+    "Name": "Ireland",
+    "Nombre": "Irlanda"
+  },
+  {
+    "Codigo": "BV",
+    "CodigoTelefonico": "",
+    "Disabled": false,
+    "Gentilicio": "de Islas Bouvet",
+    "ISOA3": "BVT",
+    "Name": "Bouvet Island",
+    "Nombre": "Isla Bouvet"
+  },
+  {
+    "Codigo": "IM",
+    "CodigoTelefonico": 44,
+    "Disabled": false,
+    "Gentilicio": "británica",
+    "ISOA3": "IMN",
+    "Name": "Isle of Man",
+    "Nombre": "Isla de Man"
+  },
+  {
+    "Codigo": "CX",
+    "CodigoTelefonico": 61,
+    "Disabled": false,
+    "Gentilicio": "australiana",
+    "ISOA3": "CXR",
+    "Name": "Christmas Island",
+    "Nombre": "Isla de Navidad"
+  },
+  {
+    "Codigo": "NF",
+    "CodigoTelefonico": "",
+    "Disabled": false,
+    "Gentilicio": "de Isl.Norfolk",
+    "ISOA3": "NFK",
+    "Name": "Norfolk Island",
+    "Nombre": "Isla Norfolk"
+  },
+  {
+    "Codigo": "IS",
+    "CodigoTelefonico": 354,
+    "Disabled": false,
+    "Gentilicio": "Islandesa",
+    "ISOA3": "ISL",
+    "Name": "Iceland",
+    "Nombre": "Islandia"
+  },
+  {
+    "Codigo": "BM",
+    "CodigoTelefonico": "1 441",
+    "Disabled": false,
+    "Gentilicio": "bermudeña",
+    "ISOA3": "BMU",
+    "Name": "Bermuda Islands",
+    "Nombre": "Islas Bermudas"
+  },
+  {
+    "Codigo": "KY",
+    "CodigoTelefonico": "1 345",
+    "Disabled": false,
+    "Gentilicio": "británica",
+    "ISOA3": "CYM",
+    "Name": "Cayman Islands",
+    "Nombre": "Islas Caimán"
+  },
+  {
+    "Codigo": "CC",
+    "CodigoTelefonico": 61,
+    "Disabled": false,
+    "Gentilicio": "australiana",
+    "ISOA3": "CCK",
+    "Name": "Cocos (Keeling) Islands",
+    "Nombre": "Islas Cocos (Keeling)"
+  },
+  {
+    "Codigo": "CK",
+    "CodigoTelefonico": 682,
+    "Disabled": false,
+    "Gentilicio": "Islas Cook",
+    "ISOA3": "COK",
+    "Name": "Cook Islands",
+    "Nombre": "Islas Cook"
+  },
+  {
+    "Codigo": "AX",
+    "CodigoTelefonico": "",
+    "Disabled": false,
+    "Gentilicio": "",
+    "ISOA3": "ALA",
+    "Name": "Åland Islands",
+    "Nombre": "Islas de Åland"
+  },
+  {
+    "Codigo": "FO",
+    "CodigoTelefonico": 298,
+    "Disabled": false,
+    "Gentilicio": "danesa",
+    "ISOA3": "FRO",
+    "Name": "Faroe Islands",
+    "Nombre": "Islas Feroe"
+  },
+  {
+    "Codigo": "GS",
+    "CodigoTelefonico": "",
+    "Disabled": false,
+    "Gentilicio": "Georgia del Sur",
+    "ISOA3": "SGS",
+    "Name": "South Georgia and the South Sandwich Islands",
+    "Nombre": "Islas Georgias del Sur y Sandwich del Sur"
+  },
+  {
+    "Codigo": "HM",
+    "CodigoTelefonico": "",
+    "Disabled": false,
+    "Gentilicio": "de Heard/Is.Mc.",
+    "ISOA3": "HMD",
+    "Name": "Heard Island and McDonald Islands",
+    "Nombre": "Islas Heard y McDonald"
+  },
+  {
+    "Codigo": "MV",
+    "CodigoTelefonico": 960,
+    "Disabled": false,
+    "Gentilicio": "maldiva",
+    "ISOA3": "MDV",
+    "Name": "Maldives",
+    "Nombre": "Islas Maldivas"
+  },
+  {
+    "Codigo": "FK",
+    "CodigoTelefonico": 500,
+    "Disabled": false,
+    "Gentilicio": "británica",
+    "ISOA3": "FLK",
+    "Name": "Falkland Islands (Malvinas)",
+    "Nombre": "Islas Malvinas"
+  },
+  {
+    "Codigo": "MP",
+    "CodigoTelefonico": "1 670",
+    "Disabled": false,
+    "Gentilicio": "de las Marianas",
+    "ISOA3": "MNP",
+    "Name": "Northern Mariana Islands",
+    "Nombre": "Islas Marianas del Norte"
+  },
+  {
+    "Codigo": "MH",
+    "CodigoTelefonico": 692,
+    "Disabled": false,
+    "Gentilicio": "de Isl.Marshall",
+    "ISOA3": "MHL",
+    "Name": "Marshall Islands",
+    "Nombre": "Islas Marshall"
+  },
+  {
+    "Codigo": "PN",
+    "CodigoTelefonico": 870,
+    "Disabled": false,
+    "Gentilicio": "británica",
+    "ISOA3": "PCN",
+    "Name": "Pitcairn Islands",
+    "Nombre": "Islas Pitcairn"
+  },
+  {
+    "Codigo": "SB",
+    "CodigoTelefonico": 677,
+    "Disabled": false,
+    "Gentilicio": "de Isl.Salomón",
+    "ISOA3": "SLB",
+    "Name": "Solomon Islands",
+    "Nombre": "Islas Salomón"
+  },
+  {
+    "Codigo": "TC",
+    "CodigoTelefonico": "1 649",
+    "Disabled": false,
+    "Gentilicio": "de Turcas Caico",
+    "ISOA3": "TCA",
+    "Name": "Turks and Caicos Islands",
+    "Nombre": "Islas Turcas y Caicos"
+  },
+  {
+    "Codigo": "UM",
+    "CodigoTelefonico": "",
+    "Disabled": false,
+    "Gentilicio": "de IslMenAlEEUU",
+    "ISOA3": "UMI",
+    "Name": "United States Minor Outlying Islands",
+    "Nombre": "Islas Ultramarinas Menores de Estados Unidos"
+  },
+  {
+    "Codigo": "VG",
+    "CodigoTelefonico": "1 284",
+    "Disabled": false,
+    "Gentilicio": "británica",
+    "ISOA3": "VGB",
+    "Name": "Virgin Islands",
+    "Nombre": "Islas Vírgenes Británicas"
+  },
+  {
+    "Codigo": "VI",
+    "CodigoTelefonico": "1 340",
+    "Disabled": false,
+    "Gentilicio": "estadounidense",
+    "ISOA3": "VIR",
+    "Name": "United States Virgin Islands",
+    "Nombre": "Islas Vírgenes de los Estados Unidos"
+  },
+  {
+    "Codigo": "IL",
+    "CodigoTelefonico": 972,
+    "Disabled": false,
+    "Gentilicio": "israelí",
+    "ISOA3": "ISR",
+    "Name": "Israel",
+    "Nombre": "Israel"
+  },
+  {
+    "Codigo": "IT",
+    "CodigoTelefonico": 39,
+    "Disabled": false,
+    "Gentilicio": "italiana",
+    "ISOA3": "ITA",
+    "Name": "Italy",
+    "Nombre": "Italia"
+  },
+  {
+    "Codigo": "JM",
+    "CodigoTelefonico": "1 876",
+    "Disabled": false,
+    "Gentilicio": "jamaicana",
+    "ISOA3": "JAM",
+    "Name": "Jamaica",
+    "Nombre": "Jamaica"
+  },
+  {
+    "Codigo": "JP",
+    "CodigoTelefonico": 81,
+    "Disabled": false,
+    "Gentilicio": "japonesa",
+    "ISOA3": "JPN",
+    "Name": "Japan",
+    "Nombre": "Japón"
+  },
+  {
+    "Codigo": "JE",
+    "CodigoTelefonico": "",
+    "Disabled": false,
+    "Gentilicio": "británica",
+    "ISOA3": "JEY",
+    "Name": "Jersey",
+    "Nombre": "Jersey"
+  },
+  {
+    "Codigo": "JO",
+    "CodigoTelefonico": 962,
+    "Disabled": false,
+    "Gentilicio": "jordana",
+    "ISOA3": "JOR",
+    "Name": "Jordan",
+    "Nombre": "Jordania"
+  },
+  {
+    "Codigo": "KZ",
+    "CodigoTelefonico": 7,
+    "Disabled": false,
+    "Gentilicio": "kazaja",
+    "ISOA3": "KAZ",
+    "Name": "Kazakhstan",
+    "Nombre": "Kazajistán"
+  },
+  {
+    "Codigo": "KE",
+    "CodigoTelefonico": 254,
+    "Disabled": false,
+    "Gentilicio": "keniana",
+    "ISOA3": "KEN",
+    "Name": "Kenya",
+    "Nombre": "Kenia"
+  },
+  {
+    "Codigo": "KG",
+    "CodigoTelefonico": 996,
+    "Disabled": false,
+    "Gentilicio": "kirguiza",
+    "ISOA3": "KGZ",
+    "Name": "Kyrgyzstan",
+    "Nombre": "Kirguistán"
+  },
+  {
+    "Codigo": "KI",
+    "CodigoTelefonico": 686,
+    "Disabled": false,
+    "Gentilicio": "kiribatiana",
+    "ISOA3": "KIR",
+    "Name": "Kiribati",
+    "Nombre": "Kiribati"
+  },
+  {
+    "Codigo": "KW",
+    "CodigoTelefonico": 965,
+    "Disabled": false,
+    "Gentilicio": "kuwaití",
+    "ISOA3": "KWT",
+    "Name": "Kuwait",
+    "Nombre": "Kuwait"
+  },
+  {
+    "Codigo": "LA",
+    "CodigoTelefonico": 856,
+    "Disabled": false,
+    "Gentilicio": "laosiana",
+    "ISOA3": "LAO",
+    "Name": "Laos",
+    "Nombre": "Laos"
+  },
+  {
+    "Codigo": "LS",
+    "CodigoTelefonico": 266,
+    "Disabled": false,
+    "Gentilicio": "de Lesoto",
+    "ISOA3": "LSO",
+    "Name": "Lesotho",
+    "Nombre": "Lesoto"
+  },
+  {
+    "Codigo": "LV",
+    "CodigoTelefonico": 371,
+    "Disabled": false,
+    "Gentilicio": "letona",
+    "ISOA3": "LVA",
+    "Name": "Latvia",
+    "Nombre": "Letonia"
+  },
+  {
+    "Codigo": "LB",
+    "CodigoTelefonico": 961,
+    "Disabled": false,
+    "Gentilicio": "libanesa",
+    "ISOA3": "LBN",
+    "Name": "Lebanon",
+    "Nombre": "Líbano"
+  },
+  {
+    "Codigo": "LR",
+    "CodigoTelefonico": 231,
+    "Disabled": false,
+    "Gentilicio": "liberiana",
+    "ISOA3": "LBR",
+    "Name": "Liberia",
+    "Nombre": "Liberia"
+  },
+  {
+    "Codigo": "LY",
+    "CodigoTelefonico": 218,
+    "Disabled": false,
+    "Gentilicio": "libia",
+    "ISOA3": "LBY",
+    "Name": "Libya",
+    "Nombre": "Libia"
+  },
+  {
+    "Codigo": "LI",
+    "CodigoTelefonico": 423,
+    "Disabled": false,
+    "Gentilicio": "de Liechtenst.",
+    "ISOA3": "LIE",
+    "Name": "Liechtenstein",
+    "Nombre": "Liechtenstein"
+  },
+  {
+    "Codigo": "LT",
+    "CodigoTelefonico": 370,
+    "Disabled": false,
+    "Gentilicio": "lituana",
+    "ISOA3": "LTU",
+    "Name": "Lithuania",
+    "Nombre": "Lituania"
+  },
+  {
+    "Codigo": "LU",
+    "CodigoTelefonico": 352,
+    "Disabled": false,
+    "Gentilicio": "luxemburguesa",
+    "ISOA3": "LUX",
+    "Name": "Luxembourg",
+    "Nombre": "Luxemburgo"
+  },
+  {
+    "Codigo": "MO",
+    "CodigoTelefonico": 853,
+    "Disabled": false,
+    "Gentilicio": "portuguesa",
+    "ISOA3": "MAC",
+    "Name": "Macao",
+    "Nombre": "Macao"
+  },
+  {
+    "Codigo": "MK",
+    "CodigoTelefonico": 389,
+    "Disabled": false,
+    "Gentilicio": "macedonia",
+    "ISOA3": "MKD",
+    "Name": "Macedonia",
+    "Nombre": "Macedônia"
+  },
+  {
+    "Codigo": "MG",
+    "CodigoTelefonico": 261,
+    "Disabled": false,
+    "Gentilicio": "malgache",
+    "ISOA3": "MDG",
+    "Name": "Madagascar",
+    "Nombre": "Madagascar"
+  },
+  {
+    "Codigo": "MY",
+    "CodigoTelefonico": 60,
+    "Disabled": false,
+    "Gentilicio": "malaya",
+    "ISOA3": "MYS",
+    "Name": "Malaysia",
+    "Nombre": "Malasia"
+  },
+  {
+    "Codigo": "MW",
+    "CodigoTelefonico": 265,
+    "Disabled": false,
+    "Gentilicio": "malaui",
+    "ISOA3": "MWI",
+    "Name": "Malawi",
+    "Nombre": "Malawi"
+  },
+  {
+    "Codigo": "ML",
+    "CodigoTelefonico": 223,
+    "Disabled": false,
+    "Gentilicio": "maliense",
+    "ISOA3": "MLI",
+    "Name": "Mali",
+    "Nombre": "Mali"
+  },
+  {
+    "Codigo": "MT",
+    "CodigoTelefonico": 356,
+    "Disabled": false,
+    "Gentilicio": "maltesa",
+    "ISOA3": "MLT",
+    "Name": "Malta",
+    "Nombre": "Malta"
+  },
+  {
+    "Codigo": "MA",
+    "CodigoTelefonico": 212,
+    "Disabled": false,
+    "Gentilicio": "marroquí",
+    "ISOA3": "MAR",
+    "Name": "Morocco",
+    "Nombre": "Marruecos"
+  },
+  {
+    "Codigo": "MQ",
+    "CodigoTelefonico": "",
+    "Disabled": false,
+    "Gentilicio": "francesa",
+    "ISOA3": "MTQ",
+    "Name": "Martinique",
+    "Nombre": "Martinica"
+  },
+  {
+    "Codigo": "MU",
+    "CodigoTelefonico": 230,
+    "Disabled": false,
+    "Gentilicio": "mauriciana",
+    "ISOA3": "MUS",
+    "Name": "Mauritius",
+    "Nombre": "Mauricio"
+  },
+  {
+    "Codigo": "MR",
+    "CodigoTelefonico": 222,
+    "Disabled": false,
+    "Gentilicio": "mauritana",
+    "ISOA3": "MRT",
+    "Name": "Mauritania",
+    "Nombre": "Mauritania"
+  },
+  {
+    "Codigo": "YT",
+    "CodigoTelefonico": 262,
+    "Disabled": false,
+    "Gentilicio": "francesa",
+    "ISOA3": "MYT",
+    "Name": "Mayotte",
+    "Nombre": "Mayotte"
+  },
+  {
+    "Codigo": "MX",
+    "CodigoTelefonico": 52,
+    "Disabled": false,
+    "Gentilicio": "mexicana",
+    "ISOA3": "MEX",
+    "Name": "Mexico",
+    "Nombre": "México"
+  },
+  {
+    "Codigo": "FM",
+    "CodigoTelefonico": 691,
+    "Disabled": false,
+    "Gentilicio": "de EE.FF.MM.",
+    "ISOA3": "FSM",
+    "Name": "Estados Federados de",
+    "Nombre": "Micronesia"
+  },
+  {
+    "Codigo": "MD",
+    "CodigoTelefonico": 373,
+    "Disabled": false,
+    "Gentilicio": "moldava",
+    "ISOA3": "MDA",
+    "Name": "Moldova",
+    "Nombre": "Moldavia"
+  },
+  {
+    "Codigo": "MC",
+    "CodigoTelefonico": 377,
+    "Disabled": false,
+    "Gentilicio": "monegasca",
+    "ISOA3": "MCO",
+    "Name": "Monaco",
+    "Nombre": "Mónaco"
+  },
+  {
+    "Codigo": "MN",
+    "CodigoTelefonico": 976,
+    "Disabled": false,
+    "Gentilicio": "mongola",
+    "ISOA3": "MNG",
+    "Name": "Mongolia",
+    "Nombre": "Mongolia"
+  },
+  {
+    "Codigo": "ME",
+    "CodigoTelefonico": 382,
+    "Disabled": false,
+    "Gentilicio": "",
+    "ISOA3": "MNE",
+    "Name": "Montenegro",
+    "Nombre": "Montenegro"
+  },
+  {
+    "Codigo": "MS",
+    "CodigoTelefonico": "1 664",
+    "Disabled": false,
+    "Gentilicio": "de Montserrat",
+    "ISOA3": "MSR",
+    "Name": "Montserrat",
+    "Nombre": "Montserrat"
+  },
+  {
+    "Codigo": "MZ",
+    "CodigoTelefonico": 258,
+    "Disabled": false,
+    "Gentilicio": "mozambiqueña",
+    "ISOA3": "MOZ",
+    "Name": "Mozambique",
+    "Nombre": "Mozambique"
+  },
+  {
+    "Codigo": "NA",
+    "CodigoTelefonico": 264,
+    "Disabled": false,
+    "Gentilicio": "namibia",
+    "ISOA3": "NAM",
+    "Name": "Namibia",
+    "Nombre": "Namibia"
+  },
+  {
+    "Codigo": "NR",
+    "CodigoTelefonico": 674,
+    "Disabled": false,
+    "Gentilicio": "nauruana",
+    "ISOA3": "NRU",
+    "Name": "Nauru",
+    "Nombre": "Nauru"
+  },
+  {
+    "Codigo": "NP",
+    "CodigoTelefonico": 977,
+    "Disabled": false,
+    "Gentilicio": "nepalí",
+    "ISOA3": "NPL",
+    "Name": "Nepal",
+    "Nombre": "Nepal"
+  },
+  {
+    "Codigo": "NI",
+    "CodigoTelefonico": 505,
+    "Disabled": false,
+    "Gentilicio": "nicaragüense",
+    "ISOA3": "NIC",
+    "Name": "Nicaragua",
+    "Nombre": "Nicaragua"
+  },
+  {
+    "Codigo": "NE",
+    "CodigoTelefonico": 227,
+    "Disabled": false,
+    "Gentilicio": "nigerina",
+    "ISOA3": "NER",
+    "Name": "Niger",
+    "Nombre": "Niger"
+  },
+  {
+    "Codigo": "NG",
+    "CodigoTelefonico": 234,
+    "Disabled": false,
+    "Gentilicio": "nigeriana",
+    "ISOA3": "NGA",
+    "Name": "Nigeria",
+    "Nombre": "Nigeria"
+  },
+  {
+    "Codigo": "NU",
+    "CodigoTelefonico": 683,
+    "Disabled": false,
+    "Gentilicio": "Islas Niue",
+    "ISOA3": "NIU",
+    "Name": "Niue",
+    "Nombre": "Niue"
+  },
+  {
+    "Codigo": "NO",
+    "CodigoTelefonico": 47,
+    "Disabled": false,
+    "Gentilicio": "noruega",
+    "ISOA3": "NOR",
+    "Name": "Norway",
+    "Nombre": "Noruega"
+  },
+  {
+    "Codigo": "NC",
+    "CodigoTelefonico": 687,
+    "Disabled": false,
+    "Gentilicio": "francesa",
+    "ISOA3": "NCL",
+    "Name": "New Caledonia",
+    "Nombre": "Nueva Caledonia"
+  },
+  {
+    "Codigo": "NZ",
+    "CodigoTelefonico": 64,
+    "Disabled": false,
+    "Gentilicio": "neozelandesa",
+    "ISOA3": "NZL",
+    "Name": "New Zealand",
+    "Nombre": "Nueva Zelanda"
+  },
+  {
+    "Codigo": "OM",
+    "CodigoTelefonico": 968,
+    "Disabled": false,
+    "Gentilicio": "omaní",
+    "ISOA3": "OMN",
+    "Name": "Oman",
+    "Nombre": "Omán"
+  },
+  {
+    "Codigo": "NL",
+    "CodigoTelefonico": 31,
+    "Disabled": false,
+    "Gentilicio": "neerlandesa",
+    "ISOA3": "NLD",
+    "Name": "Netherlands",
+    "Nombre": "Países Bajos"
+  },
+  {
+    "Codigo": "PK",
+    "CodigoTelefonico": 92,
+    "Disabled": false,
+    "Gentilicio": "pakistaní",
+    "ISOA3": "PAK",
+    "Name": "Pakistan",
+    "Nombre": "Pakistán"
+  },
+  {
+    "Codigo": "PW",
+    "CodigoTelefonico": 680,
+    "Disabled": false,
+    "Gentilicio": "Palao",
+    "ISOA3": "PLW",
+    "Name": "Palau",
+    "Nombre": "Palau"
+  },
+  {
+    "Codigo": "PS",
+    "CodigoTelefonico": "",
+    "Disabled": false,
+    "Gentilicio": "palestina",
+    "ISOA3": "PSE",
+    "Name": "Palestine",
+    "Nombre": "Palestina"
+  },
+  {
+    "Codigo": "PA",
+    "CodigoTelefonico": 507,
+    "Disabled": false,
+    "Gentilicio": "panameña",
+    "ISOA3": "PAN",
+    "Name": "Panama",
+    "Nombre": "Panamá"
+  },
+  {
+    "Codigo": "PG",
+    "CodigoTelefonico": 675,
+    "Disabled": false,
+    "Gentilicio": "De Papúa NvaGui",
+    "ISOA3": "PNG",
+    "Name": "Papua New Guinea",
+    "Nombre": "Papúa Nueva Guinea"
+  },
+  {
+    "Codigo": "PY",
+    "CodigoTelefonico": 595,
+    "Disabled": false,
+    "Gentilicio": "paraguaya",
+    "ISOA3": "PRY",
+    "Name": "Paraguay",
+    "Nombre": "Paraguay"
+  },
+  {
+    "Codigo": "PE",
+    "CodigoTelefonico": 51,
+    "Disabled": false,
+    "Gentilicio": "peruana",
+    "ISOA3": "PER",
+    "Name": "Peru",
+    "Nombre": "Perú"
+  },
+  {
+    "Codigo": "PF",
+    "CodigoTelefonico": 689,
+    "Disabled": false,
+    "Gentilicio": "francesa",
+    "ISOA3": "PYF",
+    "Name": "French Polynesia",
+    "Nombre": "Polinesia Francesa"
+  },
+  {
+    "Codigo": "PL",
+    "CodigoTelefonico": 48,
+    "Disabled": false,
+    "Gentilicio": "polaca",
+    "ISOA3": "POL",
+    "Name": "Poland",
+    "Nombre": "Polonia"
+  },
+  {
+    "Codigo": "PT",
+    "CodigoTelefonico": 351,
+    "Disabled": false,
+    "Gentilicio": "portuguesa",
+    "ISOA3": "PRT",
+    "Name": "Portugal",
+    "Nombre": "Portugal"
+  },
+  {
+    "Codigo": "PR",
+    "CodigoTelefonico": 1,
+    "Disabled": false,
+    "Gentilicio": "estadounidense",
+    "ISOA3": "PRI",
+    "Name": "Puerto Rico",
+    "Nombre": "Puerto Rico"
+  },
+  {
+    "Codigo": "QA",
+    "CodigoTelefonico": 974,
+    "Disabled": false,
+    "Gentilicio": "qatarí",
+    "ISOA3": "QAT",
+    "Name": "Qatar",
+    "Nombre": "Qatar"
+  },
+  {
+    "Codigo": "GB",
+    "CodigoTelefonico": 44,
+    "Disabled": false,
+    "Gentilicio": "británica",
+    "ISOA3": "GBR",
+    "Name": "United Kingdom",
+    "Nombre": "Reino Unido"
+  },
+  {
+    "Codigo": "CF",
+    "CodigoTelefonico": 236,
+    "Disabled": false,
+    "Gentilicio": "centroafricana",
+    "ISOA3": "CAF",
+    "Name": "Central African Republic",
+    "Nombre": "República Centroafricana"
+  },
+  {
+    "Codigo": "CZ",
+    "CodigoTelefonico": 420,
+    "Disabled": false,
+    "Gentilicio": "checa",
+    "ISOA3": "CZE",
+    "Name": "Czech Republic",
+    "Nombre": "República Checa"
+  },
+  {
+    "Codigo": "SS",
+    "CodigoTelefonico": 211,
+    "Disabled": false,
+    "Gentilicio": "de Sudán Sur",
+    "ISOA3": "SSD",
+    "Name": "South Sudan",
+    "Nombre": "República de Sudán del Sur"
+  },
+  {
+    "Codigo": "CG",
+    "CodigoTelefonico": 242,
+    "Disabled": false,
+    "Gentilicio": "congoleña",
+    "ISOA3": "COG",
+    "Name": "Republic of the Congo",
+    "Nombre": "República del Congo"
+  },
+  {
+    "Codigo": "CD",
+    "CodigoTelefonico": 243,
+    "Disabled": false,
+    "Gentilicio": "congoleña",
+    "ISOA3": "COD",
+    "Name": "Democratic Republic of the Congo",
+    "Nombre": "República Democrática del Congo"
+  },
+  {
+    "Codigo": "DO",
+    "CodigoTelefonico": "1 809",
+    "Disabled": false,
+    "Gentilicio": "dominicana",
+    "ISOA3": "DOM",
+    "Name": "Dominican Republic",
+    "Nombre": "República Dominicana"
+  },
+  {
+    "Codigo": "RE",
+    "CodigoTelefonico": "",
+    "Disabled": false,
+    "Gentilicio": "francesa",
+    "ISOA3": "REU",
+    "Name": "Réunion",
+    "Nombre": "Reunión"
+  },
+  {
+    "Codigo": "RW",
+    "CodigoTelefonico": 250,
+    "Disabled": false,
+    "Gentilicio": "ruandesa",
+    "ISOA3": "RWA",
+    "Name": "Rwanda",
+    "Nombre": "Ruanda"
+  },
+  {
+    "Codigo": "RO",
+    "CodigoTelefonico": 40,
+    "Disabled": false,
+    "Gentilicio": "rumana",
+    "ISOA3": "ROU",
+    "Name": "Romania",
+    "Nombre": "Rumanía"
+  },
+  {
+    "Codigo": "RU",
+    "CodigoTelefonico": 7,
+    "Disabled": false,
+    "Gentilicio": "rusa",
+    "ISOA3": "RUS",
+    "Name": "Russia",
+    "Nombre": "Rusia"
+  },
+  {
+    "Codigo": "EH",
+    "CodigoTelefonico": "",
+    "Disabled": false,
+    "Gentilicio": "francesa",
+    "ISOA3": "ESH",
+    "Name": "Western Sahara",
+    "Nombre": "Sahara Occidental"
+  },
+  {
+    "Codigo": "WS",
+    "CodigoTelefonico": 685,
+    "Disabled": false,
+    "Gentilicio": "samoana",
+    "ISOA3": "WSM",
+    "Name": "Samoa",
+    "Nombre": "Samoa"
+  },
+  {
+    "Codigo": "AS",
+    "CodigoTelefonico": "1 684",
+    "Disabled": false,
+    "Gentilicio": "samoana",
+    "ISOA3": "ASM",
+    "Name": "American Samoa",
+    "Nombre": "Samoa Americana"
+  },
+  {
+    "Codigo": "BL",
+    "CodigoTelefonico": 590,
+    "Disabled": false,
+    "Gentilicio": "",
+    "ISOA3": "BLM",
+    "Name": "Saint Barthélemy",
+    "Nombre": "San Bartolomé"
+  },
+  {
+    "Codigo": "KN",
+    "CodigoTelefonico": "1 869",
+    "Disabled": false,
+    "Gentilicio": "de S.Cris.Niev.",
+    "ISOA3": "KNA",
+    "Name": "Saint Kitts and Nevis",
+    "Nombre": "San Cristóbal y Nieves"
+  },
+  {
+    "Codigo": "SM",
+    "CodigoTelefonico": 378,
+    "Disabled": false,
+    "Gentilicio": "De San Marino",
+    "ISOA3": "SMR",
+    "Name": "San Marino",
+    "Nombre": "San Marino"
+  },
+  {
+    "Codigo": "MF",
+    "CodigoTelefonico": "1 599",
+    "Disabled": false,
+    "Gentilicio": "",
+    "ISOA3": "MAF",
+    "Name": "Saint Martin (French part)",
+    "Nombre": "San Martín (Francia)"
+  },
+  {
+    "Codigo": "PM",
+    "CodigoTelefonico": 508,
+    "Disabled": false,
+    "Gentilicio": "francesa",
+    "ISOA3": "SPM",
+    "Name": "Saint Pierre and Miquelon",
+    "Nombre": "San Pedro y Miquelón"
+  },
+  {
+    "Codigo": "VC",
+    "CodigoTelefonico": "1 784",
+    "Disabled": false,
+    "Gentilicio": "de S.Vicente",
+    "ISOA3": "VCT",
+    "Name": "Saint Vincent and the Grenadines",
+    "Nombre": "San Vicente y las Granadinas"
+  },
+  {
+    "Codigo": "SH",
+    "CodigoTelefonico": 290,
+    "Disabled": false,
+    "Gentilicio": "de Santa Helena",
+    "ISOA3": "SHN",
+    "Name": "Ascensión y Tristán de Acuña",
+    "Nombre": "Santa Elena"
+  },
+  {
+    "Codigo": "LC",
+    "CodigoTelefonico": "1 758",
+    "Disabled": false,
+    "Gentilicio": "santalucense",
+    "ISOA3": "LCA",
+    "Name": "Saint Lucia",
+    "Nombre": "Santa Lucía"
+  },
+  {
+    "Codigo": "ST",
+    "CodigoTelefonico": 239,
+    "Disabled": false,
+    "Gentilicio": "De San Tomé",
+    "ISOA3": "STP",
+    "Name": "Sao Tome and Principe",
+    "Nombre": "Santo Tomé y Príncipe"
+  },
+  {
+    "Codigo": "SN",
+    "CodigoTelefonico": 221,
+    "Disabled": false,
+    "Gentilicio": "senegalesa",
+    "ISOA3": "SEN",
+    "Name": "Senegal",
+    "Nombre": "Senegal"
+  },
+  {
+    "Codigo": "RS",
+    "CodigoTelefonico": 381,
+    "Disabled": false,
+    "Gentilicio": "",
+    "ISOA3": "SRB",
+    "Name": "Serbia",
+    "Nombre": "Serbia"
+  },
+  {
+    "Codigo": "SC",
+    "CodigoTelefonico": 248,
+    "Disabled": false,
+    "Gentilicio": "de Seychelles",
+    "ISOA3": "SYC",
+    "Name": "Seychelles",
+    "Nombre": "Seychelles"
+  },
+  {
+    "Codigo": "SL",
+    "CodigoTelefonico": 232,
+    "Disabled": false,
+    "Gentilicio": "de Sierra Leona",
+    "ISOA3": "SLE",
+    "Name": "Sierra Leone",
+    "Nombre": "Sierra Leona"
+  },
+  {
+    "Codigo": "SG",
+    "CodigoTelefonico": 65,
+    "Disabled": false,
+    "Gentilicio": "singapurense",
+    "ISOA3": "SGP",
+    "Name": "Singapore",
+    "Nombre": "Singapur"
+  },
+  {
+    "Codigo": "SX",
+    "CodigoTelefonico": "1 721",
+    "Disabled": false,
+    "Gentilicio": "Sint Maarten",
+    "ISOA3": "SMX",
+    "Name": "Sint Maarten",
+    "Nombre": "Sint Maarten"
+  },
+  {
+    "Codigo": "SY",
+    "CodigoTelefonico": 963,
+    "Disabled": false,
+    "Gentilicio": "siria",
+    "ISOA3": "SYR",
+    "Name": "Syria",
+    "Nombre": "Siria"
+  },
+  {
+    "Codigo": "SO",
+    "CodigoTelefonico": 252,
+    "Disabled": false,
+    "Gentilicio": "somalí",
+    "ISOA3": "SOM",
+    "Name": "Somalia",
+    "Nombre": "Somalia"
+  },
+  {
+    "Codigo": "LK",
+    "CodigoTelefonico": 94,
+    "Disabled": false,
+    "Gentilicio": "De Sri Lanka",
+    "ISOA3": "LKA",
+    "Name": "Sri Lanka",
+    "Nombre": "Sri lanka"
+  },
+  {
+    "Codigo": "ZA",
+    "CodigoTelefonico": 27,
+    "Disabled": false,
+    "Gentilicio": "sudafricana",
+    "ISOA3": "ZAF",
+    "Name": "South Africa",
+    "Nombre": "Sudáfrica"
+  },
+  {
+    "Codigo": "SD",
+    "CodigoTelefonico": 249,
+    "Disabled": false,
+    "Gentilicio": "sudanesa",
+    "ISOA3": "SDN",
+    "Name": "Sudan",
+    "Nombre": "Sudán"
+  },
+  {
+    "Codigo": "SE",
+    "CodigoTelefonico": 46,
+    "Disabled": false,
+    "Gentilicio": "sueca",
+    "ISOA3": "SWE",
+    "Name": "Sweden",
+    "Nombre": "Suecia"
+  },
+  {
+    "Codigo": "CH",
+    "CodigoTelefonico": 41,
+    "Disabled": false,
+    "Gentilicio": "suiza",
+    "ISOA3": "CHE",
+    "Name": "Switzerland",
+    "Nombre": "Suiza"
+  },
+  {
+    "Codigo": "SR",
+    "CodigoTelefonico": 597,
+    "Disabled": false,
+    "Gentilicio": "surinamesa",
+    "ISOA3": "SUR",
+    "Name": "Suriname",
+    "Nombre": "Surinám"
+  },
+  {
+    "Codigo": "SJ",
+    "CodigoTelefonico": "",
+    "Disabled": false,
+    "Gentilicio": "noruega",
+    "ISOA3": "SJM",
+    "Name": "Svalbard and Jan Mayen",
+    "Nombre": "Svalbard y Jan Mayen"
+  },
+  {
+    "Codigo": "SZ",
+    "CodigoTelefonico": 268,
+    "Disabled": false,
+    "Gentilicio": "suazi",
+    "ISOA3": "SWZ",
+    "Name": "Swaziland",
+    "Nombre": "Swazilandia"
+  },
+  {
+    "Codigo": "TH",
+    "CodigoTelefonico": 66,
+    "Disabled": false,
+    "Gentilicio": "tailandesa",
+    "ISOA3": "THA",
+    "Name": "Thailand",
+    "Nombre": "Tailandia"
+  },
+  {
+    "Codigo": "TW",
+    "CodigoTelefonico": 886,
+    "Disabled": false,
+    "Gentilicio": "taiwanesa",
+    "ISOA3": "TWN",
+    "Name": "Taiwan",
+    "Nombre": "Taiwán"
+  },
+  {
+    "Codigo": "TZ",
+    "CodigoTelefonico": 255,
+    "Disabled": false,
+    "Gentilicio": "tanzana",
+    "ISOA3": "TZA",
+    "Name": "Tanzania",
+    "Nombre": "Tanzania"
+  },
+  {
+    "Codigo": "TJ",
+    "CodigoTelefonico": 992,
+    "Disabled": false,
+    "Gentilicio": "tayika",
+    "ISOA3": "TJK",
+    "Name": "Tajikistan",
+    "Nombre": "Tayikistán"
+  },
+  {
+    "Codigo": "IO",
+    "CodigoTelefonico": "",
+    "Disabled": false,
+    "Gentilicio": "de TerrBrOcInd",
+    "ISOA3": "IOT",
+    "Name": "British Indian Ocean Territory",
+    "Nombre": "Territorio Británico del Océano Índico"
+  },
+  {
+    "Codigo": "TF",
+    "CodigoTelefonico": "",
+    "Disabled": false,
+    "Gentilicio": "francesa",
+    "ISOA3": "ATF",
+    "Name": "French Southern Territories",
+    "Nombre": "Territorios Australes y Antárticas Franceses"
+  },
+  {
+    "Codigo": "TL",
+    "CodigoTelefonico": 670,
+    "Disabled": false,
+    "Gentilicio": "",
+    "ISOA3": "TLS",
+    "Name": "East Timor",
+    "Nombre": "Timor Oriental"
+  },
+  {
+    "Codigo": "TG",
+    "CodigoTelefonico": 228,
+    "Disabled": false,
+    "Gentilicio": "togolesa",
+    "ISOA3": "TGO",
+    "Name": "Togo",
+    "Nombre": "Togo"
+  },
+  {
+    "Codigo": "TK",
+    "CodigoTelefonico": 690,
+    "Disabled": false,
+    "Gentilicio": "de Isl.Tokelau",
+    "ISOA3": "TKL",
+    "Name": "Tokelau",
+    "Nombre": "Tokelau"
+  },
+  {
+    "Codigo": "TO",
+    "CodigoTelefonico": 676,
+    "Disabled": false,
+    "Gentilicio": "tongana",
+    "ISOA3": "TON",
+    "Name": "Tonga",
+    "Nombre": "Tonga"
+  },
+  {
+    "Codigo": "TT",
+    "CodigoTelefonico": "1 868",
+    "Disabled": false,
+    "Gentilicio": "de Trinidad y T",
+    "ISOA3": "TTO",
+    "Name": "Trinidad and Tobago",
+    "Nombre": "Trinidad y Tobago"
+  },
+  {
+    "Codigo": "TN",
+    "CodigoTelefonico": 216,
+    "Disabled": false,
+    "Gentilicio": "tunecina",
+    "ISOA3": "TUN",
+    "Name": "Tunisia",
+    "Nombre": "Tunez"
+  },
+  {
+    "Codigo": "TM",
+    "CodigoTelefonico": 993,
+    "Disabled": false,
+    "Gentilicio": "turcomana",
+    "ISOA3": "TKM",
+    "Name": "Turkmenistan",
+    "Nombre": "Turkmenistán"
+  },
+  {
+    "Codigo": "TR",
+    "CodigoTelefonico": 90,
+    "Disabled": false,
+    "Gentilicio": "turca",
+    "ISOA3": "TUR",
+    "Name": "Turkey",
+    "Nombre": "Turquía"
+  },
+  {
+    "Codigo": "TV",
+    "CodigoTelefonico": 688,
+    "Disabled": false,
+    "Gentilicio": "tuvaluana",
+    "ISOA3": "TUV",
+    "Name": "Tuvalu",
+    "Nombre": "Tuvalu"
+  },
+  {
+    "Codigo": "UA",
+    "CodigoTelefonico": 380,
+    "Disabled": false,
+    "Gentilicio": "ucraniana",
+    "ISOA3": "UKR",
+    "Name": "Ukraine",
+    "Nombre": "Ucrania"
+  },
+  {
+    "Codigo": "UG",
+    "CodigoTelefonico": 256,
+    "Disabled": false,
+    "Gentilicio": "ugandesa",
+    "ISOA3": "UGA",
+    "Name": "Uganda",
+    "Nombre": "Uganda"
+  },
+  {
+    "Codigo": "UY",
+    "CodigoTelefonico": 598,
+    "Disabled": false,
+    "Gentilicio": "uruguaya",
+    "ISOA3": "URY",
+    "Name": "Uruguay",
+    "Nombre": "Uruguay"
+  },
+  {
+    "Codigo": "UZ",
+    "CodigoTelefonico": 998,
+    "Disabled": false,
+    "Gentilicio": "uzbeka",
+    "ISOA3": "UZB",
+    "Name": "Uzbekistan",
+    "Nombre": "Uzbekistán"
+  },
+  {
+    "Codigo": "VU",
+    "CodigoTelefonico": 678,
+    "Disabled": false,
+    "Gentilicio": "de Vanuatu",
+    "ISOA3": "VUT",
+    "Name": "Vanuatu",
+    "Nombre": "Vanuatu"
+  },
+  {
+    "Codigo": "VE",
+    "CodigoTelefonico": 58,
+    "Disabled": false,
+    "Gentilicio": "venezolana",
+    "ISOA3": "VEN",
+    "Name": "Venezuela",
+    "Nombre": "Venezuela"
+  },
+  {
+    "Codigo": "VN",
+    "CodigoTelefonico": 84,
+    "Disabled": false,
+    "Gentilicio": "vietnamita",
+    "ISOA3": "VNM",
+    "Name": "Vietnam",
+    "Nombre": "Vietnam"
+  },
+  {
+    "Codigo": "WF",
+    "CodigoTelefonico": 681,
+    "Disabled": false,
+    "Gentilicio": "de Wallis, Fut.",
+    "ISOA3": "WLF",
+    "Name": "Wallis and Futuna",
+    "Nombre": "Wallis y Futuna"
+  },
+  {
+    "Codigo": "YE",
+    "CodigoTelefonico": 967,
+    "Disabled": false,
+    "Gentilicio": "yemení",
+    "ISOA3": "YEM",
+    "Name": "Yemen",
+    "Nombre": "Yemen"
+  },
+  {
+    "Codigo": "DJ",
+    "CodigoTelefonico": 253,
+    "Disabled": false,
+    "Gentilicio": "yibutiense",
+    "ISOA3": "DJI",
+    "Name": "Djibouti",
+    "Nombre": "Yibuti"
+  },
+  {
+    "Codigo": "ZM",
+    "CodigoTelefonico": 260,
+    "Disabled": false,
+    "Gentilicio": "zambia",
+    "ISOA3": "ZMB",
+    "Name": "Zambia",
+    "Nombre": "Zambia"
+  },
+  {
+    "Codigo": "ZW",
+    "CodigoTelefonico": 263,
+    "Disabled": false,
+    "Gentilicio": "zimbabuense",
+    "ISOA3": "ZWE",
+    "Name": "Zimbabwe",
+    "Nombre": "Zimbabue"
+  }
+]

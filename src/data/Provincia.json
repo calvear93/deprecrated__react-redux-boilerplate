@@ -1,0 +1,338 @@
+﻿[
+  {
+    "Disabled": false,
+    "Id": 11,
+    "Nombre": "Iquique",
+    "RegionNumero": 1
+  },
+  {
+    "Disabled": false,
+    "Id": 14,
+    "Nombre": "Tamarugal",
+    "RegionNumero": 1
+  },
+  {
+    "Disabled": false,
+    "Id": 21,
+    "Nombre": "Antofagasta",
+    "RegionNumero": 2
+  },
+  {
+    "Disabled": false,
+    "Id": 22,
+    "Nombre": "El Loa",
+    "RegionNumero": 2
+  },
+  {
+    "Disabled": false,
+    "Id": 23,
+    "Nombre": "Tocopilla",
+    "RegionNumero": 2
+  },
+  {
+    "Disabled": false,
+    "Id": 31,
+    "Nombre": "Copiapó",
+    "RegionNumero": 3
+  },
+  {
+    "Disabled": false,
+    "Id": 32,
+    "Nombre": "Chañaral",
+    "RegionNumero": 3
+  },
+  {
+    "Disabled": false,
+    "Id": 33,
+    "Nombre": "Huasco",
+    "RegionNumero": 3
+  },
+  {
+    "Disabled": false,
+    "Id": 41,
+    "Nombre": "Elqui",
+    "RegionNumero": 4
+  },
+  {
+    "Disabled": false,
+    "Id": 42,
+    "Nombre": "Choapa",
+    "RegionNumero": 4
+  },
+  {
+    "Disabled": false,
+    "Id": 43,
+    "Nombre": "Limarí",
+    "RegionNumero": 4
+  },
+  {
+    "Disabled": false,
+    "Id": 51,
+    "Nombre": "Valparaíso",
+    "RegionNumero": 5
+  },
+  {
+    "Disabled": false,
+    "Id": 52,
+    "Nombre": "Isla de Pascua",
+    "RegionNumero": 5
+  },
+  {
+    "Disabled": false,
+    "Id": 53,
+    "Nombre": "Los Andes",
+    "RegionNumero": 5
+  },
+  {
+    "Disabled": false,
+    "Id": 54,
+    "Nombre": "Petorca",
+    "RegionNumero": 5
+  },
+  {
+    "Disabled": false,
+    "Id": 55,
+    "Nombre": "Quillota",
+    "RegionNumero": 5
+  },
+  {
+    "Disabled": false,
+    "Id": 56,
+    "Nombre": "San Antonio",
+    "RegionNumero": 5
+  },
+  {
+    "Disabled": false,
+    "Id": 57,
+    "Nombre": "San Felipe de Aconcagua",
+    "RegionNumero": 5
+  },
+  {
+    "Disabled": false,
+    "Id": 58,
+    "Nombre": "Marga Marga",
+    "RegionNumero": 5
+  },
+  {
+    "Disabled": false,
+    "Id": 61,
+    "Nombre": "Cachapoal",
+    "RegionNumero": 6
+  },
+  {
+    "Disabled": false,
+    "Id": 62,
+    "Nombre": "Cardenal Caro",
+    "RegionNumero": 6
+  },
+  {
+    "Disabled": false,
+    "Id": 63,
+    "Nombre": "Colchagua",
+    "RegionNumero": 6
+  },
+  {
+    "Disabled": false,
+    "Id": 71,
+    "Nombre": "Talca",
+    "RegionNumero": 7
+  },
+  {
+    "Disabled": false,
+    "Id": 72,
+    "Nombre": "Cauquenes",
+    "RegionNumero": 7
+  },
+  {
+    "Disabled": false,
+    "Id": 73,
+    "Nombre": "Curicó",
+    "RegionNumero": 7
+  },
+  {
+    "Disabled": false,
+    "Id": 74,
+    "Nombre": "Linares",
+    "RegionNumero": 7
+  },
+  {
+    "Disabled": false,
+    "Id": 81,
+    "Nombre": "Concepción",
+    "RegionNumero": 8
+  },
+  {
+    "Disabled": false,
+    "Id": 82,
+    "Nombre": "Arauco",
+    "RegionNumero": 8
+  },
+  {
+    "Disabled": false,
+    "Id": 83,
+    "Nombre": "Biobío",
+    "RegionNumero": 8
+  },
+  {
+    "Disabled": false,
+    "Id": 91,
+    "Nombre": "Cautín",
+    "RegionNumero": 9
+  },
+  {
+    "Disabled": false,
+    "Id": 92,
+    "Nombre": "Malleco",
+    "RegionNumero": 9
+  },
+  {
+    "Disabled": false,
+    "Id": 101,
+    "Nombre": "Llanquihue",
+    "RegionNumero": 10
+  },
+  {
+    "Disabled": false,
+    "Id": 102,
+    "Nombre": "Chiloé",
+    "RegionNumero": 10
+  },
+  {
+    "Disabled": false,
+    "Id": 103,
+    "Nombre": "Osorno",
+    "RegionNumero": 10
+  },
+  {
+    "Disabled": false,
+    "Id": 104,
+    "Nombre": "Palena",
+    "RegionNumero": 10
+  },
+  {
+    "Disabled": false,
+    "Id": 111,
+    "Nombre": "Coihaique",
+    "RegionNumero": 11
+  },
+  {
+    "Disabled": false,
+    "Id": 112,
+    "Nombre": "Aisén",
+    "RegionNumero": 11
+  },
+  {
+    "Disabled": false,
+    "Id": 113,
+    "Nombre": "Capitán Prat",
+    "RegionNumero": 11
+  },
+  {
+    "Disabled": false,
+    "Id": 114,
+    "Nombre": "General Carrera",
+    "RegionNumero": 11
+  },
+  {
+    "Disabled": false,
+    "Id": 121,
+    "Nombre": "Magallanes",
+    "RegionNumero": 12
+  },
+  {
+    "Disabled": false,
+    "Id": 122,
+    "Nombre": "Antártica Chilena",
+    "RegionNumero": 12
+  },
+  {
+    "Disabled": false,
+    "Id": 123,
+    "Nombre": "Tierra del Fuego",
+    "RegionNumero": 12
+  },
+  {
+    "Disabled": false,
+    "Id": 124,
+    "Nombre": "Última Esperanza",
+    "RegionNumero": 12
+  },
+  {
+    "Disabled": false,
+    "Id": 131,
+    "Nombre": "Santiago",
+    "RegionNumero": 13
+  },
+  {
+    "Disabled": false,
+    "Id": 132,
+    "Nombre": "Cordillera",
+    "RegionNumero": 13
+  },
+  {
+    "Disabled": false,
+    "Id": 133,
+    "Nombre": "Chacabuco",
+    "RegionNumero": 13
+  },
+  {
+    "Disabled": false,
+    "Id": 134,
+    "Nombre": "Maipo",
+    "RegionNumero": 13
+  },
+  {
+    "Disabled": false,
+    "Id": 135,
+    "Nombre": "Melipilla",
+    "RegionNumero": 13
+  },
+  {
+    "Disabled": false,
+    "Id": 136,
+    "Nombre": "Talagante",
+    "RegionNumero": 13
+  },
+  {
+    "Disabled": false,
+    "Id": 141,
+    "Nombre": "Valdivia",
+    "RegionNumero": 14
+  },
+  {
+    "Disabled": false,
+    "Id": 142,
+    "Nombre": "Ranco",
+    "RegionNumero": 14
+  },
+  {
+    "Disabled": false,
+    "Id": 151,
+    "Nombre": "Arica",
+    "RegionNumero": 15
+  },
+  {
+    "Disabled": false,
+    "Id": 152,
+    "Nombre": "Parinacota",
+    "RegionNumero": 15
+  },
+  {
+    "Disabled": false,
+    "Id": 161,
+    "Nombre": "Diguillín",
+    "RegionNumero": 16
+  },
+  {
+    "Disabled": false,
+    "Id": 162,
+    "Nombre": "Itata",
+    "RegionNumero": 16
+  },
+  {
+    "Disabled": false,
+    "Id": 163,
+    "Nombre": "Punilla",
+    "RegionNumero": 16
+  }
+]

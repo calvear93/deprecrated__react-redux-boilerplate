@@ -5,26 +5,29 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-18 13:34:27
- * Last modified  : 2020-05-23 21:15:42
+ * Last modified  : 2020-05-23 22:41:52
  */
 
 /**
- * preloaded data animation modules.
+ * JSON files modules.
  * modules with path should be
  * declared here.
  */
 const Modules = {
-    JSON: import('./test-file.json')
+    Pais: import('../data/Pais.json'),
+    Region: import('../data/Region.json'),
+    Provincia: import('../data/Provincia.json'),
+    Comuna: import('../data/Comuna.json')
 };
 
 /**
- * Returns animation JSON files.
+ * Returns JSON files data.
  *
  * @export
  * @param {string} module module name.
- * @returns {JSON} json animation data.
+ * @returns {JSON} json file data.
  */
-export function GetJSON(module)
+export function LoadJSON(module)
 {
     return new Promise(
         (resolve, reject) =>

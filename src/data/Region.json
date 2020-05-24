@@ -1,0 +1,114 @@
+﻿[
+  {
+    "Disabled": false,
+    "Nombre": "Tarapacá",
+    "Numero": 1,
+    "PaisCodigo": "CL",
+    "Prefijo": "Región de"
+  },
+  {
+    "Disabled": false,
+    "Nombre": "Antofagasta",
+    "Numero": 2,
+    "PaisCodigo": "CL",
+    "Prefijo": "Región de"
+  },
+  {
+    "Disabled": false,
+    "Nombre": "Atacama",
+    "Numero": 3,
+    "PaisCodigo": "CL",
+    "Prefijo": "Región de"
+  },
+  {
+    "Disabled": false,
+    "Nombre": "Coquimbo",
+    "Numero": 4,
+    "PaisCodigo": "CL",
+    "Prefijo": "Región de"
+  },
+  {
+    "Disabled": false,
+    "Nombre": "Valparaíso",
+    "Numero": 5,
+    "PaisCodigo": "CL",
+    "Prefijo": "Región de"
+  },
+  {
+    "Disabled": false,
+    "Nombre": "Libertador General Bernardo O'Higgins",
+    "Numero": 6,
+    "PaisCodigo": "CL",
+    "Prefijo": "Región del"
+  },
+  {
+    "Disabled": false,
+    "Nombre": "Maule",
+    "Numero": 7,
+    "PaisCodigo": "CL",
+    "Prefijo": "Región del"
+  },
+  {
+    "Disabled": false,
+    "Nombre": "Biobío",
+    "Numero": 8,
+    "PaisCodigo": "CL",
+    "Prefijo": "Región del"
+  },
+  {
+    "Disabled": false,
+    "Nombre": "La Araucanía",
+    "Numero": 9,
+    "PaisCodigo": "CL",
+    "Prefijo": "Región de"
+  },
+  {
+    "Disabled": false,
+    "Nombre": "Los Lagos",
+    "Numero": 10,
+    "PaisCodigo": "CL",
+    "Prefijo": "Región de"
+  },
+  {
+    "Disabled": false,
+    "Nombre": "Aysén del General Carlos Ibáñez del Campo",
+    "Numero": 11,
+    "PaisCodigo": "CL",
+    "Prefijo": "Región de"
+  },
+  {
+    "Disabled": false,
+    "Nombre": "Magallanes y la Antártica Chilena",
+    "Numero": 12,
+    "PaisCodigo": "CL",
+    "Prefijo": "Región de"
+  },
+  {
+    "Disabled": false,
+    "Nombre": "Metropolitana de Santiago",
+    "Numero": 13,
+    "PaisCodigo": "CL",
+    "Prefijo": "Región"
+  },
+  {
+    "Disabled": false,
+    "Nombre": "Los Ríos",
+    "Numero": 14,
+    "PaisCodigo": "CL",
+    "Prefijo": "Región de"
+  },
+  {
+    "Disabled": false,
+    "Nombre": "Arica y Parinacota",
+    "Numero": 15,
+    "PaisCodigo": "CL",
+    "Prefijo": "Región de"
+  },
+  {
+    "Disabled": false,
+    "Nombre": "Ñuble",
+    "Numero": 16,
+    "PaisCodigo": "CL",
+    "Prefijo": "Región de"
+  }
+]
