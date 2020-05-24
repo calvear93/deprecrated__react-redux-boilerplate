@@ -6,158 +6,158 @@ $schemes: (
     default: (
         background-color: $white,
         font-color: $dark,
-        color: $primary
+        color: $primary,
     ),
     info: (
         background-color: $white,
         font-color: $dark,
         color: $info,
-        icon: '\F02FD' // mdi-information-outline
+        icon: '\F02FD',
     ),
     success: (
         background-color: $white,
         font-color: $dark,
         color: $success,
-        icon: '\F0134' // mdi-checkbox-marked-circle-outline
+        icon: '\F0134',
     ),
     warning: (
         background-color: $white,
         font-color: $dark,
         color: $warning,
-        icon: '\F05D6' // mdi-alert-circle-outline
+        icon: '\F05D6',
     ),
     error: (
         background-color: $white,
         font-color: $dark,
         color: $danger,
-        icon: '\F015A' // mdi-close-circle-outline
+        icon: '\F015A',
     ),
     save-success: (
         background-color: $white,
         font-color: $dark,
         color: $success,
-        icon: '\F0818' // mdi-content-save-outline
+        icon: '\F0818',
     ),
     save-warning: (
         background-color: $white,
         font-color: $dark,
         color: $warning,
-        icon: '\F0818' // mdi-content-save-outline
+        icon: '\F0818',
     ),
     save-error: (
         background-color: $white,
         font-color: $dark,
         color: $danger,
-        icon: '\F0818' // mdi-content-save-outline
+        icon: '\F0818',
     ),
     send-success: (
         background-color: $white,
         font-color: $dark,
         color: $success,
-        icon: '\F0DF9' // mdi-send-circle-outline
+        icon: '\F0DF9',
     ),
     send-warning: (
         background-color: $white,
         font-color: $dark,
         color: $warning,
-        icon: '\F0DF9' // mdi-send-circle-outline
+        icon: '\F0DF9',
     ),
     send-error: (
         background-color: $white,
         font-color: $dark,
         color: $danger,
-        icon: '\F0DF9' // mdi-send-circle-outline
+        icon: '\F0DF9',
     ),
     key-success: (
         background-color: $white,
         font-color: $dark,
         color: $success,
-        icon: '\F0BC5' // mdi-shield-key-outline
+        icon: '\F0BC5',
     ),
     key-warning: (
         background-color: $white,
         font-color: $dark,
         color: $warning,
-        icon: '\F0BC5' // mdi-shield-key-outline
+        icon: '\F0BC5',
     ),
     key-error: (
         background-color: $white,
         font-color: $dark,
         color: $danger,
-        icon: '\F0BC5' // mdi-shield-key-outline
+        icon: '\F0BC5',
     ),
     security-success: (
         background-color: $white,
         font-color: $dark,
         color: $success,
-        icon: '\F0CC8' // mdi-shield-check-outline
+        icon: '\F0CC8',
     ),
     security-warning: (
         background-color: $white,
         font-color: $dark,
         color: $warning,
-        icon: '\F0ECD' // mdi-shield-alert-outline
+        icon: '\F0ECD',
     ),
     security-error: (
         background-color: $white,
         font-color: $dark,
         color: $danger,
-        icon: '\F0ADD' // mdi-shield-remove-outline
+        icon: '\F0ADD',
     ),
     notification-success: (
         background-color: $white,
         font-color: $dark,
         color: $success,
-        icon: '\F0D5B' // mdi-bell-circle-outline
+        icon: '\F0D5B',
     ),
     notification-warning: (
         background-color: $white,
         font-color: $dark,
         color: $warning,
-        icon: '\F0D5B' // mdi-bell-circle-outline
+        icon: '\F0D5B',
     ),
     notification-error: (
         background-color: $white,
         font-color: $dark,
         color: $danger,
-        icon: '\F0D5B' // mdi-bell-circle-outline
+        icon: '\F0D5B',
     ),
     form-error: (
         background-color: $white,
         font-color: $dark,
         color: $danger,
-        icon: '\F1037' // mdi-file-remove-outline
+        icon: '\F1037',
     ),
     smiley-happy: (
         background-color: $white,
         font-color: $dark,
         color: $brand,
-        icon: '\F01F5' // mdi-emoticon-happy-outline
+        icon: '\F01F5',
     ),
     smiley-neutral: (
         background-color: $white,
         font-color: $dark,
         color: $secondary,
-        icon: '\F01F6' // mdi-emoticon-neutral-outline
+        icon: '\F01F6',
     ),
     smiley-sad: (
         background-color: $white,
         font-color: $dark,
         color: $danger,
-        icon: '\F01F8' // mdi-emoticon-sad-outline
+        icon: '\F01F8',
     ),
     smiley-wink: (
         background-color: $white,
         font-color: $dark,
         color: $info,
-        icon: '\F0C79' // mdi-emoticon-wink-outline
+        icon: '\F0C79',
     ),
     smiley-confused: (
         background-color: $white,
         font-color: $dark,
         color: $tomato,
-        icon: '\F10DF' // mdi-emoticon-confused-outline
-    )
+        icon: '\F10DF',
+    ),
 );
 
 .Toastify__toast-container {
@@ -246,6 +246,11 @@ i.close.toastify-close-icon {
                 &:hover {
                     color: map-get($attr, 'color');
                 }
+            }
+
+            div.Toastify__progress-bar {
+                background: none;
+                background-color: map-get($attr, 'color');
             }
         }
     }

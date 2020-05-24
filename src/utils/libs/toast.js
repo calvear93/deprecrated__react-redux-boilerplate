@@ -1,11 +1,13 @@
 /**
  * Allows to show toasts.
+ * https://github.com/aleab/toastify
+ * https://github.com/fkhadra/react-toastify
  *
  * @summary Toast utility.
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:33:24
- * Last modified  : 2020-05-16 16:35:53
+ * Last modified  : 2020-05-24 11:54:49
  */
 
 import React from 'react';
@@ -35,20 +37,35 @@ const settings = {
     newestOnTop: true
 };
 
-// Toast creator.
-const Toast = (
-    content,
-    duration = 3000,
-    type = toast.TYPE.DEFAULT,
-    position = toast.POSITION.TOP_CENTER
-) =>
-{
-    return toast(content, {
-        ...settings,
-        className: `${settings.className} ${type}`,
-        autoClose: duration,
-        position
-    });
+// Toast factory.
+const Toast = {
+    /**
+     * Returns users list.
+     *
+     * @param {JSX | string} content toast content.
+     * @param {JSX | string} duration toast duration
+     * @param {string} type toast type. Use Toast.TYPE definitions.
+     * @param {string} position toast position. Use Toast.POSITION definitions.
+     * @param {bool} showProgressBar whether toast shows progress bar.
+     *
+     * @returns {any} shows toast and returns toast controller element.
+     */
+    show: (
+        content,
+        duration = 3000,
+        type = toast.TYPE.DEFAULT,
+        position = toast.POSITION.TOP_CENTER,
+        showProgressBar = false
+    ) =>
+    {
+        return toast(content, {
+            ...settings,
+            className: `${settings.className} ${type}`,
+            autoClose: duration,
+            position,
+            hideProgressBar: !showProgressBar
+        });
+    }
 };
 
 // Toast types.

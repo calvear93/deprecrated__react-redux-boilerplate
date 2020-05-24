@@ -11,7 +11,7 @@ export default function Demo()
 {
     useEffect(() =>
     {
-        Toast('Welcome', 8000, Toast.TYPE.SMILEY_WINK);
+        Toast.show('Welcome', 800000, Toast.TYPE.SMILEY_WINK);
     }, []);
 
     return (
