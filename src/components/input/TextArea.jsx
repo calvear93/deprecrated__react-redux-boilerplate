@@ -8,7 +8,7 @@ import { Form, TextArea as TextAreaSemantic } from 'semantic-ui-react';
  *
  * @returns {JSX} masked input.
  */
-function TextArea(props)
+export default function TextArea(props)
 {
     return (
         <Form>
@@ -16,5 +16,3 @@ function TextArea(props)
         </Form>
     );
 }
-
-export default TextArea;

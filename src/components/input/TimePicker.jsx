@@ -18,7 +18,7 @@ import '../../styles/components/time-picker.scss';
  *
  * @returns {JSX} time picker input.
  */
-function TimePicker({
+export default function TimePicker({
     time: inputTime,
     hour24Mode = true,
     coarseMinutes,
@@ -104,5 +104,3 @@ function TimePicker({
         </Ref>
     );
 }
-
-export default TimePicker;

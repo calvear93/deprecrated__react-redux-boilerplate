@@ -18,7 +18,7 @@ import '../../styles/components/checkbox.scss';
  *
  * @returns {JSX} checkbox group.
  */
-function CheckBox({ id, group, options, onChange, checked = [], max, disabled, clearable, ...props })
+export default function CheckBox({ id, group, options, onChange, checked = [], max, disabled, clearable, ...props })
 {
     const [ values, setValues ] = useState(checked);
     // id or group serves as main id.
@@ -86,5 +86,3 @@ function CheckBox({ id, group, options, onChange, checked = [], max, disabled, c
         </Row>
     );
 }
-
-export default CheckBox;

@@ -17,7 +17,7 @@ import '../../styles/components/radio-group.scss';
  *
  * @returns {JSX} radio group.
  */
-function RadioGroup({ id, group, options, onChange, checked = null, disabled, clearable, ...props })
+export default function RadioGroup({ id, group, options, onChange, checked = null, disabled, clearable, ...props })
 {
     const [ value, setValue ] = useState(checked);
     // id or group serves as main id.
@@ -77,5 +77,3 @@ function RadioGroup({ id, group, options, onChange, checked = null, disabled, cl
         </Row>
     );
 }
-
-export default RadioGroup;

@@ -7,14 +7,22 @@ import { Ref } from 'semantic-ui-react';
 /**
  * Attaches a mask (using imask) to an input.
  *
+ *  using example:
+ *  <Mask mask={ PhoneMask } onAccept={ onInputChange } value={ values['phone'] }>
+ *      <Form.Input
+ *          id='phone'
+ *          placeholder='Enter your phone number'
+ *      />
+ *  </Mask>
+ *
  * @param {any} props component props.
  *
  * @returns {JSX} masked input.
  */
-function Mask({ mask, children, onAccept, ...props })
+export default function Mask({ mask, children, onAccept, ...props })
 {
     /**
-     * Maps onAccept result for onChange behaviour.
+     * Maps onAccept result for onChange behavior.
      *
      * @param {string} value current value.
      * @param {any} masker mask controller.
@@ -57,5 +65,3 @@ const MaskedInput = IMaskMixin(({ inputRef, children, ...props }) =>
         </Ref>
     );
 });
-
-export default Mask;
