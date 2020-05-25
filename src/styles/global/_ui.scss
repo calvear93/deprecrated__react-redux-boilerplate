@@ -1,4 +1,15 @@
-@import '~semantic-ui-css/semantic.min.css';
+/**
+ * SASS/SCSS version of Semantic UI stylesheet.
+ * https://www.npmjs.com/package/semantic-ui-sass
+ *
+ * [i] Fonts is loaded in public/index.html.
+ */
+
+$font-family: 'Fira Sans', sans-serif;
+$font-name: 'Fira Sans';
+$import-google-fonts: false;
+
+@import '~semantic-ui-sass/semantic-ui';
 @import '../vars';
 
 .ui.selection.dropdown.active,

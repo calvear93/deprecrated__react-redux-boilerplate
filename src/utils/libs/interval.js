@@ -23,7 +23,7 @@ export default class Interval
      *
      * @memberof Interval
      */
-    Start()
+    start()
     {
         this.timer = setInterval(this.func, this.interval);
     }
@@ -33,7 +33,7 @@ export default class Interval
      *
      * @memberof Interval
      */
-    Stop()
+    stop()
     {
         clearInterval(this.timer);
     }
@@ -43,9 +43,9 @@ export default class Interval
      *
      * @memberof Interval
      */
-    Reset()
+    reset()
     {
-        this.Stop();
-        this.Start();
+        this.stop();
+        this.start();
     }
 }
