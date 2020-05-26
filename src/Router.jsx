@@ -4,8 +4,8 @@ import Loader from './components/Loader';
 import Routes from './rules/routes';
 
 // lazy loaded components.
-const NotFoundPage = lazy(() => import('./pages/notfound'));
-const NotAuthorizedPage = lazy(() => import('./pages/notauthorized'));
+const NotFoundPage = lazy(() => import('./pages/not-found'));
+const NotAuthorizedPage = lazy(() => import('./pages/not-authorized'));
 
 /**
  * Application routing handler.
