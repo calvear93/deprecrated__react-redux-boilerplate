@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Redirect, useLocation } from 'react-router-dom';
 import { usePartition } from '../../hooks/redux';
 import { AzureActiveDirectoryAction } from '../../store/actions';
+import { usePathBelongsTo } from '../../hooks/route';
 import Loader from '../../components/Loader';
 
 /**
@@ -25,13 +26,13 @@ export default function AzureActiveDirectoryProvider({
     const dispatch = useDispatch();
     // gets authentication state.
     const { authenticated, error } = usePartition(AzureActiveDirectoryAction);
-    // validates current path for whitelist.
-    const { pathname } = useLocation();
 
     // adds error route to whitelist.
     whitelist.push(errorRoute);
+    // validates current path for whitelist.
+    const pathAllowed = usePathBelongsTo(whitelist);
 
-    const isAuthorized = !enabled || whitelist.includes(pathname) || authenticated;
+    const isAuthorized = !enabled || pathAllowed || authenticated;
 
     useEffect(() =>
     {
