@@ -27,21 +27,21 @@ variables:
   # production environment variables definition.
   ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/master') }}:
     environmentName: 'PROD'
-    environment: 'DEPLOY_DEPLOY_PROD'
+    environment: 'DEPLOY_WEB_PROD'
     azureSubscription: 'ASC-Project-PROD'
     webapp: 'wa-prod-project'
     environmentBuild: production
   # qa environment variables definition.
   ${{ if eq( variables['Build.SourceBranch'], 'refs/heads/develop') }}:
     environmentName: 'QA'
-    environment: 'DEPLOY_DEPLOY_QA'
+    environment: 'DEPLOY_WEB_QA'
     azureSubscription: 'ASC-Project-QA'
     webapp: 'wa-qa-project'
     environmentBuild: qa
   # development environment variables definition.
   ${{ if startsWith( variables['Build.SourceBranch'], 'refs/heads/feature/') }}:
     environmentName: 'DESA'
-    environment: 'DEPLOY_DEPLOY_DESA'
+    environment: 'DEPLOY_WEB_DESA'
     azureSubscription: 'ASC-Project-DESA'
     webapp: 'wa-desa-project'
     environmentBuild: development
