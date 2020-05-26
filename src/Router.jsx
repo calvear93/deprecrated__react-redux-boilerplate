@@ -41,7 +41,7 @@ export default function Router()
                         })
                 }
 
-                <Route exact path='/notauthorized' component={ NotAuthorizedPage } />
+                <Route exact path='/401' component={ NotAuthorizedPage } />
 
                 <Route component={ NotFoundPage } />
             </Switch>

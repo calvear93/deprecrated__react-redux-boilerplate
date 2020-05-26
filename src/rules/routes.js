@@ -8,7 +8,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:24:07
- * Last modified  : 2020-05-23 21:55:27
+ * Last modified  : 2020-05-26 09:36:01
  */
 
 import { lazy } from 'react';
@@ -21,7 +21,9 @@ const Layouts = {
 
 // pages container.
 const Pages = {
-    MainPage: lazy(() => import('../pages/main'))
+    MainPage: lazy(() => import('../pages/main')),
+    NotFoundPage: lazy(() => import('../pages/not-found')),
+    NotAuthorizedPage: lazy(() => import('../pages/not-authorized'))
 };
 
 export default {

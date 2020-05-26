@@ -2,13 +2,13 @@ import React, { useEffect } from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
+import { AzureActiveDirectoryProvider, IsAuthEnabled } from './services/auth';
 import store from './store/store';
 import Router from './Router';
 import 'moment/locale/es-us';
 import { loadMessages, locale } from 'devextreme/localization';
 import esMessages from 'devextreme/localization/messages/es';
 import './styles/App.scss';
-import { AzureActiveDirectoryProvider, IsAuthEnabled } from './services/auth';
 
 /**
  * App container.
@@ -31,7 +31,7 @@ export default function App()
     return (
         <BrowserRouter>
             <Provider store={ store }>
-                <AzureActiveDirectoryProvider enabled={ IsAuthEnabled } errorRoute='/notauthorized'>
+                <AzureActiveDirectoryProvider enabled={ IsAuthEnabled } errorRoute='/401'>
                     <Router />
                     <ToastContainer />
                 </AzureActiveDirectoryProvider>
