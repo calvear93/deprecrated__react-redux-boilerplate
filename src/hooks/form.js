@@ -1,4 +1,4 @@
-import HttpMethod from '../utils/HttpMethods';
+import HttpMethod from '../constants/http-methods';
 
 /**
  * Performs a POST simulating a form.
