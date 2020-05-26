@@ -5,7 +5,7 @@ import Routes from './rules/routes';
 
 // lazy loaded components.
 const NotFoundPage = lazy(() => import('./pages/not-found'));
-const NotAuthorizedPage = lazy(() => import('./pages/not-authorized'));
+const UnauthorizedPage = lazy(() => import('./pages/unauthorized'));
 
 /**
  * Application routing handler.
@@ -51,7 +51,7 @@ export default function Router()
                         })
                 }
 
-                <Route exact path='/401' component={ NotAuthorizedPage } />
+                <Route exact path='/401' component={ UnauthorizedPage } />
 
                 <Route component={ NotFoundPage } />
             </Switch>

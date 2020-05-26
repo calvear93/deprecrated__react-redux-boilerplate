@@ -5,7 +5,7 @@ import React from 'react';
  *
  * @returns {JSX} Not Authorized page.
  */
-export default function NotAuthorizedPage()
+export default function UnauthorizedPage()
 {
     return (
         <div className='page-container'>
