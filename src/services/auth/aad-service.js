@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-23 19:53:33
- * Last modified  : 2020-05-24 19:10:58
+ * Last modified  : 2020-05-26 14:34:40
  */
 
 import axios from 'axios';
@@ -18,6 +18,17 @@ export default {
 
     // Authentication context.
     Context: AuthenticationContext,
+
+    /**
+     * Acquire new token for use.
+     *
+     * @param {array} scopes array of scopes allowed.
+     * @returns {Promise<any>} token container.
+     */
+    acquireTokenSilent(scopes)
+    {
+        return AuthenticationContext.acquireTokenSilent({ scopes: scopes ?? DEFAULT_SCOPES });
+    },
 
     /**
      * Redirect to Microsoft AD login if user isn't authenticated.
