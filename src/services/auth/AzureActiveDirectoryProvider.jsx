@@ -6,8 +6,24 @@ import { AzureActiveDirectoryAction } from '../../store/actions';
 import { usePathBelongsTo } from '../../hooks/route';
 import Loader from '../../components/Loader';
 
+// AAD route security mode.
+export const AzureActiveDirectorySecurityMode = {
+    WHITELIST: 1,
+    BLACKLIST: 0
+};
+
 /**
  * Azure Active Directory security wrapper for React.
+ *
+ * using example:
+ *  <AzureActiveDirectoryProvider
+ *      enabled={ true }
+ *      mode={ AzureActiveDirectorySecurityMode.WHITELIST }
+ *      list={ [ '/main' ] }
+ *      errorRoute='/401'
+ *  >
+ *      <Router />
+ *  </AzureActiveDirectoryProvider>
  *
  * @param {JSX} children component for render on authentication ok.
  * @param {array} whitelist routes whitelist.
@@ -18,7 +34,8 @@ import Loader from '../../components/Loader';
  */
 export default function AzureActiveDirectoryProvider({
     children,
-    whitelist = [],
+    mode = AzureActiveDirectorySecurityMode.WHITELIST,
+    list = [],
     enabled = true,
     errorRoute
 })
@@ -27,12 +44,14 @@ export default function AzureActiveDirectoryProvider({
     // gets authentication state.
     const { authenticated, error } = usePartition(AzureActiveDirectoryAction);
 
-    // adds error route to whitelist.
-    whitelist.push(errorRoute);
-    // validates current path for whitelist.
-    const pathAllowed = usePathBelongsTo(whitelist);
+    // whether mode is whitelist.
+    const whitelist = mode === AzureActiveDirectorySecurityMode.WHITELIST;
+    // adds error route in case of whitelist.
+    whitelist && list.push(errorRoute);
+    // whether current path is in list.
+    const pathIsInList = usePathBelongsTo(list);
 
-    const isAuthorized = !enabled || pathAllowed || authenticated;
+    const isAuthorized = !enabled || authenticated || !(whitelist ^ pathIsInList);
 
     useEffect(() =>
     {
