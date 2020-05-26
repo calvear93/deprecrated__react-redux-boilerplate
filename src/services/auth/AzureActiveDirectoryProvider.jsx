@@ -26,17 +26,18 @@ export const AzureActiveDirectorySecurityMode = {
  *  </AzureActiveDirectoryProvider>
  *
  * @param {JSX} children component for render on authentication ok.
- * @param {array} whitelist routes whitelist.
  * @param {bool} enabled authentication is enabled.
+ * @param {number} mode routes security list mode, may be whitelist or blacklist.
+ * @param {array} list secured routes list.
  * @param {string} errorRoute route for authentication error page.
  *
  * @returns {JSX} children on authenticated, error redirection in otherwise.
  */
 export default function AzureActiveDirectoryProvider({
     children,
+    enabled = true,
     mode = AzureActiveDirectorySecurityMode.WHITELIST,
     list = [],
-    enabled = true,
     errorRoute
 })
 {
