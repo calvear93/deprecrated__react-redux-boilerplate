@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
-import '../../styles/layouts/app-layout.scss';
+import Footer from './Footer';
+import Header from './Header';
+import '../../../styles/layouts/app-layout.scss';
 
 // defaults site title.
 const DEFAULT_TITLE = process.env.REACT_APP_TITLE;
@@ -8,10 +10,20 @@ const DEFAULT_TITLE = process.env.REACT_APP_TITLE;
  * App layout (wrapper for pages with header/footer).
  *
  * @param {JSX} children component for render inside.
+ * @param {string} title page document title.
+ * @param {any} headerProps header props.
+ * @param {any} footerProps footer props.
  * @param {any} props component props.
+ *
  * @returns {JSX} app layout.
  */
-export default function AppLayout({ children, title, ...props })
+export default function AppLayout({
+    children,
+    title,
+    header: headerProps,
+    footer: footerProps,
+    ...props
+})
 {
     useEffect(() =>
     {
@@ -21,17 +33,13 @@ export default function AppLayout({ children, title, ...props })
 
     return (
         <div className='app-container' { ...props }>
-            <header>
-                HEADER
-            </header>
+            <Header { ...headerProps } />
 
             <content { ...props }>
                 {children}
             </content>
 
-            <footer>
-                FOOTER
-            </footer>
+            <Footer { ...footerProps } />
         </div>
     );
 }

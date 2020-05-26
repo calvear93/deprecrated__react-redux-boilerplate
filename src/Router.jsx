@@ -28,12 +28,22 @@ export default function Router()
                     Object.values(Routes)
                         .map(route =>
                         {
-                            // route values.
-                            const { key, title, path, config, Layout, Page, ...props } = route;
+                            // route config values.
+                            const {
+                                key,
+                                title,
+                                path,
+                                exact,
+                                layoutConfig,
+                                Layout,
+                                Page,
+                                ...props
+                            } = route;
 
+                            // renders the route.
                             return (
-                                <Route key={ key } path={ path } { ...config }>
-                                    <Layout title={ title }>
+                                <Route key={ key } exact={ exact } path={ path }>
+                                    <Layout title={ title } { ...layoutConfig }>
                                         <Page { ...props } />
                                     </Layout>
                                 </Route>

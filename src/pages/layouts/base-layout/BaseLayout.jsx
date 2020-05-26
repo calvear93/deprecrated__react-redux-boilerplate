@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import '../../styles/layouts/base-layout.scss';
+import '../../../styles/layouts/base-layout.scss';
 
 // defaults site title.
 const DEFAULT_TITLE = process.env.REACT_APP_TITLE;
