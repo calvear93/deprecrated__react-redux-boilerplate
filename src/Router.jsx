@@ -19,7 +19,7 @@ const UnauthorizedPage = lazy(() => import('./pages/unauthorized'));
 export default function Router()
 {
     return (
-        <Suspense fallback={ <Loader message='Cargando' /> }>
+        <Suspense fallback={ <Loader message='Loading' /> }>
             <Switch>
                 <Redirect exact from='/' to='/main' />
 
