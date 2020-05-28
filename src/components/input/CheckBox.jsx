@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Col, Row } from 'react-flexbox-grid';
 import { Checkbox, Icon } from 'semantic-ui-react';
 import { CustomOnChangeEvent } from './shared';
-import '../../styles/components/checkbox.scss';
+import '../../styles/components/input/checkbox.scss';
 
 /**
  * Renders a checkbox group.

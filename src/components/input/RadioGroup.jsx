@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Col, Row } from 'react-flexbox-grid';
 import { Icon, Radio } from 'semantic-ui-react';
 import { CustomOnChangeEvent } from './shared';
-import '../../styles/components/radio-group.scss';
+import '../../styles/components/input/radio-group.scss';
 
 /**
  * Renders a radio group.

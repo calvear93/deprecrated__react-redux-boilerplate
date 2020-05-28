@@ -3,7 +3,7 @@ import TimeKeeper from 'react-timekeeper';
 import { useClickAway } from 'react-use';
 import { Icon, Input, Popup, Ref } from 'semantic-ui-react';
 import { CustomOnChangeEvent } from './shared';
-import '../../styles/components/time-picker.scss';
+import '../../styles/components/input/time-picker.scss';
 
 /**
  * Time picker based on React Timekeeper.
