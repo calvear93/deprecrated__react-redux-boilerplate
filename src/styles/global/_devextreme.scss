@@ -45,3 +45,16 @@
     dx.material.teal.light.compact.css
     dx.material.teal.dark.compact.css
 */
+
+.dx-texteditor-container {
+    padding-left: 1em;
+    min-height: 3em;
+
+    .dx-dropdowneditor-button {
+        width: 3em;
+
+        .dx-button-content > .dx-dropdowneditor-icon {
+            width: 3em;
+        }
+    }
+}

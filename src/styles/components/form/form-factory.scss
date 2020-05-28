@@ -1,0 +1,74 @@
+@import '../../vars';
+
+@mixin item-header {
+    padding-bottom: .2em;
+    width: 90%;
+    color: $secondary;
+    font-size: .8em;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+.form-factory {
+    padding: .2em .4em;
+
+    .form-item {
+        padding: .4em .6em;
+
+        .input-item-header {
+            margin-bottom: .2em;
+            @include item-header;
+
+            &[required] {
+                color: $orange-dark;
+
+                &:after {
+                    content: '*';
+                    margin-left: .2em;
+                    color: $orange-dark;
+                }
+            }
+        }
+
+        .input-item {
+            position: relative;
+
+            .ui,
+            .dx-datebox {
+                margin-top: auto;
+                margin-right: 1em;
+                margin-bottom: 0;
+                width: 100%;
+            }
+
+            .grid-form-separator {
+                margin-top: 1em;
+                padding-bottom: .2em;
+                width: 98%;
+                color: $slate-gray-light;
+                font-size: .9em;
+                font-weight: bolder;
+                text-transform: uppercase;
+            }
+        }
+
+        .input-item-error-label {
+            margin-top: .2em;
+            margin-left: -.6em;
+            color: $warning;
+            font-size: .8em;
+
+            &:before {
+                content: '\F5D6';
+                margin-right: .4em;
+                font-family: 'Material Design Icons';
+            }
+        }
+    }
+}
+
+div[for][disabled='true'] {
+    color: $light-gray !important;
+    // text-decoration: line-through;
+    opacity: .4;
+}
