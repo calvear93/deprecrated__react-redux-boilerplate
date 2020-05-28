@@ -1,18 +1,18 @@
 /**
- * Adal Microsoft Authentication configuration file.
+ * MSAL Microsoft Authentication configuration file.
+ *
+ * @see https://azuread.github.io/microsoft-authentication-library-for-js/docs/msal/modules/_configuration_.html
  *
  * @summary Adal config file.
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-04-15 19:51:39
- * Last modified  : 2020-05-23 23:10:58
+ * Last modified  : 2020-05-28 11:17:50
  */
 
 import AADTypes from './aad-types';
 
 const tokenRefreshPeriod = parseInt(process.env.REACT_APP_AAD_TOKEN_RENEWAL_OFFSET_SECONDS);
-
-/* DOCS: https://azuread.github.io/microsoft-authentication-library-for-js/docs/msal/modules/_configuration_.html */
 
 /**
  *  - clientId                    - Client ID of your app registered with our Application registration portal : https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredAppsPreview in Microsoft Identity Platform

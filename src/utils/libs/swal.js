@@ -1,12 +1,13 @@
 /**
  * Swal2 wrapper for eases alert configuration.
- * https://sweetalert2.github.io/
+ *
+ * @see https://sweetalert2.github.io/
  *
  * @summary Dialogs utility.
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:38:41
- * Last modified  : 2020-05-24 15:02:27
+ * Last modified  : 2020-05-28 11:19:44
  */
 
 import SwalDefault from 'sweetalert2';
@@ -18,8 +19,9 @@ const SwalReact = withReactContent(SwalDefault);
 const Swal = {
     /**
      * Shows a sweet alert dialog.
-     * https://sweetalert2.github.io/#configuration
-
+     *
+     * @see https://sweetalert2.github.io/#configuration
+     *
      * @param {any} options Swal 2 configuration.
      *
      * @returns {any} Popup.

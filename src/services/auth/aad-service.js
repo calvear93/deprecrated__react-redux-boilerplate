@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-23 19:53:33
- * Last modified  : 2020-05-26 14:56:03
+ * Last modified  : 2020-05-28 11:18:59
  */
 
 import axios from 'axios';
@@ -21,7 +21,7 @@ export default {
 
     /**
      * Acquire new token for use.
-     * JWT Decoding page: https://jwt.io/
+     * JWT Decoding page: @see https://jwt.io/
      *
      * @param {array} scopes array of scopes allowed.
      * @returns {Promise<any>} token container.

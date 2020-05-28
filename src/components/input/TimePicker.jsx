@@ -7,7 +7,8 @@ import '../../styles/components/input/time-picker.scss';
 
 /**
  * Time picker based on React Timekeeper.
- * https://catc.github.io/react-timekeeper/#examples
+ *
+ * @see https://catc.github.io/react-timekeeper/
  *
  * @param {string} time time value.
  * @param {bool} hour24Mode time mode.

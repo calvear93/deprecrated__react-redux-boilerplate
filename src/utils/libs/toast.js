@@ -1,13 +1,14 @@
 /**
  * Allows to show toasts.
- * https://github.com/aleab/toastify
- * https://github.com/fkhadra/react-toastify
+ *
+ * @see https://github.com/aleab/toastify
+ * @see https://github.com/fkhadra/react-toastify
  *
  * @summary Toast utility.
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:33:24
- * Last modified  : 2020-05-24 12:10:42
+ * Last modified  : 2020-05-28 11:19:58
  */
 
 import React from 'react';

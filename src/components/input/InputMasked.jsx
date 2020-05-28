@@ -4,7 +4,6 @@ import { IMaskInput } from 'react-imask';
 
 /**
  * Wrapper for IMaskInput
- * https://www.npmjs.com/package/react-imask
  *
  * using example:
  *  <InputMasked
@@ -28,6 +27,7 @@ import { IMaskInput } from 'react-imask';
  *      placeholder='Enter phone number here'
  *  />
  *
+ * @see https://www.npmjs.com/package/react-imask
  * @param {any} props component props.
  *
  * @returns {JSX} masked input.
