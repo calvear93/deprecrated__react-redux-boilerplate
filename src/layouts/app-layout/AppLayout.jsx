@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Footer from './Footer';
 import Header from './Header';
-import '../../../styles/layouts/app-layout.scss';
+import '../../styles/layouts/app-layout.scss';
 
 // defaults site title.
 const DEFAULT_TITLE = process.env.REACT_APP_TITLE;
