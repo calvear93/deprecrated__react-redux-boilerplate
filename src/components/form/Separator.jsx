@@ -1,7 +1,7 @@
 import React from 'react';
 import { Divider } from 'semantic-ui-react';
 
-function Separator({ label, divider })
+export default function Separator({ label, divider })
 {
     return (
         <div className='grid-form-separator'>
@@ -10,5 +10,3 @@ function Separator({ label, divider })
         </div>
     );
 }
-
-export default Separator;
