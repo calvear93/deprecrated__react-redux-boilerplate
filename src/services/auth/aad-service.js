@@ -1,18 +1,18 @@
 /**
- * Adal Microsoft Authentication service.
+ * MSAL Microsoft Authentication service.
  *
- * @summary Adal service.
+ * @summary MSAL service.
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-23 19:53:33
- * Last modified  : 2020-05-28 11:18:59
+ * Last modified  : 2020-05-29 17:25:12
  */
 
 import axios from 'axios';
 import AuthenticationContext from './aad-context';
 import AADTypes from './aad-types';
 
-const DEFAULT_SCOPES = [ AADTypes.SCOPES.USER.READ_ALL ];
+const DEFAULT_SCOPES = [ AADTypes.SCOPES.USER.READ, AADTypes.SCOPES.EMAIL, AADTypes.SCOPES.PROFILE ];
 
 export default {
 

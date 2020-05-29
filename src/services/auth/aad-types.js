@@ -1,11 +1,11 @@
 /**
- * Adal Microsoft Authentication constants.
+ * MSAL Microsoft Authentication constants.
  *
- * @summary Adal constants.
+ * @summary MSAL constants.
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-23 19:54:31
- * Last modified  : 2020-05-23 19:54:50
+ * Last modified  : 2020-05-29 17:24:18
  */
 
 export default {
@@ -55,6 +55,10 @@ export default {
     // Permission scopes for resources.
     SCOPES: {
         DEFAULT: '.default',
+        EMAIL: 'email',
+        PROFILE: 'profile',
+        OFFLINE_ACCESS: 'offline_access',
+        OPEN_ID: 'open_id',
         DIRECTORY: {
             READ: 'directory.read',
             READ_ALL: 'directory.read.all',
@@ -63,33 +67,42 @@ export default {
         },
         USER: {
             READ: 'user.read',
+            READ_BASIC: 'user.readbasic.all',
             READ_ALL: 'user.read.all',
             READ_WRITE: 'user.readwrite',
             READ_WRITE_ALL: 'user.readwrite.all',
-            WRITE: 'user.write',
+            EXPORT_ALL: 'user.export.all',
+            INVITE: 'user.invite',
             IMPERSONATION: 'user_impersonation'
+        },
+        BOOKINGS: {
+            READ: 'bookings.read.all',
+            MANAGE: 'bookings.manage.all',
+            READ_WRITE: 'bookings.readwrite.all'
         },
         CALENDAR: {
             READ: 'calendar.read',
-            READ_ALL: 'calendar.read.all',
-            WRITE: 'calendar.write',
-            READ_WRITE_ALL: 'calendar.readwrite.all'
+            READ_SHARED: 'calendar.read.shared',
+            READ_WRITE: 'calendar.readwrite',
+            READ_WRITE_SHARED: 'calendar.readwrite.shared'
         },
         MAIL: {
             READ: 'mail.read',
-            READ_ALL: 'mail.read.all',
-            SEND: 'mail.send'
+            READ_SHARED: 'mail.read.shared',
+            READ_BASIC: 'mail.readbasic',
+            READ_WRITE: 'mail.readwrite',
+            READ_WRITE_SHARED: 'mail.readwrite.shared',
+            SEND: 'mail.send',
+            SEND_SHARED: 'mail.send.shared'
         },
         CONTACTS: {
             READ: 'contacts.read',
-            READ_ALL: 'contacts.read.all',
-            WRITE: 'contacts.write',
-            READ_WRITE_ALL: 'contacts.readwrite.all'
+            READ_SHARED: 'contacts.read.shared',
+            READ_WRITE: 'contacts.readwrite',
+            READ_WRITE_SHARED: 'contacts.readwrite.shared'
         },
         GROUPS: {
             READ: 'groups.read',
-            READ_ALL: 'groups.read.all',
-            WRITE: 'groups.write',
             READ_WRITE_ALL: 'groups.readwrite.all'
         }
     }
