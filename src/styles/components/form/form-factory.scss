@@ -1,23 +1,19 @@
 @import '../../vars';
 
-@mixin item-header {
-    padding-bottom: .2em;
-    width: 90%;
-    color: $secondary;
-    font-size: .8em;
-    font-weight: bolder;
-    text-transform: uppercase;
-}
-
 .form-factory {
     padding: .2em .4em;
 
-    .form-item {
+    .form-item-container {
         padding: .4em .6em;
 
-        .input-item-header {
+        .form-item-header {
             margin-bottom: .2em;
-            @include item-header;
+            padding-bottom: .2em;
+            width: 90%;
+            color: $secondary;
+            font-size: .8em;
+            font-weight: bolder;
+            text-transform: uppercase;
 
             &[required] {
                 color: $orange-dark;
@@ -30,7 +26,7 @@
             }
         }
 
-        .input-item {
+        .form-item {
             position: relative;
 
             .ui,
@@ -39,16 +35,6 @@
                 margin-right: 1em;
                 margin-bottom: 0;
                 width: 100%;
-            }
-
-            .grid-form-separator {
-                margin-top: 1em;
-                padding-bottom: .2em;
-                width: 98%;
-                color: $slate-gray-light;
-                font-size: .9em;
-                font-weight: bolder;
-                text-transform: uppercase;
             }
         }
 
@@ -69,6 +55,5 @@
 
 div[for][disabled='true'] {
     color: $light-gray !important;
-    // text-decoration: line-through;
     opacity: .4;
 }

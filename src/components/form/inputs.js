@@ -5,81 +5,80 @@ import Separator from './Separator';
 
 export default {
     SEPARATOR: {
-        component: Separator,
+        Input: Separator,
         divider: true
     },
     INPUT: {
-        component: Input,
+        Input,
         onChangeSwitch: (func) => ({ onChange: func }),
         onChangeMapper: (key, receptor) => (_, { id, value }) => receptor(key, value),
         valueMapper: (value) => ({ value }),
-        default: ''
+        defaultValue: ''
     },
     TEXTAREA: {
-        component: TextArea,
+        Input: TextArea,
         onChangeSwitch: (func) => ({ onChange: func }),
         onChangeMapper: (key, receptor) => (_, { id, value }) => receptor(key, value),
         valueMapper: (value) => ({ value }),
-        default: ''
+        defaultValue: ''
     },
     INPUT_MASKED: {
-        component: InputMasked,
+        Input: InputMasked,
         onChangeSwitch: (func) => ({ onAccept: func }),
         onChangeMapper: (key, receptor) => (value, mask) => receptor(key, value),
         valueMapper: (value) => ({ value }),
-        default: ''
+        defaultValue: ''
     },
     SELECT: {
-        component: Select,
+        Input: Select,
         onChangeSwitch: (func) => ({ onChange: func }),
         onChangeMapper: (key, receptor) => (_, { id, value }) => receptor(key, value),
         valueMapper: (value) => ({ value }),
         optionsMapper: (dataset, key) => ({ options: dataset[key] }),
-        default: ''
+        defaultValue: ''
     },
     DATE_PICKER: {
-        component: DateBox,
+        Input: DateBox,
         onChangeSwitch: (func) => ({ onValueChanged: func }),
         onChangeMapper: (key, receptor) => ({ element, value }) => receptor(key, value),
         valueMapper: (value) => ({ value }),
-        default: null
+        defaultValue: null
     },
     TIME_PICKER: {
-        component: DateBox,
+        Input: DateBox,
         onChangeSwitch: (func) => ({ onValueChanged: func }),
         onChangeMapper: (key, receptor) => ({ element, value }) => receptor(key, value),
         valueMapper: (value) => ({ defaultValue: value }),
-        default: null
+        defaultValue: null
     },
     TIME_CIRCULAR_PICKER: {
-        component: TimePicker,
+        Input: TimePicker,
         onChangeSwitch: (func) => ({ onChange: func }),
         onChangeMapper: (key, receptor) => (_, { id, value }) => receptor(key, value),
         valueMapper: (value) => ({ time: value }),
-        default: ''
+        defaultValue: ''
     },
     TOGGLER: {
-        component: Checkbox,
+        Input: Checkbox,
         onChangeSwitch: (func) => ({ onChange: func }),
         onChangeMapper: (key, receptor) => (_, { id, checked }) => receptor(key, checked),
         valueMapper: (value) => (value ? { checked: true } : { checked: false }),
-        default: false
+        defaultValue: false
     },
     RADIO_GROUP: {
-        component: RadioGroup,
+        Input: RadioGroup,
         onChangeSwitch: (func) => ({ onChange: func }),
         onChangeMapper: (key, receptor) => (_, { id, value }) => receptor(key, value),
-        // valueMapper: (value) => (value ? { checked: true } : { checked: false }),
         valueMapper: (value) => ({ checked: value }),
         optionsMapper: (dataset, key) => ({ options: dataset[key] }),
-        default: null
+        defaultValue: null
     },
     CHECKBOX: {
-        component: CheckBox,
+        Input: CheckBox,
         onChangeSwitch: (func) => ({ onChange: func }),
         onChangeMapper: (key, receptor) => (_, { id, value, last }) => receptor(key, value),
         valueMapper: (value) => ({ checked: value }),
         optionsMapper: (dataset, key) => ({ options: dataset[key] }),
-        default: []
+        defaultValue: []
     }
 };

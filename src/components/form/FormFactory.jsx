@@ -1,71 +1,70 @@
 import React from 'react';
 import INPUT from './inputs';
 import { Row, Col } from 'react-flexbox-grid';
+import { useFormik } from 'formik';
 import '../../styles/components/form/form-factory.scss';
+import { PhoneAdvancedMask } from '../../utils/masks';
 
 const inputs = [
     {
         key: 'Test',
-        label: 'Title',
-        input: {
-            ...INPUT.INPUT,
-            validators: {
-                required: {
-                    dependencies: {
-                        TipoAtencion: (value, neighbour) =>
-                        {
-                            return neighbour !== 'Ninguna';
-                        }
-                    },
-                    message: 'es requerido'
+        label: 'Phone',
+        behavior: {
+            ...INPUT.INPUT_MASKED
+        },
+        config: {
+            mask: PhoneAdvancedMask,
+            placeholder: 'adassdfs'
+        },
+        validators: {
+            required: {
+                dependencies: {
+                    TipoAtencion: (value, neighbour) =>
+                    {
+                        return neighbour !== 'Ninguna';
+                    }
                 },
-                email: true
-                // email: {
-                //     message: '%{value} no es un correo válido'
-                // }
-            },
-            config: {
-                placeholder: 'adassdfs'
+                message: 'es requerido'
             }
         }
     },
     {
         key: 'Prevision',
         label: '¿Tipo de previsión de salud?',
-        input: {
-            ...INPUT.RADIO_GROUP,
-            // dataset: 'PrevisionTipo',
-            validators: {
-                required: {
-                    dependencies: {
-                        TipoAtencion: (value, neighbour) =>
-                        {
-                            return neighbour !== 'Ninguna';
-                        },
-                        DerivarAgendamiento: (value, neighbour) =>
-                        {
-                            return !neighbour;
-                        }
-                    },
-                    message: 'es requerido'
+        behavior: {
+            ...INPUT.RADIO_GROUP
+        },
+        // dataset: 'PrevisionTipo',
+        config: {
+            clearable: false,
+            options: [
+                {
+                    value: 1,
+                    label: 'yeah'
+                },
+                {
+                    value: 0,
+                    label: 'nouh'
+                },
+                {
+                    value: 3,
+                    label: 'gut'
                 }
-            },
-            config: {
-                clearable: false,
-                options: [
+            ]
+        },
+        validators: {
+            required: {
+                dependencies: {
+                    TipoAtencion: (value, neighbour) =>
                     {
-                        value: 1,
-                        label: 'yeah'
+                        return neighbour !== 'Ninguna';
                     },
+                    DerivarAgendamiento: (value, neighbour) =>
                     {
-                        value: 0,
-                        label: 'nouh'
-                    },
-                    {
-                        value: 3,
-                        label: 'gut'
+                        return !neighbour;
                     }
-                ]
+                },
+                message: 'es requerido'
             }
         }
     }
@@ -83,38 +82,60 @@ const dataset = {};
 
 export default function FormFactory()
 {
+    const {
+        values,
+        handleChange
+    } = useFormik({
+        initialValues: {},
+        validate: (values) =>
+        {
+            console.log(values);
+
+            return {};
+        },
+        validateOnChange: true,
+        onSubmit: (values) =>
+        {
+            // console.log(values);
+        }
+    });
+
+    console.log(values);
+
+    function onChange(key, value)
+    {
+        handleChange(key, value);
+    }
+
     return (
         <Row className='form-factory'>
             {
-                inputs.map(({ key, label, input }, index) => (
-                    <Col key={ key ?? index } id={ `${key ?? index}-container` } className='form-item' { ...columns } { ...input.columns }>
-                        {input.divider ? (
-                            <Row className='input-item'>
-                                <input.component { ...input.config } />
+                inputs.map(({ key, label, behavior, config, validators }, index) =>
+                {
+                    const { onChangeSwitch, onChangeMapper, valueMapper, defaultValue, filter } = behavior;
+
+                    return (
+                        <Col key={ key } id={ `${key}-container` } className='form-item-container' { ...columns } { ...behavior.columns }>
+                            <Row
+                                htmlFor={ key }
+                                className='form-item-header'
+                                required={ validators?.required }
+                            >
+                                {label ?? key}
                             </Row>
-                        ) : (
-                            <>
-                                <Row
-                                    htmlFor={ key }
-                                    className='input-item-header'
-                                    required={ input.validators?.required }
-                                >
-                                    {label ?? key}
-                                </Row>
-                                <Row className='input-item'>
-                                    <input.component
-                                        id={ key }
-                                        { ...input.onChangeSwitch(input.onChangeMapper(key, () => {})) }
-                                        { ...input.valueMapper(input.format ? input.format(values[key]) : values[key]) }
-                                        { ...(input.optionsMapper ? input.optionsMapper(dataset, input.dataset) : {}) }
-                                        { ...input.config }
-                                    />
-                                </Row>
-                            </>
-                        )}
-                        <label className='input-item-error-label hidden' />
-                    </Col>
-                ))
+                            <Row className='form-item'>
+                                <behavior.Input
+                                    id={ key }
+                                    { ...onChangeSwitch(onChangeMapper(key, onChange)) }
+                                    { ...valueMapper(values[key]) }
+                                    { ...(behavior.optionsMapper ? behavior.optionsMapper(dataset, config.dataset) : {}) }
+                                    { ...config }
+                                />
+                            </Row>
+                            <label className='form-item-error-label hidden' />
+                        </Col>
+                    );
+                })
             }
         </Row>
     );
