@@ -3,11 +3,11 @@
  *
  * @see https://azuread.github.io/microsoft-authentication-library-for-js/docs/msal/modules/_configuration_.html
  *
- * @summary Adal config file.
+ * @summary MSAL config file.
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-04-15 19:51:39
- * Last modified  : 2020-05-28 11:17:50
+ * Last modified  : 2020-05-29 16:26:31
  */
 
 import AADTypes from './aad-types';
@@ -47,7 +47,7 @@ const cache = {
 /**
  * Library Specific Options
  *
- * - logger                       - Used to initialize the Logger object; TODO: Expand on logger details or link to the documentation on logger
+ * - logger                       - Used to initialize the Logger object;
  * - loadFrameTimeout             - maximum time the library should wait for a frame to load
  * - tokenRenewalOffsetSeconds    - sets the window of offset needed to renew the token before expiry
  * - navigateFrameWait            - sets the wait time for hidden iFrame navigation
