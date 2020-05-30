@@ -1,32 +1,57 @@
+/**
+ * Base file containing validation
+ * logics for validator.js.
+ *
+ * @see https://validatejs.org/
+ *
+ * @summary Validate JS improved validations.
+ * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
+ *
+ * Created at     : 2020-05-30 15:38:03
+ * Last modified  : 2020-05-30 15:50:26
+ */
+
 import validate from 'validate.js';
 import BlackListValidator from './blacklist';
-import Disabled from './disabled';
 import Email from './email';
-import Hidden from './hidden';
 import PhoneValidator from './phone';
 import Required from './required';
 import RutValidator from './rut';
 import WhiteListValidator from './whitelist';
 
 validate.validators.required = Required;
-validate.validators.disabled = Disabled;
-validate.validators.hidden = Hidden;
 validate.validators.email = Email;
 validate.validators.rut = RutValidator;
 validate.validators.phone = PhoneValidator;
 validate.validators.whitelist = WhiteListValidator;
 validate.validators.blacklist = BlackListValidator;
-validate.validators.label = () => null; // used for skip validation attr assign.
 
-// custom validator.
+/**
+ * Allows to define a custom validator inline.
+ *
+ * @param {any} value current value.
+ * @param {any} options validator options.
+ * @param {string} options.validator custom validator function.
+ * @param {any} attributeName input key.
+ * @param {any} values neighbor values.
+ * @param {any} constraints validator cfg.
+ *
+ * @returns {string} message if value isn't a valid phone number, null in otherwise.
+ */
 validate.validators.custom = (value, { validator, ...options }, attributeName, values, constraints) =>
 {
     return validator && validator(value, options, attributeName, values, constraints);
 };
 
-// formats 'detailed' validations in order to customize
-// input label in error messages.
-validate.formatters.plain = (validations = {}, validators) =>
+/**
+ * Flatten 'detailed' validations.
+ *
+ * @param {any} validations current validations from validate().
+ * @param {any} validators validators.
+ *
+ * @returns {any} validations.
+ */
+validate.formatters.flatten = (validations = {}, validators) =>
 {
     return Object.values(validations)
         .reduce((result, error) =>
@@ -47,11 +72,6 @@ validate.formatters.plain = (validations = {}, validators) =>
 
             return result;
         }, { isValid: true });
-};
-// For validations display.
-validate.formatters.plainAsArray = (validations, validators) =>
-{
-    return Object.values(validate.formatters.plain(validations, validators));
 };
 
 export default validate;

@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:42:09
- * Last modified  : 2020-05-24 11:21:26
+ * Last modified  : 2020-05-30 15:31:00
  */
 
 /**
@@ -75,11 +75,11 @@ export function filter(obj, func)
  * null, NaN or empty object.
  *
  * @param {any} value value for validation (undefined, null, NaN).
- * @param {any} allowEmpty whether allows empty as valid ({}, [], '' or ' ').
+ * @param {any} allowsEmpty whether allows empty as valid ({}, [], '' or ' ').
  *
  * @returns {any} true if is valid, false in otherwise.
  */
-export function isData(value, allowEmpty = false)
+export function isData(value, allowsEmpty = false)
 {
     if (value === undefined || value === null)
         return false;
@@ -90,16 +90,16 @@ export function isData(value, allowEmpty = false)
     if ((type === 'number' || isDate) && isNaN(value))
         return false;
 
-    if (!allowEmpty && type === 'string' && value.trim() === '')
+    if (!allowsEmpty && type === 'string' && value.trim() === '')
         return false;
 
-    if (!allowEmpty && Array.isArray(value) && value.length === 0)
+    if (!allowsEmpty && Array.isArray(value) && value.length === 0)
         return false;
 
-    if (!allowEmpty && value instanceof Date && isNaN(value))
+    if (!allowsEmpty && value instanceof Date && isNaN(value))
         return false;
 
-    if (!allowEmpty && (type === 'object' && !isDate) && Object.keys(value).length === 0)
+    if (!allowsEmpty && (type === 'object' && !isDate) && Object.keys(value).length === 0)
         return false;
 
     return true;

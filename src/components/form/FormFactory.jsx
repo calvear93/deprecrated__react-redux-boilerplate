@@ -18,15 +18,7 @@ const inputs = [
             placeholder: 'adassdfs'
         },
         validators: {
-            required: {
-                // dependencies: {
-                //     TipoAtencion: (value, neighbour) =>
-                //     {
-                //         return neighbour !== 'Ninguna';
-                //     }
-                // },
-                message: 'es requerido'
-            },
+            required: true,
             phone: true
         }
     },
@@ -55,19 +47,7 @@ const inputs = [
             ]
         },
         validators: {
-            required: {
-                dependencies: {
-                    TipoAtencion: (value, neighbour) =>
-                    {
-                        return neighbour !== 'Ninguna';
-                    },
-                    DerivarAgendamiento: (value, neighbour) =>
-                    {
-                        return !neighbour;
-                    }
-                },
-                message: 'es requerido'
-            }
+            required: true
         }
     }
 ];
@@ -118,6 +98,14 @@ export default function FormFactory({ validateOnMount = false })
         setTouched({
             ...touched,
             [key]: defaultValues[key] !== value
+        });
+
+        setConfig({
+            ...config,
+            [key]: {
+                ...config[key],
+                disabled: true
+            }
         });
     }
 
