@@ -89,9 +89,19 @@ const config = {
 
 export default function FormFactory({ validateOnMount = false })
 {
-    const [ defaultValues ] = useState(defValues);
+    const [ defaultValues ] = useState(
+        inputs
+            .reduce((defaults, input) =>
+            {
+                const key = input.key;
+                defaults[key] = defValues[key] ?? input.behavior.defaultValue;
+
+                return defaults;
+            }, {})
+    );
     const [ values, setValues ] = useState(defaultValues);
     const [ validations, setValidations ] = useState({});
+    const [ touched, setTouched ] = useState({});
     const validators = useMemo(
         () => inputs
             .reduce((validators, input) =>
@@ -102,8 +112,6 @@ export default function FormFactory({ validateOnMount = false })
             }, {}),
         []
     );
-
-    console.log(validations);
 
     useEffect(() =>
     {
@@ -121,6 +129,11 @@ export default function FormFactory({ validateOnMount = false })
         setValidations({
             ...validations,
             [key]: validate.single(value, validators[key])
+        });
+
+        setTouched({
+            ...touched,
+            [key]: defaultValues[key] !== value
         });
     }
 
