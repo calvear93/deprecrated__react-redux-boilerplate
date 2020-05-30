@@ -82,14 +82,14 @@ const columns = {
 const defValues = {};
 const dataset = {};
 
-const config = {
+const validatorConfig = {
     fullMessages: false,
     format: 'grouped' // grouped (default), flat, detailed.
 };
 
 function useInputs(inputs, defValues)
 {
-    return useMemo(
+    const [ data ] = useState(
         inputs.reduce((data, input) =>
         {
             const key = input.key;
@@ -101,41 +101,24 @@ function useInputs(inputs, defValues)
             data[2][key] = input.validators;
 
             return data;
-        }, [ {}, {}, {} ]),
-        []
+        }, [ {}, {}, {} ])
     );
+
+    return data;
 }
 
 export default function FormFactory({ validateOnMount = false })
 {
-    const [ defaultValues ] = useState(
-        inputs
-            .reduce((defaults, input) =>
-            {
-                const key = input.key;
-                defaults[key] = defValues[key] ?? input.behavior.defaultValue;
-
-                return defaults;
-            }, {})
-    );
+    const [ defaultConfig, defaultValues, validators ] = useInputs(inputs, defValues);
+    const [ inputConfig, setInputConfig ] = useState(defaultConfig);
     const [ values, setValues ] = useState(defaultValues);
     const [ validations, setValidations ] = useState({});
     const [ touched, setTouched ] = useState({});
-    const validators = useMemo(
-        () => inputs
-            .reduce((validators, input) =>
-            {
-                validators[input.key] = input.validators;
-
-                return validators;
-            }, {}),
-        []
-    );
 
     useEffect(() =>
     {
         if (validateOnMount)
-            setValidations(validate(values, validators, config));
+            setValidations(validate(values, validators, validatorConfig));
     }, []);
 
     function handleChange(key, value)
@@ -156,13 +139,17 @@ export default function FormFactory({ validateOnMount = false })
         });
     }
 
+    console.log(values);
+    console.log(validations);
+
     return (
         <Row className='form-factory'>
             {
-                inputs.map(({ key, label, behavior, config, validators }) =>
+                inputs.map(({ key, label, behavior, validators }) =>
                 {
                     const { onChangeSwitch, onChangeMapper, valueMapper, defaultValue } = behavior;
                     const errors = validations[key];
+                    const config = inputConfig[key];
 
                     return (
                         <Col key={ key } id={ `${key}-container` } className='form-item-container' { ...columns } { ...behavior.columns }>
