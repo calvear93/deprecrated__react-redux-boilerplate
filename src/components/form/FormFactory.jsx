@@ -1,17 +1,17 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import INPUT from './inputs';
+import { INPUT, RADIO_GROUP } from './inputs';
 import { Row, Col } from 'react-flexbox-grid';
-import { useFormik } from 'formik';
 import '../../styles/components/form/form-factory.scss';
 import { PhoneAdvancedMask } from '../../utils/masks';
 import validate from '../../utils/validators';
+import classNames from 'classnames';
 
 const inputs = [
     {
         key: 'Test',
         label: 'Phone',
         behavior: {
-            ...INPUT.INPUT
+            ...INPUT
         },
         config: {
             mask: PhoneAdvancedMask,
@@ -26,25 +26,11 @@ const inputs = [
         key: 'Prevision',
         label: '¿Tipo de previsión de salud?',
         behavior: {
-            ...INPUT.RADIO_GROUP
+            ...RADIO_GROUP
         },
-        // dataset: 'PrevisionTipo',
         config: {
-            clearable: true,
-            options: [
-                {
-                    value: 1,
-                    label: 'yeah'
-                },
-                {
-                    value: 0,
-                    label: 'nouh'
-                },
-                {
-                    value: 3,
-                    label: 'gut'
-                }
-            ]
+            dataset: 'test',
+            clearable: true
         },
         validators: {
             required: true
@@ -59,8 +45,23 @@ const columns = {
     lg: 4
 };
 
-const defValues = {};
-const datasets = {};
+let defValues = {};
+const datasets = {
+    test: [
+        {
+            value: 1,
+            label: 'yeah'
+        },
+        {
+            value: 0,
+            label: 'nouh'
+        },
+        {
+            value: 3,
+            label: 'gut'
+        }
+    ]
+};
 
 const validatorConfig = {
     fullMessages: false,
@@ -103,8 +104,7 @@ export default function FormFactory({ validateOnMount = false })
         setConfig({
             ...config,
             [key]: {
-                ...config[key],
-                disabled: true
+                ...config[key]
             }
         });
     }
@@ -115,14 +115,25 @@ export default function FormFactory({ validateOnMount = false })
                 inputs.map(({ key, label, behavior, validators }) =>
                 {
                     const { onChangeSwitch, onChangeMapper, valueMapper } = behavior;
-                    const { dataset, hidden, ...cfg } = config[key];
+                    const { dataset, hidden, invisible, ...cfg } = config[key];
                     const errors = validations[key];
 
                     return (
-                        <Col key={ key } id={ `${key}-container` } className='form-item-container' { ...columns } { ...behavior.columns }>
+                        <Col key={ key } id={ `${key}-container` } { ...columns } { ...behavior.columns }
+                            className={ classNames(
+                                'form-item-container',
+                                {
+                                    hidden, // display: none
+                                    invisible, // visibility: hidden
+                                    touched: touched[key], // whether value is different from default.
+                                    success: errors === null,
+                                    error: errors
+                                }
+                            ) }
+                        >
                             <Row
                                 htmlFor={ key }
-                                className={ `form-item-header${errors ? ' error' : errors === null ? ' success' : ''}` }
+                                className='form-item-header'
                                 required={ validators?.required }
                             >
                                 {label ?? key}

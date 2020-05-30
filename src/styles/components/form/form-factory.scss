@@ -16,14 +16,17 @@
             text-transform: uppercase;
 
             &[required] {
-                &.error {
-                    color: $orange-dark;
-                }
-
                 &:after {
                     content: '*';
                     margin-left: .2em;
-                    // color: $orange-dark;
+                }
+            }
+        }
+
+        &.error {
+            .form-item-header {
+                &[required] {
+                    color: $orange-dark;
                 }
             }
         }
