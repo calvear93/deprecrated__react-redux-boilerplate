@@ -109,6 +109,8 @@ export default function FormFactory({ validateOnMount = false })
         });
     }
 
+    console.log(validations);
+
     return (
         <Row className='form-factory'>
             {
