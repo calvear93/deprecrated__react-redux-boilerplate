@@ -87,6 +87,25 @@ const config = {
     format: 'grouped' // grouped (default), flat, detailed.
 };
 
+function useInputs(inputs, defValues)
+{
+    return useMemo(
+        inputs.reduce((data, input) =>
+        {
+            const key = input.key;
+            // inputs config.
+            data[0][key] = input.config;
+            // default values.
+            data[1][key] = defValues[key] ?? input.behavior.defaultValue;
+            // validators.
+            data[2][key] = input.validators;
+
+            return data;
+        }, [ {}, {}, {} ]),
+        []
+    );
+}
+
 export default function FormFactory({ validateOnMount = false })
 {
     const [ defaultValues ] = useState(
