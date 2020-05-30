@@ -128,7 +128,7 @@ export default function FormFactory({ validateOnMount = false })
 
         setValidations({
             ...validations,
-            [key]: validate.single(value, validators[key])
+            [key]: validate.single(value, validators[key]) ?? null
         });
 
         setTouched({
@@ -140,16 +140,16 @@ export default function FormFactory({ validateOnMount = false })
     return (
         <Row className='form-factory'>
             {
-                inputs.map(({ key, label, behavior, config, validators }, index) =>
+                inputs.map(({ key, label, behavior, config, validators }) =>
                 {
-                    const { onChangeSwitch, onChangeMapper, valueMapper, defaultValue, filter } = behavior;
+                    const { onChangeSwitch, onChangeMapper, valueMapper, defaultValue } = behavior;
                     const errors = validations[key];
 
                     return (
                         <Col key={ key } id={ `${key}-container` } className='form-item-container' { ...columns } { ...behavior.columns }>
                             <Row
                                 htmlFor={ key }
-                                className={ `form-item-header${errors ? ' error' : ''}` }
+                                className={ `form-item-header${errors ? ' error' : errors === null ? ' success' : ''}` }
                                 required={ validators?.required }
                             >
                                 {label ?? key}
@@ -158,7 +158,7 @@ export default function FormFactory({ validateOnMount = false })
                                 <behavior.Input
                                     id={ key }
                                     { ...onChangeSwitch(onChangeMapper(key, handleChange)) }
-                                    { ...valueMapper(values[key] ?? defaultValue) }
+                                    { ...valueMapper(values[key]) }
                                     { ...(behavior.optionsMapper ? behavior.optionsMapper(dataset, config.dataset) : {}) }
                                     { ...config }
                                 />
