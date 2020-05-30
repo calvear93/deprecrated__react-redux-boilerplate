@@ -80,37 +80,19 @@ const columns = {
 };
 
 const defValues = {};
-const dataset = {};
+const datasets = {};
 
 const validatorConfig = {
     fullMessages: false,
     format: 'grouped' // grouped (default), flat, detailed.
 };
 
-function useInputs(inputs, defValues)
-{
-    const [ data ] = useState(
-        inputs.reduce((data, input) =>
-        {
-            const key = input.key;
-            // inputs config.
-            data[0][key] = input.config;
-            // default values.
-            data[1][key] = defValues[key] ?? input.behavior.defaultValue;
-            // validators.
-            data[2][key] = input.validators;
-
-            return data;
-        }, [ {}, {}, {} ])
-    );
-
-    return data;
-}
-
 export default function FormFactory({ validateOnMount = false })
 {
+    // keeps base configuration memoized.
     const [ defaultConfig, defaultValues, validators ] = useInputs(inputs, defValues);
-    const [ inputConfig, setInputConfig ] = useState(defaultConfig);
+
+    const [ config, setConfig ] = useState(defaultConfig);
     const [ values, setValues ] = useState(defaultValues);
     const [ validations, setValidations ] = useState({});
     const [ touched, setTouched ] = useState({});
@@ -139,17 +121,14 @@ export default function FormFactory({ validateOnMount = false })
         });
     }
 
-    console.log(values);
-    console.log(validations);
-
     return (
         <Row className='form-factory'>
             {
                 inputs.map(({ key, label, behavior, validators }) =>
                 {
-                    const { onChangeSwitch, onChangeMapper, valueMapper, defaultValue } = behavior;
+                    const { onChangeSwitch, onChangeMapper, valueMapper } = behavior;
+                    const { dataset, hidden, ...cfg } = config[key];
                     const errors = validations[key];
-                    const config = inputConfig[key];
 
                     return (
                         <Col key={ key } id={ `${key}-container` } className='form-item-container' { ...columns } { ...behavior.columns }>
@@ -165,8 +144,8 @@ export default function FormFactory({ validateOnMount = false })
                                     id={ key }
                                     { ...onChangeSwitch(onChangeMapper(key, handleChange)) }
                                     { ...valueMapper(values[key]) }
-                                    { ...(behavior.optionsMapper ? behavior.optionsMapper(dataset, config.dataset) : {}) }
-                                    { ...config }
+                                    { ...(behavior.optionsMapper ? behavior.optionsMapper(datasets, dataset) : {}) }
+                                    { ...cfg }
                                 />
                             </Row>
                             {errors && (
@@ -180,4 +159,32 @@ export default function FormFactory({ validateOnMount = false })
             }
         </Row>
     );
+}
+
+/**
+ * Retrieves config, default values
+ * and validators from input config.
+ *
+ * @param {any} inputs inputs config.
+ * @param {any} defValues default values,
+ * @returns {array} [config, defaultValues, validators]
+ */
+function useInputs(inputs, defValues)
+{
+    const [ data ] = useState(
+        inputs.reduce((data, input) =>
+        {
+            const key = input.key;
+            // inputs config.
+            data[0][key] = input.config;
+            // default values.
+            data[1][key] = defValues[key] ?? input.behavior.defaultValue;
+            // validators.
+            data[2][key] = input.validators;
+
+            return data;
+        }, [ {}, {}, {} ])
+    );
+
+    return data;
 }
