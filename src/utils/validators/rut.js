@@ -1,4 +1,4 @@
-import Rut from '../Rut';
+import Rut from '../libs/rut';
 
 // value, options, attributeName, values, constraints
 export default function(value, { message }, attributeName, values, { fullMessages })

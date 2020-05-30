@@ -1,5 +1,4 @@
-
-import Validate from 'validate.js';
+import validate from 'validate.js';
 import BlackListValidator from './blacklist';
 import Disabled from './disabled';
 import Email from './email';
@@ -9,25 +8,25 @@ import Required from './required';
 import RutValidator from './rut';
 import WhiteListValidator from './whitelist';
 
-Validate.validators.required = Required;
-Validate.validators.disabled = Disabled;
-Validate.validators.hidden = Hidden;
-Validate.validators.email = Email;
-Validate.validators.rut = RutValidator;
-Validate.validators.phone = PhoneValidator;
-Validate.validators.whitelist = WhiteListValidator;
-Validate.validators.blacklist = BlackListValidator;
-Validate.validators.label = () => null; // used for skip validation attr assign.
+validate.validators.required = Required;
+validate.validators.disabled = Disabled;
+validate.validators.hidden = Hidden;
+validate.validators.email = Email;
+validate.validators.rut = RutValidator;
+validate.validators.phone = PhoneValidator;
+validate.validators.whitelist = WhiteListValidator;
+validate.validators.blacklist = BlackListValidator;
+validate.validators.label = () => null; // used for skip validation attr assign.
 
 // custom validator.
-Validate.validators.custom = (value, { validator, ...options }, attributeName, values, constraints) =>
+validate.validators.custom = (value, { validator, ...options }, attributeName, values, constraints) =>
 {
     return validator && validator(value, options, attributeName, values, constraints);
 };
 
 // formats 'detailed' validations in order to customize
 // input label in error messages.
-Validate.formatters.plain = (validations = {}, validators) =>
+validate.formatters.plain = (validations = {}, validators) =>
 {
     return Object.values(validations)
         .reduce((result, error) =>
@@ -50,10 +49,9 @@ Validate.formatters.plain = (validations = {}, validators) =>
         }, { isValid: true });
 };
 // For validations display.
-Validate.formatters.plainAsArray = (validations, validators) =>
+validate.formatters.plainAsArray = (validations, validators) =>
 {
-    return Object.values(Validate.formatters.plain(validations, validators));
+    return Object.values(validate.formatters.plain(validations, validators));
 };
 
-export default Validate;
-
+export default validate;
