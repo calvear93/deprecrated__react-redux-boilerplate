@@ -38,7 +38,7 @@ const inputs = [
         },
         // dataset: 'PrevisionTipo',
         config: {
-            clearable: false,
+            clearable: true,
             options: [
                 {
                     value: 1,
@@ -84,10 +84,10 @@ const dataset = {};
 
 const config = {
     fullMessages: false,
-    format: 'detailed' // grouped (default), flat, detailed.
+    format: 'grouped' // grouped (default), flat, detailed.
 };
 
-export default function FormFactory()
+export default function FormFactory({ validateOnMount = false })
 {
     const [ defaultValues ] = useState(defValues);
     const [ values, setValues ] = useState(defaultValues);
@@ -100,10 +100,18 @@ export default function FormFactory()
 
                 return validators;
             }, {}),
-        [ inputs ]
+        []
     );
 
-    function onChange(key, value)
+    console.log(validations);
+
+    useEffect(() =>
+    {
+        if (validateOnMount)
+            setValidations(validate(values, validators, config));
+    }, []);
+
+    function handleChange(key, value)
     {
         setValues({
             ...values,
@@ -128,7 +136,7 @@ export default function FormFactory()
                         <Col key={ key } id={ `${key}-container` } className='form-item-container' { ...columns } { ...behavior.columns }>
                             <Row
                                 htmlFor={ key }
-                                className='form-item-header'
+                                className={ `form-item-header${errors ? ' error' : ''}` }
                                 required={ validators?.required }
                             >
                                 {label ?? key}
@@ -136,7 +144,7 @@ export default function FormFactory()
                             <Row className='form-item'>
                                 <behavior.Input
                                     id={ key }
-                                    { ...onChangeSwitch(onChangeMapper(key, onChange)) }
+                                    { ...onChangeSwitch(onChangeMapper(key, handleChange)) }
                                     { ...valueMapper(values[key] ?? defaultValue) }
                                     { ...(behavior.optionsMapper ? behavior.optionsMapper(dataset, config.dataset) : {}) }
                                     { ...config }
@@ -144,7 +152,7 @@ export default function FormFactory()
                             </Row>
                             {errors && (
                                 <label className='form-item-error-label'>
-                                    {errors.join(',')}
+                                    {errors.join(', ')}
                                 </label>
                             )}
                         </Col>

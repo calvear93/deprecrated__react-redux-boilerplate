@@ -16,12 +16,14 @@
             text-transform: uppercase;
 
             &[required] {
-                color: $orange-dark;
+                &.error {
+                    color: $orange-dark;
+                }
 
                 &:after {
                     content: '*';
                     margin-left: .2em;
-                    color: $orange-dark;
+                    // color: $orange-dark;
                 }
             }
         }
@@ -38,14 +40,14 @@
             }
         }
 
-        .input-item-error-label {
+        .form-item-error-label {
             margin-top: .2em;
             margin-left: -.6em;
             color: $warning;
             font-size: .8em;
 
             &:before {
-                content: '\F5D6';
+                content: '\F05D6';
                 margin-right: .4em;
                 font-family: 'Material Design Icons';
             }
