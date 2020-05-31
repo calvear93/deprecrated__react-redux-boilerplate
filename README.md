@@ -1,61 +1,111 @@
 # REACT & REDUX BOILERPLATE
 
-### [GITHUB REPOSITORY](https://github.com/calvear93/react-redux-boilerplate)
+## [GITHUB REPOSITORY](https://github.com/calvear93/react-redux-boilerplate)
 
-[React](https://es.reactjs.org/) [Redux](https://es.redux.js.org/), [Create React App](https://github.com/facebook/create-react-app).
+This is a boilerplate for React SPA application using [React](https://es.reactjs.org/) + [Redux](https://es.redux.js.org/), and the official project creation wrapper [Create React App](https://github.com/facebook/create-react-app).
 
 ## 1. Exec
 
-**npm scripts** .
+Project uses **npm scripts** for eases execution and building.
 
-| Script                    | Resultado                     |
-| ------------------------- | ----------------------------- |
-| npm run start:debug       | Ejecución en modo Debug       |
-| npm run start:development | Ejecución en modo Development |
-| npm run start:qa          | Ejecución en modo QA          |
-| npm run build:development | Building en modo Development  |
-| npm run build:qa          | Building en modo QA           |
-| npm run build:production  | Building en modo Production   |
-| npm run postbuild         | Remueve sourcemaps            |
+| Command                       | Action                 |
+| ----------------------------- | ---------------------- |
+| npm run start:debug           | Debug execution        |
+| npm run start:development     | Development execution  |
+| npm run start:qa              | QA execution           |
+| npm run build:development     | Development build      |
+| npm run build:qa              | QA build               |
+| npm run build:production      | Production build       |
+| npm run lint                  | eslint validation      |
+| npm run postbuild             | removes sourcemaps     |
+| npm run packages:update       | updates packages       |
+| npm run packages:update-force | force updates packages |
 
-## 2. Structure
+## 2. Source structure
 
 ```bash
-├── README.md.
-├── package.json # npm package manager file.
+├── README.md
+├── LICENCE # GPL 3
 ├── public/
-│   ├── favicon.ico # Icono.
-│   └── index.html # Root HTML.
-└── src/
-│   ├── assets/ # Recursos gráficos.
-│   ├── components/ # Componentes React.
-│   ├── services/ # Interfaces o utilidades globales como WebClient.
-│   │   └── web-client.js # Cliente interface para la API del proyecto.
+│   ├── favicon.ico
+│   └── index.html
+├── src/
+│   ├── assets/ # graphics.
+│   ├── components/
+│   │   ├── form/ # form factory. (see SampleForm).
+│   │   ├── input/ # variety of inputs.
+│   │   └── Loader.jsx
+│   ├── constants/ # app constants / global variables.
+│   ├── data/ # local master data.
+│   ├── hooks/
+│   ├── layouts/
+│   │   ├── base-layout/ # base flex layout.
+│   │   └── app-layout/ # flex layout with header and footer.
+│   ├── pages/
+│   ├── rules/ # JS files with global rules.
+│   │   └── routes/ # routes definition for Router.jsx.
+│   ├── services/
+│   │   ├── auth/ # Azure Active Directory auth service.
+│   │   │   └── AzureActiveDirectoryProvider.jsx # authentication provider.
+│   │   ├── json-service.js # allows to load JSON files.
+│   │   ├── mock-service.js # utilities for mock API responses.
+│   │   └── web-client.js # base web/api client.
 │   ├── store/ # Redux.
-│   │   ├── actions/ # Actions.
-│   │   │   └── shared.js # Utilidades comunes para las Actions.
-│   │   ├── middleware/ # Middleware usando Redux Saga.
-│   │   │   ├── shared.js # Utilidades para sagas.
-│   │   │   └── logger.js # Saga logger.
-│   │   ├── reducers/ # Reducers.
-│   │   ├── defaults.js # Valores por defecto para las particiones.
-│   │   └── store.js # Inicializa el store con saga y reducers.
-│   ├── styles/ # Hojas de estilo CSS/SCSS.
-│   ├── rules/ # Reglas para ejecuciones de páginas o JS.
-│   │   ├── globals.js # Contiene variables globales.
-│   │   └── routes.js # Contiene las rutas para Router.jsx.
-│   ├── utils/ # Utilidades JS.
-│   ├── pages/ # Contiene las páginas.
-│   │   └── layouts # Layouts para las páginas.
-│   ├── App.jsx # Inicialización y configuración base.
-│   ├── Router.jsx # Se encarga del enrutamiento con React Router.
-│   └── index.js # Montaje de la aplicación React.
-├──.env-cmdrc.json # Variables de entorno.
-├──.eslintrc.json # Eslint para JS/React/Redux.
-├──.stylelintrc.json # Stylelint para CSS/SCSS.
-├──web.config # Web config para enrutamiento en Azure.
-├──webpack.config.js # Permite configuraciones de WebPack usando CRACO.
-└──azure-pipelines.yml # Pipeline de CiCD en Azure.
+│   │   ├── actions/
+│   │   │   └── shared.js # common base utilities.
+│   │   ├── middleware/ # with Redux Saga.
+│   │   │   ├── shared.js
+│   │   │   └── logger.js
+│   │   ├── reducers/
+│   │   ├── defaults.js # default stores values.
+│   │   └── store.js # initializer.
+│   ├── styles/ # CSS/SCSS.
+│   ├── utils/
+│   │   ├── libs/
+│   │   │   ├── interval.js # chronometer util.
+│   │   │   ├── object.js # generic object utilities.
+│   │   │   ├── rut.js # chilean Id (RUT/RUN) utils.
+│   │   │   ├── string.js # string utils using voca.
+│   │   │   ├── swal.js # SweetAlert2 wrapper.
+│   │   │   ├── time.js # time utils using date fns.
+│   │   │   ├── tippy.js # tooltip using Tippy.
+│   │   │   └── toast.js # toast using Toastify.
+│   │   ├── masks/ # inputs masks using imaskjs.
+│   │   ├── normalizers/
+│   │   └── validators/ # input validation using validate.js
+│   ├── App.jsx # app initializer.
+│   ├── Router.jsx # routes controller.
+│   └── index.js # app root mounting.
+├── package.json
+├── webpack.config.js # webpack config using CRACO.
+├── web.config # Azure routing config file.
+├── .env-cmdrc.json # environment variables.
+├── .eslintrc.json # eslint for JS/React/Redux.
+├── .stylelintrc.json # stylelint for CSS/SCSS/SASS.
+└── azure-pipelines.yml # Azure CI/CD pipeline.
 ```
 
-### Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
+## 3. Libraries
+
+- [env-cmd](https://github.com/toddbluhm/env-cmd) 10.1.0
+- [craco](https://github.com/gsoft-inc/craco) 5.6.4
+- [Redux-Saga](https://redux-saga.js.org/) 1.1.1
+- [react-use](https://github.com/streamich/react-use) 15.1.1
+- [MSAL](https://github.com/AzureAD/microsoft-authentication-library-for-js) 1.3.1
+- [Semantic UI React](https://react.semantic-ui.com/) 2.4
+- [Material Design Icons](https://materialdesignicons.com/) 5
+- [Material Design Icons Animations](https://l-lin.github.io/font-awesome-animation/) 0.30 (ported for MDI)
+- [DevExtreme](https://js.devexpress.com/Overview/React/) 20
+- [SweetAlert](https://sweetalert2.github.io/) 2
+- [Toastify](https://fkhadra.github.io/react-toastify/introduction)
+- [Tippy](https://atomiks.github.io/tippyjs/) 6.2.3
+- [date-fns](https://date-fns.org/docs/Getting-Started) 2.14.0
+- [Voca](https://vocajs.com/) 1.4.0
+- [validate.js](https://validatejs.org/) 0.13.1
+- [imaskjs](https://imask.js.org/) 6.0.5
+- [mathjs](https://mathjs.org/) 7.0.1
+- [mout](http://moutjs.com/docs/latest/) 1.2.2
+- [formik](https://jaredpalmer.com/formik) 2.1.4
+- [sass-mq](https://github.com/sass-mq/sass-mq) 5.0.1
+
+### **AUTHOR**: Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>

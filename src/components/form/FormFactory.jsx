@@ -31,6 +31,8 @@ const defInterceptor = (key, values, validations, config) =>
  * configuration and behavior, with UI ready for
  * showing errors and handle input events.
  *
+ * @see https://validatejs.org/
+ *
  * @export
  * @param {any} inputs inputs configuration.
  * @param {any} defaults default values for inputs.

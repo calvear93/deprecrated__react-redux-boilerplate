@@ -2,11 +2,13 @@
  * Exposes voca library with extra
  * features for process strings.
  *
+ * @see https://vocajs.com/
+ *
  * @summary Improved voca (string processing library) utility.
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:39:47
- * Last modified  : 2020-05-24 11:26:09
+ * Last modified  : 2020-05-31 17:01:58
  */
 
 import voca from 'voca';

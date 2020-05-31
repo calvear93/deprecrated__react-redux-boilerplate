@@ -1,11 +1,13 @@
 /**
  * Exposes different formatters for time.
  *
+ * @see https://date-fns.org/docs/
+ *
  * @summary Time utility.
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:37:10
- * Last modified  : 2020-05-31 14:30:23
+ * Last modified  : 2020-05-31 16:59:03
  */
 
 import { addMonths, addYears, differenceInCalendarDays, differenceInCalendarMonths, differenceInCalendarYears, format, formatDuration, isValid } from 'date-fns';
