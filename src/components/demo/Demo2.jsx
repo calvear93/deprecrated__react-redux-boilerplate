@@ -41,47 +41,6 @@ export default function Demo2()
     );
 }
 
-const datasets = {
-    assertion: [
-        {
-            value: 1,
-            label: 'yes'
-        },
-        {
-            value: 0,
-            label: 'no'
-        }
-    ],
-    city: [
-        {
-            value: 'santiago',
-            label: 'Santiago'
-        },
-        {
-            value: 'chillan',
-            label: 'Chillán'
-        },
-        {
-            value: 'san-carlos',
-            label: 'San Carlos'
-        }
-    ],
-    approval: [
-        {
-            value: -1,
-            label: 'In Disagreement'
-        },
-        {
-            value: 0,
-            label: 'Indifferent'
-        },
-        {
-            value: 1,
-            label: 'In Agreement'
-        }
-    ]
-};
-
 const inputs = [
     {
         key: 'group-1',
@@ -95,7 +54,7 @@ const inputs = [
         },
         config: {
             divider: true,
-            label: 'Main Formulary'
+            label: 'Demo Formulary'
         }
     },
     {
@@ -187,3 +146,44 @@ const inputs = [
     //     }
     // }
 ];
+
+const datasets = {
+    assertion: [
+        {
+            value: 1,
+            label: 'yes'
+        },
+        {
+            value: 0,
+            label: 'no'
+        }
+    ],
+    city: [
+        {
+            value: 'santiago',
+            label: 'Santiago'
+        },
+        {
+            value: 'chillan',
+            label: 'Chillán'
+        },
+        {
+            value: 'san-carlos',
+            label: 'San Carlos'
+        }
+    ],
+    approval: [
+        {
+            value: -1,
+            label: 'In Disagreement'
+        },
+        {
+            value: 0,
+            label: 'Indifferent'
+        },
+        {
+            value: 1,
+            label: 'In Agreement'
+        }
+    ]
+};

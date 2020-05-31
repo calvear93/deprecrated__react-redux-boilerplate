@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-24 10:56:49
- * Last modified  : 2020-05-24 10:57:57
+ * Last modified  : 2020-05-31 15:03:02
  */
 
 import IMask from 'imask';
@@ -34,6 +34,7 @@ const Mask = {
         ],
         dispatch(appended, dynamicMasked)
         {
+            console.log(appended);
             if (dynamicMasked.value.length > 4)
                 return dynamicMasked.currentMask;
 
