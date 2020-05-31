@@ -75,11 +75,11 @@ stages:
           customCommand: 'run build:$(environmentBuild)'
         displayName: 'Building project'
 
-      # - task: Npm@1
-      #   inputs:
-      #     command: 'custom'
-      #     customCommand: 'run postbuild'
-      #   displayName: 'Cleaning sourcemaps'
+      - task: Npm@1
+        inputs:
+          command: 'custom'
+          customCommand: 'run postbuild'
+        displayName: 'Cleaning sourcemaps'
 
       - task: CopyFiles@2
         inputs:
