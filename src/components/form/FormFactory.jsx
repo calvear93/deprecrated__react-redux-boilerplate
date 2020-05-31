@@ -5,6 +5,7 @@ import '../../styles/components/form/form-factory.scss';
 import { PhoneAdvancedMask } from '../../utils/masks';
 import validate from '../../utils/validators';
 import classNames from 'classnames';
+import { isEmpty } from '../../utils/libs/object';
 
 const inputs = [
     {
@@ -68,7 +69,12 @@ const validatorConfig = {
     format: 'grouped' // grouped (default), flat, detailed.
 };
 
-export default function FormFactory({ validateOnMount = false })
+const interceptor = (key, values, validations, config) =>
+{
+    return [ values, validations, config ];
+};
+
+export default function FormFactory({ validateOnMount = true })
 {
     // keeps base configuration memoized.
     const [ defaultConfig, defaultValues, validators ] = useInputs(inputs, defValues);
@@ -76,40 +82,51 @@ export default function FormFactory({ validateOnMount = false })
     const [ config, setConfig ] = useState(defaultConfig);
     const [ values, setValues ] = useState(defaultValues);
     const [ validations, setValidations ] = useState({});
+    const [ isValid, setIsValid ] = useState();
+    const [ changed, setChanged ] = useState({});
     const [ touched, setTouched ] = useState({});
 
     useEffect(() =>
     {
         if (validateOnMount)
-            setValidations(validate(values, validators, validatorConfig));
+        {
+            const updatedValidations = validate(values, validators, validatorConfig);
+            setValidations(updatedValidations);
+            setIsValid(isEmpty(updatedValidations));
+        }
     }, []);
 
     function handleChange(key, value)
     {
-        setValues({
-            ...values,
-            [key]: value
-        });
+        const inputValidations = validate.single(value, validators[key]);
 
-        setValidations({
-            ...validations,
-            [key]: validate.single(value, validators[key]) ?? null
-        });
+        if (inputValidations)
+            validations[key] = inputValidations;
+        else
+            delete validations[key];
 
-        setTouched({
-            ...touched,
+        const [ newValues, newValidations, newConfig ] = interceptor(
+            key,
+            { ...values, [key]: value },
+            { ...validations },
+            { ...config }
+        );
+
+        setValues(newValues);
+        setValidations(newValidations);
+        setConfig(newConfig);
+        setIsValid(isEmpty(newValidations));
+
+        setChanged({
+            ...changed,
             [key]: defaultValues[key] !== value
         });
 
-        setConfig({
-            ...config,
-            [key]: {
-                ...config[key]
-            }
+        !touched[key] && setTouched({
+            ...touched,
+            [key]: true
         });
     }
-
-    console.log(validations);
 
     return (
         <Row className='form-factory'>
@@ -118,7 +135,6 @@ export default function FormFactory({ validateOnMount = false })
                 {
                     const { onChangeSwitch, onChangeMapper, valueMapper } = behavior;
                     const { dataset, hidden, invisible, ...cfg } = config[key];
-                    const errors = validations[key];
 
                     return (
                         <Col key={ key } id={ `${key}-container` } { ...columns } { ...behavior.columns }
@@ -127,9 +143,10 @@ export default function FormFactory({ validateOnMount = false })
                                 {
                                     hidden, // display: none
                                     invisible, // visibility: hidden
-                                    touched: touched[key], // whether value is different from default.
-                                    success: errors === null,
-                                    error: errors
+                                    touched: touched[key], // whether value is changed once at least.
+                                    changed: changed[key], // whether value is different from default.
+                                    success: !validations[key],
+                                    error: validations[key] && touched[key]
                                 }
                             ) }
                         >
@@ -149,9 +166,9 @@ export default function FormFactory({ validateOnMount = false })
                                     { ...cfg }
                                 />
                             </Row>
-                            {errors && (
+                            {validations[key] && touched[key] && (
                                 <label className='form-item-error-label'>
-                                    {errors.join(', ')}
+                                    {validations[key].join(', ')}
                                 </label>
                             )}
                         </Col>
