@@ -5,25 +5,50 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:37:10
- * Last modified  : 2020-05-16 16:38:27
+ * Last modified  : 2020-05-31 14:30:23
  */
 
-import moment from 'moment';
+import { addMonths, addYears, differenceInCalendarDays, differenceInCalendarMonths, differenceInCalendarYears, format, formatDuration, isValid } from 'date-fns';
+import { es as locale } from 'date-fns/locale';
+
+const LOCALE = { locale };
+
+const MESSAGES = {
+    DATE_NO_VALID: 'Fecha No Válida',
+    PREFIX_DATE: '\'de\'',
+    PREFIX_TIME: '\'a las\''
+};
 
 const Time = {
     // Formats.
     FORMAT: {
-        DATE_FORMAT: 'DD/MM/YYYY',
+        DATE_FORMAT: 'dd/MM/yyyy',
         TIME_12H_FORMAT: 'h:mm:ss a',
         TIME_24H_FORMAT: 'HH:mm:ss',
-        NATURAL_DATE_FORMAT: 'dddd D [de] MMMM [de] YYYY',
-        NATURAL_DATETIME_FORMAT: 'dddd D [de] MMMM [de] YYYY  [a las]'
+        NATURAL_DATE_FORMAT: `cccc d ${MESSAGES.PREFIX_DATE} MMMM ${MESSAGES.PREFIX_DATE} yyyy`,
+        NATURAL_DATETIME_FORMAT: `cccc d ${MESSAGES.PREFIX_DATE} MMMM ${MESSAGES.PREFIX_DATE} yyyy ${MESSAGES.PREFIX_TIME}`
+    },
+
+    /**
+     * Parses a string date.
+     *
+     * @param {string} date date as string.
+     *
+     * @returns {Date} parsed datetime.
+     */
+    Parse(date)
+    {
+        if (typeof date === 'string')
+            date = new Date(date);
+
+        return isValid(date) ? date : MESSAGES.DATE_NO_VALID;
     },
 
     /**
      * Chooses time format.
      *
      * @param {bool} format24 time format type.
+     *
      * @returns {string} time format pattern.
      */
     TimeFormatChooser(format24 = true)
@@ -35,13 +60,15 @@ const Time = {
      * Date formatting.
      *
      * @param {string} date date string.
+     *
      * @returns {string} formatted date.
      */
     Date(date)
     {
-        const d = moment(date);
+        if (typeof date === 'string')
+            date = new Date(date);
 
-        return d.isValid() ? d.format(Time.FORMAT.DATE_FORMAT) : '-';
+        return isValid(date) ? format(date, Time.FORMAT.DATE_FORMAT) : MESSAGES.DATE_NO_VALID;
     },
 
     /**
@@ -49,13 +76,15 @@ const Time = {
      *
      * @param {string} date datetime string.
      * @param {bool} format24 time format type.
+     *
      * @returns {string} formatted datetime.
      */
     DateTime(date, format24 = true)
     {
-        let dt = moment(date);
+        if (typeof date === 'string')
+            date = new Date(date);
 
-        return dt.isValid() ? dt.format(`${Time.FORMAT.DATE_FORMAT} ${Time.TimeFormatChooser(format24)}`) : '-';
+        return isValid(date) ? format(date, `${Time.FORMAT.DATE_FORMAT} ${Time.TimeFormatChooser(format24)}`) : MESSAGES.DATE_NO_VALID;
     },
 
     /**
@@ -63,24 +92,30 @@ const Time = {
      *
      * @param {string} date datetime string.
      * @param {bool} format24 time format type.
+     *
      * @returns {string} formatted time.
      */
     Time(date, format24 = true)
     {
-        let dt = moment(date);
+        if (typeof date === 'string')
+            date = new Date(date);
 
-        return dt.isValid() ? dt.format(Time.TimeFormatChooser(format24)) : '-';
+        return isValid(date) ? format(date, `${Time.TimeFormatChooser(format24)}`) : MESSAGES.DATE_NO_VALID;
     },
 
     /**
      * Spanish natural readable formatting for date.
      *
      * @param {string} date string date.
+     *
      * @returns {string} natural date.
      */
     NaturalDate(date)
     {
-        return moment(date).format(Time.FORMAT.NATURAL_DATETIME_FORMAT);
+        if (typeof date === 'string')
+            date = new Date(date);
+
+        return format(date, Time.FORMAT.NATURAL_DATE_FORMAT, LOCALE);
     },
 
     /**
@@ -88,47 +123,45 @@ const Time = {
      *
      * @param {string} date string date.
      * @param {bool} format24 time format type.
+     *
      * @returns {string} natural datetime.
      */
     NaturalDateTime(date, format24 = true)
     {
-        return moment(date).format(`${Time.FORMAT.NATURAL_DATETIME_FORMAT} ${Time.TimeFormatChooser(format24)}`);
+        if (typeof date === 'string')
+            date = new Date(date);
+
+        return format(date, `${Time.FORMAT.NATURAL_DATETIME_FORMAT} ${Time.TimeFormatChooser(format24)}`, LOCALE);
     },
 
     /**
      * Calculates age string representation in spanish from a date.
      *
-     * @param {*} str string date.
-     * @param {boolean} full whether includes days.
+     * @param {*} date date.
+     * @param {boolean} showDays whether includes days.
+     *
      * @returns {string} age from date
      */
-    AgeByBirth(str, full = false)
+    AgeByBirth(date, showDays = true)
     {
-        let today = moment();
-        let date = moment(str, Time.FORMAT.DATE_FORMAT);
+        if (typeof date === 'string')
+            date = new Date(date);
 
-        const years = today.diff(date, 'year');
-        date.add(years, 'years');
+        let today = new Date();
 
-        if (years > 120)
-            return 'Fecha No Válida';
+        const years = differenceInCalendarYears(today, date);
+        date = addYears(date, years);
 
-        const months = today.diff(date, 'months');
-        date.add(months, 'months');
+        const months = differenceInCalendarMonths(today, date);
+        date = addMonths(date, months);
 
-        let days = today.diff(date, 'days');
+        let days = differenceInCalendarDays(today, date);
 
-        if (full)
-        {
-            return (years > 0 ? years + ' año' + (years > 1 ? 's' : '') : '')
-                + (months > 0 ? (years > 0 ? (days > 0 ? ', ' : ' y ') : '') + months + ' mes' + (months > 1 ? 'es' : '') : '')
-                + (days > 0 ? (years > 0 || months > 0 ? ' y ' : '') + days + ' día' + (days > 1 ? 's.' : '.') : '');
-        }
-        else
-        {
-            return (years > 0 ? years + ' año' + (years > 1 ? 's' : '') : '')
-                + (months > 0 ? (years > 0 ? ' y ' : '') + months + ' mes' + (months > 1 ? 'es' : '') : '');
-        }
+        return formatDuration({
+            years,
+            months,
+            days: showDays && days
+        }, LOCALE);
     }
 };
 

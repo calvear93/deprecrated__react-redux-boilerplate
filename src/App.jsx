@@ -5,7 +5,6 @@ import { ToastContainer } from 'react-toastify';
 import { AzureActiveDirectoryProvider, AzureActiveDirectorySecurityMode, IsAuthEnabled } from './services/auth';
 import store from './store/store';
 import Router from './Router';
-import 'moment/locale/es-us';
 import { loadMessages, locale } from 'devextreme/localization';
 import esMessages from 'devextreme/localization/messages/es';
 import './styles/App.scss';
