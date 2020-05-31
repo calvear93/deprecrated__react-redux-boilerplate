@@ -1,135 +1,128 @@
-import React, { useState, useMemo, useEffect } from 'react';
-import { SEPARATOR, INPUT, RADIO_GROUP } from './inputs';
-import { Row, Col } from 'react-flexbox-grid';
-import '../../styles/components/form/form-factory.scss';
-import { PhoneAdvancedMask } from '../../utils/masks';
-import validate from '../../utils/validators';
 import classNames from 'classnames';
+import React, { useEffect, useState } from 'react';
+import { Col, Row } from 'react-flexbox-grid';
 import { isEmpty } from '../../utils/libs/object';
+import validate from '../../utils/validators';
+import Loader from '../Loader';
+import '../../styles/components/form/form-factory.scss';
 
-const inputs = [
-    {
-        key: 'Test',
-        label: 'Phone',
-        behavior: {
-            ...INPUT
-        },
-        config: {
-            mask: PhoneAdvancedMask,
-            placeholder: 'adassdfs'
-        },
-        validators: {
-            required: true,
-            phone: true
-        }
-    },
-    {
-        behavior: {
-            ...SEPARATOR,
-            columns: {
-                xs: 12,
-                md: 12,
-                lg: 12
-            }
-        },
-        config: {
-            divider: true,
-            label: 'Derivar Agendamiento'
-        }
-    },
-    {
-        key: 'Prevision',
-        label: '¿Tipo de previsión de salud?',
-        behavior: {
-            ...RADIO_GROUP
-        },
-        config: {
-            dataset: 'test',
-            clearable: true
-        },
-        validators: {
-            required: true
-        }
-    }
-];
-
-// defines grid columns.
+// defines flex-box default columns.
 const columns = {
     xs: 6,
     md: 6,
     lg: 4
 };
 
-let defValues = {};
-const datasets = {
-    test: [
-        {
-            value: 1,
-            label: 'yeah'
-        },
-        {
-            value: 0,
-            label: 'nouh'
-        },
-        {
-            value: 3,
-            label: 'gut'
-        }
-    ]
-};
-
+// default validator config.
 const validatorConfig = {
     fullMessages: false,
     format: 'grouped' // grouped (default), flat, detailed.
 };
 
-const interceptor = (key, values, validations, config) =>
+// default onChange interceptor.
+const defInterceptor = (key, values, validations, config) =>
 {
     return [ values, validations, config ];
 };
 
-export default function FormFactory({ validateOnMount = true })
+/**
+ * This components is a generic utility for render
+ * formulary with a huge control over each input
+ * configuration and behavior, with UI ready for
+ * showing errors and handle input events.
+ *
+ * @export
+ * @param {any} inputs inputs configuration.
+ * @param {any} defaults default values for inputs.
+ * @param {any} datasets datasets for use in options inputs.
+ * @param {func} interceptor functions for intercepts values and validations on change.
+ * @param {func} onChange callback triggered on every input change.
+ *  Receives (key: key of changed input, values: current values,
+ *  validations: current input validations, isValid: whether form is valid)
+ * @param {any} loading whether form should shows loading indicator.
+ * @param {any} validateOnMount whether validation is executed on mounting.
+ *
+ * @returns {JSX} form factory.
+ */
+export default function FormFactory({
+    inputs,
+    defaults = {},
+    datasets = {},
+    interceptor = defInterceptor,
+    onChange,
+    loading,
+    validateOnMount = true
+})
 {
     // keeps base configuration memoized.
-    const [ defaultConfig, defaultValues, validators ] = useInputs(inputs, defValues);
+    const [ defaultConfig, defaultValues, validators ] = useInputs(inputs, defaults);
 
+    // inputs config, may be changed by interceptor.
     const [ config, setConfig ] = useState(defaultConfig);
+    // current input values.
     const [ values, setValues ] = useState(defaultValues);
+    // inputs validations.
     const [ validations, setValidations ] = useState({});
-    const [ isValid, setIsValid ] = useState();
+    // whether inputs are changed from it's default value.
     const [ changed, setChanged ] = useState({});
+    // whether inputs are changed once at least.
     const [ touched, setTouched ] = useState({});
 
+    // initial validation.
     useEffect(() =>
     {
         if (validateOnMount)
-        {
-            const updatedValidations = validate(values, validators, validatorConfig);
-            setValidations(updatedValidations);
-            setIsValid(isEmpty(updatedValidations));
-        }
+            setValidations(validate(values, validators, validatorConfig));
     }, []);
 
-    function handleChange(key, value)
+    /**
+     * Updates validations from a
+     * single value changing.
+     *
+     * @param {string} key key of input changed.
+     * @param {any} value value.
+     *
+     * @returns {any} validations.
+     */
+    function updateValidationFor(key, value)
     {
-        const inputValidations = validate.single(value, validators[key]);
+        validations[key] = validate.single(value, validators[key]);
 
-        if (inputValidations)
-            validations[key] = inputValidations;
-        else
+        if (!validations[key])
             delete validations[key];
 
+        return validations;
+    }
+
+    /**
+     * Handles on input change
+     * event for updates values
+     * and validates inputs.
+     *
+     * @param {string} key key of input changed.
+     * @param {any} value value.
+     */
+    function handleChange(key, value)
+    {
+        // changes values and validations on demand.
         const [ newValues, newValidations, newConfig ] = interceptor(
             key,
             { ...values, [key]: value },
-            { ...validations },
+            { ...updateValidationFor(key, value) },
             { ...config }
         );
+
+        // on change callback.
+        onChange && onChange({
+            key,
+            values: newValues,
+            validations: newValidations,
+            isValid: isEmpty(newValidations)
+        });
 
         setValues(newValues);
         setValidations(newValidations);
         setConfig(newConfig);
-        setIsValid(isEmpty(newValidations));
 
         setChanged({
             ...changed,
@@ -142,10 +135,18 @@ export default function FormFactory({ validateOnMount = true })
         });
     }
 
+    // renders loading indicator.
+    if (loading)
+    {
+        return (
+            <Loader message='Initializing Formulary' absolute={ false } />
+        );
+    }
+
     return (
         <Row className='form-factory'>
             {
-                inputs.map(({ key, label, behavior, validators }, index) =>
+                inputs.map(({ key, label, behavior, validators }) =>
                 {
                     const { onChangeSwitch, onChangeMapper, valueMapper } = behavior;
                     const { dataset, hidden, invisible, ...cfg } = config[key];
@@ -153,7 +154,7 @@ export default function FormFactory({ validateOnMount = true })
                     if (behavior.divider)
                     {
                         return (
-                            <Col key={ `${index}-divider` } className='form-separator-container' { ...columns } { ...behavior.columns }>
+                            <Col key={ key } className='form-separator-container' { ...columns } { ...behavior.columns }>
                                 <Row className='form-item'>
                                     <behavior.Input { ...cfg } />
                                 </Row>
@@ -220,10 +221,14 @@ function useInputs(inputs, defValues)
             const key = input.key;
             // inputs config.
             data[0][key] = input.config;
-            // default values.
-            data[1][key] = defValues[key] ?? input.behavior.defaultValue;
-            // validators.
-            data[2][key] = input.validators;
+
+            if (!input.behavior.divider)
+            {
+                // default values.
+                data[1][key] = defValues[key] ?? input.behavior.defaultValue;
+                // validators.
+                data[2][key] = input.validators;
+            }
 
             return data;
         }, [ {}, {}, {} ])
