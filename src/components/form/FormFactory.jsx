@@ -8,7 +8,7 @@ import '../../styles/components/form/form-factory.scss';
 
 // defines flex-box default columns.
 const columns = {
-    xs: 6,
+    xs: 12,
     md: 6,
     lg: 4
 };
