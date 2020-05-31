@@ -41,6 +41,11 @@
                 margin-bottom: 0;
                 width: 100%;
             }
+
+            .ui.multiple.dropdown > .label {
+                margin: .3em .2em;
+                width: auto;
+            }
         }
 
         .form-item-error-label {

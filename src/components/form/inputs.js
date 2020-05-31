@@ -13,7 +13,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-30 17:01:45
- * Last modified  : 2020-05-30 17:07:11
+ * Last modified  : 2020-05-31 15:50:00
  */
 
 import { DateBox } from 'devextreme-react';
@@ -57,6 +57,15 @@ export const SELECT = {
     valueMapper: (value) => ({ value }),
     optionsMapper: (dataset, key) => ({ options: dataset[key] }),
     defaultValue: ''
+};
+
+export const SELECT_MULTIPLE = {
+    Input: Select,
+    onChangeSwitch: (func) => ({ onChange: func }),
+    onChangeMapper: (key, receptor) => (_, { id, value }) => receptor(key, value),
+    valueMapper: (value) => ({ value }),
+    optionsMapper: (dataset, key) => ({ options: dataset[key] }),
+    defaultValue: []
 };
 
 export const DATE_PICKER = {
