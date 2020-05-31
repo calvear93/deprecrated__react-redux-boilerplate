@@ -9,8 +9,6 @@ import FormFactory from '../form/FormFactory';
 export default function Demo2()
 {
     return (
-        <FormFactory>
-            <label>hola</label>
-        </FormFactory>
+        <FormFactory />
     );
 }

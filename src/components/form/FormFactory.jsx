@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { INPUT, RADIO_GROUP } from './inputs';
+import { SEPARATOR, INPUT, RADIO_GROUP } from './inputs';
 import { Row, Col } from 'react-flexbox-grid';
 import '../../styles/components/form/form-factory.scss';
 import { PhoneAdvancedMask } from '../../utils/masks';
@@ -21,6 +21,20 @@ const inputs = [
         validators: {
             required: true,
             phone: true
+        }
+    },
+    {
+        behavior: {
+            ...SEPARATOR,
+            columns: {
+                xs: 12,
+                md: 12,
+                lg: 12
+            }
+        },
+        config: {
+            divider: true,
+            label: 'Derivar Agendamiento'
         }
     },
     {
@@ -131,10 +145,21 @@ export default function FormFactory({ validateOnMount = true })
     return (
         <Row className='form-factory'>
             {
-                inputs.map(({ key, label, behavior, validators }) =>
+                inputs.map(({ key, label, behavior, validators }, index) =>
                 {
                     const { onChangeSwitch, onChangeMapper, valueMapper } = behavior;
                     const { dataset, hidden, invisible, ...cfg } = config[key];
+
+                    if (behavior.divider)
+                    {
+                        return (
+                            <Col key={ `${index}-divider` } className='form-separator-container' { ...columns } { ...behavior.columns }>
+                                <Row className='form-item'>
+                                    <behavior.Input { ...cfg } />
+                                </Row>
+                            </Col>
+                        );
+                    }
 
                     return (
                         <Col key={ key } id={ `${key}-container` } { ...columns } { ...behavior.columns }
