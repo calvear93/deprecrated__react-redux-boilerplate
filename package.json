@@ -77,7 +77,7 @@
     "build:qa": "env-cmd -e default,build,qa craco build",
     "build:production": "env-cmd -e default,build,production craco build",
     "lint": "eslint --fix --ext .js,.jsx ./src",
-    "postbuild": "rimraf build/static/js/*.map",
+    "postbuild": "rimraf build/static/**/*.map",
     "packages:update": "npm update --save/--save-dev",
     "packages:update-force": "npm update --save/--save-dev -f"
   },
