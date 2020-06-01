@@ -6,7 +6,7 @@ import { AzureActiveDirectoryProvider, AzureActiveDirectorySecurityMode, IsAuthE
 import store from './store/store';
 import Router from './Router';
 import { loadMessages, locale } from 'devextreme/localization';
-import esMessages from 'devextreme/localization/messages/es';
+import localeMessages from 'devextreme/localization/messages/en';
 import './styles/App.scss';
 
 /**
@@ -23,7 +23,7 @@ export default function App()
     useEffect(() =>
     {
         // DevExpress localization.
-        loadMessages(esMessages);
+        loadMessages(localeMessages);
         locale(navigator.language);
     }, []);
 
