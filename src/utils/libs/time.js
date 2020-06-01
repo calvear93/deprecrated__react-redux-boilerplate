@@ -7,7 +7,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:37:10
- * Last modified  : 2020-05-31 16:59:03
+ * Last modified  : 2020-05-31 21:18:24
  */
 
 import { addMonths, addYears, differenceInCalendarDays, differenceInCalendarMonths, differenceInCalendarYears, format, formatDuration, isValid } from 'date-fns';
@@ -16,9 +16,9 @@ import { es as locale } from 'date-fns/locale';
 const LOCALE = { locale };
 
 const MESSAGES = {
-    DATE_NO_VALID: 'Fecha No Válida',
-    PREFIX_DATE: '\'de\'',
-    PREFIX_TIME: '\'a las\''
+    DATE_NO_VALID: 'Date No Valid',
+    PREFIX_DATE: '\', \'',
+    PREFIX_TIME: '\', at \''
 };
 
 const Time = {
@@ -27,8 +27,8 @@ const Time = {
         DATE_FORMAT: 'dd/MM/yyyy',
         TIME_12H_FORMAT: 'h:mm:ss a',
         TIME_24H_FORMAT: 'HH:mm:ss',
-        NATURAL_DATE_FORMAT: `cccc d ${MESSAGES.PREFIX_DATE} MMMM ${MESSAGES.PREFIX_DATE} yyyy`,
-        NATURAL_DATETIME_FORMAT: `cccc d ${MESSAGES.PREFIX_DATE} MMMM ${MESSAGES.PREFIX_DATE} yyyy ${MESSAGES.PREFIX_TIME}`
+        NATURAL_DATE_FORMAT: `cccc${MESSAGES.PREFIX_DATE}d MMMM yyyy`,
+        NATURAL_DATETIME_FORMAT: `cccc${MESSAGES.PREFIX_DATE}d MMMM yyyy${MESSAGES.PREFIX_TIME}`
     },
 
     /**
@@ -133,7 +133,7 @@ const Time = {
         if (typeof date === 'string')
             date = new Date(date);
 
-        return format(date, `${Time.FORMAT.NATURAL_DATETIME_FORMAT} ${Time.TimeFormatChooser(format24)}`, LOCALE);
+        return format(date, `${Time.FORMAT.NATURAL_DATETIME_FORMAT}${Time.TimeFormatChooser(format24)}`, LOCALE);
     },
 
     /**
