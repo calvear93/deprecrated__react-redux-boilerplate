@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-23 19:53:33
- * Last modified  : 2020-05-29 17:25:12
+ * Last modified  : 2020-06-01 19:18:24
  */
 
 import axios from 'axios';
@@ -39,18 +39,23 @@ export default {
      * @param {bool} force forces to login.
      * @param {func} onSuccess on authorized.
      * @param {func} onError on unauthorized.
-
-     @returns {bool} true if is authenticated, false if login is in progress.
+     * @param {bool} redirectToMain whether redirect to hostname.
+     *
+     * @returns {bool} true if is authenticated, false if login is in progress.
      */
     login({
         scopes = DEFAULT_SCOPES,
         force = false,
         onSuccess,
-        onError
+        onError,
+        redirectToMain = false
     } = {})
     {
         if (force || !AuthenticationContext.getAccount())
         {
+            if (!redirectToMain)
+                AuthenticationContext.config.auth.redirectUri = window.location.href;
+
             // authentication process callback.
             AuthenticationContext.handleRedirectCallback((error, response) =>
             {
@@ -81,21 +86,24 @@ export default {
      *
      * @param {array} scopes permission scopes.
      * @param {bool} force forces to login.
-     * @param {func} onSuccess on authorized.
-     * @param {func} onError on unauthorized.
-
-     @returns {bool} account data if is authenticated, error on failure.
+     * @param {bool} redirectToMain whether redirect to hostname.
+     *
+     * @returns {bool} account data if is authenticated, error on failure.
      */
     loginAsync({
         scopes = DEFAULT_SCOPES,
-        force = false
+        force = false,
+        redirectToMain = false
     } = {})
     {
         return new Promise((resolve, reject) =>
         {
             if (force || !AuthenticationContext.getAccount())
             {
-            // authentication process callback.
+                if (!redirectToMain)
+                    AuthenticationContext.config.auth.redirectUri = window.location.href;
+
+                // authentication process callback.
                 AuthenticationContext.handleRedirectCallback((error, response) =>
                 {
                     if (response)
