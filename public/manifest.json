@@ -1,6 +1,6 @@
 {
-  "short_name": "Transbank WebPay",
-  "name": "Asociación Chilena de Seguridad - Transbank WebPay",
+  "short_name": "React Boilerplate",
+  "name": "React + Redux SPA Boilerplate",
   "icons": [
     {
       "src": "favicon.ico",
