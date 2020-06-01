@@ -84,7 +84,7 @@ export default function FormFactory({
                 isValid: isEmpty(newValidations)
             });
 
-            setValidations(newValidations);
+            setValidations(newValidations ?? {});
         }
     }, []);
 
