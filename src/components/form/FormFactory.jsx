@@ -74,7 +74,18 @@ export default function FormFactory({
     useEffect(() =>
     {
         if (validateOnMount)
-            setValidations(validate(values, validators, validatorConfig));
+        {
+            const newValidations = validate(values, validators, validatorConfig);
+
+            // on change callback.
+            onChange && onChange({
+                values,
+                validations: newValidations,
+                isValid: isEmpty(newValidations)
+            });
+
+            setValidations(newValidations);
+        }
     }, []);
 
     /**
