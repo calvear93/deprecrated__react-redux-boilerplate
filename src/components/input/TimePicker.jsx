@@ -87,7 +87,7 @@ export default function TimePicker({
                                         className='time-picker-clear'
                                         name='x'
                                         link
-                                        title='Limpiar'
+                                        title='Clear'
                                         onClick={ onClear }
                                     />
                                 )}

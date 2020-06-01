@@ -63,7 +63,7 @@ export default function CheckBox({ id, group, options, onChange, checked = [], m
                     className='checkbox-clear'
                     name='x'
                     link
-                    title='Limpiar'
+                    title='Clear'
                     onClick={ onClear }
                 />
             )}
