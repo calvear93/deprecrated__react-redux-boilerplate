@@ -7,11 +7,11 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:37:10
- * Last modified  : 2020-05-31 21:18:24
+ * Last modified  : 2020-05-31 21:20:16
  */
 
 import { addMonths, addYears, differenceInCalendarDays, differenceInCalendarMonths, differenceInCalendarYears, format, formatDuration, isValid } from 'date-fns';
-import { es as locale } from 'date-fns/locale';
+import { en as locale } from 'date-fns/locale';
 
 const LOCALE = { locale };
 
