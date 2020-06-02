@@ -32,6 +32,7 @@ export default function App()
             <Provider store={ store }>
                 <AzureActiveDirectoryProvider
                     enabled={ IsAuthEnabled }
+                    mode={ AzureActiveDirectorySecurityMode.WHITELIST }
                     errorRoute='/401'
                 >
                     <Router />
