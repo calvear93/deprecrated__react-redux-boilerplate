@@ -48,6 +48,7 @@
     "semantic-ui-sass": "^2.4.2",
     "sweetalert2": "^9.10.13",
     "sweetalert2-react-content": "^3.0.1",
+    "swr": "^0.2.2",
     "tippy.js": "^6.2.3",
     "use-debounce": "^3.4.2",
     "uuid": "^8.0.0",
