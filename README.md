@@ -91,6 +91,7 @@ Project uses **npm scripts** for eases execution and building.
 - [craco](https://github.com/gsoft-inc/craco) 5.6.4
 - [Redux-Saga](https://redux-saga.js.org/) 1.1.1
 - [react-use](https://github.com/streamich/react-use) 15.1.1
+- [SWR](https://github.com/vercel/swr) 0.2.2
 - [MSAL](https://github.com/AzureAD/microsoft-authentication-library-for-js) 1.3.1
 - [Semantic UI React](https://react.semantic-ui.com/) 2.4
 - [Material Design Icons](https://materialdesignicons.com/) 5
