@@ -5,8 +5,11 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-30 14:57:47
- * Last modified  : 2020-05-30 15:45:08
+ * Last modified  : 2020-06-03 14:12:15
  */
+
+//  const REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+const REGEX = /^([^@]+?)@(([a-z0-9]-*)*[a-z0-9]+\.)+([a-z0-9]+)$/i;
 
 /**
  * Validates current value email format.
@@ -26,7 +29,7 @@ export default function(value, { message }, attributeName, values, { fullMessage
     if (!value)
         return null;
 
-    const isValid = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+    const isValid = REGEX
         .test(value);
 
     if (isValid)
