@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-23 19:53:33
- * Last modified  : 2020-06-01 19:18:24
+ * Last modified  : 2020-06-05 09:31:20
  */
 
 import axios from 'axios';
@@ -203,6 +203,8 @@ export const Graph = {
     {
         return new Promise((resolve, reject) =>
         {
+            AuthenticationContext.config.auth.redirectUri = window.location.origin;
+
             AuthenticationContext.acquireTokenSilent({ scopes: DEFAULT_SCOPES })
                 .then(response =>
                 {
