@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-23 19:53:33
- * Last modified  : 2020-06-05 19:30:52
+ * Last modified  : 2020-06-05 19:50:24
  */
 
 import axios from 'axios';
@@ -13,7 +13,7 @@ import AuthenticationContext, { DEFAULT_SCOPES } from './aad-context';
 import AADTypes from './aad-types';
 
 // Graph API helper.
-export const Graph = {
+const Graph = {
     // Graph API base URL.
     URL: `${AADTypes.RESOURCES.MICROSOFT_GRAPH}v1.0/`,
 
@@ -85,10 +85,13 @@ export const Graph = {
     /**
      * User photo with specified width.
      *
+     * Available sizes are: 48x48, 64x64, 96x96, 120x120,
+     * 240x240, 360x360, 432x432, 504x504 and 648x648.
+     *
      * @param {string} size photo size.
      * @returns {string} base64 string from user photo.
      */
-    photoWithSize(size = '640x640')
+    photoWithSize(size = '648x648')
     {
         return new Promise((resolve, reject) =>
         {
@@ -106,3 +109,5 @@ export const Graph = {
         });
     }
 };
+
+export default Graph;

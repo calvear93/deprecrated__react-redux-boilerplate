@@ -18,7 +18,7 @@ function* authenticate()
         // gets user detailed info.
         const [ user, photo ] = yield all([
             storage.get('user') || call(Graph.me),
-            storage.get('photo') || call(Graph.photo)
+            storage.get('photo') || call(Graph.photoWithSize, process.env.REACT_APP_AAD_USER_PHOTO_SIZE)
         ]);
 
         // success.
