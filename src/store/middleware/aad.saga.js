@@ -5,13 +5,15 @@ import { AzureActiveDirectoryAction } from '../actions';
 
 /**
  * Executes azure active directory authentication.
+ *
+ * @param {string} type login type (redirect or popup).
  */
-function* authenticate()
+function* authenticate({ payload: { type } })
 {
     try
     {
         // calls azure MSAL authentication service.
-        const account = yield call(AuthenticationService.loginAsync);
+        const account = yield call(AuthenticationService.loginAsync, { type });
         // initializes the storage.
         const storage = Storage.initNamespaceStorage(account.accountIdentifier)[AzureActiveDirectoryAction.Persistence.Type];
 

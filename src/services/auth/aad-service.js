@@ -5,11 +5,12 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-23 19:53:33
- * Last modified  : 2020-06-05 20:29:17
+ * Last modified  : 2020-06-06 11:33:33
  */
 
 import { DEFAULT_SCOPES } from './aad-cfg';
 import AuthenticationContext from './aad-context';
+import AADTypes from './aad-types';
 
 export default {
 
@@ -32,27 +33,24 @@ export default {
      * Redirect to Microsoft AD login if user isn't authenticated.
      * On finishing, redirect to redirectUri.
      *
+     * @param {array} type login type (redirect or popup).
      * @param {array} scopes permission scopes.
      * @param {bool} force forces to login.
      * @param {func} onSuccess on authorized.
      * @param {func} onError on unauthorized.
-     * @param {bool} redirectToMain whether redirect to hostname.
      *
      * @returns {bool} true if is authenticated, false if login is in progress.
      */
     login({
+        type = AADTypes.LOGIN_TYPE.REDIRECT,
         scopes = DEFAULT_SCOPES,
         force = false,
         onSuccess,
-        onError,
-        redirectToMain = false
+        onError
     } = {})
     {
         if (force || !AuthenticationContext.getAccount())
         {
-            if (!redirectToMain)
-                AuthenticationContext.config.auth.redirectUri = window.location.href;
-
             // authentication process callback.
             AuthenticationContext.handleRedirectCallback((error, response) =>
             {
@@ -62,7 +60,7 @@ export default {
                     onError && onError(error);
             });
             // redirect method login.
-            AuthenticationContext.loginRedirect({
+            AuthenticationContext[type]({
                 scopes,
                 forceRefresh: false
             });
@@ -81,25 +79,22 @@ export default {
      * Redirect to Microsoft AD login if user isn't authenticated.
      * On finishing, redirect to redirectUri.
      *
+     * @param {array} type login type (redirect or popup).
      * @param {array} scopes permission scopes.
      * @param {bool} force forces to login.
-     * @param {bool} redirectToMain whether redirect to hostname.
      *
      * @returns {bool} account data if is authenticated, error on failure.
      */
     loginAsync({
+        type = AADTypes.LOGIN_TYPE.REDIRECT,
         scopes = DEFAULT_SCOPES,
-        force = false,
-        redirectToMain = false
+        force = false
     } = {})
     {
         return new Promise((resolve, reject) =>
         {
             if (force || !AuthenticationContext.getAccount())
             {
-                if (!redirectToMain)
-                    AuthenticationContext.config.auth.redirectUri = window.location.href;
-
                 // authentication process callback.
                 AuthenticationContext.handleRedirectCallback((error, response) =>
                 {
@@ -109,7 +104,7 @@ export default {
                         reject(error);
                 });
                 // redirect method login.
-                AuthenticationContext.loginRedirect({
+                AuthenticationContext[type]({
                     scopes,
                     forceRefresh: false
                 });

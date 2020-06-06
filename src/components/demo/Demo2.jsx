@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import SampleForm from '../form/SampleForm';
+import { Button } from 'semantic-ui-react';
+import { useDispatch } from 'react-redux';
+import { AzureActiveDirectoryAction } from '../../store/actions';
+import AADTypes from '../../services/auth/aad-types';
 
 /**
  * Main page.
@@ -8,6 +12,7 @@ import SampleForm from '../form/SampleForm';
  */
 export default function Demo2()
 {
+    const dispatch = useDispatch();
     const [ values, setValues ] = useState({});
 
     function onChange({ key, values, validations, isValid })
@@ -16,7 +21,21 @@ export default function Demo2()
         setValues(values);
     }
 
+    function Logout()
+    {
+        dispatch(AzureActiveDirectoryAction.Action(AzureActiveDirectoryAction.Type.LOGOUT));
+    }
+
+    function Login()
+    {
+        dispatch(AzureActiveDirectoryAction.Action(AzureActiveDirectoryAction.Type.AUTHENTICATE));
+    }
+
     return (
-        <SampleForm />
+        <>
+            <SampleForm />
+            {/* <Button color='primary' onClick={ Logout }>Sign Out</Button> */}
+            {/* <Button color='green' onClick={ Login }>Login</Button> */}
+        </>
     );
 }

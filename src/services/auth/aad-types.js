@@ -5,12 +5,12 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-23 19:54:31
- * Last modified  : 2020-05-29 17:24:18
+ * Last modified  : 2020-06-06 11:18:25
  */
 
 export default {
     // Login types.
-    LOGIN: {
+    LOGIN_TYPE: {
         REDIRECT: 'loginRedirect',
         POPUP: 'loginPopup'
     },
