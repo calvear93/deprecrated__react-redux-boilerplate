@@ -7,12 +7,26 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-04-15 19:51:39
- * Last modified  : 2020-05-29 16:26:31
+ * Last modified  : 2020-06-06 10:44:29
  */
 
 import AADTypes from './aad-types';
 
-const tokenRefreshPeriod = parseInt(process.env.REACT_APP_AAD_TOKEN_RENEWAL_OFFSET_SECONDS);
+// offset needed to renew the token before expiry.
+const TOKEN_REFRESH_PERIOD = parseInt(process.env.REACT_APP_AAD_TOKEN_RENEWAL_OFFSET_SECONDS);
+
+// default permission scopes for authentication.
+export const DEFAULT_SCOPES = [ AADTypes.SCOPES.USER.READ ];
+
+// login redirect URL.
+export const LOGIN_ACTION_REDIRECT = process.env.REACT_APP_AAD_LOGIN_ACTION_REDIRECT !== 'null'
+    ? `${window.location.origin}${process.env.REACT_APP_AAD_LOGIN_ACTION_REDIRECT}`
+    : window.location.origin;
+
+// logout redirect URL.
+export const LOGOUT_ACTION_REDIRECT = process.env.REACT_APP_AAD_LOGOUT_ACTION_REDIRECT !== 'null'
+    ? `${window.location.origin}${process.env.REACT_APP_AAD_LOGOUT_ACTION_REDIRECT}`
+    : window.location.origin;
 
 /**
  *  - clientId                    - Client ID of your app registered with our Application registration portal : https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredAppsPreview in Microsoft Identity Platform
@@ -28,8 +42,8 @@ const auth = {
     // https://docs.microsoft.com/en-us/azure/active-directory/develop/msal-client-application-configuration
     authority: `https://login.microsoftonline.com/${process.env.REACT_APP_AAD_TENANT_ID}`,
     validateAuthority: false,
-    redirectUri: window.location.origin,
-    postLogoutRedirectUri: window.location.origin,
+    redirectUri: LOGIN_ACTION_REDIRECT,
+    postLogoutRedirectUri: LOGOUT_ACTION_REDIRECT,
     navigateToLoginRequestUrl: false
 };
 
@@ -41,7 +55,7 @@ const auth = {
  */
 const cache = {
     cacheLocation: AADTypes.CACHE.LOCAL_STORAGE,
-    storeAuthStateInCookie: true
+    storeAuthStateInCookie: false
 };
 
 /**
@@ -54,7 +68,7 @@ const cache = {
  */
 const system = {
     loadFrameTimeout: 6000,
-    tokenRenewalOffsetSeconds: tokenRefreshPeriod,
+    tokenRenewalOffsetSeconds: TOKEN_REFRESH_PERIOD,
     navigateFrameWait: 500
 };
 

@@ -5,10 +5,11 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-23 19:53:33
- * Last modified  : 2020-06-05 19:29:38
+ * Last modified  : 2020-06-05 20:29:17
  */
 
-import AuthenticationContext, { DEFAULT_SCOPES } from './aad-context';
+import { DEFAULT_SCOPES } from './aad-cfg';
+import AuthenticationContext from './aad-context';
 
 export default {
 

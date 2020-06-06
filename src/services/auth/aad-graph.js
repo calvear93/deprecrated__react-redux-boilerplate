@@ -5,11 +5,12 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-23 19:53:33
- * Last modified  : 2020-06-05 19:50:24
+ * Last modified  : 2020-06-06 10:50:17
  */
 
 import axios from 'axios';
-import AuthenticationContext, { DEFAULT_SCOPES } from './aad-context';
+import { DEFAULT_SCOPES, LOGIN_ACTION_REDIRECT } from './aad-cfg';
+import AuthenticationContext from './aad-context';
 import AADTypes from './aad-types';
 
 // Graph API helper.
@@ -28,7 +29,7 @@ const Graph = {
     {
         return new Promise((resolve, reject) =>
         {
-            AuthenticationContext.config.auth.redirectUri = window.location.origin;
+            AuthenticationContext.config.auth.redirectUri = LOGIN_ACTION_REDIRECT;
 
             AuthenticationContext.acquireTokenSilent({ scopes: DEFAULT_SCOPES })
                 .then(response =>
