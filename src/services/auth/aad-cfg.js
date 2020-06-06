@@ -7,13 +7,16 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-04-15 19:51:39
- * Last modified  : 2020-06-06 10:44:29
+ * Last modified  : 2020-06-06 10:57:44
  */
 
 import AADTypes from './aad-types';
 
 // offset needed to renew the token before expiry.
 const TOKEN_REFRESH_PERIOD = parseInt(process.env.REACT_APP_AAD_TOKEN_RENEWAL_OFFSET_SECONDS);
+
+// navigates to request URL after authentication/login instead of redirect URL.
+const NAVIGATE_TO_REQUEST_URL_AFTER_LOGIN = process.env.REACT_APP_AAD_NAVIGATE_TO_REQUEST_URL_AFTER_LOGIN === 'true';
 
 // default permission scopes for authentication.
 export const DEFAULT_SCOPES = [ AADTypes.SCOPES.USER.READ ];
@@ -44,7 +47,7 @@ const auth = {
     validateAuthority: false,
     redirectUri: LOGIN_ACTION_REDIRECT,
     postLogoutRedirectUri: LOGOUT_ACTION_REDIRECT,
-    navigateToLoginRequestUrl: false
+    navigateToLoginRequestUrl: NAVIGATE_TO_REQUEST_URL_AFTER_LOGIN
 };
 
 /**
