@@ -1,5 +1,5 @@
-import SampleAction from './sample';
-import AzureActiveDirectoryAction from './aad';
+import SampleAction from './sample.action';
+import AzureActiveDirectoryAction from './aad.action';
 
 export {
     SampleAction,

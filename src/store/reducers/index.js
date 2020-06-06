@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import { SampleAction, AzureActiveDirectoryAction } from '../actions';
-import SampleReducer from './sample';
-import AzureActiveDirectoryReducer from './aad';
+import SampleReducer from './sample.reducer';
+import AzureActiveDirectoryReducer from './aad.reducer';
 
 // combine all reducers for store initialization.
 export default combineReducers({
