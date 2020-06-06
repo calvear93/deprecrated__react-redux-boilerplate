@@ -36,9 +36,9 @@ export default function App()
                     errorRoute='/401'
                 >
                     <Router />
-                    <ToastContainer />
                 </AzureActiveDirectoryProvider>
             </Provider>
+            <ToastContainer />
         </BrowserRouter>
     );
 }
