@@ -26,6 +26,7 @@ function interceptor(key, values, validations, config)
             config.InputMaskedRut.disabled = values.SimpleToggler;
             config.InputMaskedPhone.disabled = values.SimpleToggler;
             config.InputEmail.disabled = values.SimpleToggler;
+            config.InputEmail.invisible = values.SimpleToggler;
             break;
 
         default:

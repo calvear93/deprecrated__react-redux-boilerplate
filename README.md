@@ -108,5 +108,7 @@ Project uses **npm scripts** for eases execution and building.
 - [mout](http://moutjs.com/docs/latest/) 1.2.2
 - [formik](https://jaredpalmer.com/formik) 2.1.4
 - [sass-mq](https://github.com/sass-mq/sass-mq) 5.0.1
+- [json-query](https://www.npmjs.com/package/json-query) 2.2.2
+- [clsx](https://github.com/lukeed/clsx) 1.1.1
 
-### **AUTHOR**: Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
+### AUTHOR: Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>

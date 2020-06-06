@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import React, { useEffect, useState } from 'react';
 import { Col, Row } from 'react-flexbox-grid';
 import { isEmpty } from '../../utils/libs/object';
@@ -177,7 +177,7 @@ export default function FormFactory({
 
                     return (
                         <Col key={ key } id={ `${key}-container` } { ...columns } { ...behavior.columns }
-                            className={ classNames(
+                            className={ clsx(
                                 'form-item-container',
                                 {
                                     hidden, // display: none
