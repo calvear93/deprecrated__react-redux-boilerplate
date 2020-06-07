@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
-import { AppRoutes } from './rules/routes';
+import { AppRoutes } from './routes';
 import Loader from './components/Loader';
 
 // lazy loaded components.
