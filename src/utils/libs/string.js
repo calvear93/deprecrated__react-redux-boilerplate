@@ -1,17 +1,14 @@
 /**
- * Exposes voca library with extra
- * features for process strings.
+ * Some utilities for strings processing.
  *
  * @see https://vocajs.com/
  *
- * @summary Improved voca (string processing library) utility.
+ * @summary String processing utilities.
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:39:47
- * Last modified  : 2020-05-31 17:01:58
+ * Last modified  : 2020-06-06 22:08:32
  */
-
-import voca from 'voca';
 
 /**
  * Returns a default value on falsy string.
@@ -22,10 +19,10 @@ import voca from 'voca';
  *
  * @returns {string} string (with filter if exists) if valid, def in otherwise.
  */
-voca.defaultOnFalsy = (str, filter, def = '-') =>
+export function defaultOnFalsy(str, filter, def = '-')
 {
     return str ? (filter ? filter(str) : str) : def;
-};
+}
 
 /**
  * Removes the string underscores.
@@ -34,25 +31,24 @@ voca.defaultOnFalsy = (str, filter, def = '-') =>
  *
  * @returns {string} string without underscores.
  */
-voca.removeUnderscore = (str) =>
+export function removeUnderscore(str)
 {
     return str.replace(/_/g, ' ');
-};
+}
 
 /**
  * Capitalizes first char after period symbol.
  *
  * @param {string} str string.
- * @returns {string} string normal
- * ized.
+ * @returns {string} string normalized.
  */
-voca.capitalizeAfterPeriod = (str) =>
+export function capitalizeAfterPeriod(str)
 {
     if (!str)
         return '';
 
     return str.replace(/([.!?-]+\s*)([a-z])/g, (m, $1, $2) => $1 + $2.toUpperCase());
-};
+}
 
 /**
  * Capitalizes every word in the string.
@@ -61,16 +57,16 @@ voca.capitalizeAfterPeriod = (str) =>
  *
  * @returns {string} string capitalized.
  */
-voca.capitalizeEvery = (str) =>
+export function capitalizeEvery(str)
 {
     if (!str)
         return '';
 
-    return voca.capitalizeAfterPeriod(str.replace(/\w\S*/g, (txt) =>
+    return capitalizeAfterPeriod(str.replace(/\w\S*/g, (txt) =>
     {
         return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
     }));
-};
+}
 
 /**
  * Normalizes the string removing diacritics.
@@ -79,13 +75,13 @@ voca.capitalizeEvery = (str) =>
  *
  * @returns {string} string without diacritics.
  */
-voca.removeDiacritics = (str) =>
+export function removeDiacritics(str)
 {
     if (!str)
         return '';
 
     return str.toString().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-};
+}
 
 /**
  * Changes case to upper and add extra space
@@ -95,7 +91,7 @@ voca.removeDiacritics = (str) =>
  *
  * @returns {string} string emphasized.
  */
-voca.empathize = (str) =>
+export function empathize(str)
 {
     if (!str)
         return '';
@@ -110,6 +106,4 @@ voca.empathize = (str) =>
 
             return result;
         }, '');
-};
-
-export default voca;
+}
