@@ -1,10 +1,12 @@
-import React, { useState, useMemo } from 'react';
-import 'react-modern-calendar-datepicker/lib/DatePicker.css';
+import { getDate, getMonth, getYear } from 'date-fns';
+import React, { useMemo, useState } from 'react';
 import ModernDatePicker from 'react-modern-calendar-datepicker';
-import { getYear, getMonth, getDate } from 'date-fns';
+import { Icon, Input, Ref } from 'semantic-ui-react';
 import Time from '../../utils/libs/time';
 import { datePickerLocaleES } from './shared';
 import color from '../../styles/vars/_colors.scss';
+import 'react-modern-calendar-datepicker/lib/DatePicker.css';
+import '../../styles/components/input/date-picker.scss';
 
 /**
  * Date Picker wrapper for
@@ -15,8 +17,9 @@ import color from '../../styles/vars/_colors.scss';
  * @export
  * @param {Date} date selected.
  * @param {func} onChange on selected date callback.
- * @param {string} format format by date-fns.
+ * @param {string} displayFormat format by date-fns.
  * @param {string} placeholder input placeholder.
+ * @param {bool} clearable whether input is clearable.
  * @param {any} props other picker props.
  *
  * @returns {JSX} date picker.
@@ -24,9 +27,11 @@ import color from '../../styles/vars/_colors.scss';
 export default function DatePicker({
     value = null,
     onChange,
-    format = 'yyyy-MM-dd',
+    displayFormat = 'yyyy-MM-dd',
     placeholder,
-    ...props })
+    clearable,
+    ...props
+})
 {
     // default value modules calc.
     const defModules = useMemo(() =>
@@ -46,14 +51,28 @@ export default function DatePicker({
 
     // eslint-disable-next-line react/no-multi-comp
     const input = ({ ref }) => (
-        <div className='ui input'>
-            <input
+        <Ref innerRef={ ref }>
+            <Input
+                icon={ (
+                    <>
+                        {clearable && date && (
+                            <Icon
+                                className='date-picker-clear'
+                                name='x'
+                                link
+                                title='Limpiar'
+                                onClick={ clear }
+                            />
+                        )}
+                        <i aria-hidden='true' className='calendar icon' />
+                    </>
+                ) }
                 readOnly
-                ref={ ref }
+                autoComplete='off'
                 placeholder={ placeholder }
-                value={ date ? Time.Date(date, format) : '' }
+                value={ date ? Time.Date(date, displayFormat) : '' }
             />
-        </div>
+        </Ref>
     );
 
     /**
@@ -68,6 +87,16 @@ export default function DatePicker({
         setDate(newDate);
         setModules(selected);
         onChange && onChange(newDate);
+    }
+
+    /**
+     * Clears selected value.
+     */
+    function clear()
+    {
+        setDate(null);
+        setModules(null);
+        onChange && onChange(null);
     }
 
     return (

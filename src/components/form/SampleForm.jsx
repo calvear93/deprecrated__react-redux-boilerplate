@@ -11,7 +11,8 @@ import {
     SELECT_MULTIPLE,
     DATE_PICKER,
     TIME_CIRCULAR_PICKER,
-    TEXTAREA
+    TEXTAREA,
+    DATE_BOX
 } from './inputs';
 import { PhoneAdvancedMask, RutMask } from '../../utils/masks';
 import { addDays } from 'date-fns';
@@ -220,6 +221,19 @@ const inputs = [
         label: 'A Date Time picker',
         behavior: {
             ...DATE_PICKER
+        },
+        config: {
+            type: 'date',
+            displayFormat: 'dd-MM-yyyy',
+            clearable: true,
+            placeholder: 'Select a date'
+        }
+    },
+    {
+        key: 'DateTimePickerDevExtreme',
+        label: 'A Date Time picker from DevExtreme',
+        behavior: {
+            ...DATE_BOX
         },
         config: {
             type: 'date',

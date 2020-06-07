@@ -87,7 +87,7 @@ export default function TimePicker({
                                         className='time-picker-clear'
                                         name='x'
                                         link
-                                        title='Clear'
+                                        title='Limpiar'
                                         onClick={ onClear }
                                     />
                                 )}
@@ -95,6 +95,7 @@ export default function TimePicker({
                             </>
                         ) }
                         { ...props }
+                        readOnly
                         autoComplete='off'
                         onClick={ () => setShowTime(true) }
                         value={ value }
