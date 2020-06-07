@@ -1,11 +1,10 @@
 import React, { lazy, Suspense } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
+import { AppRoutes } from './rules/routes';
 import Loader from './components/Loader';
-import Routes from './rules/routes';
 
 // lazy loaded components.
 const NotFoundPage = lazy(() => import('./pages/not-found'));
-const UnauthorizedPage = lazy(() => import('./pages/unauthorized'));
 
 /**
  * Application routing handler.
@@ -24,8 +23,8 @@ export default function Router()
                 <Redirect exact from='/' to='/main' />
 
                 {
-                    // maps every rule for route.
-                    Object.values(Routes)
+                    // maps every app base routes.
+                    Object.values(AppRoutes)
                         .map(route =>
                         {
                             // route config values.
@@ -50,8 +49,6 @@ export default function Router()
                             );
                         })
                 }
-
-                <Route exact path='/401' component={ UnauthorizedPage } />
 
                 <Route component={ NotFoundPage } />
             </Switch>
