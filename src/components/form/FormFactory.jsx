@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import { Col, Row } from 'react-flexbox-grid';
 import { isEmpty } from '../../utils/libs/object';
 import validate from '../../utils/validators';
@@ -152,69 +152,71 @@ export default function FormFactory({
     if (loading)
     {
         return (
-            <Loader message='Initializing Formulary' absolute={ false } />
+            <Loader message='Cargando Datos de Formulario' absolute={ false } />
         );
     }
 
     return (
-        <Row className='form-factory'>
-            {
-                inputs.map(({ key, label, behavior, validators }) =>
+        <Suspense fallback={ <Loader message='Cargando Formulario' /> }>
+            <Row className='form-factory'>
                 {
-                    const { onChangeSwitch, onChangeMapper, valueMapper } = behavior;
-                    const { dataset, hidden, invisible, ...cfg } = config[key];
-
-                    if (behavior.divider)
+                    inputs.map(({ key, label, behavior, validators }) =>
                     {
+                        const { onChangeSwitch, onChangeMapper, valueMapper } = behavior;
+                        const { dataset, hidden, invisible, ...cfg } = config[key];
+
+                        if (behavior.divider)
+                        {
+                            return (
+                                <Col key={ key } className='form-separator-container' { ...columns } { ...behavior.columns }>
+                                    <Row className='form-item'>
+                                        <behavior.Input { ...cfg } />
+                                    </Row>
+                                </Col>
+                            );
+                        }
+
                         return (
-                            <Col key={ key } className='form-separator-container' { ...columns } { ...behavior.columns }>
-                                <Row className='form-item'>
-                                    <behavior.Input { ...cfg } />
+                            <Col key={ key } id={ `${key}-container` } { ...columns } { ...behavior.columns }
+                                className={ clsx(
+                                    'form-item-container',
+                                    {
+                                        hidden, // display: none
+                                        invisible, // visibility: hidden
+                                        touched: touched[key], // whether value is changed once at least.
+                                        changed: changed[key], // whether value is different from default.
+                                        success: !validations[key],
+                                        error: validations[key] && touched[key]
+                                    }
+                                ) }
+                            >
+                                <Row
+                                    htmlFor={ key }
+                                    className='form-item-header'
+                                    required={ validators?.required }
+                                >
+                                    {label ?? key}
                                 </Row>
+                                <Row className='form-item'>
+                                    <behavior.Input
+                                        id={ key }
+                                        { ...onChangeSwitch(onChangeMapper(key, handleChange)) }
+                                        { ...valueMapper(values[key]) }
+                                        { ...(behavior.optionsMapper ? behavior.optionsMapper(datasets, dataset) : {}) }
+                                        { ...cfg }
+                                    />
+                                </Row>
+                                {validations[key] && touched[key] && (
+                                    <label className='form-item-error-label'>
+                                        {validations[key].join(', ')}
+                                    </label>
+                                )}
                             </Col>
                         );
-                    }
-
-                    return (
-                        <Col key={ key } id={ `${key}-container` } { ...columns } { ...behavior.columns }
-                            className={ clsx(
-                                'form-item-container',
-                                {
-                                    hidden, // display: none
-                                    invisible, // visibility: hidden
-                                    touched: touched[key], // whether value is changed once at least.
-                                    changed: changed[key], // whether value is different from default.
-                                    success: !validations[key],
-                                    error: validations[key] && touched[key]
-                                }
-                            ) }
-                        >
-                            <Row
-                                htmlFor={ key }
-                                className='form-item-header'
-                                required={ validators?.required }
-                            >
-                                {label ?? key}
-                            </Row>
-                            <Row className='form-item'>
-                                <behavior.Input
-                                    id={ key }
-                                    { ...onChangeSwitch(onChangeMapper(key, handleChange)) }
-                                    { ...valueMapper(values[key]) }
-                                    { ...(behavior.optionsMapper ? behavior.optionsMapper(datasets, dataset) : {}) }
-                                    { ...cfg }
-                                />
-                            </Row>
-                            {validations[key] && touched[key] && (
-                                <label className='form-item-error-label'>
-                                    {validations[key].join(', ')}
-                                </label>
-                            )}
-                        </Col>
-                    );
-                })
-            }
-        </Row>
+                    })
+                }
+            </Row>
+        </Suspense>
     );
 }
 
