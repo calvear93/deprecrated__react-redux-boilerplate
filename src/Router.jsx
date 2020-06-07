@@ -1,5 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
+import RoutesRenderer from './components/RoutesRenderer';
 import { AppRoutes } from './routes';
 import Loader from './components/Loader';
 
@@ -22,33 +23,7 @@ export default function Router()
             <Switch>
                 <Redirect exact from='/' to='/main' />
 
-                {
-                    // maps every app base routes.
-                    Object.values(AppRoutes)
-                        .map(route =>
-                        {
-                            // route config values.
-                            const {
-                                key,
-                                title,
-                                path,
-                                exact,
-                                layoutConfig,
-                                Layout,
-                                Page,
-                                ...props
-                            } = route;
-
-                            // renders the route.
-                            return (
-                                <Route key={ key } exact={ exact } path={ path }>
-                                    <Layout title={ title } { ...layoutConfig }>
-                                        <Page { ...props } />
-                                    </Layout>
-                                </Route>
-                            );
-                        })
-                }
+                <RoutesRenderer routes={ Object.values(AppRoutes) } />
 
                 <Route component={ NotFoundPage } />
             </Switch>
