@@ -7,28 +7,28 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:37:10
- * Last modified  : 2020-05-31 21:20:16
+ * Last modified  : 2020-06-07 12:18:10
  */
 
 import { addMonths, addYears, differenceInCalendarDays, differenceInCalendarMonths, differenceInCalendarYears, format, formatDuration, isValid } from 'date-fns';
-import { en as locale } from 'date-fns/locale';
+import locale from 'date-fns/locale/es';
 
 const LOCALE = { locale };
 
 const MESSAGES = {
-    DATE_NO_VALID: 'Date No Valid',
-    PREFIX_DATE: '\', \'',
-    PREFIX_TIME: '\', at \''
+    DATE_NO_VALID: 'Fecha No Válida',
+    PREFIX_DATE: '\' de \'',
+    PREFIX_TIME: '\', a las \''
 };
 
 const Time = {
     // Formats.
     FORMAT: {
-        DATE_FORMAT: 'dd/MM/yyyy',
+        DATE_FORMAT: 'yyyy-MM-dd',
         TIME_12H_FORMAT: 'h:mm:ss a',
         TIME_24H_FORMAT: 'HH:mm:ss',
-        NATURAL_DATE_FORMAT: `cccc${MESSAGES.PREFIX_DATE}d MMMM yyyy`,
-        NATURAL_DATETIME_FORMAT: `cccc${MESSAGES.PREFIX_DATE}d MMMM yyyy${MESSAGES.PREFIX_TIME}`
+        NATURAL_DATE_FORMAT: `cccc dd${MESSAGES.PREFIX_DATE}MMMM${MESSAGES.PREFIX_DATE}yyyy`,
+        NATURAL_DATETIME_FORMAT: `cccc dd${MESSAGES.PREFIX_DATE}MMMM${MESSAGES.PREFIX_DATE}yyyy${MESSAGES.PREFIX_TIME}`
     },
 
     /**
@@ -62,15 +62,16 @@ const Time = {
      * Date formatting.
      *
      * @param {string} date date string.
+     * @param {string} formatPattern date format.
      *
      * @returns {string} formatted date.
      */
-    Date(date)
+    Date(date, formatPattern)
     {
         if (typeof date === 'string')
             date = new Date(date);
 
-        return isValid(date) ? format(date, Time.FORMAT.DATE_FORMAT) : MESSAGES.DATE_NO_VALID;
+        return isValid(date) ? format(date, formatPattern ?? Time.FORMAT.DATE_FORMAT) : MESSAGES.DATE_NO_VALID;
     },
 
     /**
@@ -78,15 +79,16 @@ const Time = {
      *
      * @param {string} date datetime string.
      * @param {bool} format24 time format type.
+     * @param {string} formatPattern datetime format.
      *
      * @returns {string} formatted datetime.
      */
-    DateTime(date, format24 = true)
+    DateTime(date, format24 = true, formatPattern)
     {
         if (typeof date === 'string')
             date = new Date(date);
 
-        return isValid(date) ? format(date, `${Time.FORMAT.DATE_FORMAT} ${Time.TimeFormatChooser(format24)}`) : MESSAGES.DATE_NO_VALID;
+        return isValid(date) ? format(date, formatPattern ?? `${Time.FORMAT.DATE_FORMAT} ${Time.TimeFormatChooser(format24)}`) : MESSAGES.DATE_NO_VALID;
     },
 
     /**
@@ -94,15 +96,16 @@ const Time = {
      *
      * @param {string} date datetime string.
      * @param {bool} format24 time format type.
+     * @param {string} formatPattern time format.
      *
      * @returns {string} formatted time.
      */
-    Time(date, format24 = true)
+    Time(date, format24 = true, formatPattern)
     {
         if (typeof date === 'string')
             date = new Date(date);
 
-        return isValid(date) ? format(date, `${Time.TimeFormatChooser(format24)}`) : MESSAGES.DATE_NO_VALID;
+        return isValid(date) ? format(date, formatPattern ?? `${Time.TimeFormatChooser(format24)}`) : MESSAGES.DATE_NO_VALID;
     },
 
     /**

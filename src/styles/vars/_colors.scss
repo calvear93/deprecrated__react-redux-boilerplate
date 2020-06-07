@@ -1,7 +1,9 @@
 // Business.
 $brand: #007a33;
 $primary: #00b4aa;
+$primary-light: #78ddd8;
 $secondary: #87adbd;
+$secondary-light: #9acadf;
 $success: #4caf50;
 $info: #0074f1;
 $warning: #fea900;
@@ -88,7 +90,9 @@ $maroon: #800000;
 :export {
     brand: $brand;
     primary: $primary;
+    primary-light: $primary-light;
     secondary: $secondary;
+    secondary-light: $secondary-light;
     success: $success;
     info: $info;
     warning: $warning;

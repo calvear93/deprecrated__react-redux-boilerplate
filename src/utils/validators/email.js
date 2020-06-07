@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-30 14:57:47
- * Last modified  : 2020-06-03 14:12:15
+ * Last modified  : 2020-06-07 12:20:31
  */
 
 //  const REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -35,5 +35,5 @@ export default function(value, { message }, attributeName, values, { fullMessage
     if (isValid)
         return null;
 
-    return message ?? (fullMessages ? `${attributeName} is not a valid email` : 'is not a valid email');
+    return message ?? (fullMessages ? `${attributeName} no es un correo electrónico válido` : 'no es un correo electrónico válido');
 }

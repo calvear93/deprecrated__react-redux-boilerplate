@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-30 14:57:47
- * Last modified  : 2020-05-30 15:45:04
+ * Last modified  : 2020-06-07 12:19:10
  */
 
 /**
@@ -27,5 +27,5 @@ export default function(value, { list = [], message }, attributeName, values, { 
     if (!list.includes(value))
         return null;
 
-    return message ?? (fullMessages ? `${attributeName} is not allowed` : 'is not allowed');
+    return message ?? (fullMessages ? `${attributeName} no está permitido` : 'no está permitido');
 }

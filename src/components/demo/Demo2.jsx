@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { AzureActiveDirectoryAction } from '../../store/actions';
 import AADTypes from '../../services/auth/aad-types';
 import Toast from '../../utils/libs/toast';
+import DatePicker from '../input/DatePicker';
 
 /**
  * Main page.

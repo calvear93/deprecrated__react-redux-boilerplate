@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-30 14:57:47
- * Last modified  : 2020-05-30 15:45:12
+ * Last modified  : 2020-06-07 12:20:10
  */
 
 /**
@@ -32,5 +32,5 @@ export default function(value, { message }, attributeName, values, { fullMessage
     if (isValid)
         return null;
 
-    return message ?? (fullMessages ? `${attributeName} is not a valid phone number` : 'is not a valid phone number');
+    return message ?? (fullMessages ? `${attributeName} no es un número telefónico válido` : 'no es un número telefónico válido');
 }

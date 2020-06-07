@@ -66,6 +66,6 @@ export default function AzureActiveDirectoryProvider({
     ) : error ? (
         <Redirect to={ { pathname: errorRoute, state: error } } />
     ) : (
-        <Loader message='Authenticating' />
+        <Loader message='Autenticando' />
     );
 }

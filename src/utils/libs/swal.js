@@ -7,7 +7,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:38:41
- * Last modified  : 2020-05-31 21:13:39
+ * Last modified  : 2020-06-07 12:15:29
  */
 
 import SwalDefault from 'sweetalert2';
@@ -37,7 +37,7 @@ const Swal = {
      *
      * @returns {any} Popup.
      */
-    confirm: (type, content, confirmText = 'Okay') => SwalReact.fire({
+    confirm: (type, content, confirmText = 'Aceptar') => SwalReact.fire({
         icon: type,
         html: content,
         confirmButtonColor: color.primary,
@@ -77,7 +77,7 @@ const Swal = {
      *
      * @returns {any} Popup.
      */
-    alert: (type, content, confirmText = 'Okay') => SwalReact.fire({
+    alert: (type, content, confirmText = 'Aceptar') => SwalReact.fire({
         icon: type,
         html: content,
         confirmButtonColor: color.primary,
@@ -119,7 +119,7 @@ const Swal = {
      *
      * @returns {any} Popup.
      */
-    dialog: (type, content, confirmText = 'Yes', cancelText = 'No') => SwalReact.fire({
+    dialog: (type, content, confirmText = 'Sí', cancelText = 'No') => SwalReact.fire({
         icon: type,
         html: content,
         confirmButtonColor: color.primary,

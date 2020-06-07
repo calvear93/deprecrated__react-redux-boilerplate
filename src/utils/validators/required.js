@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-30 14:57:47
- * Last modified  : 2020-05-30 15:45:15
+ * Last modified  : 2020-06-07 12:19:53
  */
 
 import { isData } from '../libs/object';
@@ -27,7 +27,7 @@ import { isData } from '../libs/object';
 export default function(value, { allowsEmpty = false, message }, attributeName, values, { fullMessages })
 {
     if (!isData(value, allowsEmpty))
-        return message ?? (fullMessages ? `${attributeName} is required` : 'is required');
+        return message ?? (fullMessages ? `${attributeName} es requerido` : 'es requerido');
 
     return null;
 }

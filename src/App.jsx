@@ -6,7 +6,7 @@ import { AzureActiveDirectoryProvider, AzureActiveDirectorySecurityMode, IsAuthE
 import store from './store/store';
 import Router from './Router';
 import { loadMessages, locale } from 'devextreme/localization';
-import localeMessages from 'devextreme/localization/messages/en';
+import localeMessages from 'devextreme/localization/messages/es';
 import './styles/App.scss';
 
 /**

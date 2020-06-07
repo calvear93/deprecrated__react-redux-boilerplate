@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-30 14:57:47
- * Last modified  : 2020-05-31 20:42:50
+ * Last modified  : 2020-06-07 12:19:39
  */
 
 import Rut from '../libs/rut';
@@ -31,5 +31,5 @@ export default function(value, { message }, attributeName, values, { fullMessage
     if (Rut.IsValid(value, false))
         return null;
 
-    return message ?? (fullMessages ? `${attributeName} is not a valid RUT/RUN` : 'is not valid RUT/RUN');
+    return message ?? (fullMessages ? `${attributeName} no es un RUT/RUN válido` : 'no es un RUT/RUN válido');
 }

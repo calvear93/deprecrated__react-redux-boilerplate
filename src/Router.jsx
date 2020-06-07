@@ -22,7 +22,7 @@ const Routes = Object.values(AppRoutes);
 export default function Router()
 {
     return (
-        <Suspense fallback={ <Loader message='Loading' /> }>
+        <Suspense fallback={ <Loader message='Cargando' /> }>
             <Switch>
                 <Redirect exact from='/' to='/main' />
 
