@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, TextArea as TextAreaSemantic } from 'semantic-ui-react';
+import { TextArea as TextAreaSemantic } from 'semantic-ui-react';
 
 /**
  * Wrapper for IMaskInput
