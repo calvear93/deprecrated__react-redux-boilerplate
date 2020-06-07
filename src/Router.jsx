@@ -7,6 +7,9 @@ import Loader from './components/Loader';
 // lazy loaded components.
 const NotFoundPage = lazy(() => import('./pages/not-found'));
 
+// routes array.
+const Routes = Object.values(AppRoutes);
+
 /**
  * Application routing handler.
  *
@@ -23,7 +26,7 @@ export default function Router()
             <Switch>
                 <Redirect exact from='/' to='/main' />
 
-                <RoutesRenderer routes={ Object.values(AppRoutes) } />
+                <RoutesRenderer routes={ Routes } />
 
                 <Route component={ NotFoundPage } />
             </Switch>
