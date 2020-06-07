@@ -13,21 +13,33 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-30 17:01:45
- * Last modified  : 2020-05-31 15:50:00
+ * Last modified  : 2020-06-07 13:00:47
  */
 
-import { DateBox } from 'devextreme-react';
-import { Checkbox, Input, Select } from 'semantic-ui-react';
-import { CheckBox, InputMasked, RadioGroup, TextArea, TimePicker } from '../input';
-import Separator from './Separator';
+import { lazy } from 'react';
+
+// components container.
+const Components = {
+    Separator: lazy(() => import('./Separator')),
+    Input: lazy(() => import('semantic-ui-react').then(module => ({ default: module.Input }))),
+    Select: lazy(() => import('semantic-ui-react').then(module => ({ default: module.Select }))),
+    Checkbox: lazy(() => import('semantic-ui-react').then(module => ({ default: module.Checkbox }))),
+    DateBox: lazy(() => import('devextreme-react').then(module => ({ default: module.DateBox }))),
+    DatePicker: lazy(() => import('../input/DatePicker')),
+    InputMasked: lazy(() => import('../input/InputMasked')),
+    RadioGroup: lazy(() => import('../input/RadioGroup')),
+    CheckBox: lazy(() => import('../input/CheckBox')),
+    TextArea: lazy(() => import('../input/TextArea')),
+    TimePicker: lazy(() => import('../input/TimePicker'))
+};
 
 export const SEPARATOR = {
-    Input: Separator,
+    Input: Components.Separator,
     divider: true
 };
 
 export const INPUT = {
-    Input,
+    Input: Components.Input,
     onChangeSwitch: (func) => ({ onChange: func }),
     onChangeMapper: (key, receptor) => (_, { id, value }) => receptor(key, value),
     valueMapper: (value) => ({ value }),
@@ -35,7 +47,7 @@ export const INPUT = {
 };
 
 export const TEXTAREA = {
-    Input: TextArea,
+    Input: Components.TextArea,
     onChangeSwitch: (func) => ({ onChange: func }),
     onChangeMapper: (key, receptor) => (_, { id, value }) => receptor(key, value),
     valueMapper: (value) => ({ value }),
@@ -43,7 +55,7 @@ export const TEXTAREA = {
 };
 
 export const INPUT_MASKED = {
-    Input: InputMasked,
+    Input: Components.InputMasked,
     onChangeSwitch: (func) => ({ onAccept: func }),
     onChangeMapper: (key, receptor) => (value, mask) => receptor(key, value),
     valueMapper: (value) => ({ value }),
@@ -51,7 +63,7 @@ export const INPUT_MASKED = {
 };
 
 export const SELECT = {
-    Input: Select,
+    Input: Components.Select,
     onChangeSwitch: (func) => ({ onChange: func }),
     onChangeMapper: (key, receptor) => (_, { id, value }) => receptor(key, value),
     valueMapper: (value) => ({ value }),
@@ -60,7 +72,7 @@ export const SELECT = {
 };
 
 export const SELECT_MULTIPLE = {
-    Input: Select,
+    Input: Components.Select,
     onChangeSwitch: (func) => ({ onChange: func }),
     onChangeMapper: (key, receptor) => (_, { id, value }) => receptor(key, value),
     valueMapper: (value) => ({ value }),
@@ -69,7 +81,15 @@ export const SELECT_MULTIPLE = {
 };
 
 export const DATE_PICKER = {
-    Input: DateBox,
+    Input: Components.DatePicker,
+    onChangeSwitch: (func) => ({ onChange: func }),
+    onChangeMapper: (key, receptor) => (value) => receptor(key, value),
+    valueMapper: (value) => ({ value }),
+    defaultValue: null
+};
+
+export const DATE_BOX = {
+    Input: Components.DateBox,
     onChangeSwitch: (func) => ({ onValueChanged: func }),
     onChangeMapper: (key, receptor) => ({ element, value }) => receptor(key, value),
     valueMapper: (value) => ({ value }),
@@ -77,7 +97,7 @@ export const DATE_PICKER = {
 };
 
 export const TIME_PICKER = {
-    Input: DateBox,
+    Input: Components.DateBox,
     onChangeSwitch: (func) => ({ onValueChanged: func }),
     onChangeMapper: (key, receptor) => ({ element, value }) => receptor(key, value),
     valueMapper: (value) => ({ defaultValue: value }),
@@ -85,7 +105,7 @@ export const TIME_PICKER = {
 };
 
 export const TIME_CIRCULAR_PICKER = {
-    Input: TimePicker,
+    Input: Components.TimePicker,
     onChangeSwitch: (func) => ({ onChange: func }),
     onChangeMapper: (key, receptor) => (_, { id, value }) => receptor(key, value),
     valueMapper: (value) => ({ time: value }),
@@ -93,7 +113,7 @@ export const TIME_CIRCULAR_PICKER = {
 };
 
 export const TOGGLER = {
-    Input: Checkbox,
+    Input: Components.Checkbox,
     onChangeSwitch: (func) => ({ onChange: func }),
     onChangeMapper: (key, receptor) => (_, { id, checked }) => receptor(key, checked),
     valueMapper: (value) => (value ? { checked: true } : { checked: false }),
@@ -101,7 +121,7 @@ export const TOGGLER = {
 };
 
 export const RADIO_GROUP = {
-    Input: RadioGroup,
+    Input: Components.RadioGroup,
     onChangeSwitch: (func) => ({ onChange: func }),
     onChangeMapper: (key, receptor) => (_, { id, value }) => receptor(key, value),
     valueMapper: (value) => ({ checked: value }),
@@ -110,7 +130,7 @@ export const RADIO_GROUP = {
 };
 
 export const CHECKBOX = {
-    Input: CheckBox,
+    Input: Components.CheckBox,
     onChangeSwitch: (func) => ({ onChange: func }),
     onChangeMapper: (key, receptor) => (_, { id, value, last }) => receptor(key, value),
     valueMapper: (value) => ({ checked: value }),

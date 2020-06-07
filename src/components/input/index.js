@@ -4,6 +4,7 @@ import TextArea from './TextArea';
 import CheckBox from './CheckBox';
 import RadioGroup from './RadioGroup';
 import TimePicker from './TimePicker';
+import DatePicker from './DatePicker';
 
 export {
     Mask,
@@ -11,5 +12,6 @@ export {
     TextArea,
     CheckBox,
     RadioGroup,
+    DatePicker,
     TimePicker
 };

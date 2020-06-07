@@ -22,12 +22,6 @@ export default function Demo2()
         Toast.show('welcome to the jungle!', 5000, Toast.TYPE.NOTIFICATION_SUCCESS);
     }, []);
 
-    function onChange({ key, values, validations, isValid })
-    {
-        console.log(values);
-        setValues(values);
-    }
-
     function Logout()
     {
         dispatch(AzureActiveDirectoryAction.Action(AzureActiveDirectoryAction.Type.LOGOUT));
