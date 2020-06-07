@@ -13,7 +13,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-30 17:01:45
- * Last modified  : 2020-06-07 13:00:47
+ * Last modified  : 2020-06-07 15:56:18
  */
 
 import { lazy } from 'react';
@@ -23,12 +23,12 @@ const Components = {
     Separator: lazy(() => import('./Separator')),
     Input: lazy(() => import('semantic-ui-react').then(module => ({ default: module.Input }))),
     Select: lazy(() => import('semantic-ui-react').then(module => ({ default: module.Select }))),
-    Checkbox: lazy(() => import('semantic-ui-react').then(module => ({ default: module.Checkbox }))),
+    CheckBox: lazy(() => import('semantic-ui-react').then(module => ({ default: module.Checkbox }))),
     DateBox: lazy(() => import('devextreme-react').then(module => ({ default: module.DateBox }))),
     DatePicker: lazy(() => import('../input/DatePicker')),
     InputMasked: lazy(() => import('../input/InputMasked')),
     RadioGroup: lazy(() => import('../input/RadioGroup')),
-    CheckBox: lazy(() => import('../input/CheckBox')),
+    CheckBoxGroup: lazy(() => import('../input/CheckBox')),
     TextArea: lazy(() => import('../input/TextArea')),
     TimePicker: lazy(() => import('../input/TimePicker'))
 };
@@ -113,7 +113,7 @@ export const TIME_CIRCULAR_PICKER = {
 };
 
 export const TOGGLER = {
-    Input: Components.Checkbox,
+    Input: Components.CheckBox,
     onChangeSwitch: (func) => ({ onChange: func }),
     onChangeMapper: (key, receptor) => (_, { id, checked }) => receptor(key, checked),
     valueMapper: (value) => (value ? { checked: true } : { checked: false }),
@@ -130,7 +130,7 @@ export const RADIO_GROUP = {
 };
 
 export const CHECKBOX = {
-    Input: Components.CheckBox,
+    Input: Components.CheckBoxGroup,
     onChangeSwitch: (func) => ({ onChange: func }),
     onChangeMapper: (key, receptor) => (_, { id, value, last }) => receptor(key, value),
     valueMapper: (value) => ({ checked: value }),
