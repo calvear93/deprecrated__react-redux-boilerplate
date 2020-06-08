@@ -1,6 +1,5 @@
 import React, { lazy, Suspense } from 'react';
 import { Redirect, Route, Switch, useRouteMatch } from 'react-router-dom';
-import RoutesRenderer from './components/RoutesRenderer';
 import { AppRoutes } from './routes';
 import Loader from './components/Loader';
 
@@ -21,9 +20,6 @@ const Routes = Object.values(AppRoutes);
  */
 export default function Router()
 {
-    // allows to arms dynamic nested routes.
-    let { path: basePath } = useRouteMatch();
-
     return (
         <Suspense fallback={ <Loader message='Cargando' /> }>
             <Switch>
@@ -47,7 +43,7 @@ export default function Router()
 
                             // renders the route.
                             return (
-                                <Route key={ key } exact={ exact } path={ `${basePath}${path}` }>
+                                <Route key={ key } exact={ exact } path={ path }>
                                     {Layout ? (
                                         <Layout title={ title } { ...layoutConfig }>
                                             <Page { ...props } />
