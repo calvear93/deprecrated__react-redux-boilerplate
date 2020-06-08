@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, useRouteMatch } from 'react-router-dom';
 
 /**
  * Renders an array of routes
@@ -12,6 +12,9 @@ import { Route } from 'react-router-dom';
  */
 export default function RoutesRenderer({ routes = {} })
 {
+    // allows to arms dynamic nested routes.
+    let { path: basePath } = useRouteMatch();
+
     return routes
         .map(route =>
         {
@@ -29,7 +32,7 @@ export default function RoutesRenderer({ routes = {} })
 
             // renders the route.
             return (
-                <Route key={ key } exact={ exact } path={ path }>
+                <Route key={ key } exact={ exact } path={ `${basePath}${path}` }>
                     {Layout ? (
                         <Layout title={ title } { ...layoutConfig }>
                             <Page { ...props } />
