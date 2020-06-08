@@ -64,7 +64,7 @@ const inputs = [
         },
         validators: {
             required: {
-                message: 'please fill this input!'
+                message: 'por favor complete este input!'
             }
         }
     },
@@ -108,7 +108,7 @@ const inputs = [
         },
         validators: {
             email: {
-                message: 'this is not a valid email'
+                message: 'este no es un email válido'
             }
         }
     },
@@ -158,8 +158,8 @@ const inputs = [
             length: {
                 minimum: 2,
                 maximum: 4,
-                tooShort: 'must be select at least %{count} options',
-                tooLong: 'must be select less than %{count} options'
+                tooShort: 'debe seleccionar al menos %{count} opciones',
+                tooLong: 'debe seleccionar menos de %{count} opciones'
             }
         }
     },
@@ -175,7 +175,7 @@ const inputs = [
             clearable: true,
             selectOnBlur: false,
             placeholder: 'Select something',
-            noResultsMessage: 'No results here!'
+            noResultsMessage: 'Nada por aquí!'
         },
         validators: {
             required: true
@@ -195,7 +195,7 @@ const inputs = [
             selectOnBlur: false,
             multiple: true,
             placeholder: 'Select many',
-            noResultsMessage: 'No results here!'
+            noResultsMessage: 'No hay nada acá!'
         },
         validators: {
             required: true
@@ -274,8 +274,8 @@ const inputs = [
             length: {
                 minimum: 10,
                 maximum: 20,
-                tooShort: 'must be at least %{count} characters',
-                tooLong: 'must be less than %{count} characters'
+                tooShort: 'debe tener al menos %{count} carácteres',
+                tooLong: 'debe tener menos de %{count} carácteres'
             }
         }
     }
