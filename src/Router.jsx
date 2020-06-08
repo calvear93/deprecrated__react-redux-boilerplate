@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch, useRouteMatch } from 'react-router-dom';
 import RoutesRenderer from './components/RoutesRenderer';
 import { AppRoutes } from './routes';
 import Loader from './components/Loader';
@@ -21,12 +21,44 @@ const Routes = Object.values(AppRoutes);
  */
 export default function Router()
 {
+    // allows to arms dynamic nested routes.
+    let { path: basePath } = useRouteMatch();
+
     return (
         <Suspense fallback={ <Loader message='Cargando' /> }>
             <Switch>
                 <Redirect exact from='/' to='/main' />
 
-                <RoutesRenderer routes={ Routes } />
+                {
+                    Routes
+                        .map(route =>
+                        {
+                            // route config values.
+                            const {
+                                key,
+                                title,
+                                path,
+                                exact,
+                                layoutConfig,
+                                Layout,
+                                Page,
+                                ...props
+                            } = route;
+
+                            // renders the route.
+                            return (
+                                <Route key={ key } exact={ exact } path={ `${basePath}${path}` }>
+                                    {Layout ? (
+                                        <Layout title={ title } { ...layoutConfig }>
+                                            <Page { ...props } />
+                                        </Layout>
+                                    ) : (
+                                        <Page { ...props } />
+                                    )}
+                                </Route>
+                            );
+                        })
+                }
 
                 <Route component={ NotFoundPage } />
             </Switch>

@@ -8,7 +8,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:24:07
- * Last modified  : 2020-06-08 08:34:47
+ * Last modified  : 2020-06-08 08:42:10
  */
 
 import { lazy } from 'react';
