@@ -70,7 +70,7 @@ const inputs = [
     },
     {
         key: 'InputMaskedRut',
-        label: 'Maked (RUT/RUN) Input',
+        label: 'Masked (RUT/RUN) Input',
         behavior: {
             ...INPUT_MASKED
         },
@@ -85,7 +85,7 @@ const inputs = [
     },
     {
         key: 'InputMaskedPhone',
-        label: 'Maked (Phone) Input',
+        label: 'Masked (Phone) Input',
         behavior: {
             ...INPUT_MASKED
         },
