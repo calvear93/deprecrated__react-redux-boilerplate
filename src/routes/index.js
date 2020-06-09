@@ -1,7 +1,7 @@
-import AppRoutes from './app.routes';
+import RootRoutes from './root.routes';
 import ProfileRoutes from './profile.routes';
 
 export {
-    AppRoutes,
+    RootRoutes,
     ProfileRoutes
 };

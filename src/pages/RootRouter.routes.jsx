@@ -1,9 +1,9 @@
 import React from 'react';
 import Router from '../components/Router';
-import { AppRoutes } from '../routes';
+import { RootRoutes } from '../routes';
 
 // routes array.
-const Routes = Object.values(AppRoutes);
+const Routes = Object.values(RootRoutes);
 
 // redirects array.
 const Redirects = [
@@ -15,9 +15,9 @@ const Redirects = [
 ];
 
 /**
- * Application routing handler.
+ * Application root routing handler.
  *
- * @returns {JSX} Application router.
+ * @returns {JSX} Application root router.
  */
 export default function AppRouter()
 {

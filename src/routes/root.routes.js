@@ -1,5 +1,5 @@
 /**
- * Contains the application routes
+ * Contains the application root routes
  * for App Router component, defining
  * title, path, component, layout
  * or specific configurations, etc.
@@ -8,7 +8,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:24:07
- * Last modified  : 2020-06-08 21:11:35
+ * Last modified  : 2020-06-09 16:44:15
  */
 
 import { lazy } from 'react';
@@ -40,10 +40,10 @@ export default {
         // specific layout config props.
         layoutConfig: {
             header: {
-                title: 'HEADER'
+                title: 'ENCABEZADO'
             },
             footer: {
-                text: 'FOOTER'
+                text: 'PIE DE PÁGINA'
             }
         },
         Layout: Layouts.AppLayout,
