@@ -110,5 +110,6 @@ Project uses **npm scripts** for eases execution and building.
 - [sass-mq](https://github.com/sass-mq/sass-mq) 5.0.1
 - [json-query](https://www.npmjs.com/package/json-query) 2.2.2
 - [clsx](https://github.com/lukeed/clsx) 1.1.1
+- [script-hook](https://github.com/hartzis/react-script-hook) 1.1.1
 
 ### AUTHOR: Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>

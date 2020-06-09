@@ -1,8 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import { useDocumentTitle } from '../../hooks/document';
 import '../../styles/layouts/base-layout.scss';
-
-// defaults site title.
-const DEFAULT_TITLE = process.env.REACT_APP_TITLE;
 
 /**
  * Base layout (wrapper for pages without header/footer).
@@ -13,11 +11,7 @@ const DEFAULT_TITLE = process.env.REACT_APP_TITLE;
  */
 export default function BaseLayout({ children, title, ...props })
 {
-    useEffect(() =>
-    {
-        // sets page document title.
-        document.title = title ?? DEFAULT_TITLE;
-    });
+    useDocumentTitle(title);
 
     return (
         <div className='base-container' { ...props }>

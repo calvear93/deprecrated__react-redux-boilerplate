@@ -1,10 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Footer from './Footer';
 import Header from './Header';
+import { useDocumentTitle } from '../../hooks/document';
 import '../../styles/layouts/app-layout.scss';
-
-// defaults site title.
-const DEFAULT_TITLE = process.env.REACT_APP_TITLE;
 
 /**
  * App layout (wrapper for pages with header/footer).
@@ -25,11 +23,7 @@ export default function AppLayout({
     ...props
 })
 {
-    useEffect(() =>
-    {
-        // sets page document title.
-        document.title = title ?? DEFAULT_TITLE;
-    });
+    useDocumentTitle(title);
 
     return (
         <div className='app-container' { ...props }>
