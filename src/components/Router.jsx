@@ -1,32 +1,41 @@
 import React, { lazy, Suspense } from 'react';
 import { Redirect, Route, Switch, useRouteMatch } from 'react-router-dom';
-import { AppRoutes } from './routes';
-import Loader from './components/Loader';
+import Loader from './Loader';
 
 // lazy loaded components.
-const NotFoundPage = lazy(() => import('./pages/not-found'));
-
-// routes array.
-const Routes = Object.values(AppRoutes);
+const NotFoundPage = lazy(() => import('../pages/not-found'));
 
 /**
- * Application routing handler.
+ * Routing handler.
  *
- * Defines routes for application
+ * Renders routes for application
  * pages, exceptions and intermediate
  * loading sections.
  *
- * @returns {JSX} Application router.
+ * @param {array} routes array of routes.
+ * @param {array} redirects array of redirects (exact, from, to).
+ * @param {string} message loading message.
+ *
+ * @returns {JSX} router.
  */
-export default function Router()
+export default function Router({ routes = [], redirects = [], message = 'Cargando' })
 {
+    const { path: basePath } = useRouteMatch();
+
     return (
-        <Suspense fallback={ <Loader message='Cargando' /> }>
+        <Suspense fallback={ <Loader message={ message } /> }>
             <Switch>
-                <Redirect exact from='/' to='/main' />
+                {
+                    // renders the redirection definitions.
+                    redirects
+                        .map(({ exact, from, to }, index) => (
+                            <Redirect key={ index } exact={ exact } from={ from } to={ to } />
+                        ))
+                }
 
                 {
-                    Routes
+                    // renders the route definitions.
+                    routes
                         .map(route =>
                         {
                             // route config values.
@@ -43,7 +52,7 @@ export default function Router()
 
                             // renders the route.
                             return (
-                                <Route key={ key } exact={ exact } path={ path }>
+                                <Route key={ key } exact={ exact } path={ `${basePath}${path}`.replace(/\/\//g, '/') }>
                                     {Layout ? (
                                         <Layout title={ title } { ...layoutConfig }>
                                             <Page { ...props } />

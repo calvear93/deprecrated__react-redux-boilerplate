@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { AzureActiveDirectoryProvider, AzureActiveDirectorySecurityMode, IsAuthEnabled } from './services/auth';
 import store from './store/store';
-import Router from './Router';
+import AppRouter from './pages/AppRouter.routes';
 import { loadMessages, locale } from 'devextreme/localization';
 import localeMessages from 'devextreme/localization/messages/es';
 import './styles/App.scss';
@@ -35,7 +35,7 @@ export default function App()
                     mode={ AzureActiveDirectorySecurityMode.WHITELIST }
                     errorRoute='/401'
                 >
-                    <Router />
+                    <AppRouter />
                 </AzureActiveDirectoryProvider>
             </Provider>
             <ToastContainer />
