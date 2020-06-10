@@ -90,14 +90,14 @@ Project uses **npm scripts** for eases execution and building.
 - [env-cmd](https://github.com/toddbluhm/env-cmd) 10.1.0
 - [craco](https://github.com/gsoft-inc/craco) 5.6.4
 - [Redux-Saga](https://redux-saga.js.org/) 1.1.1
-- [react-use](https://github.com/streamich/react-use) 15.1.1
+- [react-use](https://github.com/streamich/react-use) 15.2.2
 - [SWR](https://github.com/vercel/swr) 0.2.2
-- [MSAL](https://github.com/AzureAD/microsoft-authentication-library-for-js) 1.3.1
+- [MSAL](https://github.com/AzureAD/microsoft-authentication-library-for-js) 1.3.2
 - [Semantic UI React](https://react.semantic-ui.com/) 2.4
 - [Material Design Icons](https://materialdesignicons.com/) 5
 - [Material Design Icons Animations](https://l-lin.github.io/font-awesome-animation/) 0.30 (ported for MDI)
-- [DevExtreme](https://js.devexpress.com/Overview/React/) 20
-- [SweetAlert](https://sweetalert2.github.io/) 2
+- [DevExtreme](https://js.devexpress.com/Overview/React/) 20.1.4
+- [SweetAlert](https://sweetalert2.github.io/) 9.14.4
 - [Toastify](https://fkhadra.github.io/react-toastify/introduction)
 - [Tippy](https://atomiks.github.io/tippyjs/) 6.2.3
 - [date-fns](https://date-fns.org/docs/Getting-Started) 2.14.0
