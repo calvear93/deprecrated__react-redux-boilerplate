@@ -5,11 +5,11 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-23 19:53:33
- * Last modified  : 2020-06-06 10:53:56
+ * Last modified  : 2020-06-11 19:11:43
  */
 
 import axios from 'axios';
-import { DEFAULT_SCOPES, LOGIN_ACTION_REDIRECT } from './aad-cfg';
+import { DEFAULT_SCOPES } from './aad-cfg';
 import AuthenticationContext from './aad-context';
 import AADTypes from './aad-types';
 

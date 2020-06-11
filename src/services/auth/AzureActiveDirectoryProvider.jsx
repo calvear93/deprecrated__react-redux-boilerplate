@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { Redirect, useLocation } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { usePartition } from '../../hooks/redux';
 import { AzureActiveDirectoryAction } from '../../store/actions';
 import { usePathBelongsTo } from '../../hooks/route';

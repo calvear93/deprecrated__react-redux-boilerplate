@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import React from 'react';
 import BounceLoader from 'react-spinners/BounceLoader';
 import '../styles/components/loader.scss';
@@ -25,18 +26,11 @@ export default function Loader({
     loading = true
 })
 {
-    // container classes.
-    const classes = [ 'loader-container', 'unselectable' ];
-
-    absolute && classes.push('absolute');
-    background && classes.push('background');
-    blur && classes.push('blur');
-
     if (!loading)
         return children ?? null;
 
     return (
-        <div className={ classes.join(' ') }>
+        <div className={ clsx('loader-container', 'unselectable', { absolute, background, blur }) }>
             <div className='loader'>
                 <BounceLoader
                     color={ color.brand }
