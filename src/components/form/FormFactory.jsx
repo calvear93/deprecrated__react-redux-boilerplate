@@ -34,7 +34,7 @@ const defInterceptor = (key, values, validations, config) =>
  * @see https://validatejs.org/
  *
  * @export
- * @param {any} inputs inputs configuration.
+ * @param {any} schema inputs configuration.
  * @param {any} defaults default values for inputs.
  * @param {any} datasets datasets for use in options inputs.
  * @param {func} interceptor functions for intercepts values and validations on change.
@@ -47,7 +47,7 @@ const defInterceptor = (key, values, validations, config) =>
  * @returns {JSX} form factory.
  */
 export default function FormFactory({
-    inputs,
+    schema,
     defaults = {},
     datasets = {},
     interceptor = defInterceptor,
@@ -57,8 +57,7 @@ export default function FormFactory({
 })
 {
     // keeps base configuration memoized.
-    const [ defaultConfig, defaultValues, validators ] = useInputs(inputs, defaults);
-
+    const [ defaultConfig, defaultValues, validators ] = useSchema(schema, defaults);
     // inputs config, may be changed by interceptor.
     const [ config, setConfig ] = useState(defaultConfig);
     // current input values.
@@ -160,7 +159,7 @@ export default function FormFactory({
         <Suspense fallback={ <Loader message='Cargando Formulario' /> }>
             <Row className='form-factory'>
                 {
-                    inputs.map(({ key, label, behavior, validators }) =>
+                    schema.map(({ key, label, behavior, validators }) =>
                     {
                         const { onChangeSwitch, onChangeMapper, valueMapper } = behavior;
                         const { dataset, hidden, invisible, ...cfg } = config[key];
@@ -224,14 +223,14 @@ export default function FormFactory({
  * Retrieves config, default values
  * and validators from input config.
  *
- * @param {any} inputs inputs config.
+ * @param {any} schema inputs config.
  * @param {any} defValues default values,
  * @returns {array} [config, defaultValues, validators]
  */
-function useInputs(inputs, defValues)
+function useSchema(schema, defValues)
 {
     const [ data ] = useState(
-        inputs.reduce((data, input) =>
+        schema.reduce((data, input) =>
         {
             const key = input.key;
             // inputs config.

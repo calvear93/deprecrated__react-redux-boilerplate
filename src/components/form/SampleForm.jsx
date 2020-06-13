@@ -17,7 +17,7 @@ import {
 import { PhoneAdvancedMask, RutMask } from '../../utils/masks';
 import { addDays } from 'date-fns';
 
-export default () => <FormFactory inputs={ inputs } datasets={ datasets } interceptor={ interceptor } />;
+export default () => <FormFactory schema={ schema } datasets={ datasets } interceptor={ interceptor } />;
 
 function interceptor(key, values, validations, config)
 {
@@ -37,7 +37,7 @@ function interceptor(key, values, validations, config)
     return [ values, validations, config ];
 }
 
-const inputs = [
+const schema = [
     {
         key: 'group-1',
         behavior: {
@@ -229,22 +229,22 @@ const inputs = [
             placeholder: 'Select a date'
         }
     },
-    {
-        key: 'DateTimePickerDevExtreme',
-        label: 'A Date Time picker from DevExtreme',
-        behavior: {
-            ...DATE_BOX
-        },
-        config: {
-            type: 'date',
-            displayFormat: 'dd-MM-yyyy',
-            // disabledDates:{ disabledDates }
-            min: addDays(new Date(), -2),
-            max: addDays(new Date(), 7),
-            showClearButton: false,
-            useMaskBehavior: true
-        }
-    },
+    // {
+    //     key: 'DateTimePickerDevExtreme',
+    //     label: 'A Date Time picker from DevExtreme',
+    //     behavior: {
+    //         ...DATE_BOX
+    //     },
+    //     config: {
+    //         type: 'date',
+    //         displayFormat: 'dd-MM-yyyy',
+    //         // disabledDates:{ disabledDates }
+    //         min: addDays(new Date(), -2),
+    //         max: addDays(new Date(), 7),
+    //         showClearButton: false,
+    //         useMaskBehavior: true
+    //     }
+    // },
     {
         key: 'TimePicker',
         label: 'A Time Picker',
