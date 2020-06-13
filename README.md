@@ -96,6 +96,7 @@ Project uses **npm scripts** for eases execution and building.
 - [Semantic UI React](https://react.semantic-ui.com/) 2.4
 - [Material Design Icons](https://materialdesignicons.com/) 5
 - [Material Design Icons Animations](https://l-lin.github.io/font-awesome-animation/) 0.30 (ported for MDI)
+- [React Router Dynamic Breadcrumbs](https://github.com/roya3000/react-router-dynamic-breadcrumbs#readme) 2.2.2
 - [DevExtreme](https://js.devexpress.com/Overview/React/) 20.1.4
 - [SweetAlert](https://sweetalert2.github.io/) 9.14.4
 - [Toastify](https://fkhadra.github.io/react-toastify/introduction)
