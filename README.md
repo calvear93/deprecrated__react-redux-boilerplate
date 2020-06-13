@@ -113,5 +113,6 @@ Project uses **npm scripts** for eases execution and building.
 - [clsx](https://github.com/lukeed/clsx) 1.1.1
 - [script-hook](https://github.com/hartzis/react-script-hook) 1.1.1
 - [timeago.js](https://timeago.org/) 4.0.2
+- [react-web-animation](https://github.com/bringking/react-web-animationhttps://timeago.org/) 0.7.0
 
 ### AUTHOR: Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
