@@ -8,7 +8,7 @@ import { AzureActiveDirectoryAction } from '../actions';
  *
  * @param {string} type login type (redirect or popup).
  */
-function* authenticate({ payload: { type } })
+function* authenticate({ payload: { type } = {} })
 {
     try
     {
