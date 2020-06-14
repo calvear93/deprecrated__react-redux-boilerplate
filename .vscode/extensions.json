@@ -1,0 +1,17 @@
+{
+	"recommendations": [
+		"msjsdiag.debugger-for-chrome",
+		"msjsdiag.debugger-for-edge",
+		"dbaeumer.vscode-eslint",
+		"waderyan.gitblame",
+		"eamodio.gitlens",
+		"arjunkomath.js-file-header",
+		"joelday.docthis",
+		"fknop.vscode-npm",
+		"ryannaddy.vscode-format",
+		"svipas.prettier-plus",
+		"pkief.material-icon-theme",
+		"eg2.vscode-npm-script",
+		"jpoissonnier.vscode-styled-components"
+	]
+}
