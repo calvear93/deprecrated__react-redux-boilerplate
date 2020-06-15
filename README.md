@@ -112,6 +112,7 @@ Project uses **npm scripts** for eases execution and building.
 - [json-query](https://www.npmjs.com/package/json-query) 2.2.2
 - [clsx](https://github.com/lukeed/clsx) 1.1.1
 - [script-hook](https://github.com/hartzis/react-script-hook) 1.1.1
+- [react-wait](https://github.com/f/react-wait) 0.3.0
 - [timeago.js](https://timeago.org/) 4.0.2
 - [react-web-animation](https://github.com/bringking/react-web-animationhttps://timeago.org/) 0.7.0
 
