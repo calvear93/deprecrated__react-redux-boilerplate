@@ -46,7 +46,7 @@ export default function Router({ routes = [], redirects = [], message = 'Cargand
                                 exact,
                                 layoutConfig,
                                 Layout,
-                                Page,
+                                Child,
                                 ...props
                             } = route;
 
@@ -55,10 +55,10 @@ export default function Router({ routes = [], redirects = [], message = 'Cargand
                                 <Route key={ key } exact={ exact } path={ `${basePath}${path}`.replace(/\/\//g, '/') }>
                                     {Layout ? (
                                         <Layout title={ title } { ...layoutConfig }>
-                                            <Page { ...props } />
+                                            <Child { ...props } />
                                         </Layout>
                                     ) : (
-                                        <Page { ...props } />
+                                        <Child { ...props } />
                                     )}
                                 </Route>
                             );

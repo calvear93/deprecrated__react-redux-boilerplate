@@ -8,7 +8,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:24:07
- * Last modified  : 2020-06-09 16:40:51
+ * Last modified  : 2020-06-19 19:56:44
  */
 
 import { lazy } from 'react';
@@ -26,13 +26,13 @@ export default {
         title: 'Perfil', // requires at least BaseLayout.
         path: '/', // profile/
         exact: true,
-        Page: Pages.ProfilePage
+        Child: Pages.ProfilePage
     },
     ProfileEdit: {
         key: 'ProfileEdit',
         title: 'Editar Perfil', // requires at least BaseLayout.
         path: '/edit', // profile/edit
         exact: true,
-        Page: Pages.ProfileEditPage
+        Child: Pages.ProfileEditPage
     }
 };

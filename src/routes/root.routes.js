@@ -8,7 +8,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:24:07
- * Last modified  : 2020-06-09 16:44:15
+ * Last modified  : 2020-06-19 19:56:55
  */
 
 import { lazy } from 'react';
@@ -47,7 +47,7 @@ export default {
             }
         },
         Layout: Layouts.AppLayout,
-        Page: Pages.MainPage
+        Child: Pages.MainPage
     },
     // profile router with nested paths.
     ProfileRouter: {
@@ -64,7 +64,7 @@ export default {
             }
         },
         Layout: Layouts.AppLayout,
-        Page: Routers.ProfileRouter
+        Child: Routers.ProfileRouter
     },
     // on unauthorized access.
     Unauthorized: {
@@ -73,6 +73,6 @@ export default {
         path: '/401',
         exact: true,
         Layout: Layouts.BaseLayout,
-        Page: Pages.UnauthorizedPage
+        Child: Pages.UnauthorizedPage
     }
 };
