@@ -29,7 +29,6 @@ export const AzureActiveDirectorySecurityMode = {
  * @param {bool} enabled authentication is enabled.
  * @param {number} mode routes security list mode, may be whitelist or blacklist.
  * @param {array} list secured routes list.
- * @param {string} loginRoute route for login page. When sets, avoid to automatic authentication.
  * @param {string} errorRoute route for authentication error page.
  *
  * @returns {JSX} children on authenticated, error redirection in otherwise.
@@ -39,7 +38,6 @@ export default function AzureActiveDirectoryProvider({
     enabled = true,
     mode = AzureActiveDirectorySecurityMode.WHITELIST,
     list = [],
-    loginRoute,
     errorRoute
 })
 {
@@ -62,7 +60,7 @@ export default function AzureActiveDirectoryProvider({
     useEffect(() =>
     {
         // dispatches authentication action.
-        if (!isAuthorized && !loginRoute)
+        if (!isAuthorized)
             dispatch(AzureActiveDirectoryAction.Action(AzureActiveDirectoryAction.Type.AUTHENTICATE));
     }, [ isAuthorized ]);
 
@@ -70,8 +68,6 @@ export default function AzureActiveDirectoryProvider({
         children
     ) : error ? (
         <Redirect to={ { pathname: errorRoute, state: error } } />
-    ) : loginRoute ? (
-        <Redirect to={ loginRoute } />
     ) : (
         <Loader message='Autenticando' />
     );
