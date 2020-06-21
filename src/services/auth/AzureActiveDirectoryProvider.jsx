@@ -46,20 +46,23 @@ export default function AzureActiveDirectoryProvider({
     const { authenticated, error } = usePartition(AzureActiveDirectoryAction);
 
     // whether mode is whitelist.
-    const whitelist = mode === AzureActiveDirectorySecurityMode.WHITELIST;
+    const isWhitelistMode = mode === AzureActiveDirectorySecurityMode.WHITELIST;
     // adds error route in case of whitelist.
-    whitelist && list.push(errorRoute);
+    isWhitelistMode && list.push(errorRoute);
     // whether current path is in list.
     const pathIsInList = usePathBelongsTo(list);
 
-    const isAuthorized = !enabled || authenticated || !(whitelist ^ pathIsInList);
+    // validates whether user is authenticated or
+    // current path is in a whitelist, on Whitelist mode,
+    // or isn't in a blacklist in case of Blacklist mode.
+    const isAuthorized = !enabled || authenticated || !(isWhitelistMode ^ pathIsInList);
 
     useEffect(() =>
     {
         // dispatches authentication action.
         if (!isAuthorized)
             dispatch(AzureActiveDirectoryAction.Action(AzureActiveDirectoryAction.Type.AUTHENTICATE));
-    }, [ authenticated ]);
+    }, [ isAuthorized ]);
 
     return isAuthorized ? (
         children
