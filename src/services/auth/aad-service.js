@@ -62,7 +62,7 @@ export default {
             // redirect method login.
             AuthenticationContext[type]({
                 scopes,
-                forceRefresh: false
+                forceRefresh: true
             });
 
             // should authenticate.
@@ -106,7 +106,7 @@ export default {
                 // redirect method login.
                 AuthenticationContext[type]({
                     scopes,
-                    forceRefresh: false
+                    forceRefresh: true
                 });
             }
             else
