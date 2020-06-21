@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import { Redirect, Route, Switch, useRouteMatch } from 'react-router-dom';
-import Loader from './Loader';
+import Loader from '../components/Loader';
 
 // lazy loaded components.
 const NotFoundPage = lazy(() => import('../pages/not-found'));
@@ -11,6 +11,9 @@ const NotFoundPage = lazy(() => import('../pages/not-found'));
  * Renders routes for application
  * pages, exceptions and intermediate
  * loading sections.
+ *
+ * Use it for define application
+ * routers in this directory.
  *
  * @param {array} routes array of routes.
  * @param {array} redirects array of redirects (exact, from, to).

@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { AzureActiveDirectoryProvider, AzureActiveDirectorySecurityMode, IsAuthEnabled } from './services/auth';
 import store from './store/store';
-import RootRouter from './pages/RootRouter.routes';
+import RootRouter from './routes/root';
 import './styles/App.scss';
 
 /**
@@ -28,6 +28,7 @@ export default function App()
                     <RootRouter />
                 </AzureActiveDirectoryProvider>
             </Provider>
+
             <ToastContainer />
         </BrowserRouter>
     );

@@ -9,7 +9,7 @@ export default function NotFoundPage()
 {
     return (
         <div className='page-container'>
-            Not Found
+            PÁGINA NO ENCONTRADA
         </div>
     );
 }

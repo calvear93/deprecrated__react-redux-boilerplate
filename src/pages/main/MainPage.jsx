@@ -11,7 +11,7 @@ export default function MainPage()
 {
     return (
         <div className='page-container main-page-container'>
-            CONTENT
+            CONTENIDO
             <Demo />
         </div>
     );

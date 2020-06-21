@@ -1,6 +1,6 @@
 import React from 'react';
-import Router from '../components/Router';
-import { ProfileRoutes } from '../routes';
+import Router from '../Router';
+import ProfileRoutes from './profile.routes';
 
 // routes array.
 const Routes = Object.values(ProfileRoutes);
