@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react';
-import { Redirect, Route, Switch, useRouteMatch } from 'react-router-dom';
+import { Redirect, Route, Switch, useLocation, useRouteMatch } from 'react-router-dom';
 import Loader from '../components/Loader';
 
 // lazy loaded components.
@@ -23,11 +23,14 @@ const NotFoundPage = lazy(() => import('../pages/not-found'));
  */
 export default function Router({ routes = [], redirects = [], message = 'Cargando' })
 {
+    const { pathname: currentPath } = useLocation();
     const { path: basePath } = useRouteMatch();
 
     return (
         <Suspense fallback={ <Loader message={ message } /> }>
             <Switch>
+                <Redirect from='/:url*(/+)' to={ currentPath.slice(0, -1) } />
+
                 {
                     // renders the redirection definitions.
                     redirects
