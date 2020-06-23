@@ -29,12 +29,13 @@ const SampleAction =
     },
 
     /**
-     * Action States.
+     * Reducer States.
      *
      * @memberof SampleAction
      */
     State: {
         PREPARING: 'PREPARING',
+        FETCHING: 'FETCHING',
         READY: 'READY',
         FAILED: 'FAILED'
     },

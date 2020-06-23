@@ -8,8 +8,12 @@
 */
 
 $box-shadow: (
+    slight: 0 3px 5px 0 rgba(0, 0, 0, .08),
     normal: 0 1px 6px 0 rgba(0, 0, 0, .2),
-    hover: 0 1px 10px 0 rgba(0, 0, 0, .5)
+    hover: 0 1px 10px 0 rgba(0, 0, 0, .5),
+    button: (0px 2px 16px rgba(0, 0, 0, .08), 0px 0px 24px rgba(3, 45, 68, .16)),
+    box: (0px 9px 16px rgba(0, 0, 0, .08), 0px 0px 56px rgba(3, 45, 68, .16)),
+    header: 0px 10px 32px -10px rgba(0, 0, 0, .75)
 );
 
 @function box-shadow($key) {

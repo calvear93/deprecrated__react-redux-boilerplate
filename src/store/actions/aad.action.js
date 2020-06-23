@@ -11,7 +11,7 @@ const KEY = 'AAD';
 const AzureActiveDirectoryAction =
 {
     /**
-     * Action Store Key.
+     * Reducer Store Partition Key.
      *
      * @memberof AzureActiveDirectoryAction
      */
