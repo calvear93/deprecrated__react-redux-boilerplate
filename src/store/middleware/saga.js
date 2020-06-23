@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 22:43:58
- * Last modified  : 2020-05-16 22:44:38
+ * Last modified  : 2020-06-23 12:11:49
  */
 
 import { race, take, delay } from 'redux-saga/effects';
@@ -19,7 +19,7 @@ import { race, take, delay } from 'redux-saga/effects';
  *
  * @returns {Array<any>} actions results.
  */
-export function* waitForEvery(types, times, timeout = 0)
+export function* waitForAny(types, times, timeout = 0)
 {
     // stores every result of action intercepted.
     let results = [];
