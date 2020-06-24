@@ -32,14 +32,14 @@ variables:
     webapp: 'wa-prod-project'
     environmentBuild: production
   # qa environment variables definition.
-  ${{ if eq( variables['Build.SourceBranch'], 'refs/heads/develop') }}:
+  ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/develop') }}:
     environmentName: 'QA'
     environment: 'DEPLOY_WEB_QA'
     azureSubscription: 'ASC-Project-QA'
     webapp: 'wa-qa-project'
     environmentBuild: qa
   # development environment variables definition.
-  ${{ if startsWith( variables['Build.SourceBranch'], 'refs/heads/feature/') }}:
+  ${{ if startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/') }}:
     environmentName: 'DESA'
     environment: 'DEPLOY_WEB_DESA'
     azureSubscription: 'ASC-Project-DESA'
@@ -76,6 +76,7 @@ stages:
         displayName: 'Building project'
 
       - task: Npm@1
+        condition: ne(variables.environmentName, 'DESA')
         inputs:
           command: 'custom'
           customCommand: 'run postbuild'
