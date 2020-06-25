@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-23 19:53:33
- * Last modified  : 2020-06-25 15:55:04
+ * Last modified  : 2020-06-25 18:29:11
  */
 
 import { DEFAULT_SCOPES } from './aad-cfg';
@@ -36,13 +36,15 @@ export default {
      * @param {array} type login type (redirect or popup).
      * @param {array} scopes permission scopes.
      * @param {bool} force forces to login.
+     * @param {bool} forceTokenRefresh forces to renew token on authentication.
      *
      * @returns {bool} account data if is authenticated, error on failure.
      */
     loginAsync({
         type = AADTypes.LOGIN_TYPE.REDIRECT,
         scopes = DEFAULT_SCOPES,
-        force = false
+        force = false,
+        forceTokenRefresh = true
     } = {})
     {
         return new Promise((resolve, reject) =>
@@ -60,7 +62,7 @@ export default {
                 // redirect method login.
                 AuthenticationContext[type]({
                     scopes,
-                    forceRefresh: true
+                    forceRefresh: forceTokenRefresh
                 });
             }
             else
