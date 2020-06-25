@@ -7,13 +7,13 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-04-15 19:51:39
- * Last modified  : 2020-06-06 10:57:44
+ * Last modified  : 2020-06-25 10:55:40
  */
 
 import AADTypes from './aad-types';
 
 // offset needed to renew the token before expiry.
-const TOKEN_REFRESH_PERIOD = parseInt(process.env.REACT_APP_AAD_TOKEN_RENEWAL_OFFSET_SECONDS);
+const TOKEN_REFRESH_PERIOD = +process.env.REACT_APP_AAD_TOKEN_RENEWAL_OFFSET_SECONDS;
 
 // navigates to request URL after authentication/login instead of redirect URL.
 const NAVIGATE_TO_REQUEST_URL_AFTER_LOGIN = process.env.REACT_APP_AAD_NAVIGATE_TO_REQUEST_URL_AFTER_LOGIN === 'true';
