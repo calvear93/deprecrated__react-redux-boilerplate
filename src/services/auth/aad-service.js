@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-23 19:53:33
- * Last modified  : 2020-06-06 11:33:33
+ * Last modified  : 2020-06-25 15:55:04
  */
 
 import { DEFAULT_SCOPES } from './aad-cfg';
@@ -27,52 +27,6 @@ export default {
     acquireTokenSilent(scopes)
     {
         return AuthenticationContext.acquireTokenSilent({ scopes: scopes ?? DEFAULT_SCOPES });
-    },
-
-    /**
-     * Redirect to Microsoft AD login if user isn't authenticated.
-     * On finishing, redirect to redirectUri.
-     *
-     * @param {array} type login type (redirect or popup).
-     * @param {array} scopes permission scopes.
-     * @param {bool} force forces to login.
-     * @param {func} onSuccess on authorized.
-     * @param {func} onError on unauthorized.
-     *
-     * @returns {bool} true if is authenticated, false if login is in progress.
-     */
-    login({
-        type = AADTypes.LOGIN_TYPE.REDIRECT,
-        scopes = DEFAULT_SCOPES,
-        force = false,
-        onSuccess,
-        onError
-    } = {})
-    {
-        if (force || !AuthenticationContext.getAccount())
-        {
-            // authentication process callback.
-            AuthenticationContext.handleRedirectCallback((error, response) =>
-            {
-                if (response)
-                    onSuccess && onSuccess(response);
-                else
-                    onError && onError(error);
-            });
-            // redirect method login.
-            AuthenticationContext[type]({
-                scopes,
-                forceRefresh: true
-            });
-
-            // should authenticate.
-            return false;
-        }
-        else
-        {
-            // authentication is ok.
-            return true;
-        }
     },
 
     /**
