@@ -85,7 +85,7 @@ export default function FormFactory({
 
             setValidations(newValidations ?? {});
         }
-    }, []);
+    }, [ validateOnMount, validators, values, onChange ]);
 
     /**
      * Updates validations from a

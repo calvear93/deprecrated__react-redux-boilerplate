@@ -60,9 +60,9 @@ export default function AzureActiveDirectoryProvider({
     useEffect(() =>
     {
         // dispatches authentication action.
-        if (!isAuthorized)
+        if (!isAuthorized && !error)
             dispatch(AzureActiveDirectoryAction.Action(AzureActiveDirectoryAction.Type.AUTHENTICATE));
-    }, [ isAuthorized ]);
+    }, [ isAuthorized, error ]);
 
     return isAuthorized ? (
         children
