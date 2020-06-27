@@ -13,7 +13,7 @@ function* authenticate({ payload: { type } = {} })
     try
     {
         // calls azure MSAL authentication service.
-        const account = yield call(AuthenticationService.loginAsync, { type });
+        const account = yield call(AuthenticationService.login, { type });
         // initializes the storage.
         const storage = Storage.initNamespaceStorage(account.accountIdentifier)[AzureActiveDirectoryAction.Persistence.Type];
 

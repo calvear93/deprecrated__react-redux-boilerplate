@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-23 19:53:33
- * Last modified  : 2020-06-25 18:29:11
+ * Last modified  : 2020-06-27 11:58:23
  */
 
 import { DEFAULT_SCOPES } from './aad-cfg';
@@ -40,7 +40,7 @@ export default {
      *
      * @returns {bool} account data if is authenticated, error on failure.
      */
-    loginAsync({
+    login({
         type = AADTypes.LOGIN_TYPE.REDIRECT,
         scopes = DEFAULT_SCOPES,
         force = false,
