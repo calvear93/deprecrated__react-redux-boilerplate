@@ -90,7 +90,6 @@
     "build:production": "env-cmd -e default,build,production craco build",
     "lint": "eslint --fix --ext .js,.jsx ./src",
     "postbuild": "rimraf build/static/**/*.map",
-    "packages:outdated": "npm outdated",
     "packages:update": "npm update --save/--save-dev",
     "packages:check-updates": "npx npm-check-updates -u"
   },
