@@ -35,7 +35,7 @@ const SampleAction =
      */
     State: {
         PREPARING: 'PREPARING',
-        FETCHING: 'FETCHING',
+        EXECUTING: 'EXECUTING',
         READY: 'READY',
         FAILED: 'FAILED'
     },

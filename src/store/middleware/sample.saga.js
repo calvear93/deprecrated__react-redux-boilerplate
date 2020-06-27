@@ -23,7 +23,7 @@ function* exec(payload)
         yield put(SampleAction.Action(
             SampleAction.Type.ROLLBACK,
             {
-                error: e,
+                stacktrace: e,
                 message: 'Operation cannot be completed'
             }
         ));

@@ -37,8 +37,8 @@ function* authenticate({ payload: { type } = {} })
         yield put(AzureActiveDirectoryAction.Action(
             AzureActiveDirectoryAction.Type.AUTHENTICATE_ERROR,
             {
-                error: e,
-                message: 'Authentication denied'
+                stacktrace: e,
+                message: 'Autenticación denegada'
             }
         ));
     }

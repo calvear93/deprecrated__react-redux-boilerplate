@@ -28,16 +28,11 @@ export default function AzureActiveDirectoryReducer(store = AzureActiveDirectory
 
         // on login error.
         case AzureActiveDirectoryAction.Type.AUTHENTICATE_ERROR:
-        {
-            const { error, message } = payload;
-
             return {
                 ...store,
                 authenticated: false,
-                error,
-                message
+                error: payload
             };
-        }
 
         // on authentication success.
         case AzureActiveDirectoryAction.Type.LOGOUT:

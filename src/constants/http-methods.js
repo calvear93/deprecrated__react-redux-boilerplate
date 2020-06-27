@@ -7,5 +7,12 @@ export default {
     PATCH: 'patch',
     DELETE: 'delete',
     OPTIONS: 'options',
-    TRACE: 'trace'
+    TRACE: 'trace',
+    COPY: 'COPY',
+    LINK: 'LINK',
+    UNLINK: 'UNLINK',
+    PURGE: 'PURGE',
+    LOCK: 'LOCK',
+    UNLOCK: 'UNLOCK',
+    VIEW: 'VIEW'
 };

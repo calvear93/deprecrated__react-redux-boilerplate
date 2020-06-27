@@ -21,7 +21,7 @@ export default function SampleReducer(store = SampleDefaults, action)
 
             return {
                 ...store,
-                state: SampleAction.State.PREPARING
+                state: SampleAction.State.EXECUTING
             };
 
         case SampleAction.Type.COMMIT:
@@ -31,16 +31,11 @@ export default function SampleReducer(store = SampleDefaults, action)
             };
 
         case SampleAction.Type.ROLLBACK:
-        {
-            const { error, message } = payload;
-
             return {
                 ...store,
                 state: SampleAction.State.CORRUPT,
-                error,
-                message
+                error: payload
             };
-        }
 
         // default doesn't changes the store,
         // so, components doesn't re-renders.
