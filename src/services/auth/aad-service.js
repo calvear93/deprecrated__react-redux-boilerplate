@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-23 19:53:33
- * Last modified  : 2020-06-27 11:58:23
+ * Last modified  : 2020-06-27 12:27:40
  */
 
 import { DEFAULT_SCOPES } from './aad-cfg';
@@ -35,7 +35,6 @@ export default {
      *
      * @param {array} type login type (redirect or popup).
      * @param {array} scopes permission scopes.
-     * @param {bool} force forces to login.
      * @param {bool} forceTokenRefresh forces to renew token on authentication.
      *
      * @returns {bool} account data if is authenticated, error on failure.
@@ -43,33 +42,33 @@ export default {
     login({
         type = AADTypes.LOGIN_TYPE.REDIRECT,
         scopes = DEFAULT_SCOPES,
-        force = false,
-        forceTokenRefresh = true
+        forceTokenRefresh = false
     } = {})
     {
         return new Promise((resolve, reject) =>
         {
-            if (force || !AuthenticationContext.getAccount())
-            {
-                // authentication process callback.
-                AuthenticationContext.handleRedirectCallback((error, response) =>
+            if (AuthenticationContext.getAccount())
+                return resolve(AuthenticationContext.getAccount());
+
+            AuthenticationContext.acquireTokenSilent({ scopes: scopes ?? DEFAULT_SCOPES })
+                .then(() => resolve(AuthenticationContext.getAccount()))
+                .catch(() =>
                 {
-                    if (response)
-                        resolve(AuthenticationContext.getAccount());
-                    else
-                        reject(error);
+                    // authentication process callback.
+                    AuthenticationContext.handleRedirectCallback((error, response) =>
+                    {
+                        if (response)
+                            resolve(AuthenticationContext.getAccount());
+                        else
+                            reject(error);
+                    });
+
+                    // redirect method login.
+                    AuthenticationContext[type]({
+                        scopes,
+                        forceRefresh: forceTokenRefresh
+                    });
                 });
-                // redirect method login.
-                AuthenticationContext[type]({
-                    scopes,
-                    forceRefresh: forceTokenRefresh
-                });
-            }
-            else
-            {
-                // authentication is ok.
-                resolve(AuthenticationContext.getAccount());
-            }
         });
     },
 
