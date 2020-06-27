@@ -5,14 +5,14 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-23 19:53:33
- * Last modified  : 2020-06-27 12:27:40
+ * Last modified  : 2020-06-27 12:54:06
  */
 
 import { DEFAULT_SCOPES } from './aad-cfg';
 import AuthenticationContext from './aad-context';
 import AADTypes from './aad-types';
 
-export default {
+const AuthenticationService = {
 
     // Authentication context.
     Context: AuthenticationContext,
@@ -30,11 +30,38 @@ export default {
     },
 
     /**
+     * Single Sign-On flow.
+     *
+     * @param {array} scopes permission scopes.
+     * @param {string} loginHint preset account email.
+     *
+     * @returns {bool} account data if is authenticated, error on failure.
+     */
+    sso({
+        scopes = DEFAULT_SCOPES,
+        loginHint
+    } = {})
+    {
+        return new Promise((resolve, reject) =>
+        {
+            AuthenticationContext.ssoSilent({ loginHint, scopes })
+                .then((account) => resolve(account))
+                .catch(() =>
+                {
+                    AuthenticationService.login({ loginHint, scopes, forceTokenRefresh: true })
+                        .then((account) => resolve(account))
+                        .catch((err) => reject(err));
+                });
+        });
+    },
+
+    /**
      * Redirect to Microsoft AD login if user isn't authenticated.
      * On finishing, redirect to redirectUri.
      *
-     * @param {array} type login type (redirect or popup).
+     * @param {string} type login type (redirect or popup).
      * @param {array} scopes permission scopes.
+     * @param {string} loginHint preset account email.
      * @param {bool} forceTokenRefresh forces to renew token on authentication.
      *
      * @returns {bool} account data if is authenticated, error on failure.
@@ -42,6 +69,7 @@ export default {
     login({
         type = AADTypes.LOGIN_TYPE.REDIRECT,
         scopes = DEFAULT_SCOPES,
+        loginHint,
         forceTokenRefresh = false
     } = {})
     {
@@ -50,7 +78,7 @@ export default {
             if (AuthenticationContext.getAccount())
                 return resolve(AuthenticationContext.getAccount());
 
-            AuthenticationContext.acquireTokenSilent({ scopes: scopes ?? DEFAULT_SCOPES })
+            AuthenticationContext.acquireTokenSilent({ scopes })
                 .then(() => resolve(AuthenticationContext.getAccount()))
                 .catch(() =>
                 {
@@ -66,6 +94,7 @@ export default {
                     // redirect method login.
                     AuthenticationContext[type]({
                         scopes,
+                        loginHint,
                         forceRefresh: forceTokenRefresh
                     });
                 });
@@ -133,3 +162,5 @@ export default {
         return null;
     }
 };
+
+export default AuthenticationService;
