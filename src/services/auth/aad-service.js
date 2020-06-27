@@ -24,9 +24,31 @@ const AuthenticationService = {
      * @param {array} scopes array of scopes allowed.
      * @returns {Promise<any>} token container.
      */
-    acquireTokenSilent(scopes)
+    acquireTokenSilent(scopes = DEFAULT_SCOPES)
     {
-        return AuthenticationContext.acquireTokenSilent({ scopes: scopes ?? DEFAULT_SCOPES });
+        return AuthenticationContext.acquireTokenSilent({ scopes });
+    },
+
+    /**
+     * Acquire new token for use.
+     * JWT Decoding page: @see https://jwt.io/
+     *
+     * @param {array} scopes array of scopes allowed.
+     * @returns {Promise<any>} token container.
+     */
+    acquireToken(scopes = DEFAULT_SCOPES)
+    {
+        return new Promise((resolve, reject) =>
+        {
+            AuthenticationContext.acquireTokenSilent({ scopes })
+                .then((account) => resolve(account))
+                .catch(() =>
+                {
+                    AuthenticationContext.acquireTokenPopup({ scopes })
+                        .then((token) => resolve(token))
+                        .catch((err) => reject(err));
+                });
+        });
     },
 
     /**
