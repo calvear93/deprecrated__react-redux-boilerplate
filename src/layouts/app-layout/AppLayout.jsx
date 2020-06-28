@@ -1,6 +1,7 @@
 import React from 'react';
 import Footer from './Footer';
 import Header from './Header';
+import Breadcrumbs from '../../routes/Breadcrumbs';
 import { useDocumentTitle } from '../../hooks/document';
 import '../../styles/layouts/app-layout.scss';
 
@@ -28,6 +29,8 @@ export default function AppLayout({
     return (
         <div className='app-container' { ...props }>
             <Header { ...headerProps } />
+
+            <Breadcrumbs />
 
             <content { ...props }>
                 {children}
