@@ -34,12 +34,6 @@ export default function AzureActiveDirectoryReducer(store = AzureActiveDirectory
                 error: payload
             };
 
-        // on authentication success.
-        case AzureActiveDirectoryAction.Type.LOGOUT:
-            return {
-                authenticated: true // for avoid re-authentication on logout.
-            };
-
         // default doesn't changes the store,
         // so, components doesn't re-renders.
         default:
