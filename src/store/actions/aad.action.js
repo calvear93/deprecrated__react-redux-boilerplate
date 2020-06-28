@@ -30,6 +30,15 @@ const AzureActiveDirectoryAction =
     },
 
     /**
+     * Partition selectors.
+     *
+     * @memberof AzureActiveDirectoryAction
+     */
+    Selector: {
+        User: ({ [AzureActiveDirectoryAction.Key]: { account: { user } } }) => user
+    },
+
+    /**
      * Storage persistence.
      *
      * @memberof AzureActiveDirectoryAction
