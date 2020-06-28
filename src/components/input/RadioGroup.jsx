@@ -57,7 +57,7 @@ export default function RadioGroup({ id, group, options, onChange, checked = nul
                     className='radio-group-clear'
                     name='x'
                     link
-                    title='Clear'
+                    title='Limpiar'
                     onClick={ onClear }
                 />
             )}
