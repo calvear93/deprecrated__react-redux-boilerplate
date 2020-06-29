@@ -27,15 +27,9 @@ $z-index: (
     z-index: z-index($key);
 }
 
-// Variables export for JS.
+// variables export to JS.
 :export {
-    loader: z-index(loader);
-    tooltip: z-index(tooltip);
-    toast: z-index(toast);
-    dropdown: z-index(dropdown);
-    modal: z-index(modal);
-    navigation: z-index(navigation);
-    component: z-index(component);
-    container: z-index(container);
-    body: z-index(body);
+    @each $key, $value in $z-index {
+        #{$key}: $value;
+    }
 }

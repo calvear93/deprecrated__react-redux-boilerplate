@@ -1,4 +1,3 @@
-@import '~sass-mq';
 @import '../vars';
 
 .app-container {
@@ -9,7 +8,7 @@
 
     header {
         padding: .6em;
-        background-color: $background-dark;
+        background-color: color(background-dark);
         position: sticky;
         top: 0;
         @include box-shadow(header);
@@ -24,6 +23,6 @@
 
     footer {
         padding: .6em;
-        background-color: $background-dark;
+        background-color: color(background-dark);
     }
 }

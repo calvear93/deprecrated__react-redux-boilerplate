@@ -6,7 +6,7 @@
 
 i.link.icon.time-picker-clear {
     right: 1.4em !important;
-    color: $light;
+    color: color(light);
     font-size: .9em;
 }
 
@@ -14,7 +14,7 @@ i.link.icon.time-picker-clear {
     .react-timekeeper__top-bar {
         .react-timekeeper__tb-minute-wrapper > .react-timekeeper__tb-hour--active,
         .react-timekeeper__tb-hour-wrapper > .react-timekeeper__tb-minute--active {
-            color: $brand;
+            color: color(brand);
         }
     }
 }

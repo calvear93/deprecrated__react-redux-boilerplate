@@ -13,7 +13,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:36:01
- * Last modified  : 2020-05-24 13:28:26
+ * Last modified  : 2020-06-29 15:38:19
  */
 
 import tippy from 'tippy.js';
@@ -49,6 +49,7 @@ export default function Tippy(selector = '[data-tooltip]')
  *
  * @param {any} ctx DOM element.
  * @param {string} attribute element attribute.
+ *
  * @returns {string} attribute value.
  */
 function getAttr(ctx, attribute)

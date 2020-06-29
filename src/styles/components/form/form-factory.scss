@@ -12,7 +12,7 @@
             margin-left: .2em;
             padding-bottom: .2em;
             width: 90%;
-            color: $secondary;
+            color: color(secondary);
             font-size: .8em;
             font-weight: bolder;
             text-transform: uppercase;
@@ -28,7 +28,7 @@
         &.error {
             .form-item-header {
                 &[required] {
-                    color: $orange-dark;
+                    color: color(orange-dark);
                 }
             }
         }
@@ -55,7 +55,7 @@
         .form-item-error-label {
             margin-top: .2em;
             margin-left: .4em;
-            color: $warning;
+            color: color(warning);
             font-size: .8em;
 
             &:before {
@@ -71,7 +71,7 @@
             margin: 1em .6em .2em;
             padding-bottom: .2em;
             width: 100%;
-            color: $slate-gray-light;
+            color: color(slate-gray-light);
             font-size: .9em;
             font-weight: bolder;
             text-transform: uppercase;
@@ -85,6 +85,6 @@
 }
 
 div[for][disabled='true'] {
-    color: $light-gray !important;
+    color: color(light-gray) !important;
     opacity: .4;
 }

@@ -9,7 +9,7 @@
         position: absolute;
         top: .2em;
         right: .4em;
-        color: $light;
+        color: color(light);
         font-size: .9em;
     }
 
@@ -18,14 +18,14 @@
 
         .ui.radio.checkbox {
             input:disabled + label:before {
-                border-color: $light-gray;
+                border-color: color(light-gray);
             }
 
             label {
-                color: $slate-gray-dark;
+                color: color(slate-gray-dark);
 
                 &:after {
-                    background-color: $brand !important;
+                    background-color: color(brand) !important;
                 }
             }
         }

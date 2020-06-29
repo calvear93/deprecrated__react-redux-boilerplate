@@ -21,7 +21,7 @@ $import-google-fonts: false;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    color: $slate-gray-dark;
+    color: color(slate-gray-dark);
 
     .dropdown-content-header {
         padding-bottom: .2em;
@@ -44,7 +44,7 @@ $import-google-fonts: false;
 .ui.toggle.checkbox input:checked ~ label:before,
 .ui.toggle.checkbox input:focus:checked ~ .box:before,
 .ui.toggle.checkbox input:focus:checked ~ label:before {
-    background-color: $brand !important;
+    background-color: color(brand) !important;
 }
 
 .ui.form.disabled {
