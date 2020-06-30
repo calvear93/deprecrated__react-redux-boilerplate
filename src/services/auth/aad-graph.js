@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-23 19:53:33
- * Last modified  : 2020-06-11 19:11:43
+ * Last modified  : 2020-06-30 19:22:55
  */
 
 import axios from 'axios';
@@ -65,19 +65,19 @@ const Graph = {
      */
     photo()
     {
-        return new Promise((resolve, reject) =>
+        return new Promise((resolve) =>
         {
             Graph.graphRequest({ api: 'me/photo/$value', responseType: 'blob' })
                 .then((response) =>
                 {
-                    var reader = new FileReader();
+                    const reader = new FileReader();
                     reader.readAsDataURL(response);
                     reader.onloadend = function()
                     {
                         resolve(reader.result);
                     };
                 })
-                .catch(reject);
+                .catch(_ => resolve());
         });
     },
 
@@ -92,19 +92,19 @@ const Graph = {
      */
     photoWithSize(size = '648x648')
     {
-        return new Promise((resolve, reject) =>
+        return new Promise((resolve) =>
         {
             Graph.graphRequest({ api: `me/photos/${size}/$value`, responseType: 'blob' })
                 .then((response) =>
                 {
-                    var reader = new FileReader();
+                    const reader = new FileReader();
                     reader.readAsDataURL(response);
                     reader.onloadend = function()
                     {
                         resolve(reader.result);
                     };
                 })
-                .catch(reject);
+                .catch(_ => resolve());
         });
     }
 };
