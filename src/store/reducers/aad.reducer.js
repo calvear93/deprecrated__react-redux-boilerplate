@@ -35,7 +35,7 @@ export default function AzureActiveDirectoryReducer(store = AzureActiveDirectory
             };
 
         // default doesn't changes the store,
-        // so, components doesn't re-renders.
+        // so, components don't re-renders.
         default:
             return store;
     }

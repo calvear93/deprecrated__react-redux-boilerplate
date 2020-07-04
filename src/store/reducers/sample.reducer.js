@@ -16,6 +16,7 @@ export default function SampleReducer(store = SampleDefaults, action)
 
     switch (type)
     {
+        // executes the action.
         case SampleAction.Type.EXEC:
             delete store.error;
 
@@ -24,12 +25,14 @@ export default function SampleReducer(store = SampleDefaults, action)
                 state: SampleAction.State.EXECUTING
             };
 
+        // action is successful.
         case SampleAction.Type.COMMIT:
             return {
                 ...store,
                 state: SampleAction.State.READY
             };
 
+        // action was finished with errors.
         case SampleAction.Type.ROLLBACK:
             return {
                 ...store,
@@ -38,7 +41,7 @@ export default function SampleReducer(store = SampleDefaults, action)
             };
 
         // default doesn't changes the store,
-        // so, components doesn't re-renders.
+        // so, components don't re-renders.
         default:
             return store;
     }
