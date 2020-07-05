@@ -170,7 +170,7 @@ $schemes: (
     cursor: pointer;
     direction: ltr;
     -ms-flex-pack: justify;
-    @include box-shadow(normal);
+    @include box-shadow(toast);
 }
 
 .toastify-body {
