@@ -8,7 +8,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:24:07
- * Last modified  : 2020-06-21 14:44:35
+ * Last modified  : 2020-07-04 21:11:01
  */
 
 import { lazy } from 'react';
@@ -34,7 +34,7 @@ export default {
     // root app page.
     Main: {
         key: 'Main',
-        title: 'Main Page', // requires at least BaseLayout.
+        title: 'Inicio', // requires at least BaseLayout.
         path: '/main',
         exact: true,
         // specific layout config props.
@@ -69,7 +69,7 @@ export default {
     // on unauthorized access.
     Unauthorized: {
         key: 'Unauthorized',
-        title: 'Unauthorized',
+        title: 'Sin Autorización',
         path: '/401',
         exact: true,
         Layout: Layouts.BaseLayout,
