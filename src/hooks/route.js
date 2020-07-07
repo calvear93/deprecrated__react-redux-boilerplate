@@ -8,6 +8,7 @@ import { useLocation } from 'react-router-dom';
  * useLocation() effect.
  *
  * @export
+ *
  * @returns {any} query params.
  */
 export function useQueryParams()
