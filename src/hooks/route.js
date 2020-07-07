@@ -25,6 +25,7 @@ export function useQueryParams()
  *
  * @export
  * @param {array} list array of paths (strings)
+ *
  * @returns {bool} true if current path is in.
  */
 export function usePathBelongsTo(list)
@@ -35,4 +36,18 @@ export function usePathBelongsTo(list)
     const comparingList = useMemo(() => list.map(p => p.toUpperCase()), [ list ]);
 
     return comparingList.includes(pathname.toUpperCase());
+}
+
+/**
+ * Retrieves current path state.
+ * Depends of React Router
+ * useLocation() effect.
+ *
+ * @export
+ *
+ * @returns {any} route state.
+ */
+export function useRouteState()
+{
+    return useLocation()?.state;
 }
