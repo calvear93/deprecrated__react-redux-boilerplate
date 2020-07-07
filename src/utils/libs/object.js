@@ -5,21 +5,8 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:42:09
- * Last modified  : 2020-05-30 15:31:00
+ * Last modified  : 2020-07-07 11:49:35
  */
-
-/**
- * Reduces a empty object to a undefined,
- * 'cause in many cases,  it's meaning is the same.
- *
- * @param {any} obj object for validate.
- *
- * @returns {any} object if is not null, undefined or empty, undefined in otherwise.
- */
-export function reduceEmptiness(obj)
-{
-    return Object.isEmpty(obj) ? undefined : obj;
-}
 
 /**
  * Validates emptiness of an object.
@@ -31,6 +18,19 @@ export function reduceEmptiness(obj)
 export function isEmpty(obj)
 {
     return !obj || Object.keys(obj).length === 0;
+}
+
+/**
+ * Reduces a empty object to a undefined,
+ * 'cause in many cases,  it's meaning is the same.
+ *
+ * @param {any} obj object for validate.
+ *
+ * @returns {any} object if is not null, undefined or empty, undefined in otherwise.
+ */
+export function reduceEmptiness(obj)
+{
+    return isEmpty(obj) ? undefined : obj;
 }
 
 /**
