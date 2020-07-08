@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-23 19:53:33
- * Last modified  : 2020-06-30 19:22:55
+ * Last modified  : 2020-07-08 14:23:38
  */
 
 import axios from 'axios';
@@ -77,7 +77,7 @@ const Graph = {
                         resolve(reader.result);
                     };
                 })
-                .catch(_ => resolve());
+                .catch(() => resolve());
         });
     },
 
@@ -104,7 +104,7 @@ const Graph = {
                         resolve(reader.result);
                     };
                 })
-                .catch(_ => resolve());
+                .catch(() => resolve());
         });
     }
 };
