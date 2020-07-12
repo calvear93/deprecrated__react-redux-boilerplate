@@ -7,7 +7,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-04-15 19:51:39
- * Last modified  : 2020-06-25 10:55:40
+ * Last modified  : 2020-07-12 17:51:09
  */
 
 import AADTypes from './aad-types';
@@ -72,7 +72,7 @@ const cache = {
 const system = {
     loadFrameTimeout: 6000,
     tokenRenewalOffsetSeconds: TOKEN_REFRESH_PERIOD,
-    navigateFrameWait: 500
+    navigateFrameWait: 200
 };
 
 /**
