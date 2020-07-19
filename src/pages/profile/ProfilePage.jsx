@@ -8,8 +8,8 @@ import React from 'react';
 export default function ProfilePage()
 {
     return (
-        <div className='page-container profile-page-container'>
+        <page is='div' id='profile-page'>
             PERFIL
-        </div>
+        </page>
     );
 }

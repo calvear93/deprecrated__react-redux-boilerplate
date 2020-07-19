@@ -1,6 +1,6 @@
 @import '../vars';
 
-.app-container {
+#app-layout {
     display: flex;
     flex-direction: column;
     overflow-wrap: break-word;
@@ -13,12 +13,6 @@
         top: 0;
         @include box-shadow(header);
         @include z-index(header);
-    }
-
-    content {
-        display: flex;
-        flex-grow: 1;
-        padding: .6em;
     }
 
     footer {

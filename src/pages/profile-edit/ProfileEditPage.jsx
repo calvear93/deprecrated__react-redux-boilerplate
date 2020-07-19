@@ -8,8 +8,8 @@ import React from 'react';
 export default function ProfileEditPage()
 {
     return (
-        <div className='page-container profile-edit-page-container'>
+        <page is='div' id='profile-edit-page'>
             EDITAR PERFIL
-        </div>
+        </page>
     );
 }

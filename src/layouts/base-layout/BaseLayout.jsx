@@ -6,16 +6,15 @@ import '../../styles/layouts/base-layout.scss';
  * Base layout (wrapper for pages without header/footer).
  *
  * @param {JSX} children component for render inside.
- * @param {any} props component props.
  * @returns {JSX} base layout.
  */
-export default function BaseLayout({ children, title, ...props })
+export default function BaseLayout({ children, title })
 {
     useDocumentTitle(title);
 
     return (
-        <div className='base-container' { ...props }>
+        <main id='base-layout'>
             {children}
-        </div>
+        </main>
     );
 }

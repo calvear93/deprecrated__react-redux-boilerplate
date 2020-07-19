@@ -10,9 +10,9 @@ import Demo from '../../components/demo';
 export default function MainPage()
 {
     return (
-        <div className='page-container main-page-container'>
+        <page is='div' id='main-page'>
             CONTENIDO
             <Demo />
-        </div>
+        </page>
     );
 }

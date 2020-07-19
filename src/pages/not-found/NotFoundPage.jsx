@@ -8,8 +8,8 @@ import React from 'react';
 export default function NotFoundPage()
 {
     return (
-        <div className='page-container'>
+        <page is='div'>
             PÁGINA NO ENCONTRADA
-        </div>
+        </page>
     );
 }

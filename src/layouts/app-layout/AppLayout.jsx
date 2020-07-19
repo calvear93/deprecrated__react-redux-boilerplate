@@ -12,7 +12,7 @@ import '../../styles/layouts/app-layout.scss';
  * @param {string} title page document title.
  * @param {any} headerProps header props.
  * @param {any} footerProps footer props.
- * @param {any} props component props.
+ * @param {any} props layout props.
  *
  * @returns {JSX} app layout.
  */
@@ -20,23 +20,21 @@ export default function AppLayout({
     children,
     title,
     header: headerProps,
-    footer: footerProps,
-    ...props
+    footer: footerProps
 })
 {
+    // sets up tab title.
     useDocumentTitle(title);
 
     return (
-        <div className='app-container' { ...props }>
+        <main id='app-layout'>
             <Header { ...headerProps } />
 
             <Breadcrumbs />
 
-            <content { ...props }>
-                {children}
-            </content>
+            {children}
 
             <Footer { ...footerProps } />
-        </div>
+        </main>
     );
 }

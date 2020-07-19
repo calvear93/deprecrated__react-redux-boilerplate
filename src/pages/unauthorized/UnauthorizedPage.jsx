@@ -8,8 +8,8 @@ import React from 'react';
 export default function UnauthorizedPage()
 {
     return (
-        <div className='page-container'>
-            Not Authorized
-        </div>
+        <page is='div'>
+            NO AUTORIZADO
+        </page>
     );
 }
