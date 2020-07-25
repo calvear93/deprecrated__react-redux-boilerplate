@@ -47,7 +47,7 @@ export default function AzureActiveDirectoryProvider({
         // dispatches authentication action.
         if (!isAuthorized && !error)
             dispatch(AzureActiveDirectoryAction.Action(AzureActiveDirectoryAction.Type.AUTHENTICATE));
-    }, [ isAuthorized, error ]);
+    }, [ isAuthorized, error, dispatch ]);
 
     return isAuthorized ? (
         children

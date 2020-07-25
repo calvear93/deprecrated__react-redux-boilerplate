@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import FormFactory from './FormFactory';
 import {
     SEPARATOR,
@@ -11,11 +11,11 @@ import {
     SELECT_MULTIPLE,
     DATE_PICKER,
     TIME_CIRCULAR_PICKER,
-    TEXTAREA,
-    DATE_BOX
+    TEXTAREA
+    // DATE_BOX
 } from './inputs';
 import { PhoneAdvancedMask, RutMask } from '../../utils/masks';
-import { addDays } from 'date-fns';
+// import { addDays } from 'date-fns';
 
 export default () => <FormFactory schema={ schema } datasets={ datasets } interceptor={ interceptor } />;
 

@@ -1,11 +1,13 @@
 import { useEffect } from 'react';
 import { loadMessages, locale } from 'devextreme/localization';
 import localeMessages from 'devextreme/localization/messages/es';
+import '../styles/components/devextreme.scss';
 
 /**
- * Loads DevExtreme locale configuration.
+ * Loads DevExtreme stylesheets
+ * and locale configuration.
  */
-export function useDevExtremeLocale()
+export function useDevExtreme()
 {
     // initializes DevExtreme config.
     useEffect(() =>

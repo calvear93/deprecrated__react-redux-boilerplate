@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+// import { useState } from 'react';
 import SampleForm from '../form/SampleForm';
-import { Container, Header, Input, Button } from 'semantic-ui-react';
+import { Container, Header, Button } from 'semantic-ui-react';
+// import { Input } from 'semantic-ui-react';
 import { BallTriangleLoader } from '../../assets/loaders';
 import Swal from '../../utils/libs/swal';
-import { useDispatch } from 'react-redux';
-import { AzureActiveDirectoryAction } from '../../store/actions';
-import AADTypes from '../../services/auth/aad-types';
+// import { useDispatch } from 'react-redux';
+// import { AzureActiveDirectoryAction } from '../../store/actions';
+// import AADTypes from '../../services/auth/aad-types';
 import Toast from '../../utils/libs/toast';
 import Tippy from '../../utils/libs/tippy';
 
@@ -16,8 +18,8 @@ import Tippy from '../../utils/libs/tippy';
  */
 export default function Demo2()
 {
-    const dispatch = useDispatch();
-    const [ values, setValues ] = useState({});
+    // const dispatch = useDispatch();
+    // const [ values, setValues ] = useState({});
 
     useEffect(() =>
     {
@@ -25,17 +27,17 @@ export default function Demo2()
         Tippy();
     }, []);
 
-    function Logout()
-    {
-        Toast.show('desactivado', 5000, Toast.TYPE.KEY_ERROR);
-        // dispatch(AzureActiveDirectoryAction.Action(AzureActiveDirectoryAction.Type.LOGOUT));
-    }
+    // function Logout()
+    // {
+    //     Toast.show('desactivado', 5000, Toast.TYPE.KEY_ERROR);
+    //     // dispatch(AzureActiveDirectoryAction.Action(AzureActiveDirectoryAction.Type.LOGOUT));
+    // }
 
-    function Login()
-    {
-        Toast.show('desactivado', 5000, Toast.TYPE.KEY_ERROR);
-        // dispatch(AzureActiveDirectoryAction.Action(AzureActiveDirectoryAction.Type.AUTHENTICATE));
-    }
+    // function Login()
+    // {
+    //     Toast.show('desactivado', 5000, Toast.TYPE.KEY_ERROR);
+    //     // dispatch(AzureActiveDirectoryAction.Action(AzureActiveDirectoryAction.Type.AUTHENTICATE));
+    // }
 
     function showAlert()
     {
