@@ -13,6 +13,7 @@
   "repository": "https://github.com/calvear93/react-redux-boilerplate",
   "dependencies": {
     "axios": "^0.19.2",
+    "beautiful-react-hooks": "^0.27.2",
     "clsx": "^1.1.1",
     "date-fns": "^2.15.0",
     "devextreme": "^20.1.6",
