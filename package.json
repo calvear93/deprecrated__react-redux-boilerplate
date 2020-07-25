@@ -84,12 +84,12 @@
     "extends": "react-app"
   },
   "scripts": {
-    "start:debug": "env-cmd -e default,debug craco start --verbose",
-    "start:development": "env-cmd -e default,development craco start",
-    "start:qa": "env-cmd -e default,qa craco start",
-    "build:development": "env-cmd -e default,build,development craco build",
-    "build:qa": "env-cmd -e default,build,qa craco build",
-    "build:production": "env-cmd -e default,build,production craco build",
+    "start:debug": "env-cmd -e default,debug -r .env.json craco start --verbose",
+    "start:development": "env-cmd -e default,development -r .env.json craco start",
+    "start:qa": "env-cmd -e default,qa -r .env.json craco start",
+    "build:development": "env-cmd -e default,build,development -r .env.json craco build",
+    "build:qa": "env-cmd -e default,build,qa -r .env.json craco build",
+    "build:production": "env-cmd -e default,build,production -r .env.json craco build",
     "lint": "eslint --fix --ext .js,.jsx ./src",
     "postbuild": "rimraf build/static/**/*.map",
     "packages:update": "npm update --save/--save-dev",

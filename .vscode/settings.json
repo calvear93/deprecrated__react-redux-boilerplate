@@ -12,7 +12,7 @@
 		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
 	},
 	"[json]": {
-		"editor.defaultFormatter": "svipas.prettier-plus"
+		"editor.defaultFormatter": "vscode.json-language-features"
 	},
 	"[jsonc]": {
 		"editor.defaultFormatter": "svipas.prettier-plus"
@@ -67,6 +67,13 @@
 	"files.trimTrailingWhitespace": true,
 	"html.format.indentInnerHtml": true,
 	"material-icon-theme.activeIconPack": "react_redux",
+	"material-icon-theme.files.associations": {
+		"*.env.js": "tune",
+		"*.env.json": "tune",
+		"defaults.js": "makefile",
+		"*.router.jsx": "routing",
+		"*.page.jsx": "document"
+	},
 	"prettier.singleQuote": true,
 	"prettier.stylelintIntegration": true,
 	"prettier.tabWidth": 4,
