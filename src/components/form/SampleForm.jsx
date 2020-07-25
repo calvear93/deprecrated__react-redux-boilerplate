@@ -12,10 +12,8 @@ import {
     DATE_PICKER,
     TIME_CIRCULAR_PICKER,
     TEXTAREA
-    // DATE_BOX
 } from './inputs';
 import { PhoneAdvancedMask, RutMask } from '../../utils/masks';
-// import { addDays } from 'date-fns';
 
 export default () => <FormFactory schema={ schema } datasets={ datasets } interceptor={ interceptor } />;
 
@@ -229,22 +227,6 @@ const schema = [
             placeholder: 'Select a date'
         }
     },
-    // {
-    //     key: 'DateTimePickerDevExtreme',
-    //     label: 'A Date Time picker from DevExtreme',
-    //     behavior: {
-    //         ...DATE_BOX
-    //     },
-    //     config: {
-    //         type: 'date',
-    //         displayFormat: 'dd-MM-yyyy',
-    //         // disabledDates:{ disabledDates }
-    //         min: addDays(new Date(), -2),
-    //         max: addDays(new Date(), 7),
-    //         showClearButton: false,
-    //         useMaskBehavior: true
-    //     }
-    // },
     {
         key: 'TimePicker',
         label: 'A Time Picker',

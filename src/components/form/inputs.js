@@ -13,8 +13,10 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-30 17:01:45
- * Last modified  : 2020-06-07 15:56:18
+ * Last modified  : 2020-07-25 19:57:39
  */
+
+/* eslint-disable no-unused-vars */
 
 import { lazy } from 'react';
 
@@ -24,7 +26,6 @@ const Components = {
     Input: lazy(() => import('semantic-ui-react').then(module => ({ default: module.Input }))),
     Select: lazy(() => import('semantic-ui-react').then(module => ({ default: module.Select }))),
     CheckBox: lazy(() => import('semantic-ui-react').then(module => ({ default: module.Checkbox }))),
-    DateBox: lazy(() => import('devextreme-react').then(module => ({ default: module.DateBox }))),
     DatePicker: lazy(() => import('../input/DatePicker')),
     InputMasked: lazy(() => import('../input/InputMasked')),
     RadioGroup: lazy(() => import('../input/RadioGroup')),
@@ -84,14 +85,6 @@ export const DATE_PICKER = {
     Input: Components.DatePicker,
     onChangeSwitch: (func) => ({ onChange: func }),
     onChangeMapper: (key, receptor) => (value) => receptor(key, value),
-    valueMapper: (value) => ({ value }),
-    defaultValue: null
-};
-
-export const DATE_BOX = {
-    Input: Components.DateBox,
-    onChangeSwitch: (func) => ({ onValueChanged: func }),
-    onChangeMapper: (key, receptor) => ({ element, value }) => receptor(key, value),
     valueMapper: (value) => ({ value }),
     defaultValue: null
 };
