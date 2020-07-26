@@ -4,10 +4,9 @@ import { useLocation } from 'react-router-dom';
 
 /**
  * Returns URL query parameters.
- * Depends of React Router
- * useLocation() effect.
  *
  * @export
+ * @dependency useLocation from react-router-dom.
  *
  * @returns {any} query params.
  */
@@ -21,10 +20,9 @@ export function useQueryParams()
 /**
  * Whether current path belongs
  * to provided list, like whitelist.
- * Depends of React Router
- * useLocation() effect.
  *
  * @export
+ * @dependency useLocation from react-router-dom.
  * @param {array} list array of paths (strings)
  *
  * @returns {bool} true if current path is in.
@@ -41,10 +39,9 @@ export function usePathBelongsTo(list)
 
 /**
  * Retrieves current path state.
- * Depends of React Router
- * useLocation() effect.
  *
  * @export
+ * @dependency useLocation from react-router-dom.
  *
  * @returns {any} route state.
  */
