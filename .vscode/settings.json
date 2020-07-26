@@ -70,9 +70,11 @@
 	"material-icon-theme.files.associations": {
 		"*.env.js": "tune",
 		"*.env.json": "tune",
-		"defaults.js": "makefile",
+		"*.lib.js": "lib",
+		"*.page.jsx": "document",
 		"*.router.jsx": "routing",
-		"*.page.jsx": "document"
+		"*.saga.js": "redux-store",
+		"defaults.js": "makefile"
 	},
 	"prettier.singleQuote": true,
 	"prettier.stylelintIntegration": true,

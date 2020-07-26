@@ -1,4 +1,4 @@
-import { AzureActiveDirectoryAction } from '../actions';
+import AzureActiveDirectoryAction from './aad.action';
 import { AzureActiveDirectoryDefaults } from '../defaults';
 
 /**

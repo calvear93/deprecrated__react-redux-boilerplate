@@ -1,5 +1,5 @@
 import { SampleDefaults } from '../defaults';
-import { SampleAction } from '../actions';
+import SampleAction from './sample.action';
 
 /**
  * Redux Actions Reducer.

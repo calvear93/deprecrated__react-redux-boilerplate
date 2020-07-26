@@ -1,5 +1,5 @@
 import { all, put, takeLatest } from 'redux-saga/effects';
-import { SampleAction } from '../actions';
+import SampleAction from './sample.action';
 
 /**
  * Exec sample.

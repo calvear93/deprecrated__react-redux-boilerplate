@@ -1,5 +1,5 @@
 import { AzureActiveDirectorySecurityMode, IsAuthEnabled } from '../services/auth';
-import { AzureActiveDirectoryAction } from '../store/actions';
+import { AzureActiveDirectoryAction } from '../store/aad';
 import { usePartition } from './redux';
 import { usePathBelongsTo } from './route';
 

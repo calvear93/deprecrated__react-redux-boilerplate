@@ -1,4 +1,4 @@
-import { CreateAction, MakeUnique } from './shared';
+import { CreateAction, MakeUnique } from '../shared/action.lib';
 
 // store partition key.
 const KEY = 'SAMPLE';

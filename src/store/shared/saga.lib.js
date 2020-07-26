@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 22:43:58
- * Last modified  : 2020-06-23 12:11:49
+ * Last modified  : 2020-07-26 11:30:57
  */
 
 import { race, take, delay } from 'redux-saga/effects';
@@ -27,13 +27,15 @@ export function* waitForAny(types, times, timeout = 0)
     while (times-- > 0)
     {
         results.push(
-            yield race(types.reduce((awaiter, actionType) =>
-            {
-                awaiter[actionType] = take(actionType);
+            yield race(
+                types.reduce((awaiter, actionType) =>
+                {
+                    awaiter[actionType] = take(actionType);
 
-                return awaiter;
-            },
-            timeout === 0 ? {} : { timeout: delay(timeout) }))
+                    return awaiter;
+                },
+                timeout === 0 ? {} : { timeout: delay(timeout) })
+            )
         );
     }
 
