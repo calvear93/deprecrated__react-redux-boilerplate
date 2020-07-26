@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 22:44:51
- * Last modified  : 2020-05-23 20:26:40
+ * Last modified  : 2020-07-26 16:22:35
  */
 
 import Cookies from 'js-cookie';
@@ -30,12 +30,7 @@ import Storage from 'js-storage';
 })();
 
 // sample data defaults.
-const SampleDefaults = {};
+export const SampleDefaults = {};
 
 // aad authentication defaults.
-const AzureActiveDirectoryDefaults = {};
-
-export {
-    SampleDefaults,
-    AzureActiveDirectoryDefaults
-};
+export const AzureActiveDirectoryDefaults = {};
