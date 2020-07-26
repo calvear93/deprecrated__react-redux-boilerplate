@@ -1,5 +1,5 @@
 /**
- * lRedux store default values.
+ * Redux store default values.
  *
  * @summary Store default values for reducers.
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
