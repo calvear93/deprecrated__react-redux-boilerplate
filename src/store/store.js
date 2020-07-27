@@ -7,12 +7,11 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 22:41:11
- * Last modified  : 2020-07-26 13:46:34
+ * Last modified  : 2020-07-26 22:14:26
  */
 
 import { combineReducers, createStore } from 'redux';
-import createSagaMiddleware from 'redux-saga';
-import middleware from './middleware';
+import createMiddleware from './middleware';
 import { all } from 'redux-saga/effects';
 import { SampleAction, SampleReducer, SampleSaga } from './sample';
 import { AzureActiveDirectoryAction, AzureActiveDirectoryReducer, AzureActiveDirectorySaga } from './aad';
@@ -32,11 +31,11 @@ function* combineSagas()
     ]);
 }
 
-// creates Saga middleware factory.
-const saga = createSagaMiddleware();
+// creates middleware.
+const [ middleware, saga ] = createMiddleware();
 
 // creates the store with reducers and Saga middleware.
-export default createStore(reducers, middleware(saga));
+export default createStore(reducers, middleware);
 
 // runs Saga root middleware.
 saga.run(combineSagas);
