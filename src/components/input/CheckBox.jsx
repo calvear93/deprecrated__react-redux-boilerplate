@@ -35,7 +35,7 @@ export default function CheckBox({ id, group, options, onChange, checked = [], m
      * @param {any} value selected value.
      * @param {any} checked whether is selected.
      */
-    function handleChange(e, { id, value, checked })
+    function handleChange(e, { value, checked })
     {
         const newValues = checked ? [ ...values, value ] : [ ...values.filter(v => v !== value) ];
         setValues(newValues);

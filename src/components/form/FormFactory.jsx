@@ -167,7 +167,12 @@ export default function FormFactory({
                         if (behavior.divider)
                         {
                             return (
-                                <Col key={ key } className='form-separator-container' { ...columns } { ...behavior.columns }>
+                                <Col
+                                    key={ key }
+                                    className='form-separator-container'
+                                    { ...columns }
+                                    { ...behavior.columns }
+                                >
                                     <Row className='form-item'>
                                         <behavior.Input { ...cfg } />
                                     </Row>
@@ -176,7 +181,8 @@ export default function FormFactory({
                         }
 
                         return (
-                            <Col key={ key } id={ `${key}-container` } { ...columns } { ...behavior.columns }
+                            <Col key={ key } id={ `${key}-container` } { ...columns }
+                                { ...behavior.columns }
                                 className={ clsx(
                                     'form-item-container',
                                     {

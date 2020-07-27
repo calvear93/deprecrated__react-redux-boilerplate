@@ -35,7 +35,12 @@ export default function Router({ routes = [], redirects = [], message = 'Cargand
                     // renders the redirection definitions.
                     redirects
                         .map(({ exact, from, to }, index) => (
-                            <Redirect key={ index } exact={ exact } from={ from } to={ to } />
+                            <Redirect
+                                key={ index }
+                                exact={ exact }
+                                from={ from }
+                                to={ to }
+                            />
                         ))
                 }
 
