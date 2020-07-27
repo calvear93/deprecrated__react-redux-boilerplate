@@ -13,6 +13,6 @@ ReactDOM.render(
 // Learn more about service workers: https://bit.ly/CRA-PWA
 if (process.env.REACT_APP_SERVICE_WORKER === 'true')
 {
-    const serviceWorker = require('./serviceWorker');
+    const serviceWorker = require('./service-worker');
     serviceWorker.register();
 }
