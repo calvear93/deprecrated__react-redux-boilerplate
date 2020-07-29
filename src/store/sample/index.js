@@ -1,9 +1,3 @@
-import SampleAction from './sample.action';
-import SampleReducer from './sample.reducer';
-import SampleSaga from './sample.saga';
-
-export {
-    SampleAction,
-    SampleReducer,
-    SampleSaga
-};
+export { default as SampleAction } from './sample.action';
+export { default as SampleReducer } from './sample.reducer';
+export { default as SampleSaga } from './sample.saga';

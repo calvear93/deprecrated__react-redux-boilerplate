@@ -1,12 +1,4 @@
-import { IsAuthEnabled } from './aad-context';
-import Graph from './aad-graph';
-import AuthenticationService from './aad-service';
-import AzureActiveDirectoryProvider, { AzureActiveDirectorySecurityMode } from './AzureActiveDirectoryProvider';
-
-export {
-    IsAuthEnabled,
-    AuthenticationService,
-    Graph,
-    AzureActiveDirectoryProvider,
-    AzureActiveDirectorySecurityMode
-};
+export { IsAuthEnabled } from './aad-context';
+export { default as Graph } from './aad-graph';
+export { default as AuthenticationService } from './aad-service';
+export { default as AzureActiveDirectoryProvider, AzureActiveDirectorySecurityMode } from './AzureActiveDirectoryProvider';

@@ -1,6 +1,2 @@
-import routes from './root.routes';
-import Router from './RootRouter';
-
-export { routes };
-
-export default Router;
+export { default as routes } from './root.routes';
+export { default } from './RootRouter';

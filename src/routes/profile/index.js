@@ -1,6 +1,2 @@
-import routes from './profile.routes';
-import Router from './ProfileRouter';
-
-export { routes };
-
-export default Router;
+export { default as routes } from './profile.routes';
+export { default } from './ProfileRouter';

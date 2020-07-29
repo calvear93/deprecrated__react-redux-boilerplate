@@ -1,5 +1,1 @@
-import MasterDataNormalizer from './master-data';
-
-export {
-    MasterDataNormalizer
-};
+export { default as MasterDataNormalizer } from './master-data';

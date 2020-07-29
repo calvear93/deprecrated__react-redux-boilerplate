@@ -1,3 +1,1 @@
-import ProfileEditPage from './ProfileEditPage';
-
-export default ProfileEditPage;
+export { default } from './ProfileEditPage';

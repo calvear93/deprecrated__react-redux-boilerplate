@@ -1,17 +1,6 @@
-import Mask from './Mask';
-import InputMasked from './InputMasked';
-import TextArea from './TextArea';
-import CheckBox from './CheckBox';
-import RadioGroup from './RadioGroup';
-import TimePicker from './TimePicker';
-import DatePicker from './DatePicker';
-
-export {
-    Mask,
-    InputMasked,
-    TextArea,
-    CheckBox,
-    RadioGroup,
-    DatePicker,
-    TimePicker
-};
+export { default as InputMasked } from './InputMasked';
+export { default as TextArea } from './TextArea';
+export { default as CheckBox } from './CheckBox';
+export { default as RadioGroup } from './RadioGroup';
+export { default as TimePicker } from './TimePicker';
+export { default as DatePicker } from './DatePicker';

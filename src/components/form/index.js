@@ -1,7 +1,2 @@
-import FormFactory from './FormFactory';
-import Separator from './Separator';
-
-export {
-    FormFactory,
-    Separator
-};
+export { default as FormFactory } from './FormFactory';
+export { default as Separator } from './Separator';

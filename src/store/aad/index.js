@@ -1,9 +1,3 @@
-import AzureActiveDirectoryAction from './aad.action';
-import AzureActiveDirectoryReducer from './aad.reducer';
-import AzureActiveDirectorySaga from './aad.saga';
-
-export {
-    AzureActiveDirectoryAction,
-    AzureActiveDirectoryReducer,
-    AzureActiveDirectorySaga
-};
+export { default as AzureActiveDirectoryAction } from './aad.action';
+export { default as AzureActiveDirectoryReducer } from './aad.reducer';
+export { default as AzureActiveDirectorySaga } from './aad.saga';

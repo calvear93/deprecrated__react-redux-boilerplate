@@ -1,3 +1,1 @@
-import BaseLayout from './BaseLayout';
-
-export default BaseLayout;
+export { default } from './BaseLayout';

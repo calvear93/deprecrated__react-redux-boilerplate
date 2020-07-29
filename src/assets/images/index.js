@@ -1,5 +1,1 @@
-import Logo from './logo.svg';
-
-export {
-    Logo
-};
+export { default as Logo } from './logo.svg';
