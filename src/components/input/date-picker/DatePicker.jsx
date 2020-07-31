@@ -4,7 +4,6 @@ import ModernDatePicker from 'react-modern-calendar-datepicker';
 import { Icon, Input, Ref } from 'semantic-ui-react';
 import Time from '../../../utils/libs/time';
 import localeES from './locale-es';
-import color from '../../../styles/vars/_colors.scss';
 import 'react-modern-calendar-datepicker/lib/DatePicker.css';
 import './date-picker.scss';
 
@@ -106,8 +105,8 @@ export default function DatePicker({
             onChange={ handleChange }
             locale={ localeES }
             shouldHighlightWeekends
-            colorPrimary={ color.primary }
-            colorPrimaryLight={ color['primary-light'] }
+            // colorPrimary={ color.primary }
+            // colorPrimaryLight={ color['primary-light'] }
             { ...props }
         />
     );

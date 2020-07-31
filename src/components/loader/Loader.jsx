@@ -32,9 +32,7 @@ export default function Loader({
     return (
         <div className={ clsx('loader-container', 'unselectable', { absolute, background, blur }) }>
             <div className='loader'>
-                <BounceLoader
-                    color={ color.brand }
-                />
+                <BounceLoader color={ color.brand } />
                 {message && <label>{message}</label>}
             </div>
         </div>
