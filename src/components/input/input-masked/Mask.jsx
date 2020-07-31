@@ -3,7 +3,7 @@ import IMask from 'imask';
 import React from 'react';
 import { IMaskMixin } from 'react-imask';
 import { Ref } from 'semantic-ui-react';
-import { CustomOnChangeEvent } from './shared';
+import { CustomOnChangeEvent } from '../shared';
 
 /**
  * Attaches a mask (using imask) to an input.

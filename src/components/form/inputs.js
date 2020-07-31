@@ -13,7 +13,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-30 17:01:45
- * Last modified  : 2020-07-25 19:57:39
+ * Last modified  : 2020-07-31 19:26:39
  */
 
 /* eslint-disable no-unused-vars */
@@ -26,12 +26,12 @@ const Components = {
     Input: lazy(() => import('semantic-ui-react').then(module => ({ default: module.Input }))),
     Select: lazy(() => import('semantic-ui-react').then(module => ({ default: module.Select }))),
     CheckBox: lazy(() => import('semantic-ui-react').then(module => ({ default: module.Checkbox }))),
-    DatePicker: lazy(() => import('../input/DatePicker')),
-    InputMasked: lazy(() => import('../input/InputMasked')),
-    RadioGroup: lazy(() => import('../input/RadioGroup')),
-    CheckBoxGroup: lazy(() => import('../input/CheckBox')),
-    TextArea: lazy(() => import('../input/TextArea')),
-    TimePicker: lazy(() => import('../input/TimePicker'))
+    DatePicker: lazy(() => import('../input/date-picker')),
+    InputMasked: lazy(() => import('../input/input-masked')),
+    RadioGroup: lazy(() => import('../input/radio-group')),
+    CheckBoxGroup: lazy(() => import('../input/checkbox')),
+    TextArea: lazy(() => import('../input/textarea')),
+    TimePicker: lazy(() => import('../input/time-picker'))
 };
 
 export const SEPARATOR = {

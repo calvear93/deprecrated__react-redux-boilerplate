@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/pages/main-page.scss';
+import './main-page.scss';
 import Demo from '../../components/demo';
 
 /**

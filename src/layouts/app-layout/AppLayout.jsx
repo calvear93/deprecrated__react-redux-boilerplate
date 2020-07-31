@@ -3,7 +3,7 @@ import Footer from './Footer';
 import Header from './Header';
 import Breadcrumbs from '../../routes/Breadcrumbs';
 import { useDocumentTitle } from '../../hooks/document';
-import '../../styles/layouts/app-layout.scss';
+import './app-layout.scss';
 
 /**
  * App layout (wrapper for pages with header/footer).

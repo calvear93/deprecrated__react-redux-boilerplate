@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import { Redirect, Route, Switch, useLocation, useRouteMatch } from 'react-router-dom';
-import Loader from '../components/Loader';
+import Loader from '../components/loader';
 
 // lazy loaded components.
 const NotFoundPage = lazy(() => import('../pages/not-found'));

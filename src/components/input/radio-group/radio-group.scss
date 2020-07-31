@@ -1,11 +1,11 @@
-@import '../../vars';
+@import '../../../styles/vars';
 
-.checkbox-container {
+.radio-group-container {
     position: relative;
     padding: .2em;
     padding-right: 1em;
 
-    i.link.icon.checkbox-clear {
+    i.link.icon.radio-group-clear {
         position: absolute;
         top: .2em;
         right: .4em;
@@ -13,10 +13,10 @@
         font-size: .9em;
     }
 
-    .checkbox-item {
+    .radio-group-item {
         padding: .4em .6em;
 
-        .ui.checkbox {
+        .ui.radio.checkbox {
             input:disabled + label:before {
                 border-color: color(light-gray);
             }
@@ -25,7 +25,7 @@
                 color: color(slate-gray-dark);
 
                 &:after {
-                    color: color(brand) !important;
+                    background-color: color(brand) !important;
                 }
             }
         }

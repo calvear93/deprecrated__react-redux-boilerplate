@@ -1,8 +1,8 @@
 import clsx from 'clsx';
 import React from 'react';
 import BounceLoader from 'react-spinners/BounceLoader';
-import '../styles/components/loader.scss';
-import color from '../styles/vars/_colors.scss';
+import './loader.scss';
+import color from '../../styles/vars/_colors.scss';
 
 /**
  * Loader component for React Suspense and lazy.

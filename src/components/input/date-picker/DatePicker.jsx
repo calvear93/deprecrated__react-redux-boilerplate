@@ -2,11 +2,11 @@ import { getDate, getMonth, getYear } from 'date-fns';
 import React, { useMemo, useState } from 'react';
 import ModernDatePicker from 'react-modern-calendar-datepicker';
 import { Icon, Input, Ref } from 'semantic-ui-react';
-import Time from '../../utils/libs/time';
-import { datePickerLocaleES } from './shared';
-import color from '../../styles/vars/_colors.scss';
+import Time from '../../../utils/libs/time';
+import localeES from './locale-es';
+import color from '../../../styles/vars/_colors.scss';
 import 'react-modern-calendar-datepicker/lib/DatePicker.css';
-import '../../styles/components/input/date-picker.scss';
+import './date-picker.scss';
 
 /**
  * Date Picker wrapper for
@@ -104,7 +104,7 @@ export default function DatePicker({
             renderInput={ input }
             value={ modules }
             onChange={ handleChange }
-            locale={ datePickerLocaleES }
+            locale={ localeES }
             shouldHighlightWeekends
             colorPrimary={ color.primary }
             colorPrimaryLight={ color['primary-light'] }

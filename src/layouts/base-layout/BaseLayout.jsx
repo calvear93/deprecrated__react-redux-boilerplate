@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDocumentTitle } from '../../hooks/document';
-import '../../styles/layouts/base-layout.scss';
+import './base-layout.scss';
 
 /**
  * Base layout (wrapper for pages without header/footer).

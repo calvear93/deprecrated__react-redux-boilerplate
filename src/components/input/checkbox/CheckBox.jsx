@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Col, Row } from 'react-flexbox-grid';
 import { Checkbox, Icon } from 'semantic-ui-react';
-import { CustomOnChangeEvent } from './shared';
-import '../../styles/components/input/checkbox.scss';
+import { CustomOnChangeEvent } from '../shared';
+import './checkbox.scss';
 
 /**
  * Renders a checkbox group.
