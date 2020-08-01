@@ -1,3 +1,5 @@
+@import '../vars/colors';
+
 button.swal2-confirm:focus {
     outline: none;
     box-shadow: none;
@@ -5,4 +7,16 @@ button.swal2-confirm:focus {
 
 .swal2-content {
     line-height: 1.5em;
+}
+
+.swal2-actions {
+    .swal2-styled {
+        &.swal2-confirm {
+            background-color: color(primary) !important;
+        }
+
+        &.swal2-cancel {
+            background-color: color(secondary) !important;
+        }
+    }
 }

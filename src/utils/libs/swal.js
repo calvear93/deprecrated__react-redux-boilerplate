@@ -7,12 +7,11 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:38:41
- * Last modified  : 2020-06-21 15:11:13
+ * Last modified  : 2020-07-31 20:04:17
  */
 
 import SwalDefault from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
-import color from '../../styles/vars/_colors.scss';
 
 const SwalReact = withReactContent(SwalDefault);
 
@@ -40,7 +39,6 @@ const Swal = {
     confirm: (type, content, confirmText = 'Aceptar') => SwalReact.fire({
         icon: type,
         html: content,
-        confirmButtonColor: color.primary,
         confirmButtonText: confirmText,
         allowOutsideClick: false
     }),
@@ -80,7 +78,6 @@ const Swal = {
     alert: (type, content, confirmText = 'Aceptar') => SwalReact.fire({
         icon: type,
         html: content,
-        confirmButtonColor: color.primary,
         confirmButtonText: confirmText,
         showCancelButton: false,
         showConfirmButton: false
@@ -122,8 +119,6 @@ const Swal = {
     dialog: (type, content, confirmText = 'Sí', cancelText = 'No') => SwalReact.fire({
         icon: type,
         html: content,
-        confirmButtonColor: color.primary,
-        cancelButtonColor: color.secondary,
         confirmButtonText: confirmText,
         cancelButtonText: cancelText,
         showCancelButton: true,
