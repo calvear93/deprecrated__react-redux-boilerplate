@@ -172,9 +172,9 @@
 		"react/jsx-max-props-per-line": [
 			"warn",
 			{
-        "maximum": 3,
-        "when": "always"
-      }
+				"maximum": 3,
+				"when": "always"
+			}
 		],
 		"react/jsx-no-duplicate-props": "warn",
 		"react/jsx-no-literals": "off",
@@ -241,7 +241,13 @@
 				}
 			}
 		],
-		"switch-colon-spacing": "warn",
+		"switch-colon-spacing": [
+			"warn",
+			{
+				"after": true,
+				"before": true
+			}
+		],
 		"valid-jsdoc": [
 			"warn",
 			{
