@@ -11,11 +11,11 @@ import './time-picker.scss';
  * @see https://catc.github.io/react-timekeeper/
  *
  * @param {string} time time value.
- * @param {bool} hour24Mode time mode.
- * @param {bool} coarseMinutes rounds selected number to increments.
- * @param {bool} forceCoarseMinutes forces minutes to always round to coarseMinutes value.
- * @param {bool} clearable whether shows a clear button if any text.
- * @param {bool} onChange on time change. Sends (newTime, {id, value}).
+ * @param {boolean} hour24Mode time mode.
+ * @param {boolean} coarseMinutes rounds selected number to increments.
+ * @param {boolean} forceCoarseMinutes forces minutes to always round to coarseMinutes value.
+ * @param {boolean} clearable whether shows a clear button if any text.
+ * @param {boolean} onChange on time change. Sends (newTime, {id, value}).
  * @param {array} props rest of props for input.
  *
  * @returns {JSX} time picker input.

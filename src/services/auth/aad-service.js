@@ -57,7 +57,7 @@ const AuthenticationService = {
      * @param {array} scopes permission scopes.
      * @param {string} loginHint preset account email.
      *
-     * @returns {bool} account data if is authenticated, error on failure.
+     * @returns {boolean} account data if is authenticated, error on failure.
      */
     sso({
         scopes = DEFAULT_SCOPES,
@@ -84,9 +84,9 @@ const AuthenticationService = {
      * @param {string} type login type (redirect or popup).
      * @param {array} scopes permission scopes.
      * @param {string} loginHint preset account email.
-     * @param {bool} forceTokenRefresh forces to renew token on authentication.
+     * @param {boolean} forceTokenRefresh forces to renew token on authentication.
      *
-     * @returns {bool} account data if is authenticated, error on failure.
+     * @returns {boolean} account data if is authenticated, error on failure.
      */
     login({
         type = AADTypes.LOGIN_TYPE.REDIRECT,

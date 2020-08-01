@@ -7,7 +7,7 @@ import HttpMethod from '../constants/http-methods';
  * @param {any} data data to POST.
  * @param {string} method http method (default POST).
  *
- * @returns {func} posting function.
+ * @returns {Function} posting function.
  */
 export function useFormPost()
 {

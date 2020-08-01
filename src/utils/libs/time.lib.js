@@ -49,7 +49,7 @@ const Time = {
     /**
      * Chooses time format.
      *
-     * @param {bool} format24 time format type.
+     * @param {boolean} format24 time format type.
      *
      * @returns {string} time format pattern.
      */
@@ -78,7 +78,7 @@ const Time = {
      * Datetime formatting.
      *
      * @param {string} date datetime string.
-     * @param {bool} format24 time format type.
+     * @param {boolean} format24 time format type.
      * @param {string} formatPattern datetime format.
      *
      * @returns {string} formatted datetime.
@@ -95,7 +95,7 @@ const Time = {
      * Time formatting.
      *
      * @param {string} date datetime string.
-     * @param {bool} format24 time format type.
+     * @param {boolean} format24 time format type.
      * @param {string} formatPattern time format.
      *
      * @returns {string} formatted time.
@@ -127,7 +127,7 @@ const Time = {
      * Spanish natural readable formatting for datetime.
      *
      * @param {string} date string date.
-     * @param {bool} format24 time format type.
+     * @param {boolean} format24 time format type.
      *
      * @returns {string} natural datetime.
      */

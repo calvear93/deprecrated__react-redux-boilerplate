@@ -19,7 +19,7 @@ import Rut from '../libs/rut.lib';
  * @param {any} attributeName input key.
  * @param {any} values neighbor values.
  * @param {any} constraints validator cfg.
- * @param {bool} constraints.fullMessages whether message contains attribute name.
+ * @param {boolean} constraints.fullMessages whether message contains attribute name.
  *
  * @returns {string} message if value isn't a valid RUT/RUN, null in otherwise.
  */

@@ -10,10 +10,10 @@ import color from '../../styles/vars/_colors.scss';
  *
  * @param {JSX} children component for show on loading finished.
  * @param {string} message message for show on loading.
- * @param {bool} absolute whether loading has fixed centered position.
- * @param {bool} background whether loading has a transparent background.
- * @param {bool} blur whether loading backdrop has a blur filter (slow).
- * @param {bool} loading whether loading is active.
+ * @param {boolean} absolute whether loading has fixed centered position.
+ * @param {boolean} background whether loading has a transparent background.
+ * @param {boolean} blur whether loading backdrop has a blur filter (slow).
+ * @param {boolean} loading whether loading is active.
  *
  * @returns {JSX} loader.
  */

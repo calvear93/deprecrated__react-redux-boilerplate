@@ -25,7 +25,7 @@ export function useQueryParams()
  * @dependency useLocation from react-router-dom.
  * @param {array} list array of paths (strings)
  *
- * @returns {bool} true if current path is in.
+ * @returns {boolean} true if current path is in.
  */
 export function usePathBelongsTo(list)
 {

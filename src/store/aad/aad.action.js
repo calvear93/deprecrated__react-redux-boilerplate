@@ -55,7 +55,7 @@ const AzureActiveDirectoryAction =
      *
      * @memberof AzureActiveDirectoryAction
      *
-     * @returns {func} action function.
+     * @returns {Function} action function.
      */
     Action: (type, payload) => CreateAction(AzureActiveDirectoryAction.Key, type, payload)
 };

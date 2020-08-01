@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:40:56
- * Last modified  : 2020-05-16 16:40:56
+ * Last modified  : 2020-08-01 15:19:34
  */
 
 const Rut = {
@@ -23,7 +23,8 @@ const Rut = {
      * Calculates the check digit of a rut/ci.
      *
      * @param {string} id RUT (Rol Único Tributario), RUN (Rol Único Nacional).
-     * @returns {char} check digit.
+     *
+     * @returns {string} check digit.
      */
     CheckDigit(id)
     {
@@ -32,7 +33,7 @@ const Rut = {
 
         for (let i = id.length - 1; i >= 0; i--)
         {
-            sum = sum + id.charAt(i) * mul;
+            sum = sum + Number(id.charAt(i)) * mul;
             mul = (mul + 1) % 8 || 2;
         }
 
@@ -41,9 +42,9 @@ const Rut = {
             case 1:
                 return 'K';
             case 0:
-                return 0;
+                return '0';
             default:
-                return 11 - (sum % 11);
+                return (11 - (sum % 11)).toString();
         }
     },
 
@@ -51,8 +52,9 @@ const Rut = {
       * Removes all dots and the hyphen.
       *
       * @param {string} id chilean id.
-      * @param {bool} removeCD whether removes check digit.
-      * @param {bool} keepHyphen whether keeps hypen before check digit.
+      * @param {boolean} removeCD whether removes check digit.
+      * @param {boolean} keepHyphen whether keeps hypen before check digit.
+      *
       * @returns {string} cleaned id.
       */
     Clean(id, { removeCD, keepHyphen } = {})
@@ -74,7 +76,8 @@ const Rut = {
      * Validates chilean Id.
      *
      * @param {string} id RUT (Rol Único Tributario), RUN (Rol Único Nacional).
-     * @returns {bool} whether id is valid.
+     *
+     * @returns {boolean} whether id is valid.
      */
     IsValid(id)
     {
@@ -97,6 +100,7 @@ const Rut = {
      * @param {string} rut RUT (Rol Único Tributario), RUN (Rol Único Nacional).
      * @param {string} old previous value.
      * @param {boolean} withDots wheter formatted sttring should contains dots.
+     *
      * @returns {string} formatted id.
      */
     Format(rut, old, withDots = true)
@@ -137,6 +141,7 @@ const Rut = {
      *
      * @param {string} ndoc document number.
      * @param {string} old previous value.
+     *
      * @returns {string} formatted document number.
      */
     FormatNumeroDocumento(ndoc, old)

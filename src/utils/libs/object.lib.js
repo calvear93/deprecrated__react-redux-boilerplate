@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:42:09
- * Last modified  : 2020-07-07 11:49:35
+ * Last modified  : 2020-08-01 15:07:43
  */
 
 /**
@@ -13,7 +13,7 @@
  *
  * @param {any} obj object for validate.
  *
- * @returns {bool} true if object is empty or null/undefined, false in otherwise.
+ * @returns {boolean} true if object is empty or null/undefined, false in otherwise.
  */
 export function isEmpty(obj)
 {
@@ -37,12 +37,12 @@ export function reduceEmptiness(obj)
  * Safely calls a function over a object,
  * validating nullity of it.
  *
- * @param {func} func func for apply.
+ * @param {Function} func func for apply.
  * @param {any} obj object for apply function.
  * @param {any} def default value in case of nullity/undefined.
  * @param {array} args other function args.
  *
- * @returns {bool} function result on object ok, def if object us null/undefined.
+ * @returns {boolean} function result on object ok, def if object us null/undefined.
  */
 export function callSafe(func, obj, def, ...args)
 {
@@ -75,9 +75,9 @@ export function filter(obj, func)
  * null, NaN or empty object.
  *
  * @param {any} value value for validation (undefined, null, NaN).
- * @param {any} allowsEmpty whether allows empty as valid ({}, [], '' or ' ').
+ * @param {boolean} allowsEmpty whether allows empty as valid ({}, [], '' or ' ').
  *
- * @returns {any} true if is valid, false in otherwise.
+ * @returns {boolean} true if is valid, false in otherwise.
  */
 export function isData(value, allowsEmpty = false)
 {
@@ -96,7 +96,7 @@ export function isData(value, allowsEmpty = false)
     if (!allowsEmpty && Array.isArray(value) && value.length === 0)
         return false;
 
-    if (!allowsEmpty && value instanceof Date && isNaN(value))
+    if (!allowsEmpty && value instanceof Date && isNaN(Number(value)))
         return false;
 
     if (!allowsEmpty && (type === 'object' && !isDate) && Object.keys(value).length === 0)

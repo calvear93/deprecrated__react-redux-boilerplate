@@ -15,10 +15,10 @@ import './date-picker.scss';
  *
  * @export
  * @param {Date} date selected.
- * @param {func} onChange on selected date callback.
+ * @param {Function} onChange on selected date callback.
  * @param {string} displayFormat format by date-fns.
  * @param {string} placeholder input placeholder.
- * @param {bool} clearable whether input is clearable.
+ * @param {boolean} clearable whether input is clearable.
  * @param {any} props other picker props.
  *
  * @returns {JSX} date picker.

@@ -48,7 +48,7 @@ const SampleAction =
      *
      * @memberof SampleAction
      *
-     * @returns {func} action function.
+     * @returns {Function} action function.
      */
     Action: (type, payload) => CreateAction(SampleAction.Key, type, payload)
 };

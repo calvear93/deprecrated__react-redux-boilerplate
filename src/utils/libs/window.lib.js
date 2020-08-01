@@ -37,7 +37,7 @@ export function setHypertextReference(redirectURL)
  *
  * @export
  * @param {string} redirectURL URL for redirect.
- * @param {bool} focus whether new tab must be focused.
+ * @param {boolean} focus whether new tab must be focused.
  */
 export function openNewTab(redirectURL, focus = false)
 {

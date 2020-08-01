@@ -47,7 +47,7 @@ const Toast = {
      * @param {JSX | string} duration toast duration
      * @param {string} type toast type. Use Toast.TYPE definitions.
      * @param {string} position toast position. Use Toast.POSITION definitions.
-     * @param {bool} showProgressBar whether toast shows progress bar.
+     * @param {boolean} showProgressBar whether toast shows progress bar.
      *
      * @returns {any} shows toast and returns toast controller element.
      */

@@ -20,7 +20,7 @@ const REGEX = /^([^@]+?)@(([a-z0-9]-*)*[a-z0-9]+\.)+([a-z0-9]+)$/i;
  * @param {any} attributeName input key.
  * @param {any} values neighbor values.
  * @param {any} constraints validator cfg.
- * @param {bool} constraints.fullMessages whether message contains attribute name.
+ * @param {boolean} constraints.fullMessages whether message contains attribute name.
  *
  * @returns {string} message if value isn't a valid email, null in otherwise.
  */
