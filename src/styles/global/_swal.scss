@@ -11,6 +11,11 @@ button.swal2-confirm:focus {
 
 .swal2-actions {
     .swal2-styled {
+        &:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
         &.swal2-confirm {
             background-color: color(primary) !important;
         }
