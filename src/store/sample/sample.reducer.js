@@ -36,7 +36,7 @@ export default function SampleReducer(store = SampleDefaults, action)
         case SampleAction.Type.ROLLBACK:
             return {
                 ...store,
-                state: SampleAction.State.CORRUPT,
+                state: SampleAction.State.FAILED,
                 error: payload
             };
 
