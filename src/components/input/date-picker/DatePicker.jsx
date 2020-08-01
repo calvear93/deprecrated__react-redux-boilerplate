@@ -2,7 +2,7 @@ import { getDate, getMonth, getYear } from 'date-fns';
 import React, { useMemo, useState } from 'react';
 import ModernDatePicker from 'react-modern-calendar-datepicker';
 import { Icon, Input, Ref } from 'semantic-ui-react';
-import Time from '../../../utils/libs/time';
+import Time from '../../../utils/libs/time.lib';
 import localeES from './locale-es';
 import 'react-modern-calendar-datepicker/lib/DatePicker.css';
 import './date-picker.scss';

@@ -71,10 +71,20 @@
 		"*.env.js": "tune",
 		"*.env.json": "tune",
 		"*.lib.js": "lib",
+		"*.mask.js": "lib",
+		"*.normalizer.js": "lib",
 		"*.page.jsx": "document",
 		"*.router.jsx": "routing",
 		"*.saga.js": "redux-store",
-		"defaults.js": "makefile"
+		"*.validator.js": "lib",
+		"defaults.js": "makefile",
+		"package.json": "nodejs_alt",
+		"service-worker.js": "http"
+	},
+	"material-icon-theme.folders.associations": {
+		"masks": "middleware",
+		"normalizers": "lib",
+		"validators": "syntax"
 	},
 	"prettier.singleQuote": true,
 	"prettier.stylelintIntegration": true,

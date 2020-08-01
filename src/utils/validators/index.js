@@ -8,16 +8,16 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-30 15:38:03
- * Last modified  : 2020-05-30 15:50:26
+ * Last modified  : 2020-07-31 20:48:12
  */
 
 import validate from 'validate.js';
-import BlackListValidator from './blacklist';
-import Email from './email';
-import PhoneValidator from './phone';
-import Required from './required';
-import RutValidator from './rut';
-import WhiteListValidator from './whitelist';
+import BlackListValidator from './blacklist.validator';
+import Email from './email.validator';
+import PhoneValidator from './phone.validator';
+import Required from './required.validator';
+import RutValidator from './rut.validator';
+import WhiteListValidator from './whitelist.validator';
 
 validate.validators.required = Required;
 validate.validators.email = Email;

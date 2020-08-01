@@ -1,1 +1,1 @@
-export { default as MasterDataNormalizer } from './master-data';
+export { default as MasterDataNormalizer } from './master-data.normalizer';

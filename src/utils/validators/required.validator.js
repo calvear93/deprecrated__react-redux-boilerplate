@@ -5,10 +5,10 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-30 14:57:47
- * Last modified  : 2020-06-07 12:19:53
+ * Last modified  : 2020-07-31 20:49:57
  */
 
-import { isData } from '../libs/object';
+import { isData } from '../libs/object.lib';
 
 /**
  * Validates current value presence.

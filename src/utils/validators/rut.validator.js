@@ -5,10 +5,10 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-30 14:57:47
- * Last modified  : 2020-06-07 12:19:39
+ * Last modified  : 2020-07-31 20:50:03
  */
 
-import Rut from '../libs/rut';
+import Rut from '../libs/rut.lib';
 
 /**
  * Validates current value as chilean Id (RUT/RUN) format.

@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import React, { Suspense, useEffect, useState } from 'react';
 import { Col, Row } from 'react-flexbox-grid';
-import { isEmpty } from '../../utils/libs/object';
+import { isEmpty } from '../../utils/libs/object.lib';
 import validate from '../../utils/validators';
 import Loader from '../loader';
 import './form-factory.scss';

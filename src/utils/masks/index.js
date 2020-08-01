@@ -1,6 +1,6 @@
-import DateTimeMask, { Pipes as DateTimePipes } from './datetime';
-import PhoneMask, { Pipes as PhonePipes } from './phone';
-import RutMask, { Pipe as RutPipe } from './rut';
+import DateTimeMask, { Pipes as DateTimePipes } from './datetime.mask';
+import PhoneMask, { Pipes as PhonePipes } from './phone.mask';
+import RutMask, { Pipe as RutPipe } from './rut.mask';
 
 const DateMask = DateTimeMask.date;
 const TimeMask = DateTimeMask.time;
