@@ -18,7 +18,7 @@ import { CustomOnChangeEvent } from '../shared';
  *
  * @param {any} props component props.
  *
- * @returns {JSX} masked input.
+ * @returns {React.ReactElement} masked input.
  */
 export default function Mask({ mask, children, onAccept, ...props })
 {

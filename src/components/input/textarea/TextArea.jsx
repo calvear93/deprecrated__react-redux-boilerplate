@@ -6,7 +6,7 @@ import { TextArea as TextAreaSemantic } from 'semantic-ui-react';
  *
  * @param {any} props component props.
  *
- * @returns {JSX} masked input.
+ * @returns {React.ReactElement} masked input.
  */
 export default function TextArea(props)
 {

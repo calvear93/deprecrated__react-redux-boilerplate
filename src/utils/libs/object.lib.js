@@ -5,13 +5,13 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:42:09
- * Last modified  : 2020-08-01 15:07:43
+ * Last modified  : 2020-08-02 16:06:18
  */
 
 /**
  * Validates emptiness of an object.
  *
- * @param {any} obj object for validate.
+ * @param {object | undefined} obj object for validate.
  *
  * @returns {boolean} true if object is empty or null/undefined, false in otherwise.
  */
@@ -24,9 +24,9 @@ export function isEmpty(obj)
  * Reduces a empty object to a undefined,
  * 'cause in many cases,  it's meaning is the same.
  *
- * @param {any} obj object for validate.
+ * @param {object | undefined} obj object for validate.
  *
- * @returns {any} object if is not null, undefined or empty, undefined in otherwise.
+ * @returns {object | undefined} object if is not null, undefined or empty, undefined in otherwise.
  */
 export function reduceEmptiness(obj)
 {
@@ -37,9 +37,9 @@ export function reduceEmptiness(obj)
  * Safely calls a function over a object,
  * validating nullity of it.
  *
- * @param {Function} func func for apply.
- * @param {any} obj object for apply function.
- * @param {any} def default value in case of nullity/undefined.
+ * @param {function} func func for apply.
+ * @param {object} obj object for apply function.
+ * @param {object} def default value in case of nullity/undefined.
  * @param {array} args other function args.
  *
  * @returns {boolean} function result on object ok, def if object us null/undefined.
@@ -52,10 +52,10 @@ export function callSafe(func, obj, def, ...args)
 /**
  * Filters object properties by keys array.
  *
- * @param {any} obj object for filter.
+ * @param {object} obj object for filter.
  * @param {any} func filter func for keys/attributes.
  *
- * @returns {any} object with filtered props.
+ * @returns {object} object with filtered props.
  */
 export function filter(obj, func)
 {
@@ -74,7 +74,7 @@ export function filter(obj, func)
  * it means the value cannot be undefined,
  * null, NaN or empty object.
  *
- * @param {any} value value for validation (undefined, null, NaN).
+ * @param {object | undefined} value value for validation (undefined, null, NaN).
  * @param {boolean} allowsEmpty whether allows empty as valid ({}, [], '' or ' ').
  *
  * @returns {boolean} true if is valid, false in otherwise.

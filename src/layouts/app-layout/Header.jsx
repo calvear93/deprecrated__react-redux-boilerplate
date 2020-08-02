@@ -5,7 +5,7 @@ import React from 'react';
  *
  * @param {string} title header title.
  *
- * @returns {JSX} header component.
+ * @returns {React.ReactElement} header component.
  */
 export default function Header({ title })
 {

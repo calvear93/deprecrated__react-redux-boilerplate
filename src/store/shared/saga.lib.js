@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 22:43:58
- * Last modified  : 2020-07-26 21:15:28
+ * Last modified  : 2020-08-02 16:27:53
  */
 
 import { race, take, delay } from 'redux-saga/effects';
@@ -17,7 +17,7 @@ import { race, take, delay } from 'redux-saga/effects';
  * @param {number} times times for wait each action type.
  * @param {number} timeout timeout in milliseconds (0 no timeout).
  *
- * @returns {array} actions results.
+ * @returns {IterableIterator<any>} actions results.
  */
 export function* waitForAny(types, times, timeout = 0)
 {

@@ -34,7 +34,7 @@ function GenerateBreadcrumbs(routes, basePath = '')
  * React Router v4+.
  *
  * @export
- * @returns {JSX} breadcrumbs.
+ * @returns {React.ReactElement} breadcrumbs.
  */
 export default function Breadcrumbs()
 {

@@ -17,7 +17,7 @@ const Redirects = [
 /**
  * Profile routing handler.
  *
- * @returns {JSX} Profile router.
+ * @returns {React.ReactElement} Profile router.
  */
 export default function ProfileRouter()
 {

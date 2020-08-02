@@ -3,7 +3,7 @@ import React from 'react';
 /**
  * Profile Edit page.
  *
- * @returns {JSX} Profile Edit page.
+ * @returns {React.ReactElement} Profile Edit page.
  */
 export default function ProfileEditPage()
 {

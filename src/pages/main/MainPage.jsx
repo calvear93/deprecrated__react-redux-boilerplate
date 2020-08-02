@@ -5,7 +5,7 @@ import Demo from '../../components/demo';
 /**
  * Main page.
  *
- * @returns {JSX} Main page.
+ * @returns {React.ReactElement} Main page.
  */
 export default function MainPage()
 {

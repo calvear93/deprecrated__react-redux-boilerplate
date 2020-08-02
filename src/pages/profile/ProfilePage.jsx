@@ -3,7 +3,7 @@ import React from 'react';
 /**
  * Profile page.
  *
- * @returns {JSX} Profile page.
+ * @returns {React.ReactElement} Profile page.
  */
 export default function ProfilePage()
 {

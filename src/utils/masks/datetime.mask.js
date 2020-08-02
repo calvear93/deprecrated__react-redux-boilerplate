@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-24 10:50:51
- * Last modified  : 2020-05-24 10:58:10
+ * Last modified  : 2020-08-02 16:20:51
  */
 
 import IMask from 'imask';

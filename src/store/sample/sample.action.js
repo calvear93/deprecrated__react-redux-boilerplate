@@ -1,6 +1,11 @@
 import { CreateAction, MakeUnique } from '../shared/action.lib';
 
-// store partition key.
+/**
+ * store partition key.
+ *
+ * @const
+ * @type {string}
+ */
 const KEY = 'SAMPLE';
 
 /**
@@ -41,14 +46,14 @@ const SampleAction =
     },
 
     /**
-     * Returns the action.
+     * Returns a new action.
      *
      * @param {string} type action type.
      * @param {any} payload data involved in the action.
      *
      * @memberof SampleAction
      *
-     * @returns {Function} action function.
+     * @returns {any} action function.
      */
     Action: (type, payload) => CreateAction(SampleAction.Key, type, payload)
 };

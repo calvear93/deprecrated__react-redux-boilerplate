@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-30 14:57:47
- * Last modified  : 2020-07-31 20:50:03
+ * Last modified  : 2020-08-02 16:22:09
  */
 
 import Rut from '../libs/rut.lib';
@@ -14,11 +14,11 @@ import Rut from '../libs/rut.lib';
  * Validates current value as chilean Id (RUT/RUN) format.
  *
  * @param {any} value current value.
- * @param {any} options validator options.
+ * @param {object} options validator options.
  * @param {string} options.message error message.
  * @param {any} attributeName input key.
  * @param {any} values neighbor values.
- * @param {any} constraints validator cfg.
+ * @param {object} constraints validator cfg.
  * @param {boolean} constraints.fullMessages whether message contains attribute name.
  *
  * @returns {string} message if value isn't a valid RUT/RUN, null in otherwise.

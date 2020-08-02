@@ -6,7 +6,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-24 11:01:35
- * Last modified  : 2020-05-24 11:03:26
+ * Last modified  : 2020-08-02 16:24:56
  */
 
 const MasterDataNormalizer = {
@@ -15,9 +15,10 @@ const MasterDataNormalizer = {
      * dropdown values.
      *
      * @param {array} arr data.
-     * @param {any} key attribute name and transformation func for key.
-     * @param {any} text attribute name and transformation func for text.
-     * @param {any} value attribute name and transformation func for value.
+     * @param {object} options options.
+     * @param {any} options.key attribute name and transformation func for key.
+     * @param {any} options.text attribute name and transformation func for text.
+     * @param {any} options.value attribute name and transformation func for value.
      *
      * @returns {array} dropdown values.
      */
@@ -36,8 +37,9 @@ const MasterDataNormalizer = {
      * radio/checkbox group values.
      *
      * @param {array} arr data.
-     * @param {any} label attribute name and transformation func for label.
-     * @param {any} value attribute name and transformation func for value.
+     * @param {object} options options.
+     * @param {any} options.label attribute name and transformation func for label.
+     * @param {any} options.value attribute name and transformation func for value.
      *
      * @returns {array} dropdown values.
      */
@@ -56,6 +58,7 @@ const MasterDataNormalizer = {
      *
      * @param {array} arr data.
      * @param {string} key attribute name for dictionary key.
+     *
      * @returns {any} dictionary.
      */
     AsDictionary(arr, key)

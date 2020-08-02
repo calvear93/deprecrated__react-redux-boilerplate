@@ -14,7 +14,7 @@ import Tippy from '../../utils/libs/tippy.lib';
 /**
  * Main page.
  *
- * @returns {JSX} Main page.
+ * @returns {React.ReactElement} Main page.
  */
 export default function Demo2()
 {

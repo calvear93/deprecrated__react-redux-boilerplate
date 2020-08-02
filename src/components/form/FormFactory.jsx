@@ -37,14 +37,14 @@ const defInterceptor = (key, values, validations, config) =>
  * @param {any} schema inputs configuration.
  * @param {any} defaults default values for inputs.
  * @param {any} datasets datasets for use in options inputs.
- * @param {Function} interceptor functions for intercepts values and validations on change.
- * @param {Function} onChange callback triggered on every input change.
+ * @param {function} interceptor functions for intercepts values and validations on change.
+ * @param {function} onChange callback triggered on every input change.
  *  Receives (key: key of changed input, values: current values,
  *  validations: current input validations, isValid: whether form is valid)
  * @param {any} loading whether form should shows loading indicator.
  * @param {any} validateOnMount whether validation is executed on mounting.
  *
- * @returns {JSX} form factory.
+ * @returns {React.ReactElement} form factory.
  */
 export default function FormFactory({
     schema,

@@ -1,6 +1,11 @@
 import { CreateAction, MakeUnique } from '../shared/action.lib';
 
-// store partition key.
+/**
+ * store partition key.
+ *
+ * @const
+ * @type {string}
+ */
 const KEY = 'AAD';
 
 /**
@@ -35,7 +40,7 @@ const AzureActiveDirectoryAction =
      * @memberof AzureActiveDirectoryAction
      */
     Selector: {
-        User: ({ [AzureActiveDirectoryAction.Key]: { account: { user } } }) => user
+        User: ({ [KEY]: { account: { user } } }) => user
     },
 
     /**
@@ -51,11 +56,11 @@ const AzureActiveDirectoryAction =
      * Returns the action.
      *
      * @param {string} type action type.
-     * @param {any} payload data involved in the action.
+     * @param {any | undefined} payload data involved in the action.
      *
      * @memberof AzureActiveDirectoryAction
      *
-     * @returns {Function} action function.
+     * @returns {any} action function.
      */
     Action: (type, payload) => CreateAction(AzureActiveDirectoryAction.Key, type, payload)
 };

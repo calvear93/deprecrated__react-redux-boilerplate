@@ -19,7 +19,7 @@ const NotFoundPage = lazy(() => import('../pages/not-found'));
  * @param {array} redirects array of redirects (exact, from, to).
  * @param {string} message loading message.
  *
- * @returns {JSX} router.
+ * @returns {React.ReactElement} router.
  */
 export default function Router({ routes = [], redirects = [], message = 'Cargando' })
 {

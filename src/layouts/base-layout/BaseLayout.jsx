@@ -5,8 +5,8 @@ import './base-layout.scss';
 /**
  * Base layout (wrapper for pages without header/footer).
  *
- * @param {JSX} children component for render inside.
- * @returns {JSX} base layout.
+ * @param {React.ReactElement} children component for render inside.
+ * @returns {React.ReactElement} base layout.
  */
 export default function BaseLayout({ children, title })
 {

@@ -5,7 +5,7 @@ import React from 'react';
  *
  * @param {string} text footer text.
  *
- * @returns {JSX} footer component.
+ * @returns {React.ReactElement} footer component.
  */
 export default function Footer({ text })
 {

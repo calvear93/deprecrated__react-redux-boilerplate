@@ -14,7 +14,7 @@
  * Returns a default value on falsy string.
  *
  * @param {string} str string.
- * @param {Function} filter filter function if string is valid.
+ * @param {function} filter filter function if string is valid.
  * @param {string} def value in case of falsy string.
  *
  * @returns {string} string (with filter if exists) if valid, def in otherwise.

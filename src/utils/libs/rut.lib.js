@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:40:56
- * Last modified  : 2020-08-01 15:19:34
+ * Last modified  : 2020-08-02 16:03:47
  */
 
 const Rut = {
@@ -51,9 +51,10 @@ const Rut = {
     /**
       * Removes all dots and the hyphen.
       *
-      * @param {string} id chilean id.
-      * @param {boolean} removeCD whether removes check digit.
-      * @param {boolean} keepHyphen whether keeps hypen before check digit.
+      * @param {string | undefined} id chilean id.
+      * @param {object} [options] formatting options.
+      * @param {boolean} [options.removeCD] formatting options.
+      * @param {boolean} [options.keepHyphen] formatting options.
       *
       * @returns {string} cleaned id.
       */
@@ -75,7 +76,7 @@ const Rut = {
     /**
      * Validates chilean Id.
      *
-     * @param {string} id RUT (Rol Único Tributario), RUN (Rol Único Nacional).
+     * @param {string | undefined} id RUT (Rol Único Tributario), RUN (Rol Único Nacional).
      *
      * @returns {boolean} whether id is valid.
      */
@@ -95,10 +96,10 @@ const Rut = {
     },
 
     /**
-     * Returns a formatted rut/ci string
+     * Returns a formatted rut/ci string.
      *
-     * @param {string} rut RUT (Rol Único Tributario), RUN (Rol Único Nacional).
-     * @param {string} old previous value.
+     * @param {string | undefined} rut RUT (Rol Único Tributario), RUN (Rol Único Nacional).
+     * @param {string | undefined} old previous value.
      * @param {boolean} withDots wheter formatted sttring should contains dots.
      *
      * @returns {string} formatted id.

@@ -8,13 +8,19 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:33:24
- * Last modified  : 2020-05-28 11:19:58
+ * Last modified  : 2020-08-02 16:18:27
  */
 
 import React from 'react';
 import { toast } from 'react-toastify';
 
-// Close button.
+/**
+ * Parses a string date.
+ *
+ * @param {object} [options] date as string.
+ *
+ * @returns {React.ReactElement} parsed datetime.
+ */
 const CloseButton = ({ closeToast }) => (
     <i
         className='close toastify-close-icon'
@@ -43,10 +49,10 @@ const Toast = {
     /**
      * Returns users list.
      *
-     * @param {JSX | string} content toast content.
-     * @param {JSX | string} duration toast duration
+     * @param {React.ReactElement | string} content toast content.
+     * @param {number} duration toast duration
      * @param {string} type toast type. Use Toast.TYPE definitions.
-     * @param {string} position toast position. Use Toast.POSITION definitions.
+     * @param {any} position toast position. Use Toast.POSITION definitions.
      * @param {boolean} showProgressBar whether toast shows progress bar.
      *
      * @returns {any} shows toast and returns toast controller element.

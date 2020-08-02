@@ -13,7 +13,7 @@ import './styles/App.scss';
  * Here occur the initialization
  * and localization of some libs.
  *
- * @returns {JSX} App container.
+ * @returns {React.ReactElement} App container.
  */
 export default function App()
 {

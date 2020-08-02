@@ -17,7 +17,7 @@ const Redirects = [
 /**
  * Application root routing handler.
  *
- * @returns {JSX} Application root router.
+ * @returns {React.ReactElement} Application root router.
  */
 export default function AppRouter()
 {

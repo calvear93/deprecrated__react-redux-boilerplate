@@ -6,7 +6,9 @@ import AzureActiveDirectoryAction from './aad.action';
 /**
  * Executes azure active directory authentication.
  *
- * @param {string} type login type (redirect or popup).
+ * @param {object} action dispatched action..
+ * @param {object} [action.payload] action payload.
+ * @param {string} [action.payload.type] login type (redirect or popup).
  */
 function* authenticate({ payload: { type } = {} })
 {

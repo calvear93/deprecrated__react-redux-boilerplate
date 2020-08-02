@@ -8,8 +8,9 @@ export default class Interval
 {
     /**
      * Creates an instance of Interval.
-     * @param {*} interval range time in ms.
-     * @param {*} func callback.
+     *
+     * @param {number} interval range time in ms.
+     * @param {function} func callback.
      * @memberof Interval
      */
     constructor(interval, func)

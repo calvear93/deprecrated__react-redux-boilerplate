@@ -30,7 +30,7 @@ import { IMaskInput } from 'react-imask';
  * @see https://www.npmjs.com/package/react-imask
  * @param {any} props component props.
  *
- * @returns {JSX} masked input.
+ * @returns {React.ReactElement} masked input.
  */
 export default function InputMasked({ mask, ...props })
 {

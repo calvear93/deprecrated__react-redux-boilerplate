@@ -8,13 +8,13 @@ import './app-layout.scss';
 /**
  * App layout (wrapper for pages with header/footer).
  *
- * @param {JSX} children component for render inside.
+ * @param {React.ReactElement} children component for render inside.
  * @param {string} title page document title.
  * @param {any} headerProps header props.
  * @param {any} footerProps footer props.
  * @param {any} props layout props.
  *
- * @returns {JSX} app layout.
+ * @returns {React.ReactElement} app layout.
  */
 export default function AppLayout({
     children,

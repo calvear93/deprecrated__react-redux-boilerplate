@@ -18,7 +18,7 @@ import './time-picker.scss';
  * @param {boolean} onChange on time change. Sends (newTime, {id, value}).
  * @param {array} props rest of props for input.
  *
- * @returns {JSX} time picker input.
+ * @returns {React.ReactElement} time picker input.
  */
 export default function TimePicker({
     time: inputTime = '',
