@@ -9,6 +9,9 @@ const breadcrumbs = {
     ...GenerateBreadcrumbs(profileRoutes, '/profile')
 };
 
+// routes array.
+const routes = Object.keys(breadcrumbs);
+
 /**
  * Arms breadcrumbs object for
  * dynamic breadcrumbs.
@@ -42,17 +45,24 @@ export default function Breadcrumbs()
         <DynamicBreadcrumbs
             mappedRoutes={ breadcrumbs }
             WrapperComponent={ ({ children }) => (
-                <div className='ui breadcrumb'>{children}</div>
+                <ol className='rs-breadcrumb breadcrumb'>{children}</ol>
             ) }
-            ActiveLinkComponent={ (props) => (
-                <div className='active section'>{props.children}</div>
+            ActiveLinkComponent={ ({ children }) => (
+                <li className='rs-breadcrumb-item rs-breadcrumb-item-active'>{children}</li>
             ) }
-            LinkComponent={ (props) => (
-                <>
-                    <div className='section'>{props.children}</div>
-                    <i aria-hidden='true' className='right angle icon divider' />
-                </>
-            ) }
+            LinkComponent={ ({ children }) =>
+            {
+                // route isn't defined.
+                if (!routes.includes(children.props.to))
+                    return null;
+
+                return (
+                    <>
+                        <li className='rs-breadcrumb-item'>{children}</li>
+                        <li className='rs-breadcrumb-separator'>/</li>
+                    </>
+                );
+            } }
         />
     );
 }
