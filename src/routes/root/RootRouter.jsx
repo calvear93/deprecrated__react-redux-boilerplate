@@ -19,7 +19,7 @@ const Redirects = [
  *
  * @returns {React.ReactElement} Application root router.
  */
-export default function AppRouter()
+export default function RootRouter()
 {
     return (
         <Router routes={ Routes } redirects={ Redirects } message='Cargando' />
