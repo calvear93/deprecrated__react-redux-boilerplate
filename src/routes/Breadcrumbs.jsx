@@ -45,10 +45,10 @@ export default function Breadcrumbs()
         <DynamicBreadcrumbs
             mappedRoutes={ breadcrumbs }
             WrapperComponent={ ({ children }) => (
-                <ol className='rs-breadcrumb breadcrumb'>{children}</ol>
+                <div className='ui breadcrumb'>{children}</div>
             ) }
             ActiveLinkComponent={ ({ children }) => (
-                <li className='rs-breadcrumb-item rs-breadcrumb-item-active'>{children}</li>
+                <div className='active section'>{children}</div>
             ) }
             LinkComponent={ ({ children }) =>
             {
@@ -58,8 +58,8 @@ export default function Breadcrumbs()
 
                 return (
                     <>
-                        <li className='rs-breadcrumb-item'>{children}</li>
-                        <li className='rs-breadcrumb-separator'>/</li>
+                        <div className='section'>{children}</div>
+                        <i aria-hidden='true' className='right angle icon divider' />
                     </>
                 );
             } }

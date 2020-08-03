@@ -8,7 +8,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:24:07
- * Last modified  : 2020-06-21 14:44:09
+ * Last modified  : 2020-08-03 19:29:54
  */
 
 import { lazy } from 'react';
@@ -16,23 +16,31 @@ import { lazy } from 'react';
 // pages container.
 const Pages = {
     ProfilePage: lazy(() => import('../../pages/profile')),
-    ProfileEditPage: lazy(() => import('../../pages/profile-edit'))
+    ProfileEditPage: lazy(() => import('../../pages/profile-edit')),
+    ProfileUserPage: lazy(() => import('../../pages/profile-user'))
 };
 
 export default {
     // profile root page.
     Profile: {
         key: 'Profile',
-        title: 'Perfil', // requires at least BaseLayout.
+        title: 'Perfil',
         path: '/', // profile/
         exact: true,
         Child: Pages.ProfilePage
     },
     ProfileEdit: {
         key: 'ProfileEdit',
-        title: 'Editar Perfil', // requires at least BaseLayout.
+        title: 'Editar Perfil',
         path: '/edit', // profile/edit
         exact: true,
         Child: Pages.ProfileEditPage
+    },
+    ProfileUser: {
+        key: 'ProfileUser',
+        title: 'Ver Usuario',
+        path: '/user/:userId', // profile/user/123
+        exact: true,
+        Child: Pages.ProfileUserPage
     }
 };

@@ -1,5 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import { Redirect, Route, Switch, useLocation, useRouteMatch } from 'react-router-dom';
+import RouteChild from './RouteChild';
 import Loader from '../components/loader';
 
 // lazy loaded components.
@@ -52,25 +53,15 @@ export default function Router({ routes = [], redirects = [], message = 'Cargand
                             // route config values.
                             const {
                                 key,
-                                title,
                                 path,
                                 exact,
-                                layoutConfig,
-                                Layout,
-                                Child,
-                                ...props
+                                ...rest
                             } = route;
 
                             // renders the route.
                             return (
                                 <Route key={ key } exact={ exact } path={ `${basePath}${path}`.replace(/\/\//g, '/') }>
-                                    {Layout ? (
-                                        <Layout title={ title } { ...layoutConfig }>
-                                            <Child { ...props } />
-                                        </Layout>
-                                    ) : (
-                                        <Child { ...props } />
-                                    )}
+                                    <RouteChild render={ rest } />
                                 </Route>
                             );
                         })

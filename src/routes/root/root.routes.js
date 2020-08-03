@@ -8,7 +8,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:24:07
- * Last modified  : 2020-07-04 21:11:01
+ * Last modified  : 2020-08-03 19:28:43
  */
 
 import { lazy } from 'react';
@@ -34,7 +34,7 @@ export default {
     // root app page.
     Main: {
         key: 'Main',
-        title: 'Inicio', // requires at least BaseLayout.
+        title: 'Inicio',
         path: '/main',
         exact: true,
         // specific layout config props.
