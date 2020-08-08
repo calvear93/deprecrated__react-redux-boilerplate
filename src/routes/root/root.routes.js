@@ -8,7 +8,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:24:07
- * Last modified  : 2020-08-08 14:12:03
+ * Last modified  : 2020-08-08 15:00:43
  */
 
 import { lazy } from 'react';
@@ -32,10 +32,10 @@ const Routers = {
 
 export default {
     // root app page.
-    Main: {
+    MainPage: {
         key: 'Main',
         title: 'Inicio',
-        path: '/',
+        path: '/main',
         exact: true,
         // specific layout config props.
         layoutConfig: {

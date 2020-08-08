@@ -9,8 +9,8 @@ const Routes = Object.values(RootRoutes);
 const Redirects = [
     {
         exact: true,
-        from: '/main',
-        to: '/'
+        from: '/',
+        to: '/main'
     }
 ];
 
