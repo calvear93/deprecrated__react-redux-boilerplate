@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 22:42:56
- * Last modified  : 2020-08-02 16:35:16
+ * Last modified  : 2020-08-08 13:44:04
  */
 
 import { v1 as guid } from 'uuid';
@@ -13,7 +13,6 @@ import { v1 as guid } from 'uuid';
 /**
  * Creates a new Redux Action.
  *
- * @export
  * @param {string} key Action store pointer.
  * @param {string} type Action Type.
  * @param {any} payload Action args.
@@ -33,7 +32,6 @@ export function CreateAction(key, type, payload)
  * Creates Redux Action Type from
  * object using GUID.
  *
- * @export
  * @param {any} obj Dictionary with actions types for declare.
  *
  * @returns {any} Freezed object for Redux Action Types.
@@ -52,7 +50,6 @@ export function CreateActionTypes(obj)
  * Makes object properties of an object
  * unique, appending a guid ot it.
  *
- * @export
  * @param {any} obj dictionary with actions types for declare.
  */
 export function MakeUnique(obj)

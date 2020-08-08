@@ -32,8 +32,6 @@ function* exec(payload)
 
 /**
  * Exports saga listeners.
- *
- * @export
  */
 export default function* run()
 {

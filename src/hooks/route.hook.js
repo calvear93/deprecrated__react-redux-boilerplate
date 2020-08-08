@@ -5,7 +5,6 @@ import { useLocation } from 'react-router-dom';
 /**
  * Returns URL query parameters.
  *
- * @export
  * @dependency useLocation from react-router-dom.
  *
  * @returns {any} query params.
@@ -21,7 +20,6 @@ export function useQueryParams()
  * Whether current path belongs
  * to provided list, like whitelist.
  *
- * @export
  * @dependency useLocation from react-router-dom.
  * @param {array} list array of paths (strings)
  *
@@ -40,7 +38,6 @@ export function usePathBelongsTo(list)
 /**
  * Retrieves current path state.
  *
- * @export
  * @dependency useLocation from react-router-dom.
  *
  * @returns {any} route state.

@@ -9,7 +9,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-07-26 13:45:06
- * Last modified  : 2020-07-26 22:15:19
+ * Last modified  : 2020-08-08 13:43:30
  */
 
 import { applyMiddleware } from 'redux';
@@ -18,8 +18,6 @@ import createSagaMiddleware from 'redux-saga';
 /**
  * Generates a middleware conditionally
  * by current debug mode.
- *
- * @export
  *
  * @returns {array} middleware apply and run functions.
  */

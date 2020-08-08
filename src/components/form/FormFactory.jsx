@@ -33,7 +33,6 @@ const defInterceptor = (key, values, validations, config) =>
  *
  * @see https://validatejs.org/
  *
- * @export
  * @param {any} schema inputs configuration.
  * @param {any} defaults default values for inputs.
  * @param {any} datasets datasets for use in options inputs.

@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-18 13:34:27
- * Last modified  : 2020-05-23 22:41:52
+ * Last modified  : 2020-08-08 13:43:26
  */
 
 /**
@@ -23,7 +23,6 @@ const Modules = {
 /**
  * Returns JSON files data.
  *
- * @export
  * @param {string} module module name.
  * @returns {JSON} json file data.
  */

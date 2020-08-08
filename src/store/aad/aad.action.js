@@ -10,8 +10,6 @@ const KEY = 'AAD';
 
 /**
  * Redux Action Vault.
- *
- * @export AzureActiveDirectoryAction
  */
 const AzureActiveDirectoryAction =
 {

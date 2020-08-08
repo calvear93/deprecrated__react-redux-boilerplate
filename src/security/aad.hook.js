@@ -8,7 +8,6 @@ import { AzureActiveDirectorySecurityMode } from './AzureActiveDirectoryProvider
  * Uses MSAL authentication service for
  * validate current user account.
  *
- * @export
  * @param {number} mode AAD route filter mode.
  * @param {array} list list of routes.
  * @param {string} errorRoute route for unauthorized error page.

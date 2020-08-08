@@ -1,7 +1,6 @@
 /**
  * Creates a custom event.
  *
- * @export
  * @param {string} type event type.
  * @param {boolean} bubbles whether the event bubbles up through the DOM or not.
  * @param {boolean} cancelable whether the event is cancelable.
@@ -31,7 +30,6 @@ export function CustomEvent(type, {
 /**
  * Creates a custom on 'change' event.
  *
- * @export
  * @param {any} target reference to the target to which the event was originally dispatched.
  *
  * @returns {any} custom 'change' event.

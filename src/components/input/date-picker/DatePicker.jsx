@@ -13,7 +13,6 @@ import './date-picker.scss';
  *
  * @see https://kiarash-z.github.io/react-modern-calendar-datepicker/
  *
- * @export
  * @param {Date} date selected.
  * @param {function} onChange on selected date callback.
  * @param {string} displayFormat format by date-fns.

@@ -36,7 +36,6 @@ function GenerateBreadcrumbs(routes, basePath = '')
  * Dynamic breadcrumbs for
  * React Router v4+.
  *
- * @export
  * @returns {React.ReactElement} breadcrumbs.
  */
 export default function Breadcrumbs()
