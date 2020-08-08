@@ -1,36 +1,9 @@
 import React from 'react';
 import DynamicBreadcrumbs from 'react-router-dynamic-breadcrumbs';
-import { routes as rootRoutes } from './root';
-import { routes as profileRoutes } from './profile';
-
-// arms breadcrumbs.
-const breadcrumbs = {
-    ...GenerateBreadcrumbs(rootRoutes),
-    ...GenerateBreadcrumbs(profileRoutes, '/profile')
-};
+import { routes } from '.';
 
 // routes array.
-const routes = Object.keys(breadcrumbs);
-
-/**
- * Arms breadcrumbs object for
- * dynamic breadcrumbs.
- *
- * @param {any} routes routes definitions.
- * @param {string} basePath base path.
- * @returns {any} breadcrumbs definitions.
- */
-function GenerateBreadcrumbs(routes, basePath = '')
-{
-    return Object.values(routes)
-        .filter(r => !r.router)
-        .reduce((breadcrumbs, route) =>
-        {
-            breadcrumbs[`${basePath}${route.path.replace(/\/$/, '')}`] = route.title;
-
-            return breadcrumbs;
-        }, {});
-}
+const paths = Object.keys(routes);
 
 /**
  * Dynamic breadcrumbs for
@@ -42,7 +15,7 @@ export default function Breadcrumbs()
 {
     return (
         <DynamicBreadcrumbs
-            mappedRoutes={ breadcrumbs }
+            mappedRoutes={ routes }
             WrapperComponent={ ({ children }) => (
                 <div className='ui breadcrumb'>{children}</div>
             ) }
@@ -52,7 +25,7 @@ export default function Breadcrumbs()
             LinkComponent={ ({ children }) =>
             {
                 // route isn't defined.
-                if (!routes.includes(children.props.to))
+                if (!paths.includes(children.props.to))
                     return null;
 
                 return (

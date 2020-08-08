@@ -8,7 +8,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:24:07
- * Last modified  : 2020-08-03 19:28:43
+ * Last modified  : 2020-08-08 14:12:03
  */
 
 import { lazy } from 'react';
@@ -35,7 +35,7 @@ export default {
     Main: {
         key: 'Main',
         title: 'Inicio',
-        path: '/main',
+        path: '/',
         exact: true,
         // specific layout config props.
         layoutConfig: {
