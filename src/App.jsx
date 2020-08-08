@@ -5,7 +5,7 @@ import { ToastContainer } from 'react-toastify';
 import { AzureActiveDirectoryProvider, AzureActiveDirectorySecurityMode } from './security';
 import store from './store/store';
 import RootRouter from './routes/root';
-import './styles/App.scss';
+import './styles/app.scss';
 
 /**
  * App container.

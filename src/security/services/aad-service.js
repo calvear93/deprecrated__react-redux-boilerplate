@@ -2,7 +2,7 @@
  * MSAL Microsoft Authentication service.
  *
  * @summary MSAL service.
- * @author Alvear Candia, Cristopher Alejandro <caalvearc@achs.cl>
+ * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-23 19:53:33
  * Last modified  : 2020-08-08 12:14:11

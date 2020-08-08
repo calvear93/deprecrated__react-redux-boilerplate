@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDocumentTitle } from '../hooks/document.hook';
+import { useDocumentTitle } from '../../hooks/document.hook';
 
 /**
  * Renders the page or router in routing mapping.
@@ -9,7 +9,7 @@ import { useDocumentTitle } from '../hooks/document.hook';
  * @param {any} render.layoutConfig layout config.
  * @param {React.ReactElement} render.Layout layout component.
  * @param {React.ReactElement} render.Child child component, maybe a Page or Router.
- * @param {object} render.props child props.
+ * @param {any} render.props child props.
  *
  * @returns {React.ReactElement} route child.
  */
@@ -23,7 +23,7 @@ export default function RouteChild({ render })
         ...props
     } = render;
 
-    // sets up page tab title.
+    // sets up tab title.
     useDocumentTitle(title);
 
     return Layout ? (

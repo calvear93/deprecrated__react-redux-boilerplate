@@ -1,5 +1,5 @@
 import React from 'react';
-import Router from '../Router';
+import Router from '../router';
 import ProfileRoutes from './profile.routes';
 
 // routes array.
