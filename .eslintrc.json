@@ -5,7 +5,8 @@
 		"es6": true,
 		"jquery": true,
 		"node": true,
-		"worker": true
+		"worker": true,
+		"jest/globals": true
 	},
 	"extends": [
 		"eslint:recommended",
@@ -25,8 +26,13 @@
 		"ecmaVersion": 2020,
 		"sourceType": "module"
 	},
-	"plugins": ["react-redux", "react", "import"],
+	"plugins": ["react-redux", "react", "jest", "import"],
 	"rules": {
+		"jest/no-disabled-tests": "warn",
+		"jest/no-focused-tests": "error",
+		"jest/no-identical-title": "error",
+		"jest/prefer-to-have-length": "warn",
+		"jest/valid-expect": "error",
 		"array-bracket-spacing": ["warn", "always"],
 		"array-callback-return": "error",
 		"arrow-spacing": "warn",
