@@ -80,7 +80,8 @@
 		"*.validator.js": "lib",
 		"defaults.js": "makefile",
 		"package.json": "nodejs_alt",
-		"service-worker.js": "http"
+		"service-worker.js": "http",
+		"setupTests.js": "jest",
 	},
 	"material-icon-theme.folders.associations": {
 		"masks": "middleware",
