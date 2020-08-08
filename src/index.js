@@ -16,3 +16,11 @@ if (process.env.REACT_APP_SERVICE_WORKER === 'true')
     const serviceWorker = require('./service-worker');
     serviceWorker.register();
 }
+
+// Enables mock server using Mirage JS.
+// Learn more at: https://miragejs.com
+if (process.env.REACT_APP_MOCK_SERVER === 'true')
+{
+    const server = require('./mock/server');
+    server.default();
+}

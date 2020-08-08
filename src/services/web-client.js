@@ -16,13 +16,13 @@ const request = axios.create({
 
 export default {
     // demo service.
-    Demo: {
+    User: {
         /**
          * Returns users list.
          *
          * @returns {any} users list.
          */
-        Users()
+        GetAll()
         {
             return request({
                 url: '/api/users',
