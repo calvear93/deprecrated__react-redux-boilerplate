@@ -1,11 +1,11 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import App from './App';
+import MainPage from './MainPage';
 
-describe('testing App', () =>
+describe('testing MainPage', () =>
 {
     test('rendering', () =>
     {
-        render(<App />);
+        render(<MainPage />);
     });
 });
