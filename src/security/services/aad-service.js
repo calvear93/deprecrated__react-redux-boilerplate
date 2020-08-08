@@ -2,15 +2,14 @@
  * MSAL Microsoft Authentication service.
  *
  * @summary MSAL service.
- * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
+ * @author Alvear Candia, Cristopher Alejandro <caalvearc@achs.cl>
  *
  * Created at     : 2020-05-23 19:53:33
- * Last modified  : 2020-06-27 12:54:06
+ * Last modified  : 2020-08-08 12:14:11
  */
 
-import { DEFAULT_SCOPES } from './aad-cfg';
+import { types, DEFAULT_SCOPES } from '../config';
 import AuthenticationContext from './aad-context';
-import AADTypes from './aad-types';
 
 const AuthenticationService = {
 
@@ -89,7 +88,7 @@ const AuthenticationService = {
      * @returns {boolean} account data if is authenticated, error on failure.
      */
     login({
-        type = AADTypes.LOGIN_TYPE.REDIRECT,
+        type = types.LOGIN_TYPE.REDIRECT,
         scopes = DEFAULT_SCOPES,
         loginHint,
         forceTokenRefresh = false

@@ -2,21 +2,20 @@
  * Microsoft Graph query service.
  *
  * @summary Microsoft Graph service.
- * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
+ * @author Alvear Candia, Cristopher Alejandro <caalvearc@achs.cl>
  *
  * Created at     : 2020-05-23 19:53:33
- * Last modified  : 2020-07-08 14:23:38
+ * Last modified  : 2020-08-08 12:14:06
  */
 
 import axios from 'axios';
-import { DEFAULT_SCOPES } from './aad-cfg';
+import { types, DEFAULT_SCOPES } from '../config';
 import AuthenticationContext from './aad-context';
-import AADTypes from './aad-types';
 
 // Graph API helper.
 const Graph = {
     // Graph API base URL.
-    URL: `${AADTypes.RESOURCES.MICROSOFT_GRAPH}v1.0/`,
+    URL: `${types.RESOURCES.MICROSOFT_GRAPH}v1.0/`,
 
     /**
      * Acquire auth token and sends a request to
@@ -55,7 +54,7 @@ const Graph = {
      */
     me()
     {
-        return Graph.graphRequest({ api: 'me', params: { $select: AADTypes.ATTRIBUTES.join(',') } });
+        return Graph.graphRequest({ api: 'me', params: { $select: types.ATTRIBUTES.join(',') } });
     },
 
     /**
@@ -70,7 +69,7 @@ const Graph = {
             Graph.graphRequest({ api: 'me/photo/$value', responseType: 'blob' })
                 .then((response) =>
                 {
-                    const reader = new FileReader();
+                    var reader = new FileReader();
                     reader.readAsDataURL(response);
                     reader.onloadend = function()
                     {
@@ -97,7 +96,7 @@ const Graph = {
             Graph.graphRequest({ api: `me/photos/${size}/$value`, responseType: 'blob' })
                 .then((response) =>
                 {
-                    const reader = new FileReader();
+                    var reader = new FileReader();
                     reader.readAsDataURL(response);
                     reader.onloadend = function()
                     {

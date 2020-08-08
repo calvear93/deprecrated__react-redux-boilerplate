@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import Loader from '../../components/loader';
-import { useIsAuthorized } from '../../hooks/aad';
-import { AzureActiveDirectoryAction } from '../../store/aad';
+import Loader from '../components/loader';
+import { useIsAuthorized } from './aad.hook';
+import { AzureActiveDirectoryAction } from '../store/aad';
 
 // AAD route security mode.
 export const AzureActiveDirectorySecurityMode = {

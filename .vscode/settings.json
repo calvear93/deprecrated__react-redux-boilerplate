@@ -70,6 +70,7 @@
 	"material-icon-theme.files.associations": {
 		"*.env.js": "tune",
 		"*.env.json": "tune",
+		"*.hook.js": "capacitor",
 		"*.lib.js": "lib",
 		"*.mask.js": "lib",
 		"*.normalizer.js": "lib",

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDocumentTitle } from '../hooks/document';
+import { useDocumentTitle } from '../hooks/document.hook';
 
 /**
  * Renders the page or router in routing mapping.

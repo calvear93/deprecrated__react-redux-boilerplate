@@ -1,6 +1,6 @@
 import Storage from 'js-storage';
 import { all, call, put, takeLatest } from 'redux-saga/effects';
-import { AuthenticationService, Graph } from '../../services/auth';
+import { AuthenticationService, GraphService } from '../../security';
 import AzureActiveDirectoryAction from './aad.action';
 
 /**
@@ -21,8 +21,8 @@ function* authenticate({ payload: { type } = {} })
 
         // gets user detailed info.
         const [ user, photo ] = yield all([
-            storage.get('user') || call(Graph.me),
-            storage.get('photo') || call(Graph.photoWithSize, process.env.REACT_APP_AAD_USER_PHOTO_SIZE)
+            storage.get('user') || call(GraphService.me),
+            storage.get('photo') || call(GraphService.photoWithSize, process.env.REACT_APP_AAD_USER_PHOTO_SIZE)
         ]);
 
         // success.

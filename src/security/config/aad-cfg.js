@@ -4,22 +4,19 @@
  * @see https://azuread.github.io/microsoft-authentication-library-for-js/docs/msal/modules/_configuration_.html
  *
  * @summary MSAL config file.
- * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
+ * @author Alvear Candia, Cristopher Alejandro <caalvearc@achs.cl>
  *
  * Created at     : 2020-04-15 19:51:39
- * Last modified  : 2020-07-12 17:51:09
+ * Last modified  : 2020-08-08 12:12:16
  */
 
-import AADTypes from './aad-types';
+import types from './aad-types';
 
 // offset needed to renew the token before expiry.
 const TOKEN_REFRESH_PERIOD = +process.env.REACT_APP_AAD_TOKEN_RENEWAL_OFFSET_SECONDS;
 
 // navigates to request URL after authentication/login instead of redirect URL.
 const NAVIGATE_TO_REQUEST_URL_AFTER_LOGIN = process.env.REACT_APP_AAD_NAVIGATE_TO_REQUEST_URL_AFTER_LOGIN === 'true';
-
-// default permission scopes for authentication.
-export const DEFAULT_SCOPES = [ AADTypes.SCOPES.USER.READ ];
 
 // login redirect URL.
 export const LOGIN_ACTION_REDIRECT = process.env.REACT_APP_AAD_LOGIN_ACTION_REDIRECT !== 'null'
@@ -57,7 +54,7 @@ const auth = {
  * - storeAuthStateInCookie   - If set, MSAL store's the auth request state required for validation of the auth flows in the browser cookies. By default this flag is set to false.
  */
 const cache = {
-    cacheLocation: AADTypes.CACHE.LOCAL_STORAGE,
+    cacheLocation: types.CACHE.LOCAL_STORAGE,
     storeAuthStateInCookie: false
 };
 

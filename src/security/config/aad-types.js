@@ -2,7 +2,7 @@
  * MSAL Microsoft Authentication constants.
  *
  * @summary MSAL constants.
- * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
+ * @author Alvear Candia, Cristopher Alejandro <caalvearc@achs.cl>
  *
  * Created at     : 2020-05-23 19:54:31
  * Last modified  : 2020-06-06 11:18:25
