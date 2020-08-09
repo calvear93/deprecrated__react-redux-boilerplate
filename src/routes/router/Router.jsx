@@ -7,7 +7,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-07-04 16:42:09
- * Last modified  : 2020-08-08 13:03:32
+ * Last modified  : 2020-08-08 21:23:05
  */
 
 /* eslint-disable react/no-multi-comp */
@@ -48,7 +48,7 @@ export default function Router({
     const { path: basePath } = useRouteMatch();
 
     return (
-        <Suspense fallback={ <Loader message={ message } /> }>
+        <Suspense fallback={ <Loader message={ message } absolute={ false } /> }>
             <Switch>
                 <Redirect from='/:url*(/+)' to={ currentPath.slice(0, -1) } />
 

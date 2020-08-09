@@ -155,7 +155,7 @@ export default function FormFactory({
     }
 
     return (
-        <Suspense fallback={ <Loader message='Cargando Formulario' /> }>
+        <Suspense fallback={ <Loader message='Cargando Formulario' absolute={ false } /> }>
             <Row className='form-factory'>
                 {
                     schema.map(({ key, label, behavior, validators }) =>
