@@ -1,0 +1,34 @@
+@import 'global';
+@import 'vars/colors';
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: color(background);
+    font-family: 'Fira Sans', sans-serif;
+    letter-spacing: .025em;
+    line-height: 1.5;
+}
+
+html,
+body,
+#root {
+    height: auto;
+}
+
+page {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow-wrap: break-word;
+}

@@ -106,7 +106,8 @@
     "build:production": "env-cmd -e default,build,production -r .env.json craco build",
     "postbuild": "rimraf build/static/**/*.map",
     "packages:update": "npm update --save/--save-dev",
-    "packages:force-update": "npx npm-check-updates -u"
+    "packages:force-update": "npx npm-check-updates -u",
+    "git:case-sensitive": "git config core.ignorecase false"
   },
   "browserslist": {
     "development": [
