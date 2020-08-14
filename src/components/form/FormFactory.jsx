@@ -1,9 +1,9 @@
 import clsx from 'clsx';
 import React, { Suspense, useEffect, useState } from 'react';
 import { Col, Row } from 'react-flexbox-grid';
-import { isEmpty } from '../../utils/libs/object.lib';
-import validate from '../../utils/validators';
-import Loader from '../loader';
+import { isEmpty } from 'utils/libs/object.lib';
+import validate from 'utils/validators';
+import Loader from 'components/loader';
 import './form-factory.scss';
 
 // defines flex-box default columns.
@@ -33,15 +33,16 @@ const defInterceptor = (key, values, validations, config) =>
  *
  * @see https://validatejs.org/
  *
- * @param {any} schema inputs configuration.
- * @param {any} defaults default values for inputs.
- * @param {any} datasets datasets for use in options inputs.
- * @param {function} interceptor functions for intercepts values and validations on change.
- * @param {function} onChange callback triggered on every input change.
+ * @param {object} props component props.
+ * @param {any} props.schema inputs configuration.
+ * @param {object} [props.defaults] default values for inputs.
+ * @param {object} [props.datasets] datasets for use in options inputs.
+ * @param {function} [props.interceptor] functions for intercepts values and validations on change.
+ * @param {function} [props.onChange] callback triggered on every input change.
  *  Receives (key: key of changed input, values: current values,
  *  validations: current input validations, isValid: whether form is valid)
- * @param {any} loading whether form should shows loading indicator.
- * @param {any} validateOnMount whether validation is executed on mounting.
+ * @param {boolean} [props.loading] whether form should shows loading indicator.
+ * @param {boolean} [props.validateOnMount] whether validation is executed on mounting.
  *
  * @returns {React.ReactElement} form factory.
  */

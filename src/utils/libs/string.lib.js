@@ -7,15 +7,15 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:39:47
- * Last modified  : 2020-06-06 22:08:32
+ * Last modified  : 2020-08-14 12:41:49
  */
 
 /**
  * Returns a default value on falsy string.
  *
  * @param {string} str string.
- * @param {function} filter filter function if string is valid.
- * @param {string} def value in case of falsy string.
+ * @param {function} [filter] filter function if string is valid.
+ * @param {string} [def] value in case of falsy string.
  *
  * @returns {string} string (with filter if exists) if valid, def in otherwise.
  */
@@ -40,6 +40,7 @@ export function removeUnderscore(str)
  * Capitalizes first char after period symbol.
  *
  * @param {string} str string.
+ *
  * @returns {string} string normalized.
  */
 export function capitalizeAfterPeriod(str)

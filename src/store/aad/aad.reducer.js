@@ -1,5 +1,5 @@
 import AzureActiveDirectoryAction from './aad.action';
-import { AzureActiveDirectoryDefaults } from '../defaults';
+import { AzureActiveDirectoryDefaults } from 'store/defaults';
 
 /**
  * Redux Actions Reducer.

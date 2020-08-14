@@ -2,10 +2,10 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
-import { AzureActiveDirectoryProvider, AzureActiveDirectorySecurityMode } from './security';
-import store from './store/store';
-import RootRouter from './routes';
-import './styles/app.scss';
+import { AzureActiveDirectoryProvider, AzureActiveDirectorySecurityMode } from 'security';
+import store from 'store/store';
+import RootRouter from 'routes';
+import 'styles/app.scss';
 
 /**
  * App container.

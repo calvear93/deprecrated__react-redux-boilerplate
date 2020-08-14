@@ -1,6 +1,6 @@
 import Storage from 'js-storage';
 import { all, call, put, takeLatest } from 'redux-saga/effects';
-import { AuthenticationService, GraphService } from '../../security';
+import { AuthenticationService, GraphService } from 'security';
 import AzureActiveDirectoryAction from './aad.action';
 
 /**

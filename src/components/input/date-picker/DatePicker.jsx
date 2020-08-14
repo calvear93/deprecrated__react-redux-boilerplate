@@ -2,7 +2,7 @@ import { getDate, getMonth, getYear } from 'date-fns';
 import React, { useMemo, useState } from 'react';
 import ModernDatePicker from 'react-modern-calendar-datepicker';
 import { Icon, Input, Ref } from 'semantic-ui-react';
-import Time from '../../../utils/libs/time.lib';
+import Time from 'utils/libs/time.lib';
 import localeES from './locale-es';
 import 'react-modern-calendar-datepicker/lib/DatePicker.css';
 import './date-picker.scss';
@@ -13,12 +13,13 @@ import './date-picker.scss';
  *
  * @see https://kiarash-z.github.io/react-modern-calendar-datepicker/
  *
- * @param {Date} date selected.
- * @param {function} onChange on selected date callback.
- * @param {string} displayFormat format by date-fns.
- * @param {string} placeholder input placeholder.
- * @param {boolean} clearable whether input is clearable.
- * @param {any} props other picker props.
+ * @param {object} props component props.
+ * @param {Date} [props.value] date selected.
+ * @param {function} [props.onChange] on selected date callback.
+ * @param {string} [props.displayFormat] format by date-fns.
+ * @param {string} [props.placeholder] input placeholder.
+ * @param {boolean} [props.clearable] whether input is clearable.
+ * @param {object} [props.props] other picker props.
  *
  * @returns {React.ReactElement} date picker.
  */

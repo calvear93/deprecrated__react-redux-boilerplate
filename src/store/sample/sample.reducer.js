@@ -1,4 +1,4 @@
-import { SampleDefaults } from '../defaults';
+import { SampleDefaults } from 'store/defaults';
 import SampleAction from './sample.action';
 
 /**

@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-06-23 19:45:15
- * Last modified  : 2020-08-08 13:44:14
+ * Last modified  : 2020-08-14 12:39:00
  */
 
 /**
@@ -34,7 +34,7 @@ export function setHypertextReference(redirectURL)
  * Opens a new tab in the browser.
  *
  * @param {string} redirectURL URL for redirect.
- * @param {boolean} focus whether new tab must be focused.
+ * @param {boolean} [focus] whether new tab must be focused.
  */
 export function openNewTab(redirectURL, focus = false)
 {

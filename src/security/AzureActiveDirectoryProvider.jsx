@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import Loader from '../components/loader';
+import Loader from 'components/loader';
 import { useIsAuthorized } from './aad.hook';
-import { AzureActiveDirectoryAction } from '../store/aad';
+import { AzureActiveDirectoryAction } from 'store/aad';
 
 // AAD route security mode.
 export const AzureActiveDirectorySecurityMode = {
@@ -24,10 +24,11 @@ export const AzureActiveDirectorySecurityMode = {
  *      <Router />
  *  </AzureActiveDirectoryProvider>
  *
- * @param {React.ReactElement} children component for render on authentication ok.
- * @param {number} mode routes security list mode, may be whitelist or blacklist.
- * @param {array} list secured routes list.
- * @param {string} errorRoute route for authentication error page.
+ * @param {object} props component props.
+ * @param {React.ReactElement} props.children component for render on authentication ok.
+ * @param {number} [props.mode] routes security list mode, may be whitelist or blacklist.
+ * @param {array} [props.list] secured routes list.
+ * @param {string} [props.errorRoute] route for authentication error page.
  *
  * @returns {React.ReactElement} children on authenticated, error redirection in otherwise.
  */

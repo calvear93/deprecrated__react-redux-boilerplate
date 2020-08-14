@@ -1,15 +1,15 @@
 import React, { useEffect } from 'react';
 // import { useState } from 'react';
-import SampleForm from '../form/SampleForm';
+import SampleForm from 'components/form/SampleForm';
 import { Container, Header, Button } from 'semantic-ui-react';
 // import { Input } from 'semantic-ui-react';
-import { BallTriangleLoader } from '../../assets/loaders';
-import Swal from '../../utils/libs/swal.lib';
+import { BallTriangleLoader } from 'assets/loaders';
+import Swal from 'utils/libs/swal.lib';
 // import { useDispatch } from 'react-redux';
 // import { AzureActiveDirectoryAction } from '../../store/actions';
 // import AADTypes from '../../services/auth/aad-types';
-import Toast from '../../utils/libs/toast.lib';
-import Tippy from '../../utils/libs/tippy.lib';
+import Toast from 'utils/libs/toast.lib';
+import Tippy from 'utils/libs/tippy.lib';
 
 /**
  * Main page.

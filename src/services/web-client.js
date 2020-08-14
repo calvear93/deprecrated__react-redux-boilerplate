@@ -1,5 +1,5 @@
 import axios from 'axios';
-import HttpMethod from '../constants/http-methods';
+import HttpMethod from 'constants/http-methods';
 
 // axios instance pre-configured.
 const request = axios.create({

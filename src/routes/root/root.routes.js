@@ -8,26 +8,26 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:24:07
- * Last modified  : 2020-08-08 15:00:43
+ * Last modified  : 2020-08-14 11:25:44
  */
 
 import { lazy } from 'react';
 
 // layouts container.
 const Layouts = {
-    BaseLayout: lazy(() => import('../../layouts/base-layout')),
-    AppLayout: lazy(() => import('../../layouts/app-layout'))
+    BaseLayout: lazy(() => import('layouts/base-layout')),
+    AppLayout: lazy(() => import('layouts/app-layout'))
 };
 
 // pages container.
 const Pages = {
-    MainPage: lazy(() => import('../../pages/main')),
-    UnauthorizedPage: lazy(() => import('../../pages/unauthorized'))
+    MainPage: lazy(() => import('pages/main')),
+    UnauthorizedPage: lazy(() => import('pages/unauthorized'))
 };
 
 // routers container.
 const Routers = {
-    ProfileRouter: lazy(() => import('../profile'))
+    ProfileRouter: lazy(() => import('routes/profile'))
 };
 
 export default {

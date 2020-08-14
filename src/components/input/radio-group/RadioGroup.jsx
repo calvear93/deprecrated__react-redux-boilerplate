@@ -7,18 +7,28 @@ import './radio-group.scss';
 /**
  * Renders a radio group.
  *
- * @param {string} id component id.
- * @param {string} group id of radio group.
- * @param {array} options array of options (value, label).
- * @param {function} onChange onChange event.
- * @param {any} checked what option value is checked.
- * @param {boolean} disabled whether radio group is disabled.
- * @param {boolean} clearable whether radio group is clearable.
- * @param {any} props rest of props.
+ * @param {object} props component props.
+ * @param {string} props.id component id.
+ * @param {string} props.group id of radio group.
+ * @param {array} props.options array of options (value, label).
+ * @param {function} [props.onChange] onChange event.
+ * @param {any} [props.checked] what option value is checked.
+ * @param {boolean} [props.disabled] whether radio group is disabled.
+ * @param {boolean} [props.clearable] whether radio group is clearable.
+ * @param {object} [props.props] rest of props.
  *
  * @returns {React.ReactElement} radio group.
  */
-export default function RadioGroup({ id, group, options, onChange, checked = null, disabled, clearable, ...props })
+export default function RadioGroup({
+    id,
+    group,
+    options,
+    onChange,
+    checked = null,
+    disabled,
+    clearable,
+    ...props
+})
 {
     const [ value, setValue ] = useState(checked);
     // id or group serves as main id.

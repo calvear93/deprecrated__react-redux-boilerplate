@@ -3,7 +3,8 @@ import React from 'react';
 /**
  * Footer for App Layout.
  *
- * @param {string} text footer text.
+ * @param {object} props component props.
+ * @param {string} props.text footer text.
  *
  * @returns {React.ReactElement} footer component.
  */

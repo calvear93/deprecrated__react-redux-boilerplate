@@ -3,7 +3,8 @@ import React from 'react';
 /**
  * Header for App Layout.
  *
- * @param {string} title header title.
+ * @param {object} props component props.
+ * @param {string} props.title header title.
  *
  * @returns {React.ReactElement} header component.
  */

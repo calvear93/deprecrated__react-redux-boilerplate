@@ -8,7 +8,7 @@ import { useState } from 'react';
  *
  * @returns {array} state and set function.
  */
-export function useObjectState(def = {})
+export function useObjectState(def)
 {
     const [ state, setState ] = useState(def);
     // for multiple setState triggering, it

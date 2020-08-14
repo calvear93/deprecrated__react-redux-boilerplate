@@ -1,15 +1,16 @@
 import React from 'react';
-import { useDocumentTitle } from '../../hooks/document.hook';
+import { useDocumentTitle } from 'hooks/document.hook';
 
 /**
  * Renders the page or router in routing mapping.
  *
- * @param {object} render child config.
- * @param {string} render.title page document title.
- * @param {any} render.layoutConfig layout config.
- * @param {React.ReactElement} render.Layout layout component.
- * @param {React.ReactElement} render.Child child component, maybe a Page or Router.
- * @param {any} render.props child props.
+ * @param {object} props component props.
+ * @param {object} props.render child config.
+ * @param {string} props.render.title page document title.
+ * @param {object} [props.render.layoutConfig] layout config.
+ * @param {React.ReactElement} [props.render.Layout] layout component.
+ * @param {React.ReactElement} props.render.Child child component, maybe a Page or Router.
+ * @param {any} [props.render.props] child props.
  *
  * @returns {React.ReactElement} route child.
  */

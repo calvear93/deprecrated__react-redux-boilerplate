@@ -16,7 +16,11 @@ import { CustomOnChangeEvent } from '../shared';
  *      />
  *  </Mask>
  *
- * @param {any} props component props.
+ * @param {object} props component props.
+ * @param {any} props.mask mask.
+ * @param {React.ReactElement} props.children input for wrap.
+ * @param {function} [props.onAccept] when input is formatted (like onChange).
+ * @param {object} [props.props] component props.
  *
  * @returns {React.ReactElement} masked input.
  */

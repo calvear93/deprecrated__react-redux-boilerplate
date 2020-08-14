@@ -1,6 +1,6 @@
 import React from 'react';
 import './main-page.scss';
-import Demo from '../../components/demo';
+import Demo from 'components/demo';
 
 /**
  * Main page.

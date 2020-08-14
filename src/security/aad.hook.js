@@ -1,7 +1,7 @@
 import { SECURITY_ENABLED } from './config';
-import { usePartition } from '../hooks/redux.hook';
-import { usePathBelongsTo } from '../hooks/route.hook';
-import { AzureActiveDirectoryAction } from '../store/aad';
+import { usePartition } from 'hooks/redux.hook';
+import { usePathBelongsTo } from 'hooks/route.hook';
+import { AzureActiveDirectoryAction } from 'store/aad';
 import { AzureActiveDirectorySecurityMode } from './AzureActiveDirectoryProvider';
 
 /**
@@ -10,7 +10,7 @@ import { AzureActiveDirectorySecurityMode } from './AzureActiveDirectoryProvider
  *
  * @param {number} mode AAD route filter mode.
  * @param {array} list list of routes.
- * @param {string} errorRoute route for unauthorized error page.
+ * @param {string} [errorRoute] route for unauthorized error page.
  *
  * @returns {any} isAuthorized boolean and error object.
  */

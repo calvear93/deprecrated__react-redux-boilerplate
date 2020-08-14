@@ -4,7 +4,8 @@ import './base-layout.scss';
 /**
  * Base layout (wrapper for pages without header/footer).
  *
- * @param {React.ReactElement} children component for render inside.
+ * @param {object} props component props.
+ * @param {React.ReactElement} props.children component for render inside.
  *
  * @returns {React.ReactElement} base layout.
  */

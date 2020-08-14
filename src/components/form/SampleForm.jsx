@@ -13,7 +13,7 @@ import {
     TIME_CIRCULAR_PICKER,
     TEXTAREA
 } from './inputs';
-import { PhoneAdvancedMask, RutMask } from '../../utils/masks';
+import { PhoneAdvancedMask, RutMask } from 'utils/masks';
 
 export default () => <FormFactory schema={ schema } datasets={ datasets } interceptor={ interceptor } />;
 

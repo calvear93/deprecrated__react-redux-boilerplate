@@ -7,7 +7,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:38:41
- * Last modified  : 2020-08-02 16:11:03
+ * Last modified  : 2020-08-14 12:42:19
  */
 
 import SwalDefault from 'sweetalert2';
@@ -32,7 +32,7 @@ const Swal = {
      *
      * @param {any} type dialog type from SweetAlert2.
      * @param {string | React.ReactElement} content JSX content for the dialog.
-     * @param {string} confirmText text for confirm button.
+     * @param {string} [confirmText] text for confirm button.
      *
      * @returns {any} Popup.
      */
@@ -48,7 +48,7 @@ const Swal = {
      *
      * @param {string} type dialog type from SweetAlert2.
      * @param {string | React.ReactElement} content JSX content for the dialog.
-     * @param {string} confirmText text for confirm button.
+     * @param {string} [confirmText] text for confirm button.
      *
      * @returns {Promise<any>} Popup asynchronous.
      */
@@ -71,7 +71,7 @@ const Swal = {
      *
      * @param {any} type dialog type from SweetAlert2.
      * @param {string | React.ReactElement} content JSX content for the dialog.
-     * @param {string} confirmText text for confirm button.
+     * @param {string} [confirmText] text for confirm button.
      *
      * @returns {any} Popup.
      */
@@ -88,7 +88,7 @@ const Swal = {
      *
      * @param {any} type dialog type from SweetAlert2.
      * @param {string | React.ReactElement} content JSX content for the dialog.
-     * @param {string} confirmText text for confirm button.
+     * @param {string} [confirmText] text for confirm button.
      *
      * @returns {Promise<any>} Popup asynchronous.
      */
@@ -111,8 +111,8 @@ const Swal = {
      *
      * @param {any} type dialog type from SweetAlert2.
      * @param {string | React.ReactElement} content JSX content for the dialog.
-     * @param {string} confirmText text for confirm button.
-     * @param {string} cancelText text for cancel button.
+     * @param {string} [confirmText] text for confirm button.
+     * @param {string} [cancelText] text for cancel button.
      *
      * @returns {any} Popup.
      */
@@ -131,8 +131,8 @@ const Swal = {
      *
      * @param {any} type dialog type from SweetAlert2.
      * @param {string | React.ReactElement} content JSX content for the dialog.
-     * @param {string} confirmText text for confirm button.
-     * @param {string} cancelText text for cancel button.
+     * @param {string} [confirmText] text for confirm button.
+     * @param {string} [cancelText] text for cancel button.
      *
      * @returns {Promise<any>} Popup asynchronous.
      */

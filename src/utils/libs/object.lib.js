@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:42:09
- * Last modified  : 2020-08-02 16:06:18
+ * Last modified  : 2020-08-14 12:38:41
  */
 
 /**
@@ -40,7 +40,7 @@ export function reduceEmptiness(obj)
  * @param {function} func func for apply.
  * @param {object} obj object for apply function.
  * @param {object} def default value in case of nullity/undefined.
- * @param {array} args other function args.
+ * @param {array} [args] other function args.
  *
  * @returns {boolean} function result on object ok, def if object us null/undefined.
  */
@@ -75,7 +75,7 @@ export function filter(obj, func)
  * null, NaN or empty object.
  *
  * @param {object | undefined} value value for validation (undefined, null, NaN).
- * @param {boolean} allowsEmpty whether allows empty as valid ({}, [], '' or ' ').
+ * @param {boolean} [allowsEmpty] whether allows empty as valid ({}, [], '' or ' ').
  *
  * @returns {boolean} true if is valid, false in otherwise.
  */

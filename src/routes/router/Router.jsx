@@ -7,7 +7,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-07-04 16:42:09
- * Last modified  : 2020-08-08 21:23:05
+ * Last modified  : 2020-08-14 12:51:07
  */
 
 /* eslint-disable react/no-multi-comp */
@@ -15,10 +15,10 @@
 import React, { lazy, Suspense } from 'react';
 import { Redirect, Route, Switch, useLocation, useRouteMatch } from 'react-router-dom';
 import RouteChild from './RouteChild';
-import Loader from '../../components/loader';
+import Loader from 'components/loader';
 
 // lazy loaded components.
-const NotFoundPage = lazy(() => import('../../pages/not-found'));
+const NotFoundPage = lazy(() => import('pages/not-found'));
 
 /**
  * Routing handler.
@@ -30,10 +30,11 @@ const NotFoundPage = lazy(() => import('../../pages/not-found'));
  * Use it for define application
  * routers in this directory.
  *
- * @param {array} routes array of routes.
- * @param {array} redirects array of redirects (exact, from, to).
- * @param {string} message loading message.
- * @param {React.ReactElement} DefaultChild default child for showing on bad route.
+ * @param {object} [props] component props.
+ * @param {array} [props.routes] array of routes.
+ * @param {array} [props.redirects] array of redirects (exact, from, to).
+ * @param {string} [props.message] loading message.
+ * @param {React.ReactElement} [props.DefaultChild] default child for showing on bad route.
  *
  * @returns {React.ReactElement} router.
  */

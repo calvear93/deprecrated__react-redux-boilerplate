@@ -7,19 +7,30 @@ import './checkbox.scss';
 /**
  * Renders a checkbox group.
  *
- * @param {string} id component id.
- * @param {string} group id of checkbox group.
- * @param {array} options array of options (value, label).
- * @param {function} onChange onChange event.
- * @param {array} checked what options are checked.
- * @param {number} max max of options user can check.
- * @param {boolean} disabled whether checkbox group is disabled.
- * @param {boolean} clearable whether checkbox group is clearable.
- * @param {any} props rest of props.
+ * @param {object} props component props.
+ * @param {string} props.id component id.
+ * @param {string} props.group id of checkbox group.
+ * @param {array} props.options array of options (value, label).
+ * @param {function} [props.onChange] onChange event.
+ * @param {array} [props.checked] what options are checked.
+ * @param {number} [props.max] max of options user can check.
+ * @param {boolean} [props.disabled] whether checkbox group is disabled.
+ * @param {boolean} [props.clearable] whether checkbox group is clearable.
+ * @param {object} [props.props] rest of props.
  *
  * @returns {React.ReactElement} checkbox group.
  */
-export default function CheckBox({ id, group, options, onChange, checked = [], max, disabled, clearable, ...props })
+export default function CheckBox({
+    id,
+    group,
+    options,
+    onChange,
+    checked = [],
+    max,
+    disabled,
+    clearable,
+    ...props
+})
 {
     const [ values, setValues ] = useState(checked);
     // id or group serves as main id.
@@ -31,9 +42,9 @@ export default function CheckBox({ id, group, options, onChange, checked = [], m
      * Handles option selection.
      *
      * @param {any} e selection event.
-     * @param {any} id selected id.
-     * @param {any} value selected value.
-     * @param {any} checked whether is selected.
+     * @param {object} args event args.
+     * @param {any} args.value selected value.
+     * @param {boolean} args.checked whether is selected.
      */
     function handleChange(e, { value, checked })
     {

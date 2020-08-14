@@ -7,7 +7,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:37:10
- * Last modified  : 2020-08-02 16:13:31
+ * Last modified  : 2020-08-14 12:43:55
  */
 
 import { addMonths, addYears, differenceInCalendarDays, differenceInCalendarMonths, differenceInCalendarYears, format, formatDuration, isValid } from 'date-fns';
@@ -49,7 +49,7 @@ const Time = {
     /**
      * Chooses time format.
      *
-     * @param {boolean} format24 time format type.
+     * @param {boolean} [format24] time format type.
      *
      * @returns {string} time format pattern.
      */
@@ -62,7 +62,7 @@ const Time = {
      * Date formatting.
      *
      * @param {string | Date} date date string.
-     * @param {string} formatPattern date format.
+     * @param {string} [formatPattern] date format.
      *
      * @returns {string} formatted date.
      */
@@ -78,8 +78,8 @@ const Time = {
      * Datetime formatting.
      *
      * @param {string | Date} date datetime string.
-     * @param {boolean} format24 time format type.
-     * @param {string} formatPattern datetime format.
+     * @param {boolean} [format24] time format type.
+     * @param {string} [formatPattern] datetime format.
      *
      * @returns {string} formatted datetime.
      */
@@ -95,8 +95,8 @@ const Time = {
      * Time formatting.
      *
      * @param {string | Date} date datetime string.
-     * @param {boolean} format24 time format type.
-     * @param {string} formatPattern time format.
+     * @param {boolean} [format24] time format type.
+     * @param {string} [formatPattern] time format.
      *
      * @returns {string} formatted time.
      */
@@ -127,7 +127,7 @@ const Time = {
      * Spanish natural readable formatting for datetime.
      *
      * @param {string | Date} date string date.
-     * @param {boolean} format24 time format type.
+     * @param {boolean} [format24] time format type.
      *
      * @returns {string} natural datetime.
      */
@@ -143,7 +143,7 @@ const Time = {
      * Calculates age string representation in spanish from a date.
      *
      * @param {string | Date} date date.
-     * @param {boolean} showDays whether includes days.
+     * @param {boolean} [showDays] whether includes days.
      *
      * @returns {string} age from date
      */

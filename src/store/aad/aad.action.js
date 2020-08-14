@@ -1,4 +1,4 @@
-import { CreateAction, MakeUnique } from '../shared/action.lib';
+import { CreateAction, MakeUnique } from 'store/shared/action.lib';
 
 /**
  * store partition key.
@@ -54,11 +54,11 @@ const AzureActiveDirectoryAction =
      * Returns the action.
      *
      * @param {string} type action type.
-     * @param {any | undefined} payload data involved in the action.
+     * @param {object} [payload] data involved in the action.
      *
      * @memberof AzureActiveDirectoryAction
      *
-     * @returns {any} action function.
+     * @returns {object} action.
      */
     Action: (type, payload) => CreateAction(AzureActiveDirectoryAction.Key, type, payload)
 };

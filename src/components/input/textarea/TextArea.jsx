@@ -4,7 +4,7 @@ import { TextArea as TextAreaSemantic } from 'semantic-ui-react';
 /**
  * Wrapper for IMaskInput
  *
- * @param {any} props component props.
+ * @param {object} props component props.
  *
  * @returns {React.ReactElement} masked input.
  */

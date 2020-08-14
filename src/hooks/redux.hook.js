@@ -5,7 +5,7 @@ import { shallowEqual, useSelector } from 'react-redux';
  *
  * @dependency useSelector from react-redux.
  * @param {any} actionVault action vault (from store/actions).
- * @param {any} equalityFunc the function that will be used to determine equality.
+ * @param {any} [equalityFunc] the function that will be used to determine equality.
  *
  * @returns {any} partition.
  */

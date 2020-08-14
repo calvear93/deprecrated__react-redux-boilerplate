@@ -72,6 +72,7 @@
 		"*.env.json": "tune",
 		"*.hook.js": "capacitor",
 		"*.lib.js": "lib",
+		"*.util.js": "lib",
 		"*.mask.js": "lib",
 		"*.normalizer.js": "lib",
 		"*.page.jsx": "document",
