@@ -1,4 +1,4 @@
-import { routes as rootRoutes } from './root';
+import { routes as appRoutes } from './app';
 import { routes as profileRoutes } from './profile';
 
 /**
@@ -24,8 +24,9 @@ function ExtractRoutes(routes, basePath = '')
 
 // arms routes container.
 export const routes = {
-    ...ExtractRoutes(rootRoutes),
+    ...ExtractRoutes(appRoutes),
     ...ExtractRoutes(profileRoutes, '/profile')
 };
 
-export { default } from './root/RootRouter';
+// main router for App.
+export { default } from './app';

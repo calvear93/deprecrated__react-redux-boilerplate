@@ -5,12 +5,12 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.cl>
  *
  * Created at     : 2020-08-13 19:40:14
- * Last modified  : 2020-08-13 19:46:56
+ * Last modified  : 2020-08-14 19:18:41
  */
 
 /**
  * Memoizes the result from an asynchronous
- * callback, storing it on sessionStorage.
+ * callback, storing it in sessionStorage.
  *
  * @param {string} key memoized value accessor.
  * @param {Promise<any>} promise callback promise.

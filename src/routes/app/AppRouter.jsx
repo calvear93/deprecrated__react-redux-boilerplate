@@ -1,6 +1,6 @@
 import React from 'react';
-import Router from '../router';
-import RootRoutes from './root.routes';
+import Router from 'routes/router';
+import RootRoutes from './app.routes';
 
 // routes array.
 const Routes = Object.values(RootRoutes);
