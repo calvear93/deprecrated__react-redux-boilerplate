@@ -13,7 +13,7 @@ ReactDOM.render(
 // Learn more about service workers: https://bit.ly/CRA-PWA
 if (process.env.REACT_APP_SERVICE_WORKER === 'true')
 {
-    const serviceWorker = require('./service-worker');
+    const serviceWorker = require('service-worker');
     serviceWorker.register();
 }
 
@@ -21,6 +21,6 @@ if (process.env.REACT_APP_SERVICE_WORKER === 'true')
 // Learn more at: https://miragejs.com
 if (process.env.REACT_APP_MOCK_SERVER === 'true')
 {
-    const server = require('./mock/server');
+    const server = require('mock/server');
     server.default();
 }

@@ -15,11 +15,11 @@ const Redirects = [
 ];
 
 /**
- * Application root routing handler.
+ * Application main routing handler.
  *
- * @returns {React.ReactElement} Application root router.
+ * @returns {React.ReactElement} Application main router.
  */
-export default function RootRouter()
+export default function AppRouter()
 {
     return (
         <Router routes={ Routes } redirects={ Redirects } message='Cargando' />

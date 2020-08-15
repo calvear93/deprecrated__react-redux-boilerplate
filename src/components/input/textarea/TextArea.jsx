@@ -2,7 +2,7 @@ import React from 'react';
 import { TextArea as TextAreaSemantic } from 'semantic-ui-react';
 
 /**
- * Wrapper for IMaskInput
+ * Wrapper for TextArea.
  *
  * @param {object} props component props.
  *
