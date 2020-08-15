@@ -164,6 +164,8 @@ Variables for change.
 -   [DevExtreme](https://js.devexpress.com/Overview/React/)
 -   [date-fns](https://date-fns.org/docs/Getting-Started)
 -   [react-use](https://github.com/streamich/react-use)
+-   [fast-deep-equal](https://github.com/epoberezkin/fast-deep-equal#readme)
+-   [beautiful-react-hooks](https://github.com/beautifulinteractions/beautiful-react-hooks)
 -   [SWR](https://github.com/vercel/swr)
 -   [SweetAlert](https://sweetalert2.github.io/)
 -   [Toastify](https://fkhadra.github.io/react-toastify/introduction)
@@ -178,7 +180,11 @@ Variables for change.
 -   [clsx](https://github.com/lukeed/clsx)
 -   [script-hook](https://github.com/hartzis/react-script-hook)
 -   [react-wait](https://github.com/f/react-wait)
+-   [jwt-decode](https://github.com/auth0/jwt-decode)
+-   [react-children-utilities](https://github.com/fernandopasik/react-children-utilities)
 -   [react-web-animation](https://github.com/bringking/react-web-animationhttps://timeago.org/)
+-   [react-epic-spinners](https://www.npmjs.com/package/react-epic-spinners)
+-   [react-lazyload](https://github.com/twobin/react-lazyload)
 
 ## License 📄
 

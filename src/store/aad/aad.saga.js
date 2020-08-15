@@ -1,4 +1,4 @@
-import Storage from 'js-storage';
+import storage from 'utils/libs/storage.lib';
 import { all, call, put, takeLatest } from 'redux-saga/effects';
 import { AuthenticationService, GraphService } from 'services/security';
 import AzureActiveDirectoryAction from './aad.action';
@@ -17,12 +17,12 @@ function* authenticate({ payload: { type } = {} })
         // calls azure MSAL authentication service.
         const account = yield call(AuthenticationService.login, { type });
         // initializes the storage.
-        const storage = Storage.initNamespaceStorage(account.accountIdentifier)[AzureActiveDirectoryAction.Persistence.Type];
+        const cache = storage[AzureActiveDirectoryAction.Persistence.Type].get(account.accountIdentifier);
 
         // gets user detailed info.
         const [ user, photo ] = yield all([
-            storage.get('user') || call(GraphService.me),
-            storage.get('photo') || call(GraphService.photoWithSize, process.env.REACT_APP_AAD_USER_PHOTO_SIZE)
+            cache?.user || call(GraphService.me),
+            cache?.photo || call(GraphService.photoWithSize, process.env.REACT_APP_AAD_USER_PHOTO_SIZE)
         ]);
 
         // success.
@@ -32,7 +32,7 @@ function* authenticate({ payload: { type } = {} })
         ));
 
         // saves user info in cookies.
-        storage.set({ user, photo });
+        storage.set(account.accountIdentifier, { user, photo });
     }
     catch (e)
     {
