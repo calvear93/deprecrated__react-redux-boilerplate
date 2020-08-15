@@ -8,6 +8,7 @@
 # master -> production
 # release/* -> qa
 # develop -> development
+# hotfix/* -> development
 # feature/* -> none
 
 trigger:
@@ -17,6 +18,7 @@ trigger:
       - master
       - release/*
       - develop
+      - hotfix
       #- feature/*
 
 variables:
@@ -42,7 +44,7 @@ variables:
     webapp: 'wa-qa-project'
     environmentBuild: qa
   # development environment variables definition.
-  ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/develop') }}:
+  ${{ if or(eq(variables['Build.SourceBranch'], 'refs/heads/develop'), startsWith(variables['Build.SourceBranch'], 'refs/heads/hotfix/')) }}:
     environmentName: 'DESA'
     environment: 'DEPLOY_WEB_DESA'
     azureSubscription: 'ASC-Project-DESA'
@@ -75,15 +77,21 @@ stages:
       - task: Npm@1
         inputs:
           command: 'custom'
+          customCommand: 'run test:$(environmentBuild)'
+        displayName: 'Executing tests'
+
+      - task: Npm@1
+        inputs:
+          command: 'custom'
           customCommand: 'run build:$(environmentBuild)'
         displayName: 'Building project'
 
-      - task: Npm@1
-        condition: ne(variables.environmentName, 'DESA')
-        inputs:
-          command: 'custom'
-          customCommand: 'run postbuild'
-        displayName: 'Cleaning sourcemaps'
+      # - task: Npm@1
+      #   condition: ne(variables.environmentName, 'DESA')
+      #   inputs:
+      #     command: 'custom'
+      #     customCommand: 'run postbuild'
+      #   displayName: 'Cleaning sourcemaps'
 
       - task: CopyFiles@2
         inputs:

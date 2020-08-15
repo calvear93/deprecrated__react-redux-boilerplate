@@ -4,116 +4,186 @@
 
 This is a boilerplate for React SPA application using [React](https://es.reactjs.org/) + [Redux](https://es.redux.js.org/), and the official project creation wrapper [Create React App](https://github.com/facebook/create-react-app).
 
-## 1. Exec
-
-Project uses **npm scripts** for eases execution and building.
-
-| Command                       | Action                 |
-| ----------------------------- | ---------------------- |
-| npm run start:debug           | Debug execution        |
-| npm run start:development     | Development execution  |
-| npm run start:qa              | QA execution           |
-| npm run build:development     | Development build      |
-| npm run build:qa              | QA build               |
-| npm run build:production      | Production build       |
-| npm run lint                  | eslint validation      |
-| npm run postbuild             | removes sourcemaps     |
-| npm run packages:update       | updates packages       |
-| npm run packages:update-force | force updates packages |
-
-## 2. Source structure
+## Structure 💡
 
 ```bash
 ├── README.md
-├── LICENCE # GPL 3
+├── LICENCE.md
 ├── public/
 │   ├── favicon.ico
 │   └── index.html
 ├── src/
-│   ├── assets/ # graphics.
+│   ├── assets/ # graphics
 │   ├── components/
-│   │   ├── form/ # form factory. (see SampleForm).
-│   │   ├── input/ # variety of inputs.
-│   │   └── Loader.jsx
-│   ├── constants/ # app constants / global variables.
-│   ├── data/ # local master data.
-│   ├── hooks/
+│   │   ├── form/ # form factory. (see SampleForm)
+│   │   ├── input/ # variety of inputs
+│   │   └── loader/
+│   ├── constants/ # global constants
+│   ├── hooks/ #global hooks
 │   ├── layouts/
-│   │   ├── base-layout/ # base flex layout.
-│   │   └── app-layout/ # flex layout with header and footer.
-│   ├── pages/
-│   ├── rules/ # JS files with global rules.
-│   │   └── routes/ # routes definition for Router.jsx.
+│   │   ├── base-layout/ # base flex layout
+│   │   └── app-layout/ # flex layout with header and footer
+│   ├── mock/ # mock server using MirageJS
+│   ├── pages/ # app pages/views
+│   ├── routes/ # app routes and routers
+│   │   ├── Breadcrumbs.jsx # automatic breadcrumbs renderer
+│   │   ├── router/ # generic router component
+│   │   └── app/ # main route
 │   ├── services/
-│   │   ├── auth/ # Azure Active Directory auth service.
-│   │   │   └── AzureActiveDirectoryProvider.jsx # authentication provider.
-│   │   ├── json-service.js # allows to load JSON files.
-│   │   ├── mock-service.js # utilities for mock API responses.
-│   │   └── web-client.js # base web/api client.
-│   ├── store/ # Redux.
-│   │   ├── actions/
-│   │   │   └── shared.js # common base utilities.
-│   │   ├── middleware/ # with Redux Saga.
-│   │   │   ├── shared.js
-│   │   │   └── logger.js
-│   │   ├── reducers/
-│   │   ├── defaults.js # default stores values.
-│   │   └── store.js # initializer.
-│   ├── styles/ # CSS/SCSS.
+│   │   ├── security/ # Azure Active Directory auth service
+│   │   │   └── AzureActiveDirectoryProvider.jsx
+│   │   └── api/ # web clients
+│   ├── store/
+│   │   ├── sample/ # store partition sample
+│   │   │   ├── sample.action.js
+│   │   │   ├── sample.reducer.js
+│   │   │   └── sample.saga.js # middleware saga
+│   │   ├── shared/
+│   │   │   ├── action.lib.js # action creator utils
+│   │   │   └── saga.lib.js # saga generators utils
+│   │   ├── defaults.js # default store partition values
+│   │   ├── middleware.js # middleware constructor
+│   │   └── store.js # reducer/sagas combiner and store initializer
+│   ├── styles/
+│   │   ├── global/ # global fragments
+│   │   ├── modules/ # used in hooks, providers or injectors
+│   │   ├── vars/ # shared variables
+│   │   └── app.scss # main stylesheet
 │   ├── utils/
 │   │   ├── libs/
-│   │   │   ├── interval.js # chronometer util.
-│   │   │   ├── object.js # generic object utilities.
-│   │   │   ├── rut.js # chilean Id (RUT/RUN) utils.
-│   │   │   ├── string.js # string utils using voca.
-│   │   │   ├── swal.js # SweetAlert2 wrapper.
-│   │   │   ├── time.js # time utils using date fns.
-│   │   │   ├── tippy.js # tooltip using Tippy.
-│   │   │   └── toast.js # toast using Toastify.
-│   │   ├── masks/ # inputs masks using imaskjs.
+│   │   │   ├── http.lib.js # axios and http utils
+│   │   │   ├── object.lib.js # generic object utils
+│   │   │   ├── redirect.lib.js # browser redirection utils
+│   │   │   ├── rut.lib.js # chilean Id (RUT/RUN) utils
+│   │   │   ├── storage.lib.js # local and session storage utils.
+│   │   │   ├── string.lib.js # string utils
+│   │   │   ├── swal.lib.js # SweetAlert2 factory
+│   │   │   ├── time.lib.js # time utils using date fns
+│   │   │   ├── tippy.lib.js # tooltip using Tippy
+│   │   │   └── toast.lib.js # toast using Toastify
+│   │   ├── masks/ # inputs masks using imaskjs
 │   │   ├── normalizers/
 │   │   └── validators/ # input validation using validate.js
-│   ├── App.jsx # app initializer.
-│   ├── Router.jsx # routes controller.
-│   └── index.js # app root mounting.
+│   ├── App.test.js
+│   ├── App.jsx # app initializer
+│   ├── service-worker.js
+│   ├── setupTests.js
+│   └── index.js
 ├── package.json
-├── webpack.config.js # webpack config using CRACO.
-├── web.config # Azure routing config file.
-├── .env-cmdrc.json # environment variables.
-├── .eslintrc.json # eslint for JS/React/Redux.
-├── .stylelintrc.json # stylelint for CSS/SCSS/SASS.
-└── azure-pipelines.yml # Azure CI/CD pipeline.
+├── webpack.config.js # webpack config using CRACO
+├── web.config # Azure webapp server config file
+├── jsconfig.js # Node config for JS
+├── .env.json # environment variables
+├── .eslintrc.json # eslint for JS/React/Redux
+├── .stylelintrc.json # stylelint for CSS/SCSS/SASS
+└── azure-pipelines.yml # Azure CI/CD pipeline
 ```
 
-## 3. Libraries
+## Branches and Environments 📋
 
-- [env-cmd](https://github.com/toddbluhm/env-cmd) 10.1.0
-- [craco](https://github.com/gsoft-inc/craco) 5.6.4
-- [Redux-Saga](https://redux-saga.js.org/) 1.1.1
-- [react-use](https://github.com/streamich/react-use) 15.2.2
-- [SWR](https://github.com/vercel/swr) 0.2.2
-- [MSAL](https://github.com/AzureAD/microsoft-authentication-library-for-js) 1.3.2
-- [Semantic UI React](https://react.semantic-ui.com/) 2.4
-- [Material Design Icons](https://materialdesignicons.com/) 5
-- [Material Design Icons Animations](https://l-lin.github.io/font-awesome-animation/) 0.30 (ported for MDI)
-- [React Router Dynamic Breadcrumbs](https://github.com/roya3000/react-router-dynamic-breadcrumbs#readme) 2.2.2
-- [DevExtreme](https://js.devexpress.com/Overview/React/) 20.1.4
-- [SweetAlert](https://sweetalert2.github.io/) 9.14.4
-- [Toastify](https://fkhadra.github.io/react-toastify/introduction)
-- [Tippy](https://atomiks.github.io/tippyjs/) 6.2.3
-- [date-fns](https://date-fns.org/docs/Getting-Started) 2.14.0
-- [Voca](https://vocajs.com/) 1.4.0
-- [validate.js](https://validatejs.org/) 0.13.1
-- [imaskjs](https://imask.js.org/) 6.0.5
-- [mathjs](https://mathjs.org/) 7.0.1
-- [mout](http://moutjs.com/docs/latest/) 1.2.2
-- [formik](https://jaredpalmer.com/formik) 2.1.4
-- [sass-mq](https://github.com/sass-mq/sass-mq) 5.0.1
-- [json-query](https://www.npmjs.com/package/json-query) 2.2.2
-- [clsx](https://github.com/lukeed/clsx) 1.1.1
-- [script-hook](https://github.com/hartzis/react-script-hook) 1.1.1
-- [react-wait](https://github.com/f/react-wait) 0.3.0
-- [timeago.js](https://timeago.org/) 4.0.2
-- [react-web-animation](https://github.com/bringking/react-web-animationhttps://timeago.org/) 0.7.0
+Project has 3 environments base for project building.
 
-### AUTHOR: Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
+-   **development**: environment with breaking changes and new features.
+-   **qa**: environment for testing and quality assurance.
+-   **production**: productive environment.
+
+Also, pipeline has automated deployments depending of branch updated.
+
+-   **feature/\***: new features/requirements, it doesn't deploys to any environment.
+-   **develop**: accumulates new features for current sprint development, it deploys to 'development' environment.
+-   **release/\***: has features of last release, it deploys to 'QA' environment.
+-   **master**: releases tested and certified from 'QA' environment, it deploys to 'production' environment.
+-   **hotfix/\***: specific fixes from master, it deploys to 'development' environment.
+
+## Executing ⚙️
+
+Project uses **npm scripts** for eases execution and building.
+
+| Command                       | Action                  |
+| ----------------------------- | ----------------------- |
+| npm run start:debug           | debug execution         |
+| npm run start:development     | development execution   |
+| npm run start:qa              | qa execution            |
+| npm run eslint:analyze        | code format review      |
+| npm run eslint:fix            | code format review/fix  |
+| npm run test:development      | development tests run   |
+| npm run test:qa               | qa tests run            |
+| npm run test:production       | production tests run    |
+| npm run test:coverage         | tests coverage analysis |
+| npm run bundle:analyzer       | analyzes build bundles  |
+| npm run build:development     | development build       |
+| npm run build:qa              | qa build                |
+| npm run build:production      | production build        |
+| npm run lint                  | eslint validation       |
+| npm run postbuild             | removes sourcemaps      |
+| npm run packages:update       | updates packages        |
+| npm run packages:force-update | force updates packages  |
+| npm run git:case-sensitive    | git case sensitive fix  |
+
+## Linting 🧿
+
+Project uses two linters, for code formatting and code styling normalizing.
+
+-   **eslint**: JavaScript and React linter with Airbnb React base config and some other additions.
+-   **stylelint**: CSS/SCSS/SASS linter.
+
+For correct interpretation of linters, is recommended to use [Visual Studio Code](https://code.visualstudio.com/) as IDE and install the plugins in .vscode folder at 'extensions.json', as well as use the config provided in 'settings.json'
+
+## Deployment 📦
+
+Use included Azure Pipeline for CiCD - edit [azure-pipeline.yml](azure-pipeline.yml) file for custom projects variables.
+
+Branches environments are defined as:
+
+-   **master**: production
+-   **release/\***: qa
+-   **develop**: development
+-   **hotfix/\***: development
+-   **feature/\***: none
+
+Variables for change.
+
+-   **environment**: Azure DevOps environment for setup approvers/reviewers.
+-   **azureSubscription**: Subscription configured with a SPN.
+-   **webapp**: WebApp resource name, previously created with Terraform/Azure.
+-   **environmentBuild**: React app building environment. (development/qa/production).
+
+## Built with 🛠️
+
+-   [Create React App](https://github.com/facebook/create-react-app) - Official React SPA framework.
+-   [Redux & Redux Saga](https://es.redux.js.org/) - State container for centralized information handling.
+-   [MSAL](https://github.com/AzureAD/microsoft-authentication-library-for-js) - Microsoft authentication service.
+-   [Semantic UI](https://react.semantic-ui.com/) - UI framework.
+-   [env-cmd](https://github.com/toddbluhm/env-cmd) - NodeJS app's environment utility.
+-   [craco](https://github.com/gsoft-inc/craco) - CRA webpack config injector.
+-   [Material Design Icons](https://materialdesignicons.com/)
+-   [Material Design Icons Animations](https://l-lin.github.io/)
+
+## Libraries integrated and recommended 🛠️
+
+-   [DevExtreme](https://js.devexpress.com/Overview/React/)
+-   [date-fns](https://date-fns.org/docs/Getting-Started)
+-   [react-use](https://github.com/streamich/react-use)
+-   [SWR](https://github.com/vercel/swr)
+-   [SweetAlert](https://sweetalert2.github.io/)
+-   [Toastify](https://fkhadra.github.io/react-toastify/introduction)
+-   [Tippy](https://atomiks.github.io/tippyjs/)
+-   [Voca](https://vocajs.com/)
+-   [validate.js](https://validatejs.org/)
+-   [imaskjs](https://imask.js.org/)
+-   [mathjs](https://mathjs.org/)
+-   [mout](http://moutjs.com/docs/latest/)
+-   [formik](https://jaredpalmer.com/formik)
+-   [json-query](https://www.npmjs.com/package/json-query)
+-   [clsx](https://github.com/lukeed/clsx)
+-   [script-hook](https://github.com/hartzis/react-script-hook)
+-   [react-wait](https://github.com/f/react-wait)
+-   [react-web-animation](https://github.com/bringking/react-web-animationhttps://timeago.org/)
+
+## License 📄
+
+This project is licensed under the GPL License - see [LICENSE.md](LICENSE.md) file for details.
+
+---
+
+⌨ by [Alvear Candia, Cristopher Alejandro](https://github.com/calvear93)

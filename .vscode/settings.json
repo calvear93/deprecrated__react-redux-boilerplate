@@ -86,8 +86,11 @@
 	},
 	"material-icon-theme.folders.associations": {
 		"masks": "middleware",
+		"modules": "middleware",
 		"normalizers": "lib",
-		"validators": "syntax"
+		"validators": "syntax",
+		"vars": "shared",
+		"variables": "shared",
 	},
 	"prettier.singleQuote": true,
 	"prettier.stylelintIntegration": true,
