@@ -185,8 +185,10 @@ Variables for change.
 -   [jwt-decode](https://github.com/auth0/jwt-decode)
 -   [react-children-utilities](https://github.com/fernandopasik/react-children-utilities)
 -   [react-web-animation](https://github.com/bringking/react-web-animationhttps://timeago.org/)
--   [react-epic-spinners](https://www.npmjs.com/package/react-epic-spinners)
 -   [react-lazyload](https://github.com/twobin/react-lazyload)
+-   [react-rnd](https://github.com/bokuweb/react-rnd)
+-   [react-spinners](https://github.com/davidhu2000/react-spinners)
+-   [react-epic-spinners](https://www.npmjs.com/package/react-epic-spinners)
 
 ## License 📄
 
