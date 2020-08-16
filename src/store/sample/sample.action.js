@@ -11,19 +11,19 @@ const KEY = 'SAMPLE';
 /**
  * Redux Action Vault.
  */
-const SampleAction =
+const SampleHandler =
 {
     /**
      * Action Store Key.
      *
-     * @memberof SampleAction
+     * @memberof SampleHandler
      */
     Key: KEY,
 
     /**
      * Action Types.
      *
-     * @memberof SampleAction
+     * @memberof SampleHandler
      */
     Type: {
         EXEC: 'EXEC',
@@ -34,7 +34,7 @@ const SampleAction =
     /**
      * Reducer States.
      *
-     * @memberof SampleAction
+     * @memberof SampleHandler
      */
     State: {
         PREPARING: 'PREPARING',
@@ -49,14 +49,14 @@ const SampleAction =
      * @param {string} type action type.
      * @param {object} [payload] data involved in the action.
      *
-     * @memberof SampleAction
+     * @memberof SampleHandler
      *
      * @returns {object} action.
      */
-    Action: (type, payload) => CreateAction(SampleAction.Key, type, payload)
+    Action: (type, payload) => CreateAction(SampleHandler.Key, type, payload)
 };
 
 // makes types unique.
-MakeUnique(SampleAction.Type);
+MakeUnique(SampleHandler.Type);
 
-export default Object.freeze(SampleAction);
+export default Object.freeze(SampleHandler);

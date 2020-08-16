@@ -1,5 +1,5 @@
 import { SampleDefaults } from 'store/defaults';
-import SampleAction from './sample.action';
+import SampleHandler from './sample.action';
 
 /**
  * Redux Actions Reducer.
@@ -17,26 +17,26 @@ export default function SampleReducer(store = SampleDefaults, action)
     switch (type)
     {
         // executes the action.
-        case SampleAction.Type.EXEC:
+        case SampleHandler.Type.EXEC:
             delete store.error;
 
             return {
                 ...store,
-                state: SampleAction.State.EXECUTING
+                state: SampleHandler.State.EXECUTING
             };
 
         // action is successful.
-        case SampleAction.Type.COMMIT:
+        case SampleHandler.Type.COMMIT:
             return {
                 ...store,
-                state: SampleAction.State.READY
+                state: SampleHandler.State.READY
             };
 
         // action was finished with errors.
-        case SampleAction.Type.ROLLBACK:
+        case SampleHandler.Type.ROLLBACK:
             return {
                 ...store,
-                state: SampleAction.State.FAILED,
+                state: SampleHandler.State.FAILED,
                 error: payload
             };
 

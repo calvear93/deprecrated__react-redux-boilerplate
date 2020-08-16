@@ -1,5 +1,5 @@
 import { all, put, takeLatest } from 'redux-saga/effects';
-import SampleAction from './sample.action';
+import SampleHandler from './sample.action';
 
 /**
  * Exec sample.
@@ -13,15 +13,15 @@ function* exec(payload)
         // const account = yield call(Service.Api);
 
         // Success action.
-        yield put(SampleAction.Action(
-            SampleAction.Type.COMMIT,
+        yield put(SampleHandler.Action(
+            SampleHandler.Type.COMMIT,
             payload
         ));
     }
     catch (e)
     {
-        yield put(SampleAction.Action(
-            SampleAction.Type.ROLLBACK,
+        yield put(SampleHandler.Action(
+            SampleHandler.Type.ROLLBACK,
             {
                 stacktrace: e,
                 message: 'Operation cannot be completed'
@@ -36,6 +36,6 @@ function* exec(payload)
 export default function* run()
 {
     yield all([ // use all only if exists two or more listeners.
-        takeLatest(SampleAction.Type.EXEC, exec)
+        takeLatest(SampleHandler.Type.EXEC, exec)
     ]);
 }
