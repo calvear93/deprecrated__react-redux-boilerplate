@@ -7,19 +7,19 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 22:41:11
- * Last modified  : 2020-07-26 22:14:26
+ * Last modified  : 2020-08-16 11:23:17
  */
 
 import { combineReducers, createStore } from 'redux';
 import createMiddleware from './middleware';
 import { all } from 'redux-saga/effects';
 import { SampleAction, SampleReducer, SampleSaga } from './sample';
-import { AzureActiveDirectoryAction, AzureActiveDirectoryReducer, AzureActiveDirectorySaga } from './aad';
+import { AuthenticationHandler, AuthenticationReducer, AuthenticationSaga } from './auth';
 
 // combine reducers creating the store partitions.
 const reducers = combineReducers({
     [SampleAction.Key]: SampleReducer,
-    [AzureActiveDirectoryAction.Key]: AzureActiveDirectoryReducer
+    [AuthenticationHandler.Key]: AuthenticationReducer
 });
 
 // combine every sagas in parallel tasks.
@@ -27,7 +27,7 @@ function* combineSagas()
 {
     yield all([
         SampleSaga(),
-        AzureActiveDirectorySaga()
+        AuthenticationSaga()
     ]);
 }
 

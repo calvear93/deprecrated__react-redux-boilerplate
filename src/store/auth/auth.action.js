@@ -6,24 +6,24 @@ import { CreateAction, MakeUnique } from 'store/shared/action.lib';
  * @const
  * @type {string}
  */
-const KEY = 'AAD';
+const KEY = 'SESSION';
 
 /**
- * Redux Action Vault.
+ * Redux Action Handler.
  */
-const AzureActiveDirectoryAction =
+const AuthenticationHandler =
 {
     /**
      * Reducer Store Partition Key.
      *
-     * @memberof AzureActiveDirectoryAction
+     * @memberof AuthenticationHandler
      */
     Key: KEY,
 
     /**
      * Action Types.
      *
-     * @memberof AzureActiveDirectoryAction
+     * @memberof AuthenticationHandler
      */
     Type: {
         AUTHENTICATE: 'AUTHENTICATE',
@@ -41,7 +41,7 @@ const AzureActiveDirectoryAction =
     /**
      * Partition selectors.
      *
-     * @memberof AzureActiveDirectoryAction
+     * @memberof AuthenticationHandler
      */
     Selector: {
         User: ({ [KEY]: { account: { user } } }) => user,
@@ -54,14 +54,14 @@ const AzureActiveDirectoryAction =
      * @param {string} type action type.
      * @param {object} [payload] data involved in the action.
      *
-     * @memberof AzureActiveDirectoryAction
+     * @memberof AuthenticationHandler
      *
      * @returns {object} action.
      */
-    Action: (type, payload) => CreateAction(AzureActiveDirectoryAction.Key, type, payload)
+    Action: (type, payload) => CreateAction(AuthenticationHandler.Key, type, payload)
 };
 
 // makes types and keys unique.
-MakeUnique(AzureActiveDirectoryAction.Type);
+MakeUnique(AuthenticationHandler.Type);
 
-export default Object.freeze(AzureActiveDirectoryAction);
+export default Object.freeze(AuthenticationHandler);

@@ -1,5 +1,5 @@
-import AzureActiveDirectoryAction from './aad.action';
-import { AzureActiveDirectoryDefaults } from 'store/defaults';
+import AuthenticationHandler from './auth.action';
+import { AuthenticationDefaults } from 'store/defaults';
 
 /**
  * Redux Actions Reducer.
@@ -9,7 +9,7 @@ import { AzureActiveDirectoryDefaults } from 'store/defaults';
  *
  * @returns {any} new state or store partition.
  */
-export default function AzureActiveDirectoryReducer(store = AzureActiveDirectoryDefaults, action)
+export default function AuthenticationReducer(store = AuthenticationDefaults, action)
 {
     // action destructuring. (key, type or payload).
     const { type, payload } = action;
@@ -17,7 +17,7 @@ export default function AzureActiveDirectoryReducer(store = AzureActiveDirectory
     switch (type)
     {
         // on authentication success.
-        case AzureActiveDirectoryAction.Type.AUTHENTICATE_SUCCESS:
+        case AuthenticationHandler.Type.AUTHENTICATE_SUCCESS:
         {
             delete store.error;
 
@@ -34,7 +34,7 @@ export default function AzureActiveDirectoryReducer(store = AzureActiveDirectory
         }
 
         // on authentication error.
-        case AzureActiveDirectoryAction.Type.AUTHENTICATE_ERROR:
+        case AuthenticationHandler.Type.AUTHENTICATE_ERROR:
             return {
                 ...store,
                 authenticated: false,
@@ -42,7 +42,7 @@ export default function AzureActiveDirectoryReducer(store = AzureActiveDirectory
             };
 
         // on user info retrieved.
-        case AzureActiveDirectoryAction.Type.GET_INFO_SUCCESS:
+        case AuthenticationHandler.Type.GET_INFO_SUCCESS:
         {
             const { account } = store;
 
@@ -56,14 +56,14 @@ export default function AzureActiveDirectoryReducer(store = AzureActiveDirectory
         }
 
         // user info cannot be retrieved.
-        case AzureActiveDirectoryAction.Type.GET_INFO_ERROR:
+        case AuthenticationHandler.Type.GET_INFO_ERROR:
             return {
                 ...store,
                 error: payload
             };
 
         // on user photo retrieved.
-        case AzureActiveDirectoryAction.Type.GET_PHOTO_SUCCESS:
+        case AuthenticationHandler.Type.GET_PHOTO_SUCCESS:
         {
             const { account } = store;
 

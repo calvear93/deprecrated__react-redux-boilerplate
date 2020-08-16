@@ -1,7 +1,7 @@
 import { all, call, put, takeLatest } from 'redux-saga/effects';
 import { AuthenticationService, GraphService } from 'services/security';
 import { callPersistedInLocalStorage } from 'store/shared/saga.lib';
-import AzureActiveDirectoryAction from './aad.action';
+import AuthenticationHandler from './auth.action';
 
 /**
  * Executes azure active directory authentication.
@@ -18,19 +18,19 @@ function* authenticate({ payload: { type } = {} })
         const account = yield call(AuthenticationService.login, { type });
 
         // user authenticated.
-        yield put(AzureActiveDirectoryAction.Action(
-            AzureActiveDirectoryAction.Type.AUTHENTICATE_SUCCESS,
+        yield put(AuthenticationHandler.Action(
+            AuthenticationHandler.Type.AUTHENTICATE_SUCCESS,
             account
         ));
 
         // dispatches actions for fetching user info.
-        yield put(AzureActiveDirectoryAction.Action(AzureActiveDirectoryAction.Type.GET_INFO, account.accountIdentifier));
-        yield put(AzureActiveDirectoryAction.Action(AzureActiveDirectoryAction.Type.GET_PHOTO, account.accountIdentifier));
+        yield put(AuthenticationHandler.Action(AuthenticationHandler.Type.GET_INFO, account.accountIdentifier));
+        yield put(AuthenticationHandler.Action(AuthenticationHandler.Type.GET_PHOTO, account.accountIdentifier));
     }
     catch (e)
     {
-        yield put(AzureActiveDirectoryAction.Action(
-            AzureActiveDirectoryAction.Type.AUTHENTICATE_ERROR,
+        yield put(AuthenticationHandler.Action(
+            AuthenticationHandler.Type.AUTHENTICATE_ERROR,
             {
                 stacktrace: e,
                 message: 'Autenticación denegada'
@@ -53,15 +53,15 @@ function* getUserInfo({ payload: accountIdentifier })
         const user = yield callPersistedInLocalStorage(`${accountIdentifier}_info`, GraphService.me);
 
         // success.
-        yield put(AzureActiveDirectoryAction.Action(
-            AzureActiveDirectoryAction.Type.GET_INFO_SUCCESS,
+        yield put(AuthenticationHandler.Action(
+            AuthenticationHandler.Type.GET_INFO_SUCCESS,
             user
         ));
     }
     catch (e)
     {
-        yield put(AzureActiveDirectoryAction.Action(
-            AzureActiveDirectoryAction.Type.GET_INFO_ERROR,
+        yield put(AuthenticationHandler.Action(
+            AuthenticationHandler.Type.GET_INFO_ERROR,
             {
                 stacktrace: e,
                 message: 'No se pudo obtener información del usuario'
@@ -88,15 +88,15 @@ function* getUserPhoto({ payload: accountIdentifier })
         );
 
         // success.
-        yield put(AzureActiveDirectoryAction.Action(
-            AzureActiveDirectoryAction.Type.GET_PHOTO_SUCCESS,
+        yield put(AuthenticationHandler.Action(
+            AuthenticationHandler.Type.GET_PHOTO_SUCCESS,
             photo
         ));
     }
     catch (e)
     {
-        yield put(AzureActiveDirectoryAction.Action(
-            AzureActiveDirectoryAction.Type.GET_PHOTO_ERROR,
+        yield put(AuthenticationHandler.Action(
+            AuthenticationHandler.Type.GET_PHOTO_ERROR,
             {
                 stacktrace: e,
                 message: 'No se pudo obtener fotografía del usuario'
@@ -121,9 +121,9 @@ function logout()
 export default function* run()
 {
     yield all([
-        takeLatest(AzureActiveDirectoryAction.Type.AUTHENTICATE, authenticate),
-        takeLatest(AzureActiveDirectoryAction.Type.GET_INFO, getUserInfo),
-        takeLatest(AzureActiveDirectoryAction.Type.GET_PHOTO, getUserPhoto),
-        takeLatest(AzureActiveDirectoryAction.Type.LOGOUT, logout)
+        takeLatest(AuthenticationHandler.Type.AUTHENTICATE, authenticate),
+        takeLatest(AuthenticationHandler.Type.GET_INFO, getUserInfo),
+        takeLatest(AuthenticationHandler.Type.GET_PHOTO, getUserPhoto),
+        takeLatest(AuthenticationHandler.Type.LOGOUT, logout)
     ]);
 }

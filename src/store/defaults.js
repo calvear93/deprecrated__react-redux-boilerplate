@@ -12,4 +12,4 @@
 export const SampleDefaults = {};
 
 // aad authentication defaults.
-export const AzureActiveDirectoryDefaults = {};
+export const AuthenticationDefaults = {};

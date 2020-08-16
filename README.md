@@ -33,7 +33,7 @@ This is a boilerplate for React SPA application using [React](https://es.reactjs
 │   │   └── index.js # exposes main router and routes definition
 │   ├── services/
 │   │   ├── security/ # Azure Active Directory auth service
-│   │   │   └── AzureActiveDirectoryProvider.jsx
+│   │   │   └── AuthenticationProvider.jsx
 │   │   └── api/ # web clients
 │   ├── store/
 │   │   ├── sample/ # store partition sample

@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import Loader from 'components/shared/loader';
-import { useIsAuthorized } from './aad.hook';
-import { AzureActiveDirectoryAction } from 'store/aad';
+import { useIsAuthorized } from './auth.hook';
+import { AuthenticationHandler } from 'store/auth';
 
 // AAD route security mode.
-export const AzureActiveDirectorySecurityMode = {
+export const AuthenticationSecurityMode = {
     WHITELIST: 1,
     BLACKLIST: 0
 };
@@ -15,14 +15,14 @@ export const AzureActiveDirectorySecurityMode = {
  * Azure Active Directory security wrapper for React.
  *
  * using example:
- *  <AzureActiveDirectoryProvider
+ *  <AuthenticationProvider
  *      enabled={ true }
- *      mode={ AzureActiveDirectorySecurityMode.WHITELIST }
+ *      mode={ AuthenticationSecurityMode.WHITELIST }
  *      list={ [ '/main' ] }
  *      errorRoute='/401'
  *  >
  *      <Router />
- *  </AzureActiveDirectoryProvider>
+ *  </AuthenticationProvider>
  *
  * @param {object} props component props.
  * @param {React.ReactElement} props.children component for render on authentication ok.
@@ -32,9 +32,9 @@ export const AzureActiveDirectorySecurityMode = {
  *
  * @returns {React.ReactElement} children on authenticated, error redirection in otherwise.
  */
-export default function AzureActiveDirectoryProvider({
+export default function AuthenticationProvider({
     children,
-    mode = AzureActiveDirectorySecurityMode.WHITELIST,
+    mode = AuthenticationSecurityMode.WHITELIST,
     list = [],
     errorRoute
 })
@@ -47,7 +47,7 @@ export default function AzureActiveDirectoryProvider({
     {
         // dispatches authentication action.
         if (!isAuthorized && !error)
-            dispatch(AzureActiveDirectoryAction.Action(AzureActiveDirectoryAction.Type.AUTHENTICATE));
+            dispatch(AuthenticationHandler.Action(AuthenticationHandler.Type.AUTHENTICATE));
     }, [ isAuthorized, error, dispatch ]);
 
     return isAuthorized ? (

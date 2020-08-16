@@ -1,8 +1,8 @@
 import { SECURITY_ENABLED } from './config';
 import { usePartition } from 'hooks/redux.hook';
 import { usePathBelongsTo } from 'hooks/route.hook';
-import { AzureActiveDirectoryAction } from 'store/aad';
-import { AzureActiveDirectorySecurityMode } from './AzureActiveDirectoryProvider';
+import { AuthenticationHandler } from 'store/auth';
+import { AuthenticationSecurityMode } from './AuthenticationProvider';
 
 /**
  * Uses MSAL authentication service for
@@ -17,10 +17,10 @@ import { AzureActiveDirectorySecurityMode } from './AzureActiveDirectoryProvider
 export function useIsAuthorized(mode, list, errorRoute)
 {
     // gets authentication state.
-    const { authenticated, error } = usePartition(AzureActiveDirectoryAction);
+    const { authenticated, error } = usePartition(AuthenticationHandler);
 
     // whether mode is whitelist.
-    const isWhitelistMode = mode === AzureActiveDirectorySecurityMode.WHITELIST;
+    const isWhitelistMode = mode === AuthenticationSecurityMode.WHITELIST;
     // adds error route in case of whitelist.
     isWhitelistMode && list.push(errorRoute);
     // whether current path is in list.
