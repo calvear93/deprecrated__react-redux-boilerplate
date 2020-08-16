@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 // import { useState } from 'react';
-import SampleForm from 'components/form/SampleForm';
+import SampleForm from 'components/shared/form/SampleForm';
 import { Container, Header, Button } from 'semantic-ui-react';
 // import { Input } from 'semantic-ui-react';
 import { BallTriangleLoader } from 'assets/loaders';

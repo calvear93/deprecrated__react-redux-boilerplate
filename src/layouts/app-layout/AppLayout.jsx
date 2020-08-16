@@ -1,7 +1,7 @@
 import React from 'react';
 import Footer from './Footer';
 import Header from './Header';
-import Breadcrumbs from 'routes/Breadcrumbs';
+import Breadcrumbs from 'components/shared/breadcrumbs';
 import './app-layout.scss';
 
 /**

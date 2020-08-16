@@ -4,7 +4,7 @@
 
 This is a boilerplate for React SPA application using [React](https://es.reactjs.org/) + [Redux](https://es.redux.js.org/), and the official project creation wrapper [Create React App](https://github.com/facebook/create-react-app).
 
-## Structure 💡
+## Structure (simplified) 💡
 
 ```bash
 ├── README.md
@@ -15,9 +15,11 @@ This is a boilerplate for React SPA application using [React](https://es.reactjs
 ├── src/
 │   ├── assets/ # graphics
 │   ├── components/
-│   │   ├── form/ # form factory. (see SampleForm)
-│   │   ├── input/ # variety of inputs
-│   │   └── loader/
+│   │   └── shared/ # shared atomic components
+│   │       ├── form/ # form factory. (see SampleForm)
+│   │       ├── input/ # variety of inputs
+│   │       ├── breadcrumbs/ # automatic breadcrumbs renderer
+│   │       └── loader/
 │   ├── constants/ # global constants
 │   ├── hooks/ #global hooks
 │   ├── layouts/
@@ -26,9 +28,9 @@ This is a boilerplate for React SPA application using [React](https://es.reactjs
 │   ├── mock/ # mock server using MirageJS
 │   ├── pages/ # app pages/views
 │   ├── routes/ # app routes and routers
-│   │   ├── Breadcrumbs.jsx # automatic breadcrumbs renderer
 │   │   ├── router/ # generic router component
-│   │   └── app/ # main route
+│   │   ├── app/ # main router
+│   │   └── index.js # exposes main router and routes definition
 │   ├── services/
 │   │   ├── security/ # Azure Active Directory auth service
 │   │   │   └── AzureActiveDirectoryProvider.jsx
@@ -55,7 +57,7 @@ This is a boilerplate for React SPA application using [React](https://es.reactjs
 │   │   │   ├── object.lib.js # generic object utils
 │   │   │   ├── redirect.lib.js # browser redirection utils
 │   │   │   ├── rut.lib.js # chilean Id (RUT/RUN) utils
-│   │   │   ├── storage.lib.js # local and session storage utils.
+│   │   │   ├── storage.lib.js # browser storage utils.
 │   │   │   ├── string.lib.js # string utils
 │   │   │   ├── swal.lib.js # SweetAlert2 factory
 │   │   │   ├── time.lib.js # time utils using date fns
@@ -97,7 +99,7 @@ Also, pipeline has automated deployments depending of branch updated.
 
 ## Executing ⚙️
 
-Project uses **npm scripts** for eases execution and building.
+Project uses **npm scripts** for eases execution, testing and building.
 
 | Command                       | Action                  |
 | ----------------------------- | ----------------------- |

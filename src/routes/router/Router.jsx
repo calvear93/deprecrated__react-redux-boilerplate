@@ -7,7 +7,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-07-04 16:42:09
- * Last modified  : 2020-08-14 12:51:07
+ * Last modified  : 2020-08-15 20:27:53
  */
 
 /* eslint-disable react/no-multi-comp */
@@ -15,7 +15,7 @@
 import React, { lazy, Suspense } from 'react';
 import { Redirect, Route, Switch, useLocation, useRouteMatch } from 'react-router-dom';
 import RouteChild from './RouteChild';
-import Loader from 'components/loader';
+import Loader from 'components/shared/loader';
 
 // lazy loaded components.
 const NotFoundPage = lazy(() => import('pages/not-found'));

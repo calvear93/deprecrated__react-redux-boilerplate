@@ -1,6 +1,6 @@
 import React from 'react';
 import DynamicBreadcrumbs from 'react-router-dynamic-breadcrumbs';
-import { routes } from '.';
+import { routes } from 'routes';
 
 // routes array.
 const paths = Object.keys(routes);

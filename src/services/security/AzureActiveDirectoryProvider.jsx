@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import Loader from 'components/loader';
+import Loader from 'components/shared/loader';
 import { useIsAuthorized } from './aad.hook';
 import { AzureActiveDirectoryAction } from 'store/aad';
 
