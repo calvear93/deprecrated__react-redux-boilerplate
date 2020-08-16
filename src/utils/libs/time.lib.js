@@ -7,7 +7,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:37:10
- * Last modified  : 2020-08-15 23:13:09
+ * Last modified  : 2020-08-15 23:29:55
  */
 
 import { addMonths, addYears, differenceInCalendarDays, differenceInCalendarMonths, differenceInCalendarYears, format, formatDuration, isValid } from 'date-fns';
@@ -48,7 +48,7 @@ function timeFormatChooser(format24 = true)
  *
  * @returns {string | Date} parsed datetime.
  */
-export function toDate(date)
+export function parseDate(date)
 {
     if (typeof date === 'string')
         date = new Date(date);
@@ -98,7 +98,7 @@ export function formatDateTime(date, format24 = true, formatPattern)
  *
  * @returns {string} formatted time.
  */
-export function toTime(date, format24 = true, formatPattern)
+export function formatTime(date, format24 = true, formatPattern)
 {
     if (typeof date === 'string')
         date = new Date(date);
