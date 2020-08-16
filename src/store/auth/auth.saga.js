@@ -90,7 +90,7 @@ function* getUserPhoto({ payload: accountIdentifier })
         // success.
         yield put(AuthenticationHandler.Action(
             AuthenticationHandler.Type.GET_PHOTO_SUCCESS,
-            photo
+            photo === 'undefined' ? null : photo
         ));
     }
     catch (e)
