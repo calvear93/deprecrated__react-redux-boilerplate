@@ -7,7 +7,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.cl>
  *
  * Created at     : 2020-08-13 19:40:14
- * Last modified  : 2020-08-15 15:47:29
+ * Last modified  : 2020-08-15 20:11:51
  */
 
 import storage from 'store2';
@@ -29,24 +29,24 @@ storage[StorageType.SESSION] = storage.session;
 export default storage;
 
 /**
- * Memoizes the result from an asynchronous
- * callback, storing it in sessionStorage.
+ * Persists the result from an asynchronous
+ * callback, storing it in browser storage.
  *
- * @param {string} key memoized value accessor.
- * @param {Promise<any>} promise callback promise.
+ * @param {string} key persisted value accessor.
+ * @param {Promise<any>} promise async callback.
  * @param {string} [storageType] storage type.
  *
- * @return {Promise<any>} cached/memoized value or promise result.
+ * @return {Promise<any>} cached/persisted value or promise result.
  */
-export async function memoizeAsyncCallbackInStorage(key, promise, storageType = StorageType.SESSION)
+export async function persistAsyncCallbackInStorage(key, promise, storageType = StorageType.SESSION)
 {
-    const cache = window[storageType].getItem(key);
+    const cache = storage[storageType].get(key);
 
     if (cache)
-        return Promise.resolve(JSON.parse(cache));
+        return Promise.resolve(cache);
 
     const data = await promise;
-    window[storageType].setItem(key, JSON.stringify(data));
+    storage[storageType].set(key, data);
 
     return data;
 }
