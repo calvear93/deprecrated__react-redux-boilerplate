@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file.
 ## [1.0.0] - 2020-08-15
 
 -   Base project scalable architecture.
+-   Semantic UI React as UI Framework.
 -   Declarative routing in routes folder.
 -   Pages components represents a specific URL path in app.
 -   Layouts components may be used in routes declaration or containers.
