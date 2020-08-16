@@ -1,6 +1,6 @@
-import storage from 'utils/libs/storage.lib';
 import { all, call, put, takeLatest } from 'redux-saga/effects';
 import { AuthenticationService, GraphService } from 'services/security';
+import { callPersistedInLocalStorage } from 'store/shared/saga.lib';
 import AzureActiveDirectoryAction from './aad.action';
 
 /**
@@ -16,23 +16,16 @@ function* authenticate({ payload: { type } = {} })
     {
         // calls azure MSAL authentication service.
         const account = yield call(AuthenticationService.login, { type });
-        // initializes the storage.
-        const cache = storage[AzureActiveDirectoryAction.Persistence.Type].get(account.accountIdentifier);
 
-        // gets user detailed info.
-        const [ user, photo ] = yield all([
-            cache?.user || call(GraphService.me),
-            cache?.photo || call(GraphService.photoWithSize, process.env.REACT_APP_AAD_USER_PHOTO_SIZE)
-        ]);
-
-        // success.
+        // user authenticated.
         yield put(AzureActiveDirectoryAction.Action(
             AzureActiveDirectoryAction.Type.AUTHENTICATE_SUCCESS,
-            { account, user, photo }
+            account
         ));
 
-        // saves user info in cookies.
-        storage.set(account.accountIdentifier, { user, photo });
+        // dispatches actions for fetching user info.
+        yield put(AzureActiveDirectoryAction.Action(AzureActiveDirectoryAction.Type.GET_INFO, account.accountIdentifier));
+        yield put(AzureActiveDirectoryAction.Action(AzureActiveDirectoryAction.Type.GET_PHOTO, account.accountIdentifier));
     }
     catch (e)
     {
@@ -41,6 +34,72 @@ function* authenticate({ payload: { type } = {} })
             {
                 stacktrace: e,
                 message: 'Autenticación denegada'
+            }
+        ));
+    }
+}
+
+/**
+ * Fetches azure account info.
+ *
+ * @param {object} action dispatched action..
+ * @param {object} action.payload azure account identifier.
+ */
+function* getUserInfo({ payload: accountIdentifier })
+{
+    try
+    {
+        // gets user detailed info.
+        const user = yield callPersistedInLocalStorage(`${accountIdentifier}_info`, GraphService.me);
+
+        // success.
+        yield put(AzureActiveDirectoryAction.Action(
+            AzureActiveDirectoryAction.Type.GET_INFO_SUCCESS,
+            user
+        ));
+    }
+    catch (e)
+    {
+        yield put(AzureActiveDirectoryAction.Action(
+            AzureActiveDirectoryAction.Type.GET_INFO_ERROR,
+            {
+                stacktrace: e,
+                message: 'No se pudo obtener información del usuario'
+            }
+        ));
+    }
+}
+
+/**
+ * Fetches azure account photo.
+ *
+ * @param {object} action dispatched action..
+ * @param {object} action.payload azure account identifier.
+ */
+function* getUserPhoto({ payload: accountIdentifier })
+{
+    try
+    {
+        // gets user photo.
+        const photo = yield callPersistedInLocalStorage(
+            `${accountIdentifier}_photo`,
+            GraphService.photoWithSize,
+            process.env.REACT_APP_AAD_USER_PHOTO_SIZE
+        );
+
+        // success.
+        yield put(AzureActiveDirectoryAction.Action(
+            AzureActiveDirectoryAction.Type.GET_PHOTO_SUCCESS,
+            photo
+        ));
+    }
+    catch (e)
+    {
+        yield put(AzureActiveDirectoryAction.Action(
+            AzureActiveDirectoryAction.Type.GET_PHOTO_ERROR,
+            {
+                stacktrace: e,
+                message: 'No se pudo obtener fotografía del usuario'
             }
         ));
     }
@@ -63,6 +122,8 @@ export default function* run()
 {
     yield all([
         takeLatest(AzureActiveDirectoryAction.Type.AUTHENTICATE, authenticate),
+        takeLatest(AzureActiveDirectoryAction.Type.GET_INFO, getUserInfo),
+        takeLatest(AzureActiveDirectoryAction.Type.GET_PHOTO, getUserPhoto),
         takeLatest(AzureActiveDirectoryAction.Type.LOGOUT, logout)
     ]);
 }

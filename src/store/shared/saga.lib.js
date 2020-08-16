@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 22:43:58
- * Last modified  : 2020-08-15 22:04:12
+ * Last modified  : 2020-08-15 22:56:40
  */
 
 import { call, race, take, delay } from 'redux-saga/effects';
@@ -54,7 +54,7 @@ export function* waitForAny(types, times, timeout = 0)
  *
  * @returns {IterableIterator<any>} cached/persisted value or result.
  */
-function* callPersistedInStorage(storageType, key, generator, ...args)
+export function* callPersistedInStorage(storageType, key, generator, ...args)
 {
     const cache = storage[storageType].get(key);
 
@@ -94,5 +94,5 @@ export function* callPersistedInSessionStorage(key, generator, ...args)
  */
 export function* callPersistedInLocalStorage(key, generator, ...args)
 {
-    return yield callPersistedInStorage(StorageType.SESSION, key, generator, ...args);
+    return yield callPersistedInStorage(StorageType.LOCAL, key, generator, ...args);
 }

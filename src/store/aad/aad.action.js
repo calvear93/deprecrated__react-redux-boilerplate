@@ -35,6 +35,7 @@ const AzureActiveDirectoryAction =
         GET_INFO_ERROR: 'GET_INFO_ERROR',
         GET_PHOTO: 'GET_PHOTO',
         GET_PHOTO_SUCCESS: 'GET_PHOTO_SUCCESS',
+        GET_PHOTO_ERROR: 'GET_PHOTO_ERROR',
         LOGOUT: 'LOGOUT'
     },
 
@@ -44,16 +45,8 @@ const AzureActiveDirectoryAction =
      * @memberof AzureActiveDirectoryAction
      */
     Selector: {
-        User: ({ [KEY]: { account: { user } } }) => user
-    },
-
-    /**
-     * Storage persistence.
-     *
-     * @memberof AzureActiveDirectoryAction
-     */
-    Persistence: {
-        Type: StorageType.LOCAL
+        User: ({ [KEY]: { account: { user } } }) => user,
+        Photo: ({ [KEY]: { account: { photo } } }) => photo
     },
 
     /**
