@@ -4,10 +4,10 @@
  * @see https://github.com/nbubna/store
  *
  * @summary Storage data and memoizing utilities.
- * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.cl>
+ * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-08-13 19:40:14
- * Last modified  : 2020-08-15 20:11:51
+ * Last modified  : 2020-08-15 21:56:03
  */
 
 import storage from 'store2';
@@ -36,7 +36,7 @@ export default storage;
  * @param {Promise<any>} promise async callback.
  * @param {string} [storageType] storage type.
  *
- * @return {Promise<any>} cached/persisted value or promise result.
+ * @returns {Promise<any>} cached/persisted value or promise result.
  */
 export async function persistAsyncCallbackInStorage(key, promise, storageType = StorageType.SESSION)
 {

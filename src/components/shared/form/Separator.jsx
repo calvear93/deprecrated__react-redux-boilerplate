@@ -8,7 +8,7 @@ import { Divider } from 'semantic-ui-react';
  * @param {React.ReactElement | string} props.label label.
  * @param {boolean} props.divider whether divider is visible.
  *
- * @return {React.ReactElement} input divider.
+ * @returns {React.ReactElement} input divider.
  */
 export default function Separator({ label, divider })
 {

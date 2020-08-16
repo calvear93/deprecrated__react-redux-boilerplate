@@ -7,7 +7,7 @@ import SampleAction from './sample.action';
  * @param {any} store current store partition state.
  * @param {any} action action dispatched.
  *
- * @returns {any} new store partition.
+ * @returns {any} new state or store partition.
  */
 export default function SampleReducer(store = SampleDefaults, action)
 {

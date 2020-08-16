@@ -1,4 +1,5 @@
 import { CreateAction, MakeUnique } from 'store/shared/action.lib';
+import { StorageType } from 'utils/libs/storage.lib';
 
 /**
  * store partition key.
@@ -29,6 +30,11 @@ const AzureActiveDirectoryAction =
         AUTHENTICATE: 'AUTHENTICATE',
         AUTHENTICATE_SUCCESS: 'AUTHENTICATE_SUCCESS',
         AUTHENTICATE_ERROR: 'AUTHENTICATE_ERROR',
+        GET_INFO: 'GET_INFO',
+        GET_INFO_SUCCESS: 'GET_INFO_SUCCESS',
+        GET_INFO_ERROR: 'GET_INFO_ERROR',
+        GET_PHOTO: 'GET_PHOTO',
+        GET_PHOTO_SUCCESS: 'GET_PHOTO_SUCCESS',
         LOGOUT: 'LOGOUT'
     },
 
@@ -47,7 +53,7 @@ const AzureActiveDirectoryAction =
      * @memberof AzureActiveDirectoryAction
      */
     Persistence: {
-        Type: 'localStorage'
+        Type: StorageType.LOCAL
     },
 
     /**
@@ -63,7 +69,7 @@ const AzureActiveDirectoryAction =
     Action: (type, payload) => CreateAction(AzureActiveDirectoryAction.Key, type, payload)
 };
 
-// makes types and cookies keys unique.
+// makes types and keys unique.
 MakeUnique(AzureActiveDirectoryAction.Type);
 
 export default Object.freeze(AzureActiveDirectoryAction);

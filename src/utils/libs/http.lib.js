@@ -3,10 +3,10 @@
  * utilities using axios.
  *
  * @summary Http utils for fetching/requests.
- * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.cl>
+ * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-08-14 16:40:14
- * Last modified  : 2020-08-14 19:29:47
+ * Last modified  : 2020-08-15 21:55:57
  */
 
 import axios from 'axios';
@@ -41,7 +41,7 @@ export const HttpMethod = {
  * @param {string} baseURL base URL.
  * @param {object} [headers] default headers.
  *
- * @return {AxiosInstance} axios http client.
+ * @returns {AxiosInstance} axios http client.
  */
 export function createHttpClient(baseURL, headers)
 {
