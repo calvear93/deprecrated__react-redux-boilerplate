@@ -8,7 +8,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:24:07
- * Last modified  : 2020-08-14 11:25:44
+ * Last modified  : 2020-08-15 20:43:50
  */
 
 import { lazy } from 'react';
@@ -27,7 +27,7 @@ const Pages = {
 
 // routers container.
 const Routers = {
-    ProfileRouter: lazy(() => import('routes/profile'))
+    PlaygroundRouter: lazy(() => import('routes/playground'))
 };
 
 export default {
@@ -49,22 +49,22 @@ export default {
         Layout: Layouts.AppLayout,
         Child: Pages.MainPage
     },
-    // profile router with nested paths.
-    ProfileRouter: {
-        key: 'ProfileRouter',
-        title: 'Perfil',
-        path: '/profile', // base path for nested routes.
+    // playground router with nested paths.
+    PlaygroundRouter: {
+        key: 'PlaygroundRouter',
+        title: 'Playground',
+        path: '/playground', // base path for nested routes.
         // specific layout config props.
         layoutConfig: {
             header: {
-                title: 'ENCABEZADO DEL PERFIL'
+                title: 'ÁREA DE PLAYGROUND'
             },
             footer: {
-                text: 'PIE DE PÁGINA DEL PERFIL'
+                text: 'PIE DE PÁGINA'
             }
         },
         Layout: Layouts.AppLayout,
-        Child: Routers.ProfileRouter
+        Child: Routers.PlaygroundRouter
     },
     // on unauthorized access.
     Unauthorized: {

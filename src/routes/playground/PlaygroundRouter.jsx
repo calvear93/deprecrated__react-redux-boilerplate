@@ -1,6 +1,6 @@
 import React from 'react';
 import Router from 'routes/router';
-import ProfileRoutes from './profile.routes';
+import ProfileRoutes from './playground.routes';
 
 // routes array.
 const Routes = Object.values(ProfileRoutes);
@@ -15,13 +15,13 @@ const Redirects = [
 ];
 
 /**
- * Profile routing handler.
+ * Playground routing handler.
  *
- * @returns {React.ReactElement} Profile router.
+ * @returns {React.ReactElement} Playground router.
  */
-export default function ProfileRouter()
+export default function PlaygroundRouter()
 {
     return (
-        <Router routes={ Routes } redirects={ Redirects } message='Cargando Perfil' />
+        <Router routes={ Routes } redirects={ Redirects } message='Cargando Playground' />
     );
 }

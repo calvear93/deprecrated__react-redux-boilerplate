@@ -5,7 +5,7 @@ const request = createHttpClient(process.env.REACT_APP_WEB_API_HOST);
 
 export default {
     // demo service.
-    User: {
+    Users: {
         /**
          * Returns users list.
          *

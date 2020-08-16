@@ -1,12 +1,12 @@
 import { routes as appRoutes } from './app';
-import { routes as profileRoutes } from './profile';
+import { routes as playgroundRoutes } from './playground';
 
 /**
  * Extract route paths from
  * routes definitions as path -> title.
  *
  * @param {object} routes routes definitions.
- * @param {string} basePath base path.
+ * @param {string} [basePath] base path.
  *
  * @returns {any} routes.
  */
@@ -25,7 +25,7 @@ function ExtractRoutes(routes, basePath = '')
 // arms routes container.
 export const routes = {
     ...ExtractRoutes(appRoutes),
-    ...ExtractRoutes(profileRoutes, '/profile')
+    ...ExtractRoutes(playgroundRoutes, '/playground')
 };
 
 // main router for App.
