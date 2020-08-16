@@ -1,5 +1,4 @@
 import { CreateAction, MakeUnique } from 'store/shared/action.lib';
-import { StorageType } from 'utils/libs/storage.lib';
 
 /**
  * store partition key.
