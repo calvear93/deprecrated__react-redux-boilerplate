@@ -6,10 +6,18 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-08-14 16:40:14
- * Last modified  : 2020-08-15 21:55:57
+ * Last modified  : 2020-08-16 12:55:08
  */
 
 import axios from 'axios';
+import HttpStatus from 'http-status-codes';
+
+/**
+ * Http Status Codes.
+ *
+ * @type {object}
+ */
+export { HttpStatus };
 
 /**
  * Http Methods.
@@ -46,7 +54,7 @@ export const HttpMethod = {
 export function createHttpClient(baseURL, headers)
 {
     // creates an axios instance pre-configured.
-    return axios.create({
+    const client = axios.create({
         baseURL,
         headers: {
             'Content-Type': 'application/json; charset=utf-8',
@@ -58,4 +66,38 @@ export function createHttpClient(baseURL, headers)
         responseType: 'application/json',
         responseEncoding: 'utf8'
     });
+
+    // error handler.
+    client.interceptors.response.use(undefined, (error) =>
+    {
+        errorMessageInterceptor(error);
+        throw error;
+    });
+
+    return client;
+}
+
+/**
+ * Axios interceptor for
+ * change error message.
+ *
+ * @param {AxiosError} error axios error object.
+ */
+function errorMessageInterceptor(error)
+{
+    if (!error.response)
+    {
+        error.message = 'Error de conexión';
+
+        return;
+    }
+
+    const { status, statusText } = error.response;
+
+    // modifies error message.
+    switch (status)
+    {
+        default:
+            error.message = `Solicitud ha fallado por '${statusText}' [${status}]`;
+    }
 }
