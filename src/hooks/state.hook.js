@@ -11,20 +11,15 @@ import { useState } from 'react';
 export function useObjectState(def)
 {
     const [ state, setState ] = useState(def);
-    // for multiple setState triggering, it
-    // var prevents to loose accumulative
-    // changes for entire object.
-    let accumulator;
 
     return [
         state,
         (key, value) =>
         {
-            accumulator = {
-                ...(accumulator ?? state),
+            setState((prevState) => ({
+                ...prevState,
                 [key]: value
-            };
-            setState(accumulator);
+            }));
         }
     ];
 }
