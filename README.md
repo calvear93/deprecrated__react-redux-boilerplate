@@ -161,7 +161,7 @@ Variables for change.
 -   [Material Design Icons](https://materialdesignicons.com/)
 -   [Material Design Icons Animations](https://l-lin.github.io/)
 
-## Libraries integrated and recommended 🛠️
+## Libraries could be useful 🛠️
 
 -   [DevExtreme](https://js.devexpress.com/Overview/React/)
 -   [date-fns](https://date-fns.org/docs/Getting-Started)
@@ -189,6 +189,7 @@ Variables for change.
 -   [react-rnd](https://github.com/bokuweb/react-rnd)
 -   [react-spinners](https://github.com/davidhu2000/react-spinners)
 -   [react-epic-spinners](https://www.npmjs.com/package/react-epic-spinners)
+-   [mathjs](https://mathjs.org/)
 
 ## License 📄
 
