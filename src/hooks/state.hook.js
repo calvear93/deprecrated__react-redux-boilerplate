@@ -11,7 +11,7 @@ import { stackActions, stackReducer } from 'hooks/helpers/stack.reducer';
  *
  * @returns {array} state and set function.
  */
-export function useObjectState(def)
+export function useDictionary(def)
 {
     const [ state, setState ] = useState(def ?? {});
 
