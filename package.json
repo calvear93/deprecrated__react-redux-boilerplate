@@ -60,7 +60,7 @@
     "@testing-library/user-event": "^12.1.1",
     "env-cmd": "^10.1.0",
     "eslint-plugin-jest": "^23.20.0",
-    "eslint-plugin-react-hooks": "^4.0.8",
+    "eslint-plugin-react-hooks": "^4.1.0",
     "eslint-plugin-react-redux": "^3.1.0",
     "jest": "^26.4.0",
     "miragejs": "^0.1.40",
