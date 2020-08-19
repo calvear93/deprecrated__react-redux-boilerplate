@@ -13,7 +13,7 @@ import { stackActions, stackReducer } from 'hooks/helpers/stack.reducer';
  */
 export function useObjectState(def)
 {
-    const [ state, setState ] = useState(def);
+    const [ state, setState ] = useState(def ?? {});
 
     return [
         state,
