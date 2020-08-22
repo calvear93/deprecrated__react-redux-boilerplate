@@ -6,6 +6,7 @@
 #
 # Branches environments are defined below:
 # master -> production
+# stage -> staging
 # release/* -> qa
 # develop -> development
 # hotfix/* -> development
@@ -16,6 +17,7 @@ trigger:
   branches:
     include:
       - master
+      - stage
       - release/*
       - develop
       - hotfix/*
@@ -36,6 +38,15 @@ variables:
     azureSubscription: 'ASC-Project-PROD'
     webapp: 'wa-prod-project'
     environmentBuild: production
+
+  # staging environment variables definition.
+  ${{ if startsWith(variables['Build.SourceBranch'], 'refs/heads/stage') }}:
+    environmentName: 'STAGING'
+    environment: 'DEPLOY_WEB_STAGING'
+    azureSubscription: 'ASC-Project-STAGING'
+    webapp: 'wa-stg-project'
+    environmentBuild: staging
+
   # qa environment variables definition.
   ${{ if startsWith(variables['Build.SourceBranch'], 'refs/heads/release/') }}:
     environmentName: 'QA'
@@ -43,6 +54,7 @@ variables:
     azureSubscription: 'ASC-Project-QA'
     webapp: 'wa-qa-project'
     environmentBuild: qa
+
   # development environment variables definition.
   ${{ if or(eq(variables['Build.SourceBranch'], 'refs/heads/develop'), startsWith(variables['Build.SourceBranch'], 'refs/heads/hotfix/')) }}:
     environmentName: 'DESA'

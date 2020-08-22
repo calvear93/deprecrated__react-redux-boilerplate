@@ -1,0 +1,56 @@
+@import '~tippy.js/dist/tippy.css', '~tippy.js/animations/scale-extreme.css',
+    '~tippy.js/themes/light-border.css';
+
+div[data-tippy-root] {
+    width: max-content;
+}
+
+.tooltip-container {
+    margin: .3em .6em;
+    font-size: .9em;
+
+    &.bold {
+        font-weight: bolder;
+    }
+
+    &.italic {
+        font-style: italic;
+    }
+
+    &.underline {
+        text-decoration: underline;
+    }
+
+    &.overline {
+        text-decoration: overline;
+    }
+
+    &.line-through {
+        text-decoration: line-through;
+    }
+
+    &.tiny {
+        font-size: .5em;
+    }
+
+    &.small {
+        font-size: .7em;
+    }
+
+    &.medium {
+        font-size: .8em;
+    }
+
+    &.large {
+        font-size: 1.1em;
+    }
+
+    &.big {
+        font-size: 1.2em;
+    }
+}
+
+.tooltip-info {
+    max-width: 12em;
+    text-align: left;
+}

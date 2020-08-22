@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
-import SampleForm from 'components/shared/form/SampleForm';
-import { Button } from 'semantic-ui-react';
-import Toast from 'utils/libs/toast.lib';
 import { BallTriangleLoader } from 'assets/loaders';
+import SampleForm from 'components/shared/form/SampleForm';
+import Tooltip from 'components/shared/tooltip';
+import React, { useEffect } from 'react';
+import { Button } from 'semantic-ui-react';
 import Swal from 'utils/libs/swal.lib';
+import Toast from 'utils/libs/toast.lib';
 
 /**
  * Main page.
@@ -24,7 +25,9 @@ export default function Demo2()
 
     return (
         <>
-            <BallTriangleLoader style={ { stroke: 'green' } } />
+            <Tooltip content='holitas' textType={ [ 'bold', 'medium' ] }>
+                <BallTriangleLoader style={ { stroke: 'green' } } />
+            </Tooltip>
             <SampleForm />
             <Button
                 type='submit'
