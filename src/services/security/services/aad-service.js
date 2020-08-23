@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-23 19:53:33
- * Last modified  : 2020-08-08 12:14:11
+ * Last modified  : 2020-08-23 19:42:31
  */
 
 import { types, DEFAULT_SCOPES } from '../config';
@@ -20,10 +20,12 @@ const AuthenticationService = {
      * Acquire new token for use.
      * JWT Decoding page: @see https://jwt.io/
      *
+     * @param {object} [params] function args.
      * @param {array} scopes array of scopes allowed.
+     *
      * @returns {Promise<any>} token container.
      */
-    acquireTokenSilent(scopes = DEFAULT_SCOPES)
+    acquireTokenSilent({ scopes = DEFAULT_SCOPES } = {})
     {
         return AuthenticationContext.acquireTokenSilent({ scopes });
     },
@@ -32,10 +34,12 @@ const AuthenticationService = {
      * Acquire new token for use.
      * JWT Decoding page: @see https://jwt.io/
      *
-     * @param {array} scopes array of scopes allowed.
+     * @param {object} [params] function args.
+     * @param {array} params.scopes array of scopes allowed.
+     *
      * @returns {Promise<any>} token container.
      */
-    acquireToken(scopes = DEFAULT_SCOPES)
+    acquireToken({ scopes = DEFAULT_SCOPES } = {})
     {
         return new Promise((resolve, reject) =>
         {

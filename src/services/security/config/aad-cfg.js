@@ -7,7 +7,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-04-15 19:51:39
- * Last modified  : 2020-08-08 12:12:16
+ * Last modified  : 2020-08-23 19:43:11
  */
 
 import types from './aad-types';
@@ -67,7 +67,7 @@ const cache = {
  * - navigateFrameWait            - sets the wait time for hidden iFrame navigation
  */
 const system = {
-    loadFrameTimeout: 6000,
+    loadFrameTimeout: 30000, // increase this value if client throws renewal token timeout error.
     tokenRenewalOffsetSeconds: TOKEN_REFRESH_PERIOD,
     navigateFrameWait: 200
 };

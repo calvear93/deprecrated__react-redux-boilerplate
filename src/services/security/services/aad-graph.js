@@ -5,12 +5,12 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-23 19:53:33
- * Last modified  : 2020-08-08 12:14:06
+ * Last modified  : 2020-08-23 19:42:52
  */
 
 import axios from 'axios';
 import { types, DEFAULT_SCOPES } from '../config';
-import AuthenticationContext from './aad-context';
+import AuthenticationService from './aad-service';
 
 // Graph API helper.
 const Graph = {
@@ -28,7 +28,7 @@ const Graph = {
     {
         return new Promise((resolve, reject) =>
         {
-            AuthenticationContext.acquireTokenSilent({ scopes: DEFAULT_SCOPES })
+            AuthenticationService.acquireToken({ scopes: DEFAULT_SCOPES })
                 .then(response =>
                 {
                     const token = response.accessToken;
