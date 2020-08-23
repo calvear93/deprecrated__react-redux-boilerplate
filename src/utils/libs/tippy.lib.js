@@ -13,10 +13,11 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:36:01
- * Last modified  : 2020-06-29 15:38:19
+ * Last modified  : 2020-08-23 17:16:35
  */
 
 import tippy from 'tippy.js';
+import 'styles/modules/tippy.scss';
 
 /**
  * Initializes Tippy tooltip.

@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import Tippy from '@tippyjs/react';
-import './tippy.scss';
+import 'styles/modules/tippy.scss';
 
 /**
  * Wrapper for Tippy tooltip.
