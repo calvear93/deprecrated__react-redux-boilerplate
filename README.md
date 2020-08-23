@@ -191,6 +191,7 @@ Variables for change.
 -   [react-epic-spinners](https://www.npmjs.com/package/react-epic-spinners)
 -   [mathjs](https://mathjs.org/)
 -   [react-fine-uploader](https://github.com/FineUploader/react-fine-uploader)
+-   [ahooks](https://github.com/alibaba/hooks)
 
 ## License 📄
 
