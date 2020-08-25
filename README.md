@@ -87,6 +87,7 @@ Project has 3 environments base for project building.
 
 -   **development**: environment with breaking changes and new features.
 -   **qa**: environment for testing and quality assurance.
+-   **staging**: pre-production environment.
 -   **production**: productive environment.
 
 Also, pipeline has automated deployments depending of branch updated.
@@ -94,6 +95,7 @@ Also, pipeline has automated deployments depending of branch updated.
 -   **feature/\***: new features/requirements, it doesn't deploys to any environment.
 -   **develop**: accumulates new features for current sprint development, it deploys to 'development' environment.
 -   **release/\***: has features of last release, it deploys to 'QA' environment.
+-   **stage**: pre-production, for stability assurance, it deploys to 'staging' environment.
 -   **master**: releases tested and certified from 'QA' environment, it deploys to 'production' environment.
 -   **hotfix/\***: specific fixes from master, it deploys to 'development' environment.
 
@@ -138,6 +140,7 @@ Use included Azure Pipeline for CiCD - edit [azure-pipeline.yml](azure-pipeline.
 Branches environments are defined as:
 
 -   **master**: production
+-   **stage/\***: staging
 -   **release/\***: qa
 -   **develop**: development
 -   **hotfix/\***: development
