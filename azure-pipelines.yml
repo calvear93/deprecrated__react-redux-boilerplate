@@ -129,7 +129,7 @@ stages:
           includeRootFolder: false
         displayName: 'Packaging files'
 
-      - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+      - publish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
         artifact: artifact
         displayName: 'Uploading files to pipeline'
 
