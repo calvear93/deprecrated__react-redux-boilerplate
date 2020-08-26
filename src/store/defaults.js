@@ -12,4 +12,9 @@
 export const SampleDefaults = {};
 
 // aad authentication defaults.
-export const AuthenticationDefaults = {};
+export const AuthenticationDefaults = {
+    authenticated: false,
+    account: {
+        user: {}
+    }
+};

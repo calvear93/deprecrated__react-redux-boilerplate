@@ -19,9 +19,11 @@ const Redirects = [
  *
  * @returns {React.ReactElement} Application main router.
  */
-export default function AppRouter()
+function AppRouter()
 {
     return (
         <Router routes={ Routes } redirects={ Redirects } message='Cargando' />
     );
 }
+
+export default React.memo(AppRouter);

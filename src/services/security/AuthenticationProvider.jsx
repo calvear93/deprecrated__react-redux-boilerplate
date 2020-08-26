@@ -32,7 +32,7 @@ export const AuthenticationSecurityMode = {
  *
  * @returns {React.ReactElement} children on authenticated, error redirection in otherwise.
  */
-export default function AuthenticationProvider({
+function AuthenticationProvider({
     children,
     mode = AuthenticationSecurityMode.WHITELIST,
     list = [],
@@ -58,3 +58,5 @@ export default function AuthenticationProvider({
         <Loader message='Autenticando' />
     );
 }
+
+export default React.memo(AuthenticationProvider);

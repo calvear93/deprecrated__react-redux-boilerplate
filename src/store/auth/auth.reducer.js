@@ -28,7 +28,13 @@ export default function AuthenticationReducer(store = AuthenticationDefaults, ac
                 authenticated: true,
                 account: {
                     ...account,
-                    context: payload
+                    context: payload,
+                    user: {
+                        displayName: payload.name,
+                        givenName: payload.name,
+                        mail: payload.userName,
+                        ...account.user
+                    }
                 }
             };
         }

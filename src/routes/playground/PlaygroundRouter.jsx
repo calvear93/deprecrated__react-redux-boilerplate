@@ -19,9 +19,11 @@ const Redirects = [
  *
  * @returns {React.ReactElement} Playground router.
  */
-export default function PlaygroundRouter()
+function PlaygroundRouter()
 {
     return (
         <Router routes={ Routes } redirects={ Redirects } message='Cargando Playground' />
     );
 }
+
+export default React.memo(PlaygroundRouter);
