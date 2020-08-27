@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 22:43:58
- * Last modified  : 2020-08-15 22:56:40
+ * Last modified  : 2020-08-27 11:35:25
  */
 
 import { call, race, take, delay } from 'redux-saga/effects';
@@ -20,7 +20,7 @@ import storage, { StorageType } from 'utils/libs/storage.lib';
  *
  * @returns {IterableIterator<any>} actions results.
  */
-export function* waitForAny(types, times, timeout = 0)
+export function* takeAny(types, times, timeout = 0)
 {
     // stores every result of action intercepted.
     let results = [];
