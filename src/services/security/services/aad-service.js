@@ -28,7 +28,7 @@ export default {
      */
     acquireTokenSilent({ scopes = DEFAULT_SCOPES } = {})
     {
-        if (AuthenticationContext.getAcquireTokenInProgress())
+        if (this.AcquireTokenPromise && AuthenticationContext.getAcquireTokenInProgress())
             return this.AcquireTokenPromise;
 
         AuthenticationContext.setAcquireTokenInProgress(true);
