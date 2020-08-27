@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-23 19:53:33
- * Last modified  : 2020-08-27 15:39:40
+ * Last modified  : 2020-08-27 16:41:10
  */
 
 import { types, DEFAULT_SCOPES } from '../config';
@@ -28,7 +28,13 @@ export default {
      */
     acquireTokenSilent({ scopes = DEFAULT_SCOPES } = {})
     {
-        return this.AcquireTokenPromise ?? (this.AcquireTokenPromise = AuthenticationContext.acquireTokenSilent({ scopes }));
+        if (AuthenticationContext.getAcquireTokenInProgress())
+            return this.AcquireTokenPromise;
+
+        AuthenticationContext.setAcquireTokenInProgress(true);
+
+        return (this.AcquireTokenPromise = AuthenticationContext.acquireTokenSilent({ scopes }))
+            .finally(() => AuthenticationContext.setAcquireTokenInProgress(false));
     },
 
     /**
