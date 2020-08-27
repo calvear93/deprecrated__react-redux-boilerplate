@@ -5,52 +5,52 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-23 19:53:33
- * Last modified  : 2020-08-23 19:42:31
+ * Last modified  : 2020-08-27 15:39:40
  */
 
 import { types, DEFAULT_SCOPES } from '../config';
 import AuthenticationContext from './aad-context';
 
-const AuthenticationService = {
+export default {
 
     // Authentication context.
     Context: AuthenticationContext,
+
+    // saves current token acquisition request.
+    AcquireTokenPromise: null,
 
     /**
      * Acquire new token for use.
      * JWT Decoding page: @see https://jwt.io/
      *
-     * @param {object} [params] function args.
      * @param {array} scopes array of scopes allowed.
-     *
      * @returns {Promise<any>} token container.
      */
     acquireTokenSilent({ scopes = DEFAULT_SCOPES } = {})
     {
-        return AuthenticationContext.acquireTokenSilent({ scopes });
+        return this.AcquireTokenPromise ?? (this.AcquireTokenPromise = AuthenticationContext.acquireTokenSilent({ scopes }));
     },
 
     /**
      * Acquire new token for use.
      * JWT Decoding page: @see https://jwt.io/
      *
-     * @param {object} [params] function args.
-     * @param {array} params.scopes array of scopes allowed.
-     *
+     * @param {array} scopes array of scopes allowed.
      * @returns {Promise<any>} token container.
      */
     acquireToken({ scopes = DEFAULT_SCOPES } = {})
     {
         return new Promise((resolve, reject) =>
         {
-            AuthenticationContext.acquireTokenSilent({ scopes })
+            this.acquireTokenSilent({ scopes })
                 .then((account) => resolve(account))
                 .catch(() =>
                 {
                     AuthenticationContext.acquireTokenPopup({ scopes })
                         .then((token) => resolve(token))
                         .catch((err) => reject(err));
-                });
+                })
+                .finally(() => this.AcquireTokenPromise = null);
         });
     },
 
@@ -73,7 +73,7 @@ const AuthenticationService = {
                 .then((account) => resolve(account))
                 .catch(() =>
                 {
-                    AuthenticationService.login({ loginHint, scopes, forceTokenRefresh: true })
+                    this.login({ loginHint, scopes, forceTokenRefresh: true })
                         .then((account) => resolve(account))
                         .catch((err) => reject(err));
                 });
@@ -187,5 +187,3 @@ const AuthenticationService = {
         return null;
     }
 };
-
-export default AuthenticationService;
