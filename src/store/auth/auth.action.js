@@ -61,7 +61,7 @@ const AuthenticationHandler =
     Action: (type, payload) => CreateAction(AuthenticationHandler.Key, type, payload)
 };
 
-// makes types and keys unique.
-MakeUnique(AuthenticationHandler.Type);
+// makes action types unique depending of partition.
+MakeUnique(KEY, AuthenticationHandler.Type);
 
 export default Object.freeze(AuthenticationHandler);

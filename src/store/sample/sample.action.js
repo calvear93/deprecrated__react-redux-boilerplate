@@ -56,7 +56,7 @@ const SampleHandler =
     Action: (type, payload) => CreateAction(SampleHandler.Key, type, payload)
 };
 
-// makes types unique.
-MakeUnique(SampleHandler.Type);
+// makes action types unique depending of partition.
+MakeUnique(KEY, SampleHandler.Type);
 
 export default Object.freeze(SampleHandler);
