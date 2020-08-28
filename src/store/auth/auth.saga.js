@@ -1,7 +1,12 @@
+import { addDays } from 'date-fns';
 import { all, call, put, takeLatest } from 'redux-saga/effects';
 import { AuthenticationService, GraphService } from 'services/security';
-import { callPersistedInLocalStorage } from 'store/shared/saga.lib';
+import { memoCallInLocalStorage } from 'store/shared/saga.lib';
 import AuthenticationHandler from './auth.action';
+
+// info expiration dates.
+const infoExpirationDate = addDays(new Date(), +process.env.REACT_APP_AAD_USER_INFO_MEMO_EXPIRATION_DAYS);
+const photoExpirationDate = addDays(new Date(), +process.env.REACT_APP_AAD_USER_PHOTO_MEMO_EXPIRATION_DAYS);
 
 /**
  * Executes azure active directory authentication.
@@ -50,7 +55,11 @@ function* getUserInfo({ payload: accountIdentifier })
     try
     {
         // gets user detailed info.
-        const user = yield callPersistedInLocalStorage(`${accountIdentifier}_info`, GraphService.me);
+        const user = yield memoCallInLocalStorage(
+            `${accountIdentifier}_info`,
+            infoExpirationDate,
+            GraphService.me
+        );
 
         // success.
         yield put(AuthenticationHandler.Action(
@@ -81,8 +90,9 @@ function* getUserPhoto({ payload: accountIdentifier })
     try
     {
         // gets user photo.
-        const photo = yield callPersistedInLocalStorage(
+        const photo = yield memoCallInLocalStorage(
             `${accountIdentifier}_photo`,
+            photoExpirationDate,
             GraphService.photoWithSize,
             process.env.REACT_APP_AAD_USER_PHOTO_SIZE
         );

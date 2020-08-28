@@ -18,6 +18,8 @@ module.exports = Promise.resolve({
 		REACT_APP_AAD_LOGIN_ACTION_REDIRECT: '/auth', // blank page for auth redirect and load token refresh iframe.
 		REACT_APP_AAD_LOGOUT_ACTION_REDIRECT: null,
 		REACT_APP_AAD_USER_PHOTO_SIZE: '120x120',
+		REACT_APP_AAD_USER_INFO_MEMO_EXPIRATION_DAYS: 1,
+		REACT_APP_AAD_USER_PHOTO_MEMO_EXPIRATION_DAYS: 3,
 
 		REACT_APP_WEB_API_HOST: 'https://ws-desa-project.azurewebsites.net'
 	},

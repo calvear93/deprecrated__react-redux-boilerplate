@@ -7,10 +7,11 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-08-13 19:40:14
- * Last modified  : 2020-08-15 21:56:03
+ * Last modified  : 2020-08-28 16:28:08
  */
 
 import storage from 'store2';
+import { isBefore } from 'date-fns';
 
 /**
  * Storage types.
@@ -34,19 +35,21 @@ export default storage;
  *
  * @param {string} key persisted value accessor.
  * @param {Promise<any>} promise async callback.
- * @param {string} [storageType] storage type.
+ * @param {object} [options] options.
+ * @param {Date | null} [options.expiration] expiration date.
+ * @param {string} [options.storageType] storage type.
  *
  * @returns {Promise<any>} cached/persisted value or promise result.
  */
-export async function persistAsyncCallbackInStorage(key, promise, storageType = StorageType.SESSION)
+export async function memoAsyncCallback(key, promise, { expiration, storageType = StorageType.SESSION } = {})
 {
     const cache = storage[storageType].get(key);
 
-    if (cache)
-        return Promise.resolve(cache);
+    if (cache && cache !== 'undefined' && cache.expiration && isBefore(new Date(), new Date(cache.expiration)))
+        return Promise.resolve(cache.data);
 
     const data = await promise;
-    storage[storageType].set(key, data);
+    storage[storageType].set(key, { expiration, data });
 
     return data;
 }
