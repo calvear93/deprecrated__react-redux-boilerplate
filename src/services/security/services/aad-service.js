@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-23 19:53:33
- * Last modified  : 2020-08-27 20:35:17
+ * Last modified  : 2020-08-28 09:50:32
  */
 
 import { types, DEFAULT_SCOPES } from '../config';
@@ -69,12 +69,7 @@ export default {
 
             this.acquireTokenSilent({ scopes })
                 .then((account) => resolve(account))
-                .catch(() =>
-                {
-                    AuthenticationContext.acquireTokenRedirect({ scopes })
-                        .then((token) => resolve(token))
-                        .catch((err) => reject(err));
-                });
+                .catch((err) => reject(err));
         });
     },
 

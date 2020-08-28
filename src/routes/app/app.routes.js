@@ -8,7 +8,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:24:07
- * Last modified  : 2020-08-15 20:43:50
+ * Last modified  : 2020-08-28 09:56:46
  */
 
 import { lazy } from 'react';
@@ -65,6 +65,15 @@ export default {
         },
         Layout: Layouts.AppLayout,
         Child: Routers.PlaygroundRouter
+    },
+    // blank html page for load authentication iframe to refresh the token,
+    // also, you should set REACT_APP_AAD_LOGIN_ACTION_REDIRECT as '/auth' route.
+    AuthPage: {
+        key: 'Auth',
+        title: 'Autenticando',
+        path: '/auth',
+        exact: true,
+        Child: () => null
     },
     // on unauthorized access.
     Unauthorized: {
