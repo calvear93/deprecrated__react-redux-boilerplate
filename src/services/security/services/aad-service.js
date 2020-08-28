@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-23 19:53:33
- * Last modified  : 2020-08-27 16:41:10
+ * Last modified  : 2020-08-27 20:35:17
  */
 
 import { types, DEFAULT_SCOPES } from '../config';
@@ -20,10 +20,23 @@ export default {
     AcquireTokenPromise: null,
 
     /**
+     * Retrieves current access token cached.
+     *
+     * @param {array} scopes array of scopes allowed.
+     *
+     * @returns {object} account with cached token.
+     */
+    acquireTokenInCache({ scopes = DEFAULT_SCOPES } = {})
+    {
+        return AuthenticationContext.getCachedTokenInternal(scopes, AuthenticationContext.getAccount());
+    },
+
+    /**
      * Acquire new token for use.
      * JWT Decoding page: @see https://jwt.io/
      *
      * @param {array} scopes array of scopes allowed.
+     *
      * @returns {Promise<any>} token container.
      */
     acquireTokenSilent({ scopes = DEFAULT_SCOPES } = {})
@@ -42,21 +55,26 @@ export default {
      * JWT Decoding page: @see https://jwt.io/
      *
      * @param {array} scopes array of scopes allowed.
+     *
      * @returns {Promise<any>} token container.
      */
     acquireToken({ scopes = DEFAULT_SCOPES } = {})
     {
         return new Promise((resolve, reject) =>
         {
+            const cached = this.acquireTokenInCache(scopes);
+
+            if (cached && cached.accessToken)
+                resolve(cached);
+
             this.acquireTokenSilent({ scopes })
                 .then((account) => resolve(account))
                 .catch(() =>
                 {
-                    AuthenticationContext.acquireTokenPopup({ scopes })
+                    AuthenticationContext.acquireTokenRedirect({ scopes })
                         .then((token) => resolve(token))
                         .catch((err) => reject(err));
-                })
-                .finally(() => this.AcquireTokenPromise = null);
+                });
         });
     },
 
