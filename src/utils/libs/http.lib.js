@@ -6,7 +6,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-08-14 16:40:14
- * Last modified  : 2020-08-16 12:55:08
+ * Last modified  : 2020-08-28 20:32:52
  */
 
 import axios from 'axios';
@@ -63,7 +63,7 @@ export function createHttpClient(baseURL, headers)
             // 'Access-Control-Allow-Headers': 'Content-Type, Authorization, Content-Length, X-Requested-With, Accept',
             ...headers
         },
-        responseType: 'application/json',
+        responseType: 'json',
         responseEncoding: 'utf8'
     });
 
