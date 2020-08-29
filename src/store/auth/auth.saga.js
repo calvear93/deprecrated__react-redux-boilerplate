@@ -1,3 +1,4 @@
+import storage from 'utils/libs/storage.lib';
 import { addDays } from 'date-fns';
 import { all, call, put, takeLatest } from 'redux-saga/effects';
 import { AuthenticationService, GraphService } from 'services/security';
@@ -120,9 +121,10 @@ function* getUserPhoto({ payload: accountIdentifier })
  */
 function logout()
 {
-    // logouts user by AAD service.
-    AuthenticationService.logout();
+    // clear app cache and logouts user by AAD service.
+    storage.clear();
     AuthenticationService.clearCache();
+    AuthenticationService.logout();
 }
 
 /**
