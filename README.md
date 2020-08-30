@@ -1,4 +1,4 @@
-# REACT & REDUX BOILERPLATE
+# REACT SPA BOILERPLATE
 
 ## [GITHUB REPOSITORY](https://github.com/calvear93/react-redux-boilerplate)
 
@@ -83,7 +83,7 @@ This is a boilerplate for React SPA application using [React](https://es.reactjs
 
 ## Branches and Environments 📋
 
-Project has 3 environments base for project building.
+Project has 4 environments base for project building.
 
 -   **development**: environment with breaking changes and new features.
 -   **qa**: environment for testing and quality assurance.
@@ -135,7 +135,7 @@ For correct interpretation of linters, is recommended to use [Visual Studio Code
 
 ## Deployment 📦
 
-Use included Azure Pipeline for CiCD - edit [azure-pipeline.yml](azure-pipeline.yml) file for custom projects variables.
+Use included Azure Pipeline for CI/CD - edit [azure-pipeline.yml](azure-pipeline.yml) file for custom projects variables.
 
 Branches environments are defined as:
 
@@ -151,7 +151,7 @@ Variables for change.
 -   **environment**: Azure DevOps environment for setup approvers/reviewers.
 -   **azureSubscription**: Subscription configured with a SPN.
 -   **webapp**: WebApp resource name, previously created with Terraform/Azure.
--   **environmentBuild**: React app building environment. (development/qa/production).
+-   **environmentBuild**: React app building environment. (development/qa/staging/production).
 
 ## Built with 🛠️
 
@@ -167,6 +167,8 @@ Variables for change.
 ## Libraries could be useful 🛠️
 
 -   [DevExtreme](https://js.devexpress.com/Overview/React/)
+-   [rxjs](https://rxjs-dev.firebaseapp.com/)
+-   [rxjs-hooks](https://github.com/LeetCode-OpenSource/rxjs-hooks)
 -   [date-fns](https://date-fns.org/docs/Getting-Started)
 -   [react-use](https://github.com/streamich/react-use)
 -   [fast-deep-equal](https://github.com/epoberezkin/fast-deep-equal#readme)
