@@ -1,13 +1,11 @@
 /**
  * Some utilities for strings processing.
  *
- * @see https://vocajs.com/
- *
  * @summary String processing utilities.
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:39:47
- * Last modified  : 2020-08-14 12:41:49
+ * Last modified  : 2020-08-31 09:15:09
  */
 
 /**
