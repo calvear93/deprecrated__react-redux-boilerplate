@@ -1,4 +1,4 @@
-import { CreateAction, MakeUnique } from 'store/shared/action.lib';
+import { createAction, makeUnique } from 'store/shared/action.lib';
 
 /**
  * store partition key.
@@ -58,10 +58,35 @@ const AuthenticationHandler =
      *
      * @returns {object} action.
      */
-    Action: (type, payload) => CreateAction(AuthenticationHandler.Key, type, payload)
+    Action: (type, payload) => createAction(AuthenticationHandler.Key, type, payload),
+
+    /**
+     * Creates AUTHENTICATE action.
+     * Initiates authentication logic
+     * for Single Sign-On or login.
+     *
+     * @param {string} type login type (loginRedirect or loginPopup).
+     *
+     * @memberof AuthenticationHandler
+     *
+     * @returns {object} action.
+     */
+    Authenticate: (type) => createAction(KEY, AuthenticationHandler.Type.AUTHENTICATE, type),
+
+    /**
+     * Creates LOGOUT action.
+     * Clears session cache and
+     * redirects to Microsoft
+     * Account logout page.
+     *
+     * @memberof AuthenticationHandler
+     *
+     * @returns {object} action.
+     */
+    Logout: () => createAction(KEY, AuthenticationHandler.Type.LOGOUT)
 };
 
 // makes action types unique depending of partition.
-MakeUnique(KEY, AuthenticationHandler.Type);
+makeUnique(KEY, AuthenticationHandler.Type);
 
 export default Object.freeze(AuthenticationHandler);

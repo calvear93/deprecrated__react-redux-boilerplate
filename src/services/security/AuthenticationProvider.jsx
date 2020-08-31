@@ -47,7 +47,7 @@ function AuthenticationProvider({
     {
         // dispatches authentication action.
         if (!isAuthorized && !error)
-            dispatch(AuthenticationHandler.Action(AuthenticationHandler.Type.AUTHENTICATE));
+            dispatch(AuthenticationHandler.Authenticate());
     }, [ isAuthorized, error, dispatch ]);
 
     return isAuthorized ? (

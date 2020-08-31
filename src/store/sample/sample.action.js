@@ -1,4 +1,4 @@
-import { CreateAction, MakeUnique } from 'store/shared/action.lib';
+import { createAction, makeUnique } from 'store/shared/action.lib';
 
 /**
  * store partition key.
@@ -53,10 +53,10 @@ const SampleHandler =
      *
      * @returns {object} action.
      */
-    Action: (type, payload) => CreateAction(SampleHandler.Key, type, payload)
+    Action: (type, payload) => createAction(SampleHandler.Key, type, payload)
 };
 
 // makes action types unique depending of partition.
-MakeUnique(KEY, SampleHandler.Type);
+makeUnique(KEY, SampleHandler.Type);
 
 export default Object.freeze(SampleHandler);
