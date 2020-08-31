@@ -21,19 +21,19 @@ module.exports = Promise.resolve({
 		REACT_APP_AAD_USER_INFO_MEMO_EXPIRATION_DAYS: 1,
 		REACT_APP_AAD_USER_PHOTO_MEMO_EXPIRATION_DAYS: 3,
 
-		REACT_APP_WEB_API_HOST: 'https://ws-desa-project.azurewebsites.net'
+		REACT_APP_WEB_API_HOST: 'https://aa-desa-project.azurewebsites.net'
 	},
 
-  // used on tests running.
+  	// used on tests running.
 	test: {
 	},
 
-  // used on project building.
+	// used on project building.
 	build: {
 		//NODE_OPTIONS: '--max_old_space_size=4096', // increases build heap size.
-  },
+	},
 
-  debug: {
+  	debug: {
 		PORT: 3000,
 		REACT_APP_ENV: 'debug',
 		REACT_APP_MOCK_SERVER: false,
@@ -50,6 +50,7 @@ module.exports = Promise.resolve({
 	},
 	staging: {
 		REACT_APP_ENV: 'staging',
+		REACT_APP_MOCK_SERVER: false,
 		REACT_APP_WEB_API_HOST: 'https://aa-stg-project.azurewebsites.net',
 		REACT_APP_AAD_CLIENT_ID: ''
 	},
