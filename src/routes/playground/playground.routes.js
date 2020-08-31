@@ -8,7 +8,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-08-03 16:24:07
- * Last modified  : 2020-08-15 20:46:18
+ * Last modified  : 2020-08-31 09:34:55
  */
 
 import { lazy } from 'react';
@@ -20,27 +20,26 @@ const Pages = {
     QueyDemoPage: lazy(() => import('pages/playground/query-demo'))
 };
 
-export default {
-    // root page.
-    PlaygroundPage: {
-        key: 'Playground',
+export default [
+    {
+        key: 'PlaygroundPage',
         title: 'Playground',
         path: '/', // playground/
         exact: true,
         Child: Pages.PlaygroundPage
     },
-    FormDemoPage: {
-        key: 'FormDemo',
+    {
+        key: 'FormDemoPage',
         title: 'Demostración Formularios',
         path: '/form', // playground/form
         exact: true,
         Child: Pages.FormDemoPage
     },
-    QueyDemoPage: {
-        key: 'QueyDemo',
+    {
+        key: 'QueyDemoPage',
         title: 'Demostración de Ruta dinámica',
         path: '/query/:id', // playground/query/123
         exact: true,
         Child: Pages.QueyDemoPage
     }
-};
+];

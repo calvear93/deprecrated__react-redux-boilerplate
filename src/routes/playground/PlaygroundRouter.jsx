@@ -1,9 +1,6 @@
 import React from 'react';
 import Router from 'routes/router';
-import ProfileRoutes from './playground.routes';
-
-// routes array.
-const Routes = Object.values(ProfileRoutes);
+import Routes from './playground.routes';
 
 // redirects array.
 const Redirects = [

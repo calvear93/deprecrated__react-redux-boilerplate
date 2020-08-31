@@ -8,7 +8,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:24:07
- * Last modified  : 2020-08-28 09:56:46
+ * Last modified  : 2020-08-31 09:36:33
  */
 
 import { lazy } from 'react';
@@ -30,13 +30,14 @@ const Routers = {
     PlaygroundRouter: lazy(() => import('routes/playground'))
 };
 
-export default {
-    // root app page.
-    MainPage: {
-        key: 'Main',
+export default [
+    {
+        key: 'MainPage',
         title: 'Inicio',
         path: '/main',
         exact: true,
+        Layout: Layouts.AppLayout,
+        Child: Pages.MainPage,
         // specific layout config props.
         layoutConfig: {
             header: {
@@ -45,15 +46,15 @@ export default {
             footer: {
                 text: 'PIE DE PÁGINA'
             }
-        },
-        Layout: Layouts.AppLayout,
-        Child: Pages.MainPage
+        }
     },
     // playground router with nested paths.
-    PlaygroundRouter: {
+    {
         key: 'PlaygroundRouter',
         title: 'Playground',
         path: '/playground', // base path for nested routes.
+        Layout: Layouts.AppLayout,
+        Child: Routers.PlaygroundRouter,
         // specific layout config props.
         layoutConfig: {
             header: {
@@ -62,26 +63,24 @@ export default {
             footer: {
                 text: 'PIE DE PÁGINA'
             }
-        },
-        Layout: Layouts.AppLayout,
-        Child: Routers.PlaygroundRouter
+        }
     },
     // blank html page for load authentication iframe to refresh the token,
     // also, you should set REACT_APP_AAD_LOGIN_ACTION_REDIRECT as '/auth' route.
-    AuthPage: {
-        key: 'Auth',
+    {
+        key: 'AuthPage',
         title: 'Autenticando',
         path: '/auth',
         exact: true,
         Child: () => null
     },
     // on unauthorized access.
-    Unauthorized: {
-        key: 'Unauthorized',
+    {
+        key: 'UnauthorizedPage',
         title: 'Sin Autorización',
         path: '/401',
         exact: true,
         Layout: Layouts.BaseLayout,
         Child: Pages.UnauthorizedPage
     }
-};
+];

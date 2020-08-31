@@ -1,9 +1,6 @@
 import React from 'react';
 import Router from 'routes/router';
-import RootRoutes from './app.routes';
-
-// routes array.
-const Routes = Object.values(RootRoutes);
+import Routes from './app.routes';
 
 // redirects array.
 const Redirects = [
