@@ -1,7 +1,7 @@
 #base-layout {
     display: flex;
     flex-direction: column;
-    overflow-wrap: break-word;
-    min-height: 100%;
     align-items: stretch;
+    min-height: 100%;
+    overflow-wrap: break-word;
 }

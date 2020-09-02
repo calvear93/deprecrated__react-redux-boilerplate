@@ -7,20 +7,20 @@
         padding: .4em .6em;
 
         .form-item-header {
+            width: 90%;
             margin-right: .2em;
             margin-bottom: .2em;
             margin-left: .2em;
             padding-bottom: .2em;
-            width: 90%;
             color: color(secondary);
-            font-size: .8em;
             font-weight: bolder;
+            font-size: .8em;
             text-transform: uppercase;
 
             &[required] {
                 &:after {
-                    content: '*';
                     margin-left: .2em;
+                    content: '*';
                 }
             }
         }
@@ -41,14 +41,14 @@
             .ui,
             .DatePicker,
             .dx-datebox {
+                width: 100%;
                 margin: 0;
                 margin-top: auto;
-                width: 100%;
             }
 
             .ui.multiple.dropdown > .label {
-                margin: .3em .2em;
                 width: auto;
+                margin: .3em .2em;
             }
         }
 
@@ -59,21 +59,21 @@
             font-size: .8em;
 
             &:before {
-                content: '\F05D6';
                 margin-right: .4em;
                 font-family: 'Material Design Icons';
+                content: '\F05D6';
             }
         }
     }
 
     .form-separator-container {
         .form-separator {
+            width: 100%;
             margin: 1em .6em .2em;
             padding-bottom: .2em;
-            width: 100%;
             color: color(slate-gray-light);
-            font-size: .9em;
             font-weight: bolder;
+            font-size: .9em;
             text-transform: uppercase;
 
             .ui.section.divider {

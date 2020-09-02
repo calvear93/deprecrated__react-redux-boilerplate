@@ -166,9 +166,9 @@ $schemes: (
 
 .Toastify__toast {
     justify-content: center;
+    direction: ltr;
     border-radius: 8px;
     cursor: pointer;
-    direction: ltr;
     -ms-flex-pack: justify;
     @include box-shadow(toast);
 }
@@ -179,10 +179,10 @@ $schemes: (
 
 i.close.toastify-close-icon {
     display: inline-block;
-    margin: 0;
-    margin-top: -.2em;
     width: .9em;
     height: .9em;
+    margin: 0;
+    margin-top: -.2em;
     color: color(light-gray);
     font-size: .9em;
     font-style: normal;
@@ -191,8 +191,8 @@ i.close.toastify-close-icon {
     transition: .4s ease;
 
     &:before {
-        content: '\F0159'; // mdi-close-circle
         font-family: 'Material Design Icons';
+        content: '\F0159'; // mdi-close-circle
     }
 
     &:hover {
@@ -203,8 +203,8 @@ i.close.toastify-close-icon {
 .toastify-container {
     @each $scheme, $attr in $schemes {
         &.#{$scheme} {
-            background-color: map-get($attr, 'background-color');
             color: map-get($attr, 'font-color');
+            background-color: map-get($attr, 'background-color');
 
             @if map-get($attr, 'icon') {
                 .toastify-body {
@@ -215,12 +215,12 @@ i.close.toastify-close-icon {
                     text-align: left;
 
                     &:before {
-                        content: map-get($attr, 'icon');
                         position: absolute;
                         left: 12px;
                         color: map-get($attr, 'color');
-                        font-family: 'Material Design Icons';
                         font-size: 2.4em;
+                        font-family: 'Material Design Icons';
+                        content: map-get($attr, 'icon');
                     }
                 }
             }
