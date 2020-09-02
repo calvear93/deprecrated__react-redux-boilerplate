@@ -7,7 +7,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-04-15 19:51:39
- * Last modified  : 2020-08-27 16:41:46
+ * Last modified  : 2020-09-01 20:34:46
  */
 
 import types from './aad-types';
@@ -28,6 +28,11 @@ export const LOGOUT_ACTION_REDIRECT = process.env.REACT_APP_AAD_LOGOUT_ACTION_RE
     ? `${window.location.origin}${process.env.REACT_APP_AAD_LOGOUT_ACTION_REDIRECT}`
     : window.location.origin;
 
+// token acquisition route path..
+export const TOKEN_REFRESH_URI = process.env.REACT_APP_AAD_TOKEN_REFRESH_URI !== 'null'
+    ? `${window.location.origin}${process.env.REACT_APP_AAD_TOKEN_REFRESH_URI}`
+    : window.location.origin;
+
 /**
  *  - clientId                    - Client ID of your app registered with our Application registration portal : https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredAppsPreview in Microsoft Identity Platform
  *  - authority                   - You can configure a specific authority, defaults to " " or "https://login.microsoftonline.com/common"
@@ -36,6 +41,7 @@ export const LOGOUT_ACTION_REDIRECT = process.env.REACT_APP_AAD_LOGOUT_ACTION_RE
  *  - redirectUri                 - The redirect URI of the application, this should be same as the value in the application registration portal.Defaults to `window.location.href`.
  *  - postLogoutRedirectUri       - Used to redirect the user to this location after logout. Defaults to `window.location.href`.
  *  - navigateToLoginRequestUrl   - Used to turn off default navigation to start page after login. Default is true. This is used only for redirect flows.
+ *  - tokenRefreshUri             - [CUSTOM!] allows to exports token acquisition iframe route for token refresh logic.
  */
 const auth = {
     clientId: process.env.REACT_APP_AAD_CLIENT_ID,
@@ -44,7 +50,8 @@ const auth = {
     validateAuthority: false,
     redirectUri: LOGIN_ACTION_REDIRECT,
     postLogoutRedirectUri: LOGOUT_ACTION_REDIRECT,
-    navigateToLoginRequestUrl: NAVIGATE_TO_REQUEST_URL_AFTER_LOGIN
+    navigateToLoginRequestUrl: NAVIGATE_TO_REQUEST_URL_AFTER_LOGIN,
+    tokenRefreshUri: TOKEN_REFRESH_URI
 };
 
 /**

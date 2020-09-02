@@ -5,10 +5,10 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-23 19:53:33
- * Last modified  : 2020-08-28 09:50:32
+ * Last modified  : 2020-09-01 20:35:16
  */
 
-import { types, DEFAULT_SCOPES } from '../config';
+import { config, types, DEFAULT_SCOPES } from '../config';
 import AuthenticationContext from './aad-context';
 
 export default {
@@ -45,6 +45,8 @@ export default {
             return this.AcquireTokenPromise;
 
         AuthenticationContext.setAcquireTokenInProgress(true);
+        // sets token refresh uri as redirect uri for iframe load.
+        AuthenticationContext.config.auth.redirectUri = config.auth.tokenRefreshUri;
 
         return (this.AcquireTokenPromise = AuthenticationContext.acquireTokenSilent({ scopes }))
             .finally(() => AuthenticationContext.setAcquireTokenInProgress(false));
