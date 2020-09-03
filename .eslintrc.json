@@ -23,7 +23,7 @@
 		"ecmaFeatures": {
 			"jsx": true
 		},
-		"ecmaVersion": 2020,
+		"ecmaVersion": 12,
 		"sourceType": "module"
 	},
 	"plugins": ["react-redux", "react", "jest", "import"],

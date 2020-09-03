@@ -61,6 +61,7 @@
     "@testing-library/user-event": "^12.1.3",
     "craco-image-optimizer-plugin": "0.0.3",
     "env-cmd": "^10.1.0",
+    "eslint": "^7.8.1",
     "eslint-plugin-jest": "^23.20.0",
     "eslint-plugin-react-hooks": "^4.1.0",
     "eslint-plugin-react-redux": "^3.2.0",
