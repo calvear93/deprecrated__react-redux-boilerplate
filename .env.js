@@ -1,3 +1,5 @@
+const app = require('./package.json');
+
 module.exports = Promise.resolve({
   // default variables for all environments.
 	default: {
@@ -8,8 +10,9 @@ module.exports = Promise.resolve({
 		REACT_APP_DEBUG: true,
 		REACT_APP_MOCK_SERVER: false, // enables/disables mirage js mock server.
 		REACT_APP_SERVICE_WORKER: false, // enables/disables service worker.
-		REACT_APP_TITLE: 'ACHS React Boilerplate',
-    	REACT_APP_DESCRIPTION: 'React con Redux boilerplate usando Create React App.',
+		REACT_APP_VERSION: app.version,
+		REACT_APP_TITLE: app.title,
+    	REACT_APP_DESCRIPTION: app.description,
     	REACT_APP_NOSCRIPT: 'Necesitas activar JavaScript para ejecutar esta aplicación.',
 
 		REACT_APP_AAD_ENABLED: false, // when true, turn on HTTPS.
