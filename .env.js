@@ -4,6 +4,7 @@ module.exports = Promise.resolve({
 		HTTPS: false, // local HTTPS support.
 		GENERATE_SOURCEMAP: true, // enables/disables sourcemaps generation.
 		SKIP_PREFLIGHT_CHECK: true, // avoid package from node_modules versions conflicts. Used for jest.
+		EXTEND_ESLINT: true, // allows to use eslint plugins
 		REACT_APP_DEBUG: true,
 		REACT_APP_MOCK_SERVER: false, // enables/disables mirage js mock server.
 		REACT_APP_SERVICE_WORKER: false, // enables/disables service worker.
@@ -11,7 +12,7 @@ module.exports = Promise.resolve({
     	REACT_APP_DESCRIPTION: 'React con Redux boilerplate usando Create React App.',
     	REACT_APP_NOSCRIPT: 'Necesitas activar JavaScript para ejecutar esta aplicación.',
 
-		REACT_APP_AAD_ENABLED: false,
+		REACT_APP_AAD_ENABLED: false, // when true, turn on HTTPS.
 		REACT_APP_AAD_TOKEN_RENEWAL_OFFSET_SECONDS: 120,
 		REACT_APP_AAD_TENANT_ID: '',
 		REACT_APP_AAD_NAVIGATE_TO_REQUEST_URL_AFTER_LOGIN: true,

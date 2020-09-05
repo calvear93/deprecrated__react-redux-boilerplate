@@ -12,7 +12,8 @@
 		"eslint:recommended",
 		"plugin:react/recommended",
 		"plugin:react-redux/recommended",
-		"plugin:react-hooks/recommended"
+		"plugin:react-hooks/recommended",
+		"plugin:sonarjs/recommended"
 	],
 	"globals": {
 		"Atomics": "readonly",
@@ -23,10 +24,10 @@
 		"ecmaFeatures": {
 			"jsx": true
 		},
-		"ecmaVersion": 12,
+		"ecmaVersion": 11,
 		"sourceType": "module"
 	},
-	"plugins": ["react-redux", "react", "jest", "import"],
+	"plugins": ["react", "react-redux", "sonarjs", "jest", "import"],
 	"rules": {
 		"array-bracket-spacing": ["warn", "always"],
 		"array-callback-return": "error",
@@ -171,10 +172,6 @@
 		"react/display-name": "off",
 		"react/forbid-prop-types": "warn",
 		"react/jsx-handler-names": "warn",
-		"react/jsx-filename-extension": [
-			"error",
-			{ "extensions": [".js", ".jsx"] }
-		],
 		"react/jsx-boolean-value": "warn",
 		"react/jsx-child-element-spacing": "off",
 		"react/jsx-closing-bracket-location": ["warn", "tag-aligned"],
@@ -237,6 +234,10 @@
 		"react/self-closing-comp": "warn",
 		"react/sort-comp": "warn",
 		"react/sort-prop-types": "warn",
+		"sonarjs/no-duplicate-string": "off",
+		"sonarjs/no-small-switch": "warn",
+		"sonarjs/cognitive-complexity": ["off", 20],
+		"sonarjs/max-switch-cases": ["off", 12],
 		"semi": ["error", "always"],
 		"semi-spacing": "warn",
 		"semi-style": ["warn", "last"],

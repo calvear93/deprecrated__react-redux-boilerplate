@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-23 19:53:33
- * Last modified  : 2020-08-23 19:42:52
+ * Last modified  : 2020-09-05 11:08:28
  */
 
 import axios from 'axios';
@@ -48,6 +48,27 @@ const Graph = {
     },
 
     /**
+     * Reads blob data from axios
+     * request for Graph API.
+     *
+     * @param {object} response request response.
+     *
+     * @returns {Promise<any>} promise waiting for blob data.
+     */
+    async readBlob(response)
+    {
+        return new Promise((resolve) =>
+        {
+            var reader = new FileReader();
+            reader.readAsDataURL(response);
+            reader.onloadend = () =>
+            {
+                resolve(reader.result);
+            };
+        });
+    },
+
+    /**
      * User info.
      *
      * @returns {any} user info from AAD.
@@ -67,15 +88,7 @@ const Graph = {
         return new Promise((resolve) =>
         {
             Graph.graphRequest({ api: 'me/photo/$value', responseType: 'blob' })
-                .then((response) =>
-                {
-                    var reader = new FileReader();
-                    reader.readAsDataURL(response);
-                    reader.onloadend = function()
-                    {
-                        resolve(reader.result);
-                    };
-                })
+                .then((response) => resolve(Graph.readBlob(response)))
                 .catch(() => resolve());
         });
     },
@@ -94,15 +107,7 @@ const Graph = {
         return new Promise((resolve) =>
         {
             Graph.graphRequest({ api: `me/photos/${size}/$value`, responseType: 'blob' })
-                .then((response) =>
-                {
-                    var reader = new FileReader();
-                    reader.readAsDataURL(response);
-                    reader.onloadend = function()
-                    {
-                        resolve(reader.result);
-                    };
-                })
+                .then((response) => resolve(Graph.readBlob(response)))
                 .catch(() => resolve());
         });
     }

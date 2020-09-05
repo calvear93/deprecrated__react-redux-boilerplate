@@ -65,6 +65,7 @@
     "eslint-plugin-jest": "^23.20.0",
     "eslint-plugin-react-hooks": "^4.1.0",
     "eslint-plugin-react-redux": "^3.2.0",
+    "eslint-plugin-sonarjs": "^0.5.0",
     "jest": "^26.4.2",
     "miragejs": "^0.1.40",
     "prettier-stylelint": "^0.4.2",
