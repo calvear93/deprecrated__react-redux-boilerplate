@@ -28,11 +28,6 @@
 	},
 	"plugins": ["react-redux", "react", "jest", "import"],
 	"rules": {
-		"jest/no-disabled-tests": "warn",
-		"jest/no-focused-tests": "error",
-		"jest/no-identical-title": "error",
-		"jest/prefer-to-have-length": "warn",
-		"jest/valid-expect": "error",
 		"array-bracket-spacing": ["warn", "always"],
 		"array-callback-return": "error",
 		"arrow-spacing": "warn",
@@ -88,6 +83,11 @@
 				"outerIIFEBody": 1
 			}
 		],
+		"jest/no-disabled-tests": "warn",
+		"jest/no-focused-tests": "error",
+		"jest/no-identical-title": "error",
+		"jest/prefer-to-have-length": "warn",
+		"jest/valid-expect": "error",
 		"jsx-quotes": ["warn", "prefer-single"],
 		"key-spacing": [
 			"warn",
@@ -161,20 +161,36 @@
 		"react-hooks/exhaustive-deps": "off",
 		"react-redux/no-unused-prop-types": "warn",
 		"react-redux/prefer-separate-component-file": "off",
-		"react/boolean-prop-naming": [
-			"error",
+		"react-redux/useSelector-prefer-selectors": [
+			"warn",
 			{
-				"propTypeNames": ["bool", "mutuallyExclusiveTrueProps"]
+				"matching": "^.*Selector$"
 			}
 		],
+		"react/destructuring-assignment": ["warn", "always"],
 		"react/display-name": "off",
 		"react/forbid-prop-types": "warn",
+		"react/jsx-handler-names": "warn",
+		"react/jsx-filename-extension": [
+			"error",
+			{ "extensions": [".js", ".jsx"] }
+		],
 		"react/jsx-boolean-value": "warn",
 		"react/jsx-child-element-spacing": "off",
 		"react/jsx-closing-bracket-location": ["warn", "tag-aligned"],
 		"react/jsx-closing-tag-location": "warn",
 		"react/jsx-curly-spacing": ["warn", "always"],
+		"react/jsx-indent": [
+			"warn",
+			4,
+			{
+				"checkAttributes": true,
+				"indentLogicalExpressions": true
+			}
+		],
 		"react/jsx-indent-props": ["warn", 4],
+		"react/jsx-key": ["error", { "checkFragmentShorthand": true }],
+		"react/jsx-fragments": ["warn", "syntax"],
 		"react/jsx-max-props-per-line": [
 			"warn",
 			{
@@ -183,8 +199,11 @@
 			}
 		],
 		"react/jsx-no-duplicate-props": "warn",
+		"react/jsx-no-comment-textnodes": "warn",
 		"react/jsx-no-literals": "off",
 		"react/jsx-no-undef": "warn",
+		"react/jsx-no-useless-fragment": "warn",
+		"react/jsx-pascal-case": "warn",
 		"react/jsx-sort-props": "off",
 		"react/jsx-tag-spacing": [
 			"warn",
@@ -265,7 +284,7 @@
 	"settings": {
 		"react": {
 			"pragma": "React",
-			"version": "6.9.0"
+			"version": "detect"
 		}
 	}
 }

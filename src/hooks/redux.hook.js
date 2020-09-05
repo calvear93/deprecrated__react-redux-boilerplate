@@ -1,5 +1,8 @@
 import { shallowEqual, useSelector } from 'react-redux';
 
+// usePartition selector.
+const selector = (actionVault) => ({ [actionVault.Key]: partition }) => partition;
+
 /**
  * Allows to query a store partition by an action vault.
  *
@@ -11,8 +14,5 @@ import { shallowEqual, useSelector } from 'react-redux';
  */
 export function usePartition(actionVault, equalityFunc = shallowEqual)
 {
-    return useSelector(
-        ({ [actionVault.Key]: partition }) => partition,
-        equalityFunc
-    );
+    return useSelector(selector(actionVault), equalityFunc);
 }
