@@ -3,9 +3,9 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { AuthenticationProvider, AuthenticationSecurityMode } from 'services/security';
+import { useUI } from 'hooks/ui.hook';
 import store from 'store/store';
 import AppRouter from 'routes';
-import 'styles/app.scss';
 
 /**
  * App container.
@@ -17,6 +17,9 @@ import 'styles/app.scss';
  */
 export default function App()
 {
+    // loads UI theme stylesheets.
+    useUI();
+
     return (
         <BrowserRouter>
             <Provider store={ store }>

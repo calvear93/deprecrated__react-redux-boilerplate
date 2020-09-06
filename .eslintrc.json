@@ -6,6 +6,7 @@
 		"jquery": true,
 		"node": true,
 		"worker": true,
+		"es2020": true,
 		"jest/globals": true
 	},
 	"extends": [
@@ -27,7 +28,7 @@
 		"ecmaVersion": 11,
 		"sourceType": "module"
 	},
-	"plugins": ["react", "react-redux", "sonarjs", "jest", "import"],
+	"plugins": ["react", "react-redux", "react-hooks", "sonarjs", "jest", "import"],
 	"rules": {
 		"array-bracket-spacing": ["warn", "always"],
 		"array-callback-return": "error",
