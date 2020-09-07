@@ -48,7 +48,6 @@ export default function DatePicker({
     const [ date, setDate ] = useState(value);
     const [ modules, setModules ] = useState(defModules);
 
-    // eslint-disable-next-line react/no-multi-comp
     const input = ({ ref }) => (
         <Ref innerRef={ ref }>
             <Input

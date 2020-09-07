@@ -7,10 +7,8 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-07-04 16:42:09
- * Last modified  : 2020-08-15 20:27:53
+ * Last modified  : 2020-09-07 19:10:21
  */
-
-/* eslint-disable react/no-multi-comp */
 
 import React, { lazy, Suspense } from 'react';
 import { Redirect, Route, Switch, useLocation, useRouteMatch } from 'react-router-dom';

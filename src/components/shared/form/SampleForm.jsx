@@ -1,3 +1,4 @@
+/* eslint-disable sonarjs/no-small-switch */
 import React from 'react';
 import FormFactory from './FormFactory';
 import {

@@ -1,4 +1,3 @@
-/* eslint-disable react/no-find-dom-node */
 import IMask from 'imask';
 import React from 'react';
 import { IMaskMixin } from 'react-imask';

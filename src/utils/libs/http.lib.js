@@ -6,7 +6,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-08-14 16:40:14
- * Last modified  : 2020-08-28 20:32:52
+ * Last modified  : 2020-09-07 19:11:43
  */
 
 import axios from 'axios';
@@ -97,6 +97,14 @@ function errorMessageInterceptor(error)
     // modifies error message.
     switch (status)
     {
+        case HttpStatus.INTERNAL_SERVER_ERROR:
+            error.message = `Error en el servidor '${statusText}'`;
+            break;
+
+        case HttpStatus.NOT_FOUND:
+            error.message = `Servicio no encontrado '${statusText}'`;
+            break;
+
         default:
             error.message = `Solicitud ha fallado por '${statusText}' [${status}]`;
     }
