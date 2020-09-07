@@ -169,6 +169,7 @@
 		"quotes": ["warn", "single", "avoid-escape"],
 		"radix": ["warn", "as-needed"],
 		"react-hooks/exhaustive-deps": "off",
+		"react-hooks/rules-of-hooks": "warn",
 		"react-redux/no-unused-prop-types": "warn",
 		"react-redux/prefer-separate-component-file": "off",
 		"react-redux/useSelector-prefer-selectors": [
