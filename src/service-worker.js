@@ -20,6 +20,9 @@ const isLocalhost = Boolean(
     window.location.hostname.match(/^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/)
 );
 
+/**
+ * @param {any} config service worker configuration.
+ */
 export function register(config)
 {
     if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator)
@@ -62,6 +65,10 @@ export function register(config)
     }
 }
 
+/**
+ * @param {string} swUrl service worker URL.
+ * @param {object} config options.
+ */
 function registerValidSW(swUrl, config)
 {
     navigator.serviceWorker
@@ -113,6 +120,10 @@ function registerValidSW(swUrl, config)
         });
 }
 
+/**
+ * @param {string} swUrl service worker URL.
+ * @param {object} config options.
+ */
 function checkValidServiceWorker(swUrl, config)
 {
     // Check if the service worker can be found. If it can't reload the page.
@@ -149,6 +160,9 @@ function checkValidServiceWorker(swUrl, config)
         });
 }
 
+/**
+ *
+ */
 export function unregister()
 {
     if ('serviceWorker' in navigator)

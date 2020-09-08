@@ -18,6 +18,9 @@ export default function Demo2()
         Toast.show('welcome to the jungle!', 5000, Toast.TYPE.NOTIFICATION_SUCCESS);
     }, []);
 
+    /**
+     *
+     */
     function showAlert()
     {
         Swal.confirm('success', 'este es una alerta');

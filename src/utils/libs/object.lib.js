@@ -37,10 +37,10 @@ export function reduceEmptiness(obj)
  * Safely calls a function over a object,
  * validating nullity of it.
  *
- * @param {function} func func for apply.
+ * @param {Function} func func for apply.
  * @param {object} obj object for apply function.
  * @param {object} def default value in case of nullity/undefined.
- * @param {array} [args] other function args.
+ * @param {Array} [args] other function args.
  *
  * @returns {boolean} function result on object ok, def if object us null/undefined.
  */

@@ -10,8 +10,8 @@ import './radio-group.scss';
  * @param {object} props component props.
  * @param {string} props.id component id.
  * @param {string} props.group id of radio group.
- * @param {array} props.options array of options (value, label).
- * @param {function} [props.onChange] onChange event.
+ * @param {Array} props.options array of options (value, label).
+ * @param {Function} [props.onChange] onChange event.
  * @param {any} [props.checked] what option value is checked.
  * @param {boolean} [props.disabled] whether radio group is disabled.
  * @param {boolean} [props.clearable] whether radio group is clearable.

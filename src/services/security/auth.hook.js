@@ -9,7 +9,7 @@ import { AuthenticationSecurityMode } from './AuthenticationProvider';
  * validate current user account.
  *
  * @param {number} mode AAD route filter mode.
- * @param {array} list list of routes.
+ * @param {Array} list list of routes.
  * @param {string} [errorRoute] route for unauthorized error page.
  *
  * @returns {any} isAuthorized boolean and error object.

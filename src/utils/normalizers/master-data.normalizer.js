@@ -14,13 +14,13 @@ const MasterDataNormalizer = {
      * Transforms data as
      * dropdown values.
      *
-     * @param {array} arr data.
+     * @param {Array} arr data.
      * @param {object} options options.
      * @param {any} options.key attribute name and transformation func for key.
      * @param {any} options.text attribute name and transformation func for text.
      * @param {any} options.value attribute name and transformation func for value.
      *
-     * @returns {array} dropdown values.
+     * @returns {Array} dropdown values.
      */
     AsDropdown(arr, { key, text, value })
     {
@@ -36,12 +36,12 @@ const MasterDataNormalizer = {
      * Transforms data as
      * radio/checkbox group values.
      *
-     * @param {array} arr data.
+     * @param {Array} arr data.
      * @param {object} options options.
      * @param {any} options.label attribute name and transformation func for label.
      * @param {any} options.value attribute name and transformation func for value.
      *
-     * @returns {array} dropdown values.
+     * @returns {Array} dropdown values.
      */
     AsOptions(arr, { label, value })
     {
@@ -56,7 +56,7 @@ const MasterDataNormalizer = {
      * Transform data as
      * a dictionary with defined key.
      *
-     * @param {array} arr data.
+     * @param {Array} arr data.
      * @param {string} key attribute name for dictionary key.
      *
      * @returns {any} dictionary.

@@ -5,7 +5,7 @@ import { routes as playgroundRoutes } from './playground';
  * Extract route paths from
  * routes definitions as path -> title.
  *
- * @param {array} routes routes definitions.
+ * @param {Array} routes routes definitions.
  * @param {string} [basePath] base path.
  *
  * @returns {any} routes.

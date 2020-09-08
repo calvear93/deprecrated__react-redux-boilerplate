@@ -1,4 +1,3 @@
-/* eslint-disable sonarjs/no-small-switch */
 import React from 'react';
 import FormFactory from './FormFactory';
 import {
@@ -18,6 +17,16 @@ import { PhoneAdvancedMask, RutMask } from 'utils/masks';
 
 export default () => <FormFactory schema={ schema } datasets={ datasets } interceptor={ interceptor } />;
 
+/* eslint-disable sonarjs/no-small-switch */
+
+/**
+ * @param {string} key input key.
+ * @param {string} values current values.
+ * @param {string} validations current validations.
+ * @param {string} config current config.
+ *
+ * @returns {Array} config, validations and values updated.
+ */
 function interceptor(key, values, validations, config)
 {
     switch (key)

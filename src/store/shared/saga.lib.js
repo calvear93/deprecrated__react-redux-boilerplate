@@ -15,7 +15,7 @@ import storage, { StorageType } from 'utils/libs/storage.lib';
 /**
  * Waits for any action type to occur n times.
  *
- * @param {array} types action types.
+ * @param {Array} types action types.
  * @param {number} times times for wait each action type.
  * @param {number} [timeout] timeout in milliseconds (0 no timeout).
  *
@@ -52,7 +52,7 @@ export function* takeAny(types, times, timeout = 0)
  * @param {string} storageType storage type.
  * @param {Date | null} expiration date when value expires.
  * @param {IterableIterator<any>} generator generator callback.
- * @param {array} args generator function args.
+ * @param {Array} args generator function args.
  *
  * @returns {IterableIterator<any>} cached/persisted value or result.
  */
@@ -76,7 +76,7 @@ export function* memoCall(key, storageType, expiration, generator, ...args)
  * @param {string} key persisted value accessor.
  * @param {Date | null} expiration date when value expires.
  * @param {IterableIterator<any>} generator generator callback.
- * @param {array} args generator function args.
+ * @param {Array} args generator function args.
  *
  * @returns {IterableIterator<any>} cached/persisted value or result.
  */
@@ -92,7 +92,7 @@ export function* memoCallInSessionStorage(key, expiration, generator, ...args)
  * @param {string} key persisted value accessor.
  * @param {Date | null} expiration date when value expires.
  * @param {IterableIterator<any>} generator generator callback.
- * @param {array} args generator function args.
+ * @param {Array} args generator function args.
  *
  * @returns {IterableIterator<any>} cached/persisted value or result.
  */

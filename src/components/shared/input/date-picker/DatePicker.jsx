@@ -7,6 +7,8 @@ import localeES from './locale-es';
 import 'react-modern-calendar-datepicker/lib/DatePicker.css';
 import './date-picker.scss';
 
+/* eslint-disable react/no-multi-comp */
+
 /**
  * Date Picker wrapper for
  * React Modern Calendar Datepicker.
@@ -15,7 +17,7 @@ import './date-picker.scss';
  *
  * @param {object} props component props.
  * @param {Date} [props.value] date selected.
- * @param {function} [props.onChange] on selected date callback.
+ * @param {Function} [props.onChange] on selected date callback.
  * @param {string} [props.displayFormat] format by date-fns.
  * @param {string} [props.placeholder] input placeholder.
  * @param {boolean} [props.clearable] whether input is clearable.

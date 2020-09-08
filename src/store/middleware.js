@@ -19,7 +19,7 @@ import createSagaMiddleware from 'redux-saga';
  * Generates a middleware conditionally
  * by current debug mode.
  *
- * @returns {array} middleware apply and run functions.
+ * @returns {Array} middleware apply and run functions.
  */
 export default function createMiddleware()
 {

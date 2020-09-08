@@ -19,8 +19,8 @@ import 'styles/modules/tippy.scss';
  *
  * @param {object} props component props.
  * @param {React.ReactElement} props.children children component.
- * @param {string | array} props.className classes.
- * @param {string | array} props.textType text type.
+ * @param {string | Array} props.className classes.
+ * @param {string | Array} props.textType text type.
  * @param {object} props.props rest of props for Tippy.
  *
  * @returns {React.ReactElement} component with Tippy tooltip.

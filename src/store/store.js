@@ -26,6 +26,9 @@ const reducers = combineReducers({
 });
 
 // combine every sagas in parallel tasks.
+/**
+ *
+ */
 function* combineSagas()
 {
     yield all([

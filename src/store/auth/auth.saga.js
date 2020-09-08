@@ -12,7 +12,7 @@ const photoExpirationDate = addDays(new Date(), +process.env.REACT_APP_AAD_USER_
 /**
  * Executes azure active directory authentication.
  *
- * @param {object} action dispatched action..
+ * @param {any} action dispatched action.
  * @param {object} [action.payload] action payload.
  * @param {string} [action.payload.type] login type (redirect or popup).
  */
@@ -48,7 +48,7 @@ function* authenticate({ payload: { type } = {} })
 /**
  * Fetches azure account info.
  *
- * @param {object} action dispatched action..
+ * @param {any} action dispatched action..
  * @param {object} action.payload azure account identifier.
  */
 function* getUserInfo({ payload: accountIdentifier })
@@ -83,7 +83,7 @@ function* getUserInfo({ payload: accountIdentifier })
 /**
  * Fetches azure account photo.
  *
- * @param {object} action dispatched action..
+ * @param {any} action dispatched action..
  * @param {object} action.payload azure account identifier.
  */
 function* getUserPhoto({ payload: accountIdentifier })

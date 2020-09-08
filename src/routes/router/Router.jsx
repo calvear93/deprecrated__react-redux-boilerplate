@@ -29,8 +29,8 @@ const NotFoundPage = lazy(() => import('pages/not-found'));
  * routers in this directory.
  *
  * @param {object} [props] component props.
- * @param {array} [props.routes] array of routes.
- * @param {array} [props.redirects] array of redirects (exact, from, to).
+ * @param {Array} [props.routes] array of routes.
+ * @param {Array} [props.redirects] array of redirects (exact, from, to).
  * @param {string} [props.message] loading message.
  * @param {React.ReactElement} [props.DefaultChild] default child for showing on bad route.
  *

@@ -27,7 +27,7 @@ export const AuthenticationSecurityMode = {
  * @param {object} props component props.
  * @param {React.ReactElement} props.children component for render on authentication ok.
  * @param {number} [props.mode] routes security list mode, may be whitelist or blacklist.
- * @param {array} [props.list] secured routes list.
+ * @param {Array} [props.list] secured routes list.
  * @param {string} [props.errorRoute] route for authentication error page.
  *
  * @returns {React.ReactElement} children on authenticated, error redirection in otherwise.

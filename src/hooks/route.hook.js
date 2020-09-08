@@ -21,7 +21,7 @@ export function useQueryParams()
  * to provided list, like whitelist.
  *
  * @dependency useLocation from react-router-dom.
- * @param {array} list array of paths (strings)
+ * @param {Array} list array of paths (strings)
  *
  * @returns {boolean} true if current path is in.
  */

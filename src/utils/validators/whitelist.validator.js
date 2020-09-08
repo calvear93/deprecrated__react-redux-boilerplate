@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-30 14:57:47
- * Last modified  : 2020-08-14 12:09:37
+ * Last modified  : 2020-09-07 20:37:29
  */
 
 /**
@@ -13,7 +13,7 @@
  *
  * @param {any} value current value.
  * @param {object} options validator options.
- * @param {array} options.list whitelist.
+ * @param {Array} options.list whitelist.
  * @param {string} options.message error message.
  * @param {any} attributeName input key.
  * @param {any} values neighbor values.

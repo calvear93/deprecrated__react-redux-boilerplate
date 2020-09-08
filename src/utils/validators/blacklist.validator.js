@@ -13,7 +13,7 @@
  *
  * @param {any} value current value.
  * @param {object} options validator options.
- * @param {array} options.list blacklist.
+ * @param {Array} options.list blacklist.
  * @param {string} options.message error message.
  * @param {any} attributeName input key.
  * @param {any} values neighbor values.

@@ -10,9 +10,9 @@ import './checkbox.scss';
  * @param {object} props component props.
  * @param {string} props.id component id.
  * @param {string} props.group id of checkbox group.
- * @param {array} props.options array of options (value, label).
- * @param {function} [props.onChange] onChange event.
- * @param {array} [props.checked] what options are checked.
+ * @param {Array} props.options array of options (value, label).
+ * @param {Function} [props.onChange] onChange event.
+ * @param {Array} [props.checked] what options are checked.
  * @param {number} [props.max] max of options user can check.
  * @param {boolean} [props.disabled] whether checkbox group is disabled.
  * @param {boolean} [props.clearable] whether checkbox group is clearable.

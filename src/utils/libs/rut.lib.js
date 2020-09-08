@@ -49,15 +49,15 @@ const Rut = {
     },
 
     /**
-      * Removes all dots and the hyphen.
-      *
-      * @param {string | undefined} id chilean id.
-      * @param {object} [options] formatting options.
-      * @param {boolean} [options.removeCD] formatting options.
-      * @param {boolean} [options.keepHyphen] formatting options.
-      *
-      * @returns {string} cleaned id.
-      */
+     * Removes all dots and the hyphen.
+     *
+     * @param {string | undefined} id chilean id.
+     * @param {object} [options] formatting options.
+     * @param {boolean} [options.removeCD] formatting options.
+     * @param {boolean} [options.keepHyphen] formatting options.
+     *
+     * @returns {string} cleaned id.
+     */
     Clean(id, { removeCD, keepHyphen } = {})
     {
         if (!id)

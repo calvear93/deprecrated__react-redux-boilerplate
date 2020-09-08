@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-23 19:53:33
- * Last modified  : 2020-09-01 20:35:16
+ * Last modified  : 2020-09-07 20:50:16
  */
 
 import { config, types, DEFAULT_SCOPES } from '../config';
@@ -22,7 +22,8 @@ export default {
     /**
      * Retrieves current access token cached.
      *
-     * @param {array} scopes array of scopes allowed.
+     * @param {object} [config] options.
+     * @param {Array} [config.scopes] array of scopes allowed.
      *
      * @returns {object} account with cached token.
      */
@@ -35,7 +36,8 @@ export default {
      * Acquire new token for use.
      * JWT Decoding page: @see https://jwt.io/
      *
-     * @param {array} scopes array of scopes allowed.
+     * @param {object} [config] options.
+     * @param {Array} [config.scopes] array of scopes allowed.
      *
      * @returns {Promise<any>} token container.
      */
@@ -56,7 +58,8 @@ export default {
      * Acquire new token for use.
      * JWT Decoding page: @see https://jwt.io/
      *
-     * @param {array} scopes array of scopes allowed.
+     * @param {object} [config] options.
+     * @param {Array} [config.scopes] array of scopes allowed.
      *
      * @returns {Promise<any>} token container.
      */
@@ -78,8 +81,9 @@ export default {
     /**
      * Single Sign-On flow.
      *
-     * @param {array} scopes permission scopes.
-     * @param {string} loginHint preset account email.
+     * @param {object} [config] options.
+     * @param {Array} [config.scopes] array of scopes allowed.
+     * @param {string} [config.loginHint] preset account email.
      *
      * @returns {boolean} account data if is authenticated, error on failure.
      */
@@ -105,10 +109,11 @@ export default {
      * Redirect to Microsoft AD login if user isn't authenticated.
      * On finishing, redirect to redirectUri.
      *
-     * @param {string} type login type (redirect or popup).
-     * @param {array} scopes permission scopes.
-     * @param {string} loginHint preset account email.
-     * @param {boolean} forceTokenRefresh forces to renew token on authentication.
+     * @param {object} [config] options.
+     * @param {string} [config.type] login type (redirect or popup).
+     * @param {Array} [config.scopes] permission scopes.
+     * @param {string} [config.loginHint] preset account email.
+     * @param {boolean} [config.forceTokenRefresh] forces to renew token on authentication.
      *
      * @returns {boolean} account data if is authenticated, error on failure.
      */

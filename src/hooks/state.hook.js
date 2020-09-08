@@ -9,7 +9,7 @@ import { stackActions, stackReducer } from 'hooks/helpers/stack.reducer';
  * @dependency useState from react.
  * @param {object} def default values for state.
  *
- * @returns {array} state and set function.
+ * @returns {Array} state and set function.
  */
 export function useDictionary(def)
 {
@@ -39,9 +39,9 @@ export function useDictionary(def)
  *  - clear: removes all items.
  *
  * @dependency useReducer from react.
- * @param {array} def default values for state.
+ * @param {Array} def default values for state.
  *
- * @returns {array} state and handler object.
+ * @returns {Array} state and handler object.
  */
 export function useArray(def)
 {
@@ -70,9 +70,9 @@ export function useArray(def)
  *  - clear: removes all items.
  *
  * @dependency useReducer from react.
- * @param {array} def default values for state.
+ * @param {Array} def default values for state.
  *
- * @returns {array} state and handler object.
+ * @returns {Array} state and handler object.
  */
 export function useQueue(def)
 {
@@ -108,9 +108,9 @@ export function useQueue(def)
  *  - clear: removes all items.
  *
  * @dependency useReducer from react.
- * @param {array} def default values for state.
+ * @param {Array} def default values for state.
  *
- * @returns {array} state and handler object.
+ * @returns {Array} state and handler object.
  */
 export function useStack(def)
 {

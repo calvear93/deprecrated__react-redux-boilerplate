@@ -8,7 +8,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:33:24
- * Last modified  : 2020-08-14 12:45:18
+ * Last modified  : 2020-09-07 20:41:42
  */
 
 import React from 'react';
@@ -18,6 +18,7 @@ import { toast } from 'react-toastify';
  * Parses a string date.
  *
  * @param {object} [options] date as string.
+ * @param {Function} options.closeToast close toast callback.
  *
  * @returns {React.ReactElement} parsed datetime.
  */

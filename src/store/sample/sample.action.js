@@ -3,7 +3,7 @@ import { createAction, makeUnique } from 'store/shared/action.lib';
 /**
  * store partition key.
  *
- * @const
+ * @constant
  * @type {string}
  */
 const KEY = 'SAMPLE';

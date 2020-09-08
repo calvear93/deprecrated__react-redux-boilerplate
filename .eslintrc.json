@@ -13,7 +13,7 @@
 		"eslint:recommended",
 		"plugin:react/recommended",
 		"plugin:react-redux/recommended",
-		"plugin:react-hooks/recommended",
+		"plugin:jsdoc/recommended",
 		"plugin:sonarjs/recommended"
 	],
 	"globals": {
@@ -32,11 +32,12 @@
 		"react",
 		"react-redux",
 		"react-hooks",
+		"jsdoc",
 		"sonarjs",
 		"jest",
 		"import"
 	],
-	"reportUnusedDisableDirectives": true,
+	"reportUnusedDisableDirectives": false,
 	"rules": {
 		"array-bracket-spacing": ["warn", "always"],
 		"array-callback-return": "error",
@@ -248,6 +249,8 @@
 		"sonarjs/no-small-switch": "warn",
 		"sonarjs/cognitive-complexity": ["off", 20],
 		"sonarjs/max-switch-cases": ["off", 12],
+		"jsdoc/no-undefined-types": "off",
+		"jsdoc/check-tag-names": "off",
 		"semi": ["error", "always"],
 		"semi-spacing": "warn",
 		"semi-style": ["warn", "last"],

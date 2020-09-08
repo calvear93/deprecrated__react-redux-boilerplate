@@ -16,7 +16,7 @@ import './time-picker.scss';
  * @param {number} [props.coarseMinutes] rounds selected number to increments.
  * @param {boolean} [props.forceCoarseMinutes] forces minutes to always round to coarseMinutes value.
  * @param {boolean} [props.clearable] whether shows a clear button if any text.
- * @param {function} [props.onChange] on time change. Sends (newTime, {id, value}).
+ * @param {Function} [props.onChange] on time change. Sends (newTime, {id, value}).
  * @param {object} [props.props] rest of props for input.
  *
  * @returns {React.ReactElement} time picker input.

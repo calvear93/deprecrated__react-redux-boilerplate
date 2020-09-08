@@ -37,8 +37,8 @@ const defInterceptor = (key, values, validations, config) =>
  * @param {any} props.schema inputs configuration.
  * @param {object} [props.defaults] default values for inputs.
  * @param {object} [props.datasets] datasets for use in options inputs.
- * @param {function} [props.interceptor] functions for intercepts values and validations on change.
- * @param {function} [props.onChange] callback triggered on every input change.
+ * @param {Function} [props.interceptor] functions for intercepts values and validations on change.
+ * @param {Function} [props.onChange] callback triggered on every input change.
  *  Receives (key: key of changed input, values: current values,
  *  validations: current input validations, isValid: whether form is valid)
  * @param {boolean} [props.loading] whether form should shows loading indicator.
@@ -231,7 +231,7 @@ export default function FormFactory({
  *
  * @param {any} schema inputs config.
  * @param {any} defValues default values,
- * @returns {array} [config, defaultValues, validators]
+ * @returns {Array} [config, defaultValues, validators]
  */
 function useSchema(schema, defValues)
 {

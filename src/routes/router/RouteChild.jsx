@@ -4,7 +4,7 @@ import { useDocumentTitle } from 'hooks/document.hook';
 /**
  * Renders the page or router in routing mapping.
  *
- * @param {object} props component props.
+ * @param {any} props component props.
  * @param {object} props.render child config.
  * @param {string} props.render.title page document title.
  * @param {object} [props.render.layoutConfig] layout config.
