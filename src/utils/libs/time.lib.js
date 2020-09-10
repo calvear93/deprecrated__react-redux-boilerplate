@@ -7,10 +7,10 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:37:10
- * Last modified  : 2020-08-15 23:29:55
+ * Last modified  : 2020-09-10 14:57:34
  */
 
-import { addMonths, addYears, differenceInCalendarDays, differenceInCalendarMonths, differenceInCalendarYears, format, formatDuration, isValid } from 'date-fns';
+import { addMonths, addYears, getDaysInMonth, differenceInCalendarDays, differenceInCalendarMonths, differenceInCalendarYears, format, formatDuration, isValid } from 'date-fns';
 import locale from 'date-fns/locale/es';
 
 const LOCALE = { locale };
@@ -54,6 +54,16 @@ export function parseDate(date)
         date = new Date(date);
 
     return isValid(date) ? date : MESSAGES.DATE_NO_VALID;
+}
+
+/**
+ * Resets timezone offset.
+ *
+ * @param {Date} date date as string.
+ */
+export function resetTimezoneOffset(date)
+{
+    date.setUTCMinutes(date.getTimezoneOffset());
 }
 
 /**
@@ -145,24 +155,43 @@ export function toNaturalDateTime(date, format24 = true)
  *
  * @returns {string} age from date
  */
-export function toAgeByBirth(date, showDays = true)
+export function toAgeByBirth(date, showDays = false)
 {
     if (typeof date === 'string')
         date = new Date(date);
 
     let today = new Date();
+    const daysInMonth = getDaysInMonth(date);
 
-    const years = differenceInCalendarYears(today, date);
+    let years = differenceInCalendarYears(today, date);
     date = addYears(date, years);
 
-    const months = differenceInCalendarMonths(today, date);
+    let months = differenceInCalendarMonths(today, date);
     date = addMonths(date, months);
+    if (months < 0)
+    {
+        years--;
+        months = 12 + months;
+    }
 
     let days = differenceInCalendarDays(today, date);
+    if (days < 0)
+    {
+        if (months === 0)
+        {
+            years--;
+            months = 12 - 1;
+        }
+        else
+        {
+            months--;
+        }
+        days = daysInMonth + days;
+    }
 
     return formatDuration({
         years,
         months,
         days: showDays && days
-    });
+    }, LOCALE);
 }
