@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-08-19 16:23:12
- * Last modified  : 2020-08-19 19:10:29
+ * Last modified  : 2020-09-12 14:57:26
  */
 
 /**
@@ -15,6 +15,7 @@ export const arrayActions = {
     PUSH: 'push',
     INSERT: 'insert',
     REMOVE: 'remove',
+    REMOVE_AT: 'remove_at',
     FILTER: 'filter',
     CLEAR: 'clear'
 };
@@ -68,6 +69,13 @@ export function arrayReducer(state, action)
         // removes the specified item.
         case arrayActions.REMOVE:
             return state.filter(i => i !== payload);
+
+        // removes element at specified index.
+        case arrayActions.REMOVE_AT:
+            return [
+                ...state.slice(0, payload),
+                ...state.slice(payload)
+            ];
 
         // filters array items.
         case arrayActions.FILTER:

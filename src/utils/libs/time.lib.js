@@ -7,7 +7,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:37:10
- * Last modified  : 2020-09-10 14:57:34
+ * Last modified  : 2020-09-12 14:53:28
  */
 
 import { addMonths, addYears, getDaysInMonth, differenceInCalendarDays, differenceInCalendarMonths, differenceInCalendarYears, format, formatDuration, isValid } from 'date-fns';
@@ -180,7 +180,7 @@ export function toAgeByBirth(date, showDays = false)
         if (months === 0)
         {
             years--;
-            months = 12 - 1;
+            months = 11;
         }
         else
         {

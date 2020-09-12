@@ -35,6 +35,7 @@ export function useDictionary(def)
  *  - push: inserts an item at the end.
  *  - insert: inserts an item in specified index.
  *  - remove: removes one item.
+ *  - removeAt: removes one item at specified index.
  *  - filter: filters array items.
  *  - clear: removes all items.
  *
@@ -53,6 +54,7 @@ export function useArray(def)
             push: (item) => dispatch({ type: arrayActions.PUSH, payload: item }),
             insert: (item, index) => dispatch({ type: arrayActions.INSERT, payload: { index, item } }),
             remove: (item) => dispatch({ type: arrayActions.REMOVE, payload: item }),
+            removeAt: (index) => dispatch({ type: arrayActions.REMOVE_AT, payload: index }),
             filter: (filter) => dispatch({ type: arrayActions.FILTER, payload: filter }),
             clear: () => dispatch({ type: arrayActions.CLEAR })
         }
