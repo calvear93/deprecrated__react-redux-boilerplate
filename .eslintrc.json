@@ -125,6 +125,7 @@
 		],
 		"lines-between-class-members": ["warn", "always"],
 		"no-console": "warn",
+		"no-debugger": "warn",
 		"no-duplicate-case": "error",
 		"no-empty": "error",
 		"no-empty-pattern": "error",

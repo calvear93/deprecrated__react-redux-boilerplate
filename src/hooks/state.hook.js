@@ -32,10 +32,12 @@ export function useDictionary(def)
  * using a reducer with actions.
  *
  * Handler has the actions below:
- *  - push: inserts an item at the end.
+ *  - put: pushes a new element to the beginning of the array.
+ *  - append: pushes a new element to end of the array.
  *  - insert: inserts an item in specified index.
  *  - remove: removes one item.
  *  - removeAt: removes one item at specified index.
+ *  - sort: sorts array items.
  *  - filter: filters array items.
  *  - clear: removes all items.
  *
@@ -51,10 +53,12 @@ export function useArray(def)
     return [
         state,
         {
-            push: (item) => dispatch({ type: arrayActions.PUSH, payload: item }),
+            put: (item) => dispatch({ type: arrayActions.PUT, payload: item }),
+            append: (item) => dispatch({ type: arrayActions.APPEND, payload: item }),
             insert: (item, index) => dispatch({ type: arrayActions.INSERT, payload: { index, item } }),
             remove: (item) => dispatch({ type: arrayActions.REMOVE, payload: item }),
             removeAt: (index) => dispatch({ type: arrayActions.REMOVE_AT, payload: index }),
+            sort: (sort) => dispatch({ type: arrayActions.SORT, payload: sort }),
             filter: (filter) => dispatch({ type: arrayActions.FILTER, payload: filter }),
             clear: () => dispatch({ type: arrayActions.CLEAR })
         }

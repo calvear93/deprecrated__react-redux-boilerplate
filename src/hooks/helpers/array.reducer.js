@@ -5,17 +5,19 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-08-19 16:23:12
- * Last modified  : 2020-09-12 14:57:26
+ * Last modified  : 2020-09-15 14:35:00
  */
 
 /**
  * Action types.
  */
 export const arrayActions = {
-    PUSH: 'push',
+    PUT: 'put',
+    APPEND: 'append',
     INSERT: 'insert',
     REMOVE: 'remove',
     REMOVE_AT: 'remove_at',
+    SORT: 'sort',
     FILTER: 'filter',
     CLEAR: 'clear'
 };
@@ -39,8 +41,8 @@ export function arrayReducer(state, action)
 
     switch (type)
     {
-        // pushes a new element to the array.
-        case arrayActions.PUSH:
+        // pushes a new element to the beginning of the array.
+        case arrayActions.PUT:
         {
             if (!payload)
                 return state;
@@ -51,18 +53,15 @@ export function arrayReducer(state, action)
             ];
         }
 
-        // inserts a new element in the specified index.
-        case arrayActions.INSERT:
+        // pushes a new element to end of the array.
+        case arrayActions.APPEND:
         {
-            const { index, item } = payload;
-
-            if (!item)
+            if (!payload)
                 return state;
 
             return [
-                ...state.slice(0, index),
-                item,
-                ...state.slice(index)
+                payload,
+                ...state
             ];
         }
 
@@ -73,9 +72,13 @@ export function arrayReducer(state, action)
         // removes element at specified index.
         case arrayActions.REMOVE_AT:
             return [
-                ...state.slice(0, payload),
+                ...state.slice(0, payload - 1),
                 ...state.slice(payload)
             ];
+
+        // sorts array items.
+        case arrayActions.SORT:
+            return [ ...state.SORT(payload) ];
 
         // filters array items.
         case arrayActions.FILTER:
