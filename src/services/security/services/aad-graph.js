@@ -55,7 +55,7 @@ const Graph = {
      *
      * @returns {Promise<any>} promise waiting for blob data.
      */
-    async readBlob(response)
+    readBlob(response)
     {
         return new Promise((resolve) =>
         {

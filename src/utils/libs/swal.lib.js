@@ -7,7 +7,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:38:41
- * Last modified  : 2020-08-14 12:42:19
+ * Last modified  : 2020-09-23 21:01:27
  */
 
 import SwalDefault from 'sweetalert2';
@@ -52,7 +52,7 @@ const Swal = {
      *
      * @returns {Promise<any>} Popup asynchronous.
      */
-    confirmAsync: async (type, content, confirmText) =>
+    confirmAsync: (type, content, confirmText) =>
     {
         return new Promise(
             (resolve) =>
@@ -92,7 +92,7 @@ const Swal = {
      *
      * @returns {Promise<any>} Popup asynchronous.
      */
-    alertAsync: async (type, content, confirmText) =>
+    alertAsync: (type, content, confirmText) =>
     {
         return new Promise(
             (resolve) =>
@@ -136,7 +136,7 @@ const Swal = {
      *
      * @returns {Promise<any>} Popup asynchronous.
      */
-    dialogAsync: async (type, content, confirmText, cancelText) =>
+    dialogAsync: (type, content, confirmText, cancelText) =>
     {
         return new Promise(
             (resolve) =>
