@@ -7,7 +7,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:37:10
- * Last modified  : 2020-09-12 14:53:28
+ * Last modified  : 2020-10-03 20:35:00
  */
 
 import { addMonths, addYears, getDaysInMonth, differenceInCalendarDays, differenceInCalendarMonths, differenceInCalendarYears, format, formatDuration, isValid } from 'date-fns';
@@ -44,13 +44,13 @@ function timeFormatChooser(format24 = true)
 /**
  * Parses a string date.
  *
- * @param {string | Date} date date as string.
+ * @param {string | number | Date} date date as string.
  *
  * @returns {string | Date} parsed datetime.
  */
 export function parseDate(date)
 {
-    if (typeof date === 'string')
+    if (typeof date !== 'object')
         date = new Date(date);
 
     return isValid(date) ? date : MESSAGES.DATE_NO_VALID;
@@ -69,14 +69,14 @@ export function resetTimezoneOffset(date)
 /**
  * Date formatting.
  *
- * @param {string | Date} date date string.
+ * @param {string | number | Date} date date string.
  * @param {string} [formatPattern] date format.
  *
  * @returns {string} formatted date.
  */
 export function formatDate(date, formatPattern)
 {
-    if (typeof date === 'string')
+    if (typeof date !== 'object')
         date = new Date(date);
 
     return isValid(date) ? format(date, formatPattern ?? FORMAT.DATE_FORMAT) : MESSAGES.DATE_NO_VALID;
@@ -85,7 +85,7 @@ export function formatDate(date, formatPattern)
 /**
  * Datetime formatting.
  *
- * @param {string | Date} date datetime string.
+ * @param {string | number | Date} date datetime string.
  * @param {boolean} [format24] time format type.
  * @param {string} [formatPattern] datetime format.
  *
@@ -93,7 +93,7 @@ export function formatDate(date, formatPattern)
  */
 export function formatDateTime(date, format24 = true, formatPattern)
 {
-    if (typeof date === 'string')
+    if (typeof date !== 'object')
         date = new Date(date);
 
     return isValid(date) ? format(date, formatPattern ?? `${FORMAT.DATE_FORMAT} ${timeFormatChooser(format24)}`) : MESSAGES.DATE_NO_VALID;
@@ -102,7 +102,7 @@ export function formatDateTime(date, format24 = true, formatPattern)
 /**
  * Time formatting.
  *
- * @param {string | Date} date datetime string.
+ * @param {string | number | Date} date datetime string.
  * @param {boolean} [format24] time format type.
  * @param {string} [formatPattern] time format.
  *
@@ -110,7 +110,7 @@ export function formatDateTime(date, format24 = true, formatPattern)
  */
 export function formatTime(date, format24 = true, formatPattern)
 {
-    if (typeof date === 'string')
+    if (typeof date !== 'object')
         date = new Date(date);
 
     return isValid(date) ? format(date, formatPattern ?? `${timeFormatChooser(format24)}`) : MESSAGES.DATE_NO_VALID;
@@ -119,13 +119,13 @@ export function formatTime(date, format24 = true, formatPattern)
 /**
  * Spanish natural readable formatting for date.
  *
- * @param {string | Date} date string date.
+ * @param {string | number | Date} date string date.
  *
  * @returns {string} natural date.
  */
 export function toNaturalDate(date)
 {
-    if (typeof date === 'string')
+    if (typeof date !== 'object')
         date = new Date(date);
 
     return format(date, FORMAT.NATURAL_DATE_FORMAT, LOCALE);
@@ -134,14 +134,14 @@ export function toNaturalDate(date)
 /**
  * Spanish natural readable formatting for datetime.
  *
- * @param {string | Date} date string date.
+ * @param {string | number | Date} date string date.
  * @param {boolean} [format24] time format type.
  *
  * @returns {string} natural datetime.
  */
 export function toNaturalDateTime(date, format24 = true)
 {
-    if (typeof date === 'string')
+    if (typeof date !== 'object')
         date = new Date(date);
 
     return format(date, `${FORMAT.NATURAL_DATETIME_FORMAT}${timeFormatChooser(format24)}`, LOCALE);
@@ -150,17 +150,17 @@ export function toNaturalDateTime(date, format24 = true)
 /**
  * Calculates age string representation in spanish from a date.
  *
- * @param {string | Date} date date.
+ * @param {string | number | Date} date date.
  * @param {boolean} [showDays] whether includes days.
  *
  * @returns {string} age from date
  */
 export function toAgeByBirth(date, showDays = false)
 {
-    if (typeof date === 'string')
+    if (typeof date !== 'object')
         date = new Date(date);
 
-    let today = new Date();
+    const today = new Date();
     const daysInMonth = getDaysInMonth(date);
 
     let years = differenceInCalendarYears(today, date);
@@ -192,6 +192,6 @@ export function toAgeByBirth(date, showDays = false)
     return formatDuration({
         years,
         months,
-        days: showDays && days
+        days: showDays ? days : undefined
     }, LOCALE);
 }

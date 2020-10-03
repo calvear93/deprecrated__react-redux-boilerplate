@@ -3,7 +3,7 @@
         "jsx": "react",
         "baseUrl": "src",
         "module": "commonjs",
-        "target": "es2020",
+        "target": "es5",
         "checkJs": false
     },
     "exclude": ["node_modules", "build", "public"],
