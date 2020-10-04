@@ -1,7 +1,7 @@
 /**
  * Allows to attach a tooltip to DOM elements.
  *
- * using example:
+ * @example
  *      <input data-tooltip='this is a tooltip message!' data-tooltip-classes='bold medium'>
  * and initialize the tooltip in useEffect hook as:
  *      useEffect(() =>
@@ -13,7 +13,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:36:01
- * Last modified  : 2020-08-23 17:16:35
+ * Last modified  : 2020-10-04 11:13:54
  */
 
 import tippy from 'tippy.js';
@@ -22,7 +22,7 @@ import 'styles/modules/tippy.scss';
 /**
  * Initializes Tippy tooltip.
  *
- * [i] Adds data-tooltip='content' for adds tooltip.
+ * @use Adds data-tooltip='content' attribute to tag for adds tooltip.
  *
  * @param {string} selector DOM element selector.
  */

@@ -5,7 +5,7 @@ import { IMaskInput } from 'react-imask';
 /**
  * Wrapper for IMaskInput
  *
- * using example:
+ * @example
  *  <InputMasked
  *      mask={ PhoneMask }
  *      radix="."

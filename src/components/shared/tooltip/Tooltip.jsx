@@ -9,7 +9,7 @@ import 'styles/modules/tippy.scss';
  * @see https://atomiks.github.io/tippyjs
  * @see https://github.com/atomiks/tippyjs-react
  *
- * example:
+ * @example
  *  <Tooltip
  *      content='hello world'
  *      textType={ [ 'bold', 'underline' ] }

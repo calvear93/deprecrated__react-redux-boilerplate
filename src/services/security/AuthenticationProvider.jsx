@@ -14,7 +14,7 @@ export const AuthenticationSecurityMode = {
 /**
  * Azure Active Directory security wrapper for React.
  *
- * using example:
+ * @example
  *  <AuthenticationProvider
  *      enabled={ true }
  *      mode={ AuthenticationSecurityMode.WHITELIST }

@@ -7,7 +7,7 @@ import { CustomOnChangeEvent } from '../shared';
 /**
  * Attaches a mask (using imask) to an input.
  *
- *  using example:
+ * @example
  *  <Mask mask={ PhoneMask } onAccept={ onInputChange } value={ values['phone'] }>
  *      <Form.Input
  *          id='phone'
