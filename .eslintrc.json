@@ -1,13 +1,13 @@
 {
 	"env": {
 		"amd": true,
-		"node": true,
 		"browser": true,
 		"commonjs": true,
 		"es2020": true,
 		"jest": true,
-		"worker": true,
-		"serviceworker": true
+		"node": true,
+		"serviceworker": true,
+		"worker": true
 	},
 	"extends": [
 		"eslint:recommended",
@@ -99,6 +99,14 @@
 		"jest/no-identical-title": "error",
 		"jest/prefer-to-have-length": "warn",
 		"jest/valid-expect": "error",
+		"jsdoc/check-tag-names": "off",
+		"jsdoc/no-undefined-types": "off",
+		"jsdoc/require-hyphen-before-param-description": "off",
+		"jsdoc/require-jsdoc": "off",
+		"jsdoc/require-param-description": "off",
+		"jsdoc/require-property-description": "off",
+		"jsdoc/require-returns-description": "off",
+		"jsdoc/require-throws": "warn",
 		"jsx-quotes": ["warn", "prefer-single"],
 		"key-spacing": [
 			"warn",
@@ -183,12 +191,13 @@
 		"react/destructuring-assignment": ["warn", "always"],
 		"react/display-name": "off",
 		"react/forbid-prop-types": "warn",
-		"react/jsx-handler-names": "warn",
 		"react/jsx-boolean-value": "warn",
 		"react/jsx-child-element-spacing": "off",
 		"react/jsx-closing-bracket-location": ["warn", "tag-aligned"],
 		"react/jsx-closing-tag-location": "warn",
 		"react/jsx-curly-spacing": ["warn", "always"],
+		"react/jsx-fragments": ["warn", "syntax"],
+		"react/jsx-handler-names": "warn",
 		"react/jsx-indent": [
 			"warn",
 			4,
@@ -198,8 +207,12 @@
 			}
 		],
 		"react/jsx-indent-props": ["warn", 4],
-		"react/jsx-key": ["error", { "checkFragmentShorthand": true }],
-		"react/jsx-fragments": ["warn", "syntax"],
+		"react/jsx-key": [
+			"error",
+			{
+				"checkFragmentShorthand": true
+			}
+		],
 		"react/jsx-max-props-per-line": [
 			"warn",
 			{
@@ -207,8 +220,8 @@
 				"when": "always"
 			}
 		],
-		"react/jsx-no-duplicate-props": "warn",
 		"react/jsx-no-comment-textnodes": "warn",
+		"react/jsx-no-duplicate-props": "warn",
 		"react/jsx-no-literals": "off",
 		"react/jsx-no-undef": "warn",
 		"react/jsx-no-useless-fragment": "warn",
@@ -246,15 +259,13 @@
 		"react/self-closing-comp": "warn",
 		"react/sort-comp": "warn",
 		"react/sort-prop-types": "warn",
-		"sonarjs/no-duplicate-string": "off",
-		"sonarjs/no-small-switch": "warn",
-		"sonarjs/cognitive-complexity": ["off", 20],
-		"sonarjs/max-switch-cases": ["off", 12],
-		"jsdoc/no-undefined-types": "off",
-		"jsdoc/check-tag-names": "off",
 		"semi": ["error", "always"],
 		"semi-spacing": "warn",
 		"semi-style": ["warn", "last"],
+		"sonarjs/cognitive-complexity": ["off", 20],
+		"sonarjs/max-switch-cases": ["off", 12],
+		"sonarjs/no-duplicate-string": "off",
+		"sonarjs/no-small-switch": "warn",
 		"sort-imports": "off",
 		"sort-keys": ["off", "asc"],
 		"space-before-blocks": "warn",
@@ -266,6 +277,7 @@
 				"named": "never"
 			}
 		],
+		"space-in-parens": ["warn", "never"],
 		"spaced-comment": [
 			"warn",
 			"always",
@@ -291,7 +303,9 @@
 		"valid-jsdoc": [
 			"warn",
 			{
-				"requireReturn": false
+				"requireReturn": false,
+				"requireParamDescription": false,
+				"requireReturnDescription": false
 			}
 		],
 		"vars-on-top": "warn"
