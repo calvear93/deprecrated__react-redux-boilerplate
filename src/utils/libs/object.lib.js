@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:42:09
- * Last modified  : 2020-08-14 12:38:41
+ * Last modified  : 2020-10-04 12:26:12
  */
 
 /**
@@ -74,7 +74,7 @@ export function filter(obj, func)
  * it means the value cannot be undefined,
  * null, NaN or empty object.
  *
- * @param {object | undefined} value value for validation (undefined, null, NaN).
+ * @param {any} value value for validation (undefined, null, NaN).
  * @param {boolean} [allowsEmpty] whether allows empty as valid ({}, [], '' or ' ').
  *
  * @returns {boolean} true if is valid, false in otherwise.

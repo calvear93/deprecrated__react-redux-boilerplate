@@ -7,7 +7,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:38:41
- * Last modified  : 2020-10-03 20:57:28
+ * Last modified  : 2020-10-04 12:31:42
  */
 
 import SwalDefault from 'sweetalert2';
@@ -21,20 +21,20 @@ const Swal = {
      *
      * @see https://sweetalert2.github.io/#configuration
      *
-     * @param {any} options Swal 2 configuration.
+     * @param {SweetAlertOptions} options Swal 2 configuration.
      *
-     * @returns {any} Popup.
+     * @returns {Promise<SweetAlertResult<any>>} Popup.
      */
     show: (options) => SwalReact.fire(options),
 
     /**
      * Shows a confirm dialog.
      *
-     * @param {any} type dialog type from SweetAlert2.
+     * @param {string} type dialog type from SweetAlert2.
      * @param {string | React.ReactElement} content JSX content for the dialog.
      * @param {string} [confirmText] text for confirm button.
      *
-     * @returns {Promise<any>} Popup.
+     * @returns {Promise<SweetAlertResult<any>>} Popup.
      */
     confirm: (type, content, confirmText = 'Aceptar') => SwalReact.fire({
         icon: type,
@@ -46,11 +46,11 @@ const Swal = {
     /**
      * Shows a alert popup.
      *
-     * @param {any} type dialog type from SweetAlert2.
+     * @param {string} type dialog type from SweetAlert2.
      * @param {string | React.ReactElement} content JSX content for the dialog.
      * @param {string} [confirmText] text for confirm button.
      *
-     * @returns {Promise<any>} Popup.
+     * @returns {Promise<SweetAlertResult<any>>} Popup.
      */
     alert: (type, content, confirmText = 'Aceptar') => SwalReact.fire({
         icon: type,
@@ -63,12 +63,12 @@ const Swal = {
     /**
      * Shows a confirm dialog with Ok and Cancel button.
      *
-     * @param {any} type dialog type from SweetAlert2.
+     * @param {string} type dialog type from SweetAlert2.
      * @param {string | React.ReactElement} content JSX content for the dialog.
      * @param {string} [confirmText] text for confirm button.
      * @param {string} [cancelText] text for cancel button.
      *
-     * @returns {Promise<any>} Popup.
+     * @returns {Promise<SweetAlertResult<any>>} Popup.
      */
     dialog: (type, content, confirmText = 'Sí', cancelText = 'No') => SwalReact.fire({
         icon: type,
