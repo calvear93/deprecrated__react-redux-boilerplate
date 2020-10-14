@@ -15,5 +15,6 @@
         "stylelint.vscode-stylelint",
         "svipas.prettier-plus",
         "waderyan.gitblame",
+        "rvest.vs-code-prettier-eslint"
     ]
 }
