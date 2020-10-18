@@ -2,9 +2,6 @@
 	"[css]": {
 		"editor.defaultFormatter": "svipas.prettier-plus"
 	},
-	"[html]": {
-		"editor.defaultFormatter": "vscode.html-language-features"
-	},
 	"[javascript]": {
 		"editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
 	},
@@ -36,7 +33,7 @@
 	"debug.inlineValues": true,
 	"debug.showInStatusBar": "onFirstSessionStart",
 	"docthis.enableHungarianNotationEvaluation": true,
-	"docthis.includeDateTag": true,
+	"docthis.includeDateTag": false,
 	"docthis.inferTypesFromNames": true,
 	"editor.renderIndentGuides": true,
 	"editor.rulers": [100, 120],
@@ -103,6 +100,7 @@
 		"variables": "shared"
 	},
 	"prettier.singleQuote": true,
+	"prettier.eslintIntegration": true,
 	"prettier.stylelintIntegration": true,
 	"prettier.tabWidth": 4,
 	"prettier.useTabs": false,

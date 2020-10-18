@@ -11,10 +11,11 @@
         "msjsdiag.debugger-for-edge",
         "oouo-diogo-perdigao.docthis",
         "pkief.material-icon-theme",
+        "rvest.vs-code-prettier-eslint",
         "ryannaddy.vscode-format",
         "stylelint.vscode-stylelint",
         "svipas.prettier-plus",
         "waderyan.gitblame",
-        "rvest.vs-code-prettier-eslint"
+        "DotJoshJohnson.xml"
     ]
 }
