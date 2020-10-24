@@ -1,5 +1,3 @@
-import React from 'react';
-
 /**
  * Header for App Layout.
  *

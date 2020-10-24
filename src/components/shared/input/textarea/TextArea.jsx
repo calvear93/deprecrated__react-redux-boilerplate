@@ -1,4 +1,3 @@
-import React from 'react';
 import { TextArea as TextAreaSemantic } from 'semantic-ui-react';
 
 /**

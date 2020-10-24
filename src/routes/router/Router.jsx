@@ -10,7 +10,7 @@
  * Last modified  : 2020-09-07 19:10:21
  */
 
-import React, { lazy, Suspense } from 'react';
+import { lazy, Suspense } from 'react';
 import { Redirect, Route, Switch, useLocation, useRouteMatch } from 'react-router-dom';
 import RouteChild from './RouteChild';
 import Loader from 'components/shared/loader';

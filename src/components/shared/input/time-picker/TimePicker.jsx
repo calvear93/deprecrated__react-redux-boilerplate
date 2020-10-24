@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import TimeKeeper from 'react-timekeeper';
 import { useClickAway } from 'react-use';
 import { Icon, Input, Popup, Ref } from 'semantic-ui-react';

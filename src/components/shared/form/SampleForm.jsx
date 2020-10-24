@@ -1,4 +1,3 @@
-import React from 'react';
 import FormFactory from './FormFactory';
 import {
     SEPARATOR,

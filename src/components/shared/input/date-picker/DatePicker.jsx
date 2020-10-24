@@ -1,5 +1,5 @@
 import { getDate, getMonth, getYear } from 'date-fns';
-import React, { useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import ModernDatePicker from 'react-modern-calendar-datepicker';
 import { Icon, Input, Ref } from 'semantic-ui-react';
 import { formatDate } from 'utils/libs/time.lib';

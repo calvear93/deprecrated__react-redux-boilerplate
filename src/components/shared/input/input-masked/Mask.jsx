@@ -1,5 +1,5 @@
 import IMask from 'imask';
-import React from 'react';
+import { cloneElement } from 'react';
 import { IMaskMixin } from 'react-imask';
 import { Ref } from 'semantic-ui-react';
 import { CustomOnChangeEvent } from '../shared';
@@ -73,7 +73,7 @@ const MaskedInput = IMaskMixin(({ inputRef, children, ...props }) =>
 {
     return (
         <Ref innerRef={ (node) => inputRef(findInput(node)) }>
-            {React.cloneElement(children, { ...props })}
+            {cloneElement(children, { ...props })}
         </Ref>
     );
 });

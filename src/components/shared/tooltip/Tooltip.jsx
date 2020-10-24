@@ -1,4 +1,3 @@
-import React from 'react';
 import clsx from 'clsx';
 import Tippy from '@tippyjs/react';
 import 'styles/modules/tippy.scss';

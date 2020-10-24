@@ -1,4 +1,3 @@
-import React from 'react';
 import './playground-page.scss';
 import { useAsync } from 'react-use';
 import WebClient from 'services/api/web-client';

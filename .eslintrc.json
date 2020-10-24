@@ -3,7 +3,7 @@
 		"amd": true,
 		"browser": true,
 		"commonjs": true,
-		"es2020": true,
+		"es2021": true,
 		"jest": true,
 		"node": true,
 		"serviceworker": true,
@@ -25,7 +25,7 @@
 		"ecmaFeatures": {
 			"jsx": true
 		},
-		"ecmaVersion": 2020,
+		"ecmaVersion": 12,
 		"sourceType": "module"
 	},
 	"plugins": [
@@ -236,7 +236,7 @@
 				"closingSlash": "never"
 			}
 		],
-		"react/jsx-uses-react": "warn",
+		"react/jsx-uses-react": "off",
 		"react/jsx-uses-vars": "warn",
 		"react/jsx-wrap-multilines": "warn",
 		"react/no-danger": "warn",
@@ -255,7 +255,7 @@
 		"react/no-unused-prop-types": "warn",
 		"react/no-unused-state": "warn",
 		"react/prop-types": "off",
-		"react/react-in-jsx-scope": "error",
+		"react/react-in-jsx-scope": "off",
 		"react/self-closing-comp": "warn",
 		"react/sort-comp": "warn",
 		"react/sort-prop-types": "warn",

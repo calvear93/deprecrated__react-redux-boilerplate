@@ -1,4 +1,4 @@
-import React from 'react';
+import { memo } from 'react';
 import Router from 'routes/router';
 import Routes from './playground.routes';
 
@@ -23,4 +23,4 @@ function PlaygroundRouter()
     );
 }
 
-export default React.memo(PlaygroundRouter);
+export default memo(PlaygroundRouter);

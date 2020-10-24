@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { memo, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import Loader from 'components/shared/loader';
@@ -59,4 +59,4 @@ function AuthenticationProvider({
     );
 }
 
-export default React.memo(AuthenticationProvider);
+export default memo(AuthenticationProvider);

@@ -1,4 +1,4 @@
-import React from 'react';
+import { memo } from 'react';
 import Router from 'routes/router';
 import Routes from './app.routes';
 
@@ -23,4 +23,4 @@ function AppRouter()
     );
 }
 
-export default React.memo(AppRouter);
+export default memo(AppRouter);

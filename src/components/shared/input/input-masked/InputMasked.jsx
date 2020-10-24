@@ -1,5 +1,4 @@
 import IMask from 'imask';
-import React from 'react';
 import { IMaskInput } from 'react-imask';
 
 /**

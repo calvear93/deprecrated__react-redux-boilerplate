@@ -11,7 +11,6 @@
  * Last modified  : 2020-09-07 20:41:42
  */
 
-import React from 'react';
 import { toast } from 'react-toastify';
 
 /**

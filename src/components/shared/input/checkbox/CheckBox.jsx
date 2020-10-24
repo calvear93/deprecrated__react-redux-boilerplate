@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Col, Row } from 'react-flexbox-grid';
 import { Checkbox, Icon } from 'semantic-ui-react';
 import { CustomOnChangeEvent } from '../shared';

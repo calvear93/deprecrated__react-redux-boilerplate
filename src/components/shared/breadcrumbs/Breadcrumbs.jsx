@@ -1,4 +1,3 @@
-import React from 'react';
 import DynamicBreadcrumbs from 'react-router-dynamic-breadcrumbs';
 import { routes } from 'routes';
 

@@ -1,5 +1,4 @@
 import clsx from 'clsx';
-import React from 'react';
 import BounceLoader from 'react-spinners/BounceLoader';
 import './loader.scss';
 import color from 'styles/vars/_colors.scss';
