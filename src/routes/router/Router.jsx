@@ -74,13 +74,13 @@ export default function Router({
                                 key,
                                 path,
                                 exact,
-                                ...rest
+                                ...child
                             } = route;
 
                             // renders the route.
                             return (
                                 <Route key={ key } exact={ exact } path={ `${basePath}${path}`.replace(/\/\//g, '/') }>
-                                    <RouteChild render={ rest } />
+                                    <RouteChild render={ child } />
                                 </Route>
                             );
                         })

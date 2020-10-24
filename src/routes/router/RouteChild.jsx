@@ -6,31 +6,48 @@ import { useDocumentTitle } from 'hooks/document.hook';
  * @param {any} props component props.
  * @param {object} props.render child config.
  * @param {string} props.render.title page document title.
- * @param {object} [props.render.layoutConfig] layout config.
- * @param {React.ReactElement} [props.render.Layout] layout component.
- * @param {React.ReactElement} props.render.Child child component, maybe a Page or Router.
- * @param {any} [props.render.props] child props.
+ * @param {React.ReactElement | object} [props.render.Layout] layout render and props.
+ * @param {React.ReactElement | object} props.render.Child page/router render and props.
  *
  * @returns {React.ReactElement} route child.
  */
 export default function RouteChild({ render })
 {
-    const {
-        title,
-        layoutConfig,
-        Layout,
-        Child,
-        ...props
-    } = render;
+    const { title, Layout, Child } = render;
+
+    const [ LayoutRender, layoutProps ] = ExtractRender(Layout);
+    const [ ChildRender, childProps ] = ExtractRender(Child);
 
     // sets up tab title.
     useDocumentTitle(title);
 
-    return Layout ? (
-        <Layout { ...layoutConfig }>
-            <Child { ...props } />
-        </Layout>
+    return LayoutRender ? (
+        <LayoutRender { ...layoutProps }>
+            <ChildRender { ...childProps } />
+        </LayoutRender>
     ) : (
-        <Child { ...props } />
+        <ChildRender { ...childProps } />
     );
+}
+
+/**
+ * Extracts renderer and props.
+ *
+ * @param {React.ReactElement | object} renderer component renderer.
+ * @param {object} [renderer.Render] component.
+ * @param {...any} [renderer.props] props.
+ *
+ * @returns {Array} render and props.
+ */
+function ExtractRender(renderer)
+{
+    if (!renderer)
+        return [];
+
+    if (!renderer?.Render)
+        return [ renderer ];
+
+    const { Render, ...props } = renderer;
+
+    return [ Render, props ];
 }
