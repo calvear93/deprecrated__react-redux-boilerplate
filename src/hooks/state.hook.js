@@ -3,6 +3,46 @@ import { arrayActions, arrayReducer } from 'hooks/helpers/array.reducer';
 import { queueActions, queueReducer } from 'hooks/helpers/queue.reducer';
 import { stackActions, stackReducer } from 'hooks/helpers/stack.reducer';
 
+// Static states.
+const States = {};
+
+/**
+ * Binds a static state to react component.
+ * State value keeps on mounting/un-mounting.
+ *
+ * @dependency useState from react.
+ *
+ * @param {string} key state identifier.
+ * @param {object} def default values for state.
+ *
+ * @returns {Array} static state and set function.
+ */
+export function useStaticState(key, def)
+{
+    const [ state, setState ] = useState(States[key] ?? def);
+
+    return [
+        state,
+        (args) =>
+        {
+            if (typeof args === 'function')
+            {
+                setState((prevState) =>
+                {
+                    States[key] = args(prevState);
+
+                    return States[key];
+                });
+            }
+            else
+            {
+                States[key] = args;
+                setState(args);
+            }
+        }
+    ];
+}
+
 /**
  * Binds a complex state to react component.
  *

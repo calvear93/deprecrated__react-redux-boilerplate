@@ -21,7 +21,7 @@ This is a boilerplate for React SPA application using [React](https://es.reactjs
 │   │       ├── breadcrumbs/ # automatic breadcrumbs renderer
 │   │       └── loader/
 │   ├── constants/ # global constants
-│   ├── hooks/ #global hooks
+│   ├── hooks/ # global hooks
 │   ├── layouts/
 │   │   ├── base-layout/ # base flex layout
 │   │   └── app-layout/ # flex layout with header and footer

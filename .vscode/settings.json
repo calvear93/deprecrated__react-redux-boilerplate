@@ -3,10 +3,10 @@
 		"editor.defaultFormatter": "svipas.prettier-plus"
 	},
 	"[javascript]": {
-		"editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
 	},
 	"[javascriptreact]": {
-		"editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
 	},
 	"[json]": {
 		"editor.defaultFormatter": "vscode.json-language-features"
