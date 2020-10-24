@@ -259,7 +259,7 @@
 		"react/self-closing-comp": "warn",
 		"react/sort-comp": "warn",
 		"react/sort-prop-types": "warn",
-		"semi": ["error", "always"],
+		"semi": ["warn", "always"],
 		"semi-spacing": "warn",
 		"semi-style": ["warn", "last"],
 		"sonarjs/cognitive-complexity": ["off", 20],

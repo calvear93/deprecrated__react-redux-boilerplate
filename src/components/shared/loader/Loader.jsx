@@ -1,7 +1,6 @@
 import clsx from 'clsx';
 import BounceLoader from 'react-spinners/BounceLoader';
 import './loader.scss';
-import color from 'styles/vars/_colors.scss';
 
 /**
  * Loader component for React Suspense and lazy.
@@ -32,7 +31,7 @@ export default function Loader({
     return (
         <div className={ clsx('loader-container', 'unselectable', { absolute, background, blur }) }>
             <div className='loader'>
-                <BounceLoader color={ color.brand } />
+                <BounceLoader color='#007a33' />
                 {message && <label>{message}</label>}
             </div>
         </div>
