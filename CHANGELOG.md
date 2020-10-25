@@ -2,9 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0] - 2020-10-25
+
+-   React 17.
+-   React Scripts 4.
+-   Eslint 7.
+-   Routing architecture tweaks.
+-   .prettierrc.json added.
+
 ## [1.0.0] - 2020-08-15
 
--   Base project scalable architecture.
+-   Base project with scalable architecture.
 -   Semantic UI React as UI Framework.
 -   Declarative routing in routes folder.
 -   Pages components represents a specific URL path in app.

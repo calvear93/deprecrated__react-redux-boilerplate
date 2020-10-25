@@ -1,1 +1,1 @@
-export { default } from './FormDemoPage';
+export { default } from './FormDemo.page';
