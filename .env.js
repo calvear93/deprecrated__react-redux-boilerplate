@@ -35,6 +35,7 @@ module.exports = Promise.resolve({
 	// used on project building.
 	build: {
 		//NODE_OPTIONS: '--max_old_space_size=4096', // increases build heap size.
+		REACT_APP_SERVICE_WORKER: false
 	},
 
   	debug: {
