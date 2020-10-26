@@ -90,7 +90,8 @@
 		"defaults.js": "makefile",
 		"defaults.ts": "makefile",
 		"package.json": "nodejs_alt",
-		"serviceWorker.js": "http",
+		"service-worker.js": "http",
+		"service-worker-register.js": "settings",
 		"setupTests.js": "jest"
 	},
 	"material-icon-theme.folders.associations": {
