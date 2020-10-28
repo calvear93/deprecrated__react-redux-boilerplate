@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:42:09
- * Last modified  : 2020-10-04 12:26:12
+ * Last modified  : 2020-10-28 19:07:30
  */
 
 /**
@@ -67,6 +67,31 @@ export function filter(obj, func)
 
             return mapper;
         }, {});
+}
+
+/**
+ * Select object properties values by selectors
+ *
+ * @example
+ *  const obj = {
+ *      name: 'fire',
+ *      indexes: [1, 2, 3, 4]
+ *  };
+ *  select(obj, 'name', 'indexes[2]') // ['fire', 3]
+ *
+ * @param {object} obj object for filter.
+ * @param {...any} selectors
+ *
+ * @returns {Array} selected values array..
+ */
+export function select(obj, ...selectors)
+{
+    return selectors.map(s => s
+        .replace(/\[([^[\]]*)\]/g, '.$1.')
+        .split('.')
+        .filter(t => t !== '')
+        .reduce((prev, cur) => prev && prev[cur], obj)
+    );
 }
 
 /**

@@ -7,7 +7,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:37:10
- * Last modified  : 2020-10-03 20:35:00
+ * Last modified  : 2020-10-28 19:07:05
  */
 
 import { addMonths, addYears, getDaysInMonth, differenceInCalendarDays, differenceInCalendarMonths, differenceInCalendarYears, format, formatDuration, isValid } from 'date-fns';
@@ -27,6 +27,22 @@ const FORMAT = {
     TIME_24H_FORMAT: 'HH:mm:ss',
     NATURAL_DATE_FORMAT: `cccc dd${MESSAGES.PREFIX_DATE}MMMM${MESSAGES.PREFIX_DATE}yyyy`,
     NATURAL_DATETIME_FORMAT: `cccc dd${MESSAGES.PREFIX_DATE}MMMM${MESSAGES.PREFIX_DATE}yyyy${MESSAGES.PREFIX_TIME}`
+};
+
+const DURATIONS = {
+    millennium: [ 'milenio', 's' ],
+    century: [ 'siglo', 's' ],
+    decade: [ 'década', 's' ],
+    year: [ 'año', 's' ],
+    semester: [ 'semestre', 's' ],
+    quarter: [ 'trimestre', 's' ],
+    month: [ 'mes', 'es' ],
+    week: [ 'semana', 's' ],
+    day: [ 'día', 's' ],
+    hour: [ 'hora', 's' ],
+    minute: [ 'minuto', 's' ],
+    second: [ 'segundo', 's' ],
+    millisecond: [ 'milisegundo', 's' ]
 };
 
 /**
@@ -145,6 +161,30 @@ export function toNaturalDateTime(date, format24 = true)
         date = new Date(date);
 
     return format(date, `${FORMAT.NATURAL_DATETIME_FORMAT}${timeFormatChooser(format24)}`, LOCALE);
+}
+
+/**
+ * Converts ms in time duration from days.
+ *
+ * @param {number} ms milliseconds.
+ *
+ * @returns {string} duration.
+ */
+export function toDuration(ms)
+{
+    if (ms < 0) ms = -ms;
+    const time = {
+        day: Math.floor(ms / 86400000),
+        hour: Math.floor(ms / 3600000) % 24,
+        minute: Math.floor(ms / 60000) % 60,
+        second: Math.floor(ms / 1000) % 60,
+        millisecond: Math.floor(ms) % 1000
+    };
+
+    return Object.entries(time)
+        .filter(val => val[1] !== 0)
+        .map(([ key, val ]) => `${val} ${DURATIONS[key][0]}${val !== 1 ? DURATIONS[key][1] : ''}`)
+        .join(', ');
 }
 
 /**
