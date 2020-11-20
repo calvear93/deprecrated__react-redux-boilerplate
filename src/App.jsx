@@ -1,5 +1,5 @@
-import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
+import { Provider as StoreProvider } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 import { AuthenticationProvider, AuthenticationSecurityMode } from 'services/security';
 import { useUI } from 'hooks/ui.hook';
@@ -21,14 +21,14 @@ export default function App()
 
     return (
         <BrowserRouter>
-            <Provider store={ store }>
+            <StoreProvider store={ store }>
                 <AuthenticationProvider
                     mode={ AuthenticationSecurityMode.WHITELIST }
                     errorRoute='/401'
                 >
                     <AppRouter />
                 </AuthenticationProvider>
-            </Provider>
+            </StoreProvider>
 
             <ToastContainer />
         </BrowserRouter>
