@@ -6,7 +6,7 @@ import SampleHandler from './sample.action';
  *
  * @param {any} payload action payload.
  */
-function* exec(payload)
+function* exec({ payload })
 {
     try
     {
