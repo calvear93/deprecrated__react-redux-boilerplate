@@ -151,7 +151,6 @@
         ],
         "no-throw-literal": "error",
         "no-trailing-spaces": "warn",
-        "no-undef": "warn",
         "no-unneeded-ternary": "warn",
         "no-unused-vars": "warn",
         "object-curly-spacing": ["warn", "always"],
