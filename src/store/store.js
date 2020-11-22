@@ -10,7 +10,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 22:41:11
- * Last modified  : 2020-08-16 11:30:51
+ * Last modified  : 2020-11-22 11:26:12
  */
 
 import { combineReducers, createStore } from 'redux';
@@ -26,9 +26,6 @@ const reducers = combineReducers({
 });
 
 // combine every sagas in parallel tasks.
-/**
- *
- */
 function* combineSagas()
 {
     yield all([
