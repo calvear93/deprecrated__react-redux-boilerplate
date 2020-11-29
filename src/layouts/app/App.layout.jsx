@@ -8,26 +8,20 @@ import './app-layout.scss';
  *
  * @param {object} props component props.
  * @param {React.ReactElement} props.children component for render inside.
- * @param {any} props.header header props.
- * @param {any} props.footer footer props.
  *
  * @returns {React.ReactElement} app layout.
  */
-export default function AppLayout({
-    children,
-    header: headerProps,
-    footer: footerProps
-})
+export default function AppLayout({ children })
 {
     return (
         <main id='app-layout'>
-            <Header { ...headerProps } />
+            <Header />
 
             <Breadcrumbs />
 
             {children}
 
-            <Footer { ...footerProps } />
+            <Footer />
         </main>
     );
 }

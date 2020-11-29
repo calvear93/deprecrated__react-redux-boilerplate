@@ -1,8 +1,8 @@
 import { BrowserRouter } from 'react-router-dom';
 import { Provider as StoreProvider } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
-import { AuthenticationProvider, AuthenticationSecurityMode } from 'services/security';
 import { useUI } from 'hooks/ui.hook';
+import { useAppInit } from 'hooks/app.hook';
 import store from 'store/store';
 import AppRouter from 'routes';
 
@@ -16,18 +16,15 @@ import AppRouter from 'routes';
  */
 export default function App()
 {
+    // initializes app modules.
+    useAppInit();
     // loads UI theme stylesheets.
     useUI();
 
     return (
         <BrowserRouter>
             <StoreProvider store={ store }>
-                <AuthenticationProvider
-                    mode={ AuthenticationSecurityMode.WHITELIST }
-                    errorRoute='/401'
-                >
-                    <AppRouter />
-                </AuthenticationProvider>
+                <AppRouter />
             </StoreProvider>
 
             <ToastContainer />

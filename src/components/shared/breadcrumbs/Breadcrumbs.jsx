@@ -1,8 +1,8 @@
 import DynamicBreadcrumbs from 'react-router-dynamic-breadcrumbs';
-import { routes } from 'routes';
+import { RouterService } from 'modules/router';
 
 // routes array.
-const paths = Object.keys(routes);
+const paths = Object.keys(RouterService.Breadcrumbs);
 
 /**
  * Dynamic breadcrumbs for
@@ -14,7 +14,7 @@ export default function Breadcrumbs()
 {
     return (
         <DynamicBreadcrumbs
-            mappedRoutes={ routes }
+            mappedRoutes={ RouterService.Breadcrumbs }
             WrapperComponent={ ({ children }) => (
                 <div className='ui breadcrumb'>{children}</div>
             ) }

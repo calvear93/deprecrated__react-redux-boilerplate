@@ -10,27 +10,24 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 22:41:11
- * Last modified  : 2020-11-22 11:26:12
+ * Last modified  : 2020-11-29 18:50:12
  */
 
 import { combineReducers, createStore } from 'redux';
 import createMiddleware from './middleware';
 import { all } from 'redux-saga/effects';
 import { SampleHandler, SampleReducer, SampleSaga } from './sample';
-import { AuthenticationHandler, AuthenticationReducer, AuthenticationSaga } from './auth';
 
 // combine reducers creating the store partitions.
 const reducers = combineReducers({
-    [SampleHandler.Key]: SampleReducer,
-    [AuthenticationHandler.Key]: AuthenticationReducer
+    [SampleHandler.Key]: SampleReducer
 });
 
 // combine every sagas in parallel tasks.
 function* combineSagas()
 {
     yield all([
-        SampleSaga(),
-        AuthenticationSaga()
+        SampleSaga()
     ]);
 }
 
