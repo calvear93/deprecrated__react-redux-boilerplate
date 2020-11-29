@@ -72,7 +72,7 @@ export function useAuthentication(disabled = false, loginType = types.LOGIN_TYPE
 
     useEffect(() =>
     {
-        if (!authenticated)
+        if (!authenticated && !error)
         {
             AuthenticationService.login({ type: loginType })
                 .then(() => setAuthenticated(true))

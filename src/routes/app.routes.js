@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:24:07
- * Last modified  : 2020-11-29 18:37:10
+ * Last modified  : 2020-11-29 19:41:51
  */
 
 import { lazy } from 'react';
@@ -66,7 +66,10 @@ export default [
         title: 'Sin Autorización',
         path: '/401',
         Layout: Layouts.Base,
-        Child: Pages.Unauthorized
+        Child: Pages.Unauthorized,
+        payload: {
+            unsecured: true
+        }
     },
     // blank html page for load authentication iframe to refresh the token,
     // also, you should set REACT_APP_AAD_LOGIN_ACTION_REDIRECT as '/auth' route.

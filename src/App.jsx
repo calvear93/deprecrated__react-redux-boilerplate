@@ -4,7 +4,6 @@ import { ToastContainer } from 'react-toastify';
 import store from 'store/store';
 import AppRouter from 'routes';
 import { useUI } from 'hooks/ui.hook';
-import { useSecurity } from 'hooks/app.hook';
 
 /**
  * App container.
@@ -18,8 +17,6 @@ export default function App()
 {
     // loads UI theme stylesheets.
     useUI();
-    // initializes app modules.
-    useSecurity();
 
     return (
         <BrowserRouter>

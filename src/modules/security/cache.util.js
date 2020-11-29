@@ -70,6 +70,8 @@ function dateNextDays(days)
  * @param {number} [options.expirationInDays] expiration in days.
  * @param {string} [options.storageType] storage type.
  *
+ * @throws {Error} on non valid key.
+ *
  * @returns {Promise<any>} cached/persisted value or promise result.
  */
 export async function cacheAsyncCallback(key, promise, { expirationInDays, storageType = types.CACHE.LOCAL_STORAGE } = {})
