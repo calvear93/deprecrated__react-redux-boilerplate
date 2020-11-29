@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:24:07
- * Last modified  : 2020-11-29 19:41:51
+ * Last modified  : 2020-11-29 19:56:11
  */
 
 import { lazy } from 'react';
@@ -58,17 +58,6 @@ export default [
             footer: {
                 text: 'PIE DE PÁGINA'
             }
-        }
-    },
-    // on unauthorized access.
-    {
-        key: 'unauthorized-page',
-        title: 'Sin Autorización',
-        path: '/401',
-        Layout: Layouts.Base,
-        Child: Pages.Unauthorized,
-        payload: {
-            unsecured: true
         }
     },
     // blank html page for load authentication iframe to refresh the token,
