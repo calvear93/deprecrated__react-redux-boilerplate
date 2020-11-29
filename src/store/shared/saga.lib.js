@@ -5,10 +5,9 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 22:43:58
- * Last modified  : 2020-08-28 16:29:45
+ * Last modified  : 2020-11-29 20:18:50
  */
 
-import { isBefore } from 'date-fns';
 import { call, race, take, delay } from 'redux-saga/effects';
 import storage, { StorageType } from 'utils/libs/storage.lib';
 
@@ -54,13 +53,26 @@ export function* takeAny(types, times, timeout = 0)
  * @param {IterableIterator<any>} generator generator callback.
  * @param {Array} args generator function args.
  *
+ * @throws {Error} on non valid key.
+ *
  * @returns {IterableIterator<any>} cached/persisted value or result.
  */
 export function* memoCall(key, storageType, expiration, generator, ...args)
 {
     const cache = storage[storageType].get(key);
 
-    if (cache && cache !== 'undefined' && cache.expiration && isBefore(new Date(), new Date(cache.expiration)))
+    // optimistic data refresh.
+    if (cache?.expiration && new Date().getTime() > new Date(cache.expiration).getTime())
+    {
+        // delayed data refresh from source.
+        (function* ()
+        {
+            const data = yield call(generator, ...args);
+            storage[storageType].set(key, { expiration, data });
+        })();
+    }
+
+    if (cache && cache !== 'undefined')
         return cache.data;
 
     const data = yield call(generator, ...args);

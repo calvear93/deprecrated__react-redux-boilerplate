@@ -20,6 +20,6 @@ if (process.env.REACT_APP_SERVICE_WORKER === 'true')
 // Learn more at: https://miragejs.com
 if (process.env.REACT_APP_MOCK_SERVER === 'true')
 {
-    const server = require('mock/server');
+    const server = require('modules/mock');
     server.default();
 }
