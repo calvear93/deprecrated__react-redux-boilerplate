@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-23 19:53:33
- * Last modified  : 2020-11-29 11:14:34
+ * Last modified  : 2020-11-29 19:17:17
  */
 
 import * as Msal from 'msal';

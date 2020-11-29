@@ -1,10 +1,10 @@
 import { BrowserRouter } from 'react-router-dom';
 import { Provider as StoreProvider } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
-import { useUI } from 'hooks/ui.hook';
-import { useAppInit } from 'hooks/app.hook';
 import store from 'store/store';
 import AppRouter from 'routes';
+import { useUI } from 'hooks/ui.hook';
+import { useSecurity } from 'hooks/app.hook';
 
 /**
  * App container.
@@ -16,10 +16,10 @@ import AppRouter from 'routes';
  */
 export default function App()
 {
-    // initializes app modules.
-    useAppInit();
     // loads UI theme stylesheets.
     useUI();
+    // initializes app modules.
+    useSecurity();
 
     return (
         <BrowserRouter>
