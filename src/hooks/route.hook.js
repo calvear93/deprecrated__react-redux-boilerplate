@@ -29,7 +29,7 @@ export function useQueryParams()
  *
  * @returns {string} URL hash.
  */
-export function useHash()
+export function useHashValue()
 {
     const { hash } = useLocation();
 

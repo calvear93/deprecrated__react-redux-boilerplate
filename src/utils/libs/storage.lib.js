@@ -7,11 +7,10 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-08-13 19:40:14
- * Last modified  : 2020-08-28 16:28:08
+ * Last modified  : 2020-11-29 17:40:45
  */
 
 import storage from 'store2';
-import { isBefore } from 'date-fns';
 
 /**
  * Storage types.
@@ -39,13 +38,29 @@ export default storage;
  * @param {Date | null} [options.expiration] expiration date.
  * @param {string} [options.storageType] storage type.
  *
+ * @throws {Error} on non valid key.
+ *
  * @returns {Promise<any>} cached/persisted value or promise result.
  */
 export async function memoAsyncCallback(key, promise, { expiration, storageType = StorageType.SESSION } = {})
 {
+    if (!key)
+        throw new Error('InvalidArgumentException: [key] is required.');
+
     const cache = storage[storageType].get(key);
 
-    if (cache && cache !== 'undefined' && cache.expiration && isBefore(new Date(), new Date(cache.expiration)))
+    // optimistic data refresh.
+    if (cache?.expiration && new Date().getTime() > new Date(cache.expiration).getTime())
+    {
+        // delayed data refresh from source.
+        (async () =>
+        {
+            const data = await promise;
+            storage[storageType].set(key, { expiration, data });
+        })();
+    }
+
+    if (cache && cache !== 'undefined')
         return Promise.resolve(cache.data);
 
     const data = await promise;

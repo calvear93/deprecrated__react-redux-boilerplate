@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0] - 2020-11-29
+
+-   Router module: eases routes declaration and payload. Based on hooks.
+-   Authentication (Azure Active Directory) module. Based on hooks.
+
 ## [1.1.0] - 2020-10-25
 
 -   React 17.

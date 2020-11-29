@@ -26,15 +26,16 @@ This is a boilerplate for React SPA application using [React](https://es.reactjs
 │   │   ├── base-layout/ # base flex layout
 │   │   └── app-layout/ # flex layout with header and footer
 │   ├── mock/ # mock server using MirageJS
+│   ├── modules/
+│   │   ├── router/ # routing service
+│   │   └── security/ # authentication module
 │   ├── pages/ # app pages/views
 │   ├── routes/ # app routes and routers
 │   │   ├── router/ # generic router component
 │   │   ├── app/ # main router
 │   │   └── index.js # exposes main router and routes definition
 │   ├── services/
-│   │   ├── security/ # Azure Active Directory auth service
-│   │   │   └── AuthenticationProvider.jsx
-│   │   └── api/ # web clients
+│   │   └── api/ # web api clients
 │   ├── store/
 │   │   ├── sample/ # store partition sample
 │   │   │   ├── sample.action.js
