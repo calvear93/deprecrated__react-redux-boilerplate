@@ -5,7 +5,7 @@
 # 2. Deployment: deploys the artifact to webapp.
 #
 # Branches environments are defined below:
-# master -> production
+# main -> production
 # stage -> staging
 # release/* -> qa
 # develop -> development
@@ -16,7 +16,7 @@ trigger:
   batch: true
   branches:
     include:
-      - master
+      - main
       - stage
       - release/*
       - develop
@@ -32,7 +32,7 @@ variables:
   System.Debug: false
 
   # production environment variables definition.
-  ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/master') }}:
+  ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/main') }}:
     environmentName: 'PROD'
     environment: 'DEPLOY_WEB_PROD'
     azureSubscription: 'ASC-Project-PROD'
