@@ -42,7 +42,7 @@ module.exports = Promise.resolve({
   	debug: {
 		PORT: 3000,
 		REACT_APP_ENV: 'debug',
-		REACT_APP_MOCK_SERVER: true,
+		REACT_APP_MOCK_SERVER: false,
 		REACT_APP_AAD_CLIENT_ID: ''
 	},
 	development: {

@@ -12,14 +12,14 @@ ReactDOM.render(
 // Learn more about service workers: https://bit.ly/CRA-PWA
 if (process.env.REACT_APP_SERVICE_WORKER === 'true')
 {
-    const serviceWorker = require('service-worker-register');
-    serviceWorker.register();
+    import('service-worker-register')
+        .then(({ default: serviceWorker }) => serviceWorker.register());
 }
 
 // Enables mock server using Mirage JS.
 // Learn more at: https://miragejs.com
 if (process.env.REACT_APP_MOCK_SERVER === 'true')
 {
-    const server = require('modules/mock/server');
-    server.default();
+    import('modules/mock/server')
+        .then(({ default: runServer }) => runServer());
 }
