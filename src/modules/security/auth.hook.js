@@ -103,7 +103,7 @@ export function useAuthentication(disabled = false, loginType = types.LOGIN_TYPE
  */
 export function useAcquireToken()
 {
-    return AuthenticationService.acquireToken;
+    return () => AuthenticationService.acquireToken();
 }
 
 /**

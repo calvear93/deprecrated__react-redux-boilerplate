@@ -3,7 +3,7 @@ const app = require('./package.json');
 module.exports = Promise.resolve({
   // default variables for all environments.
 	default: {
-		HTTPS: false, // local HTTPS support.
+		HTTPS: true, // local HTTPS support.
 		GENERATE_SOURCEMAP: true, // enables/disables sourcemaps generation.
 		SKIP_PREFLIGHT_CHECK: true, // avoid package from node_modules versions conflicts. Used for jest.
 		REACT_APP_DEBUG: true,
@@ -43,7 +43,9 @@ module.exports = Promise.resolve({
 		PORT: 3000,
 		REACT_APP_ENV: 'debug',
 		REACT_APP_MOCK_SERVER: false,
-		REACT_APP_AAD_CLIENT_ID: ''
+		REACT_APP_AAD_ENABLED: true,
+		REACT_APP_AAD_TENANT_ID: '6d4bbe0a-5654-4c69-a682-bf7dcdaed8e7',
+		REACT_APP_AAD_CLIENT_ID: '91678a4b-5262-4611-a60b-6dc9e0ca00f3',
 	},
 	development: {
 		REACT_APP_ENV: 'development',
