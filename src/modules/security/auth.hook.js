@@ -19,7 +19,36 @@ import { AuthenticationService, GraphService } from './services';
 export function useLogin(loginType = types.LOGIN_TYPE.REDIRECT)
 {
     const [ disabled, setDisabled ] = useState(true);
-    const state = useAuthentication(disabled, loginType);
+    const state = useAuthentication({ disabled, loginType });
+
+    function login()
+    {
+        setDisabled(false);
+    }
+
+    return [ login, state ];
+}
+
+/**
+ * Returns login function and
+ * current authentication state
+ * using an async callback for
+ * post AD auth validation.
+ *
+ * @export
+ *
+ * @param {Promise<boolean>} asyncCallback a promise callback.
+ * @param {string} [loginType] login type (redirect or popup).
+ *  Avoid using POPUP type on programatic/automatic login, should be used
+ *  on user interaction (i.e. button push, page navigation triggered by user, etc.)
+ *
+ * @returns {Array<any>} login function and auth state
+ *  (authenticated, authenticating and error).
+ */
+export function useConditionalLogin(asyncCallback, loginType = types.LOGIN_TYPE.REDIRECT)
+{
+    const [ disabled, setDisabled ] = useState(true);
+    const state = useConditionalAuthentication(asyncCallback, { disabled, loginType });
 
     function login()
     {
@@ -56,15 +85,16 @@ export function useLogout()
  *
  * @export
  *
- * @param {boolean} [disabled] whether authentication is disabled.
- * @param {string} [loginType] login type (redirect or popup).
+ * @param {boolean} [options] whether authentication is disabled.
+ * @param {boolean} [options.disabled] whether authentication is disabled.
+ * @param {string} [options.loginType] login type (redirect or popup).
  *  Avoid using POPUP type on programatic/automatic login, should be used
  *  on user interaction (i.e. button push, page navigation triggered by user, etc.)
  *
  * @returns {object} authenticating (bool),
  *  authenticated (bool) and error (Error) data.
  */
-export function useAuthentication(disabled = false, loginType = types.LOGIN_TYPE.REDIRECT)
+export function useAuthentication({ disabled = false, loginType = types.LOGIN_TYPE.REDIRECT } = {})
 {
     const [ authenticated, setAuthenticated ] = useState(AuthenticationService.isAuthenticated() || disabled);
     const [ authenticating, setAuthenticating ] = useState(!authenticated);
@@ -88,6 +118,56 @@ export function useAuthentication(disabled = false, loginType = types.LOGIN_TYPE
         setAuthenticated(isAuthenticated);
         setAuthenticating(!isAuthenticated);
     }, [ disabled ]);
+
+    return { authenticating, authenticated, error };
+}
+
+/**
+ * Executes Active Directory
+ * automatic account validation
+ * and a condition post condition.
+ *
+ * @export
+ *
+ * @param {Promise<boolean>} asyncCallback a promise callback.
+ *  Returns true if authentication is done, false in otherwise.
+ * @param {boolean} [options] whether authentication is disabled.
+ * @param {boolean} [options.disabled] whether authentication is disabled.
+ * @param {string} [options.loginType] login type (redirect or popup).
+ * Avoid using POPUP type on programatic/automatic login, should be used
+ * on user interaction (i.e. button push, page navigation triggered by user, etc.)
+ *
+ * @returns {object} authenticating (bool),
+ * authenticated (bool) and error (Error) data.
+ */
+export function useConditionalAuthentication(asyncCallback, options)
+{
+    const {
+        authenticated: baseAuthenticated,
+        authenticating: baseAuthenticating,
+        error: baseError
+    } = useAuthentication(options);
+
+    const [ authenticated, setAuthenticated ] = useState();
+    const [ authenticating, setAuthenticating ] = useState(true);
+    const [ error, setError ] = useState(baseError);
+
+    useEffect(() =>
+    {
+        if (baseAuthenticated)
+        {
+            asyncCallback()
+                .then((valid) => setAuthenticated(valid))
+                .catch((error) => setError(error))
+                .finally(() => setAuthenticating(false));
+        }
+        else if (!baseAuthenticating)
+        {
+            setAuthenticated(false);
+            setAuthenticating(false);
+            setError(baseError);
+        }
+    }, [ authenticated ]);
 
     return { authenticating, authenticated, error };
 }
