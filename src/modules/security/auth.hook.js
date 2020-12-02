@@ -210,7 +210,7 @@ export function useAccountInfo(disabled = false)
             const { cacheLocation, infoCacheDurationInDays } = AuthenticationService.BaseConfig.cache;
 
             cacheAsyncCallback(
-                `${AuthenticationService.getId()}_info`,
+                `msal.${AuthenticationService.getId()}.info`,
                 GraphService.me(),
                 {
                     expirationInDays: infoCacheDurationInDays,
@@ -251,7 +251,7 @@ export function useUserPhoto(size = '648x648', disabled = false)
             const { cacheLocation, photoCacheDurationInDays } = AuthenticationService.BaseConfig.cache;
 
             cacheAsyncCallback(
-                `${AuthenticationService.getId()}_photo_${size}`,
+                `msal.${AuthenticationService.getId()}.photo${size}`,
                 GraphService.photoWithSize(size),
                 {
                     expirationInDays: photoCacheDurationInDays,
