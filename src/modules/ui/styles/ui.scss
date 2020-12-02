@@ -1,0 +1,60 @@
+/**
+ * SASS/SCSS version of Semantic UI stylesheet.
+ * https://www.npmjs.com/package/semantic-ui-sass
+ *
+ * [i] Fonts is loaded in public/index.html.
+ */
+
+$font-family: 'Fira Sans', sans-serif;
+$font-name: 'Fira Sans';
+$import-google-fonts: false;
+
+@import '~semantic-ui-sass/semantic-ui';
+@import 'global';
+@import 'vars';
+
+.ui.selection.dropdown.active,
+.ui.selection.dropdown.visible {
+    @include z-index(dropdown);
+}
+
+.dropdown-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: color(slate-gray-dark);
+
+    .dropdown-content-header {
+        padding-bottom: .2em;
+        font-weight: bolder;
+        text-transform: uppercase;
+    }
+
+    .dropdown-content-item {
+        padding-top: .2em;
+        font-size: .9em;
+    }
+}
+
+.ui.disabled.toggle.checkbox .box:hover:before,
+.ui.disabled.toggle.checkbox label:hover:before {
+    background-color: rgba(0, 0, 0, .05);
+}
+
+.ui.toggle.checkbox input:checked ~ .box:before,
+.ui.toggle.checkbox input:checked ~ label:before,
+.ui.toggle.checkbox input:focus:checked ~ .box:before,
+.ui.toggle.checkbox input:focus:checked ~ label:before {
+    background-color: color(brand) !important;
+}
+
+.ui.form.disabled {
+    textarea:disabled {
+        opacity: .6;
+        resize: none;
+    }
+}
+
+.ui.breadcrumb {
+    padding: .6em 1em;
+}

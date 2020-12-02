@@ -1,6 +1,5 @@
 import Footer from './Footer';
 import Header from './Header';
-import Breadcrumbs from 'components/shared/breadcrumbs';
 import './app-layout.scss';
 
 /**
@@ -16,8 +15,6 @@ export default function AppLayout({ children })
     return (
         <main id='app-layout'>
             <Header />
-
-            <Breadcrumbs />
 
             {children}
 

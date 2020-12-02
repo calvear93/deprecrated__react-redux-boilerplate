@@ -1,9 +1,9 @@
 import { BallTriangleLoader } from 'assets/loaders';
 import SampleForm from 'components/shared/form/SampleForm';
-import Tooltip from 'components/shared/tooltip';
+import Tooltip from 'modules/ui/components/tooltip';
 import { useEffect } from 'react';
 import { Button } from 'semantic-ui-react';
-import Swal from 'utils/libs/swal.lib';
+import { Swal } from 'modules/ui';
 import Toast from 'utils/libs/toast.lib';
 
 /**

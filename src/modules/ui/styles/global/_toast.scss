@@ -1,0 +1,240 @@
+@import '~react-toastify/dist/ReactToastify.css';
+@import '../vars';
+
+// Toast schemes.
+$schemes: (
+    default: (
+        background-color: color(white),
+        font-color: color(dark),
+        color: color(primary),
+    ),
+    info: (
+        background-color: color(white),
+        font-color: color(dark),
+        color: color(info),
+        icon: '\F02FD',
+    ),
+    success: (
+        background-color: color(white),
+        font-color: color(dark),
+        color: color(success),
+        icon: '\F0134',
+    ),
+    warning: (
+        background-color: color(white),
+        font-color: color(dark),
+        color: color(warning),
+        icon: '\F05D6',
+    ),
+    error: (
+        background-color: color(white),
+        font-color: color(dark),
+        color: color(danger),
+        icon: '\F015A',
+    ),
+    save-success: (
+        background-color: color(white),
+        font-color: color(dark),
+        color: color(success),
+        icon: '\F0818',
+    ),
+    save-warning: (
+        background-color: color(white),
+        font-color: color(dark),
+        color: color(warning),
+        icon: '\F0818',
+    ),
+    save-error: (
+        background-color: color(white),
+        font-color: color(dark),
+        color: color(danger),
+        icon: '\F0818',
+    ),
+    send-success: (
+        background-color: color(white),
+        font-color: color(dark),
+        color: color(success),
+        icon: '\F0DF9',
+    ),
+    send-warning: (
+        background-color: color(white),
+        font-color: color(dark),
+        color: color(warning),
+        icon: '\F0DF9',
+    ),
+    send-error: (
+        background-color: color(white),
+        font-color: color(dark),
+        color: color(danger),
+        icon: '\F0DF9',
+    ),
+    key-success: (
+        background-color: color(white),
+        font-color: color(dark),
+        color: color(success),
+        icon: '\F0BC5',
+    ),
+    key-warning: (
+        background-color: color(white),
+        font-color: color(dark),
+        color: color(warning),
+        icon: '\F0BC5',
+    ),
+    key-error: (
+        background-color: color(white),
+        font-color: color(dark),
+        color: color(danger),
+        icon: '\F0BC5',
+    ),
+    security-success: (
+        background-color: color(white),
+        font-color: color(dark),
+        color: color(success),
+        icon: '\F0CC8',
+    ),
+    security-warning: (
+        background-color: color(white),
+        font-color: color(dark),
+        color: color(warning),
+        icon: '\F0ECD',
+    ),
+    security-error: (
+        background-color: color(white),
+        font-color: color(dark),
+        color: color(danger),
+        icon: '\F0ADD',
+    ),
+    notification-success: (
+        background-color: color(white),
+        font-color: color(dark),
+        color: color(success),
+        icon: '\F0D5B',
+    ),
+    notification-warning: (
+        background-color: color(white),
+        font-color: color(dark),
+        color: color(warning),
+        icon: '\F0D5B',
+    ),
+    notification-error: (
+        background-color: color(white),
+        font-color: color(dark),
+        color: color(danger),
+        icon: '\F0D5B',
+    ),
+    form-error: (
+        background-color: color(white),
+        font-color: color(dark),
+        color: color(danger),
+        icon: '\F1037',
+    ),
+    smiley-happy: (
+        background-color: color(white),
+        font-color: color(dark),
+        color: color(brand),
+        icon: '\F01F5',
+    ),
+    smiley-neutral: (
+        background-color: color(white),
+        font-color: color(dark),
+        color: color(secondary),
+        icon: '\F01F6',
+    ),
+    smiley-sad: (
+        background-color: color(white),
+        font-color: color(dark),
+        color: color(danger),
+        icon: '\F01F8',
+    ),
+    smiley-wink: (
+        background-color: color(white),
+        font-color: color(dark),
+        color: color(info),
+        icon: '\F0C79',
+    ),
+    smiley-confused: (
+        background-color: color(white),
+        font-color: color(dark),
+        color: color(tomato),
+        icon: '\F10DF',
+    ),
+);
+
+.Toastify__toast-container {
+    @include z-index(toast);
+}
+
+.Toastify__toast {
+    justify-content: center;
+    direction: ltr;
+    border-radius: 8px;
+    cursor: pointer;
+    -ms-flex-pack: justify;
+    @include box-shadow(toast);
+}
+
+.toastify-body {
+    padding: 0 .6em;
+}
+
+i.close.toastify-close-icon {
+    display: inline-block;
+    width: .9em;
+    height: .9em;
+    margin: 0;
+    margin-top: -.2em;
+    color: color(light-gray);
+    font-size: .9em;
+    font-style: normal;
+    text-align: center;
+    text-decoration: inherit;
+    transition: .4s ease;
+
+    &:before {
+        font-family: 'Material Design Icons';
+        content: '\F0159'; // mdi-close-circle
+    }
+
+    &:hover {
+        color: color(primary);
+    }
+}
+
+.toastify-container {
+    @each $scheme, $attr in $schemes {
+        &.#{$scheme} {
+            color: map-get($attr, 'font-color');
+            background-color: map-get($attr, 'background-color');
+
+            @if map-get($attr, 'icon') {
+                .toastify-body {
+                    display: flex;
+                    align-items: center;
+                    justify-content: left;
+                    margin-left: 2.8em;
+                    text-align: left;
+
+                    &:before {
+                        position: absolute;
+                        left: 12px;
+                        color: map-get($attr, 'color');
+                        font-size: 2.4em;
+                        font-family: 'Material Design Icons';
+                        content: map-get($attr, 'icon');
+                    }
+                }
+            }
+
+            i.close.toastify-close-icon {
+                &:hover {
+                    color: map-get($attr, 'color');
+                }
+            }
+
+            div.Toastify__progress-bar {
+                background: none;
+                background-color: map-get($attr, 'color');
+            }
+        }
+    }
+}

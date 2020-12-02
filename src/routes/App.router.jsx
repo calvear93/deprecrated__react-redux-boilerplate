@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-import Loader from 'components/shared/loader';
+import Loader from 'modules/ui/components/loader';
 import Router, { RouterService } from 'modules/router';
 import { AuthenticationService, useAuthentication } from 'modules/security';
 import routes from './app.routes';

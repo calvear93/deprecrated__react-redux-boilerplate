@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 16:24:07
- * Last modified  : 2020-11-29 19:56:11
+ * Last modified  : 2020-12-02 15:25:57
  */
 
 import { lazy } from 'react';
@@ -13,7 +13,6 @@ import playgroundRoutes from './playground.routes';
 
 // layouts container.
 const Layouts = {
-    Base: lazy(() => import('layouts/base')),
     App: lazy(() => import('layouts/app'))
 };
 

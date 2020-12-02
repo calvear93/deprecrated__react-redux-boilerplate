@@ -1,0 +1,33 @@
+@import '../../../styles/vars';
+
+.checkbox-container {
+    position: relative;
+    padding: .2em;
+    padding-right: 1em;
+
+    i.link.icon.checkbox-clear {
+        position: absolute;
+        top: .2em;
+        right: .4em;
+        color: color(light);
+        font-size: .9em;
+    }
+
+    .checkbox-item {
+        padding: .4em .6em;
+
+        .ui.checkbox {
+            input:disabled + label:before {
+                border-color: color(light-gray);
+            }
+
+            label {
+                color: color(slate-gray-dark);
+
+                &:after {
+                    color: color(brand) !important;
+                }
+            }
+        }
+    }
+}

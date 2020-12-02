@@ -3,7 +3,8 @@ import { Provider as StoreProvider } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 import store from 'store/store';
 import AppRouter from 'routes';
-import { useUI } from 'hooks/ui.hook';
+import { useUI } from 'modules/ui';
+import 'styles/app.scss';
 
 /**
  * App container.

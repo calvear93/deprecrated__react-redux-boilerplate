@@ -3,7 +3,7 @@ import { Suspense, useEffect, useState } from 'react';
 import { Col, Row } from 'react-flexbox-grid';
 import { isEmpty } from 'utils/libs/object.lib';
 import validate from 'utils/validators';
-import Loader from 'components/shared/loader';
+import Loader from 'modules/ui/components/loader';
 import './form-factory.scss';
 
 // defines flex-box default columns.
