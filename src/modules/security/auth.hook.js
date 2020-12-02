@@ -93,6 +93,20 @@ export function useAuthentication(disabled = false, loginType = types.LOGIN_TYPE
 }
 
 /**
+ * Exposes acquireToken function
+ * from AuthenticationService
+ * for acquires a access token.
+ *
+ * @export
+ *
+ * @returns {Function} acquireToken.
+ */
+export function useAcquireToken()
+{
+    return AuthenticationService.acquireToken;
+}
+
+/**
  * Retrieves Active Directory
  * account info from Graph Service.
  *
