@@ -19,8 +19,8 @@
     "beautiful-react-hooks": "^0.31.0",
     "clsx": "^1.1.1",
     "date-fns": "^2.16.1",
-    "devextreme": "^20.2.3",
-    "devextreme-react": "^20.2.3",
+    "devextreme": "^20.2.4",
+    "devextreme-react": "^20.2.4",
     "http-status-codes": "^2.1.4",
     "imask": "^6.0.5",
     "mime-types": "^2.1.27",
@@ -47,7 +47,7 @@
     "semantic-ui-react": "^2.0.1",
     "semantic-ui-sass": "^2.4.2",
     "store2": "^2.12.0",
-    "sweetalert2": "^10.10.4",
+    "sweetalert2": "^10.11.1",
     "sweetalert2-react-content": "^3.2.2",
     "swr": "^0.3.9",
     "uuid": "^8.3.1",
@@ -55,10 +55,10 @@
     "voca": "^1.4.0"
   },
   "devDependencies": {
-    "@craco/craco": "^5.8.0",
+    "@craco/craco": "^5.9.0",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
-    "@testing-library/user-event": "^12.2.2",
+    "@testing-library/user-event": "^12.4.0",
     "craco-image-optimizer-plugin": "0.0.3",
     "env-cmd": "^10.1.0",
     "eslint": "^7.14.0",
@@ -76,7 +76,7 @@
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-order": "^4.1.0",
     "stylelint-scss": "^3.18.0",
-    "webpack-bundle-analyzer": "^4.1.0"
+    "webpack-bundle-analyzer": "^4.2.0"
   },
   "cracoConfig": "webpack.config.js",
   "scripts": {
