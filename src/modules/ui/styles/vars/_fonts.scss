@@ -1,0 +1,17 @@
+/** How to use:
+    @import "fonts";
+
+    .modal {
+        font-family: fonts(default);
+    }
+*/
+
+$default: 'Fira Sans', sans-serif;
+
+$fonts: (
+    default: $default
+);
+
+@function font($key) {
+    @return map-get($fonts, $key);
+}

@@ -104,6 +104,7 @@
 		"masks": "middleware",
 		"modules": "middleware",
 		"normalizers": "lib",
+		"ui": "core",
 		"validators": "syntax",
 		"vars": "shared",
 		"variables": "shared"

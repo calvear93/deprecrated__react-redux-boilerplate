@@ -1,4 +1,4 @@
-import Demo from './Demo2';
+import Demo from './Demo';
 
 /**
  * Form Demo page.

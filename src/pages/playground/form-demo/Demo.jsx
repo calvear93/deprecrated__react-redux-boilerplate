@@ -1,17 +1,17 @@
 import { BallTriangleLoader } from 'assets/loaders';
-import SampleForm from 'components/shared/form/SampleForm';
+import SampleForm from 'components/form/SampleForm';
 import Tooltip from 'modules/ui/components/tooltip';
 import { useEffect } from 'react';
 import { Button } from 'semantic-ui-react';
-import { Swal } from 'modules/ui';
-import Toast from 'utils/libs/toast.lib';
+import { Swal } from 'modules/ui/libs';
+import { Toast } from 'modules/ui/libs';
 
 /**
  * Main page.
  *
  * @returns {React.ReactElement} Main page.
  */
-export default function Demo2()
+export default function Demo()
 {
     useEffect(() =>
     {

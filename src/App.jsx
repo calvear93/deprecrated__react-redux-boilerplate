@@ -21,8 +21,7 @@ export default function App()
 
     useEffect(() =>
     {
-        // asynchronous stylesheet loading.
-        import('styles/app.scss');
+        require('styles/app.scss');
     }, []);
 
     return (
