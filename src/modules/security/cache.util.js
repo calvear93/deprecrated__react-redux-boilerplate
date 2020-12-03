@@ -7,7 +7,7 @@ import { types } from './config';
  * @param {any} value value for store.
  * @param {string} [storageType] storage type. Default is localStorage.
  */
-function write(key, value, storageType = types.CACHE.LOCAL_STORAGE)
+export function write(key, value, storageType = types.CACHE.LOCAL_STORAGE)
 {
     try
     {
@@ -30,7 +30,7 @@ function write(key, value, storageType = types.CACHE.LOCAL_STORAGE)
  *
  * @returns {any} stored value.
  */
-function read(key, storageType = types.CACHE.LOCAL_STORAGE)
+export function read(key, storageType = types.CACHE.LOCAL_STORAGE)
 {
     const data = window[storageType].getItem(key);
 

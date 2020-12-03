@@ -44,6 +44,10 @@ module.exports = Promise.resolve({
 		REACT_APP_ENV: 'debug',
 		REACT_APP_MOCK_SERVER: false,
 		REACT_APP_AAD_CLIENT_ID: '',
+		HTTPS: true,
+		REACT_APP_AAD_ENABLED: true,
+		REACT_APP_AAD_TENANT_ID: '6d4bbe0a-5654-4c69-a682-bf7dcdaed8e7',
+		REACT_APP_AAD_CLIENT_ID: '62d47a8a-3d05-40c4-a5cf-0ee0a68ffc35'
 	},
 	development: {
 		REACT_APP_ENV: 'development',

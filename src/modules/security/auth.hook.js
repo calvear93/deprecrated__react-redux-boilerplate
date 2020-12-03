@@ -106,7 +106,11 @@ export function useAuthentication({ disabled = false, loginType = types.LOGIN_TY
         {
             AuthenticationService.login({ type: loginType })
                 .then(() => setAuthenticated(true))
-                .catch((error) => setError(error))
+                .catch((error) =>
+                {
+                    setAuthenticated(false);
+                    setError(error);
+                })
                 .finally(() => setAuthenticating(false));
         }
     }, [ authenticated ]);
@@ -150,7 +154,7 @@ export function useConditionalAuthentication(asyncCallback, options = {})
         error: baseError
     } = useAuthentication(options);
 
-    const [ authenticated, setAuthenticated ] = useState();
+    const [ authenticated, setAuthenticated ] = useState(baseAuthenticated);
     const [ authenticating, setAuthenticating ] = useState(!disabled);
     const [ error, setError ] = useState(baseError);
 
@@ -160,18 +164,16 @@ export function useConditionalAuthentication(asyncCallback, options = {})
         {
             setAuthenticating(true);
 
-            asyncCallback()
+            asyncCallback(AuthenticationService)
                 .then((valid) => setAuthenticated(valid))
-                .catch((error) => setError(error))
+                .catch((error) =>
+                {
+                    setAuthenticated(false);
+                    setError(error);
+                })
                 .finally(() => setAuthenticating(false));
         }
-        else if (!baseAuthenticating)
-        {
-            setAuthenticated(false);
-            setAuthenticating(false);
-            setError(baseError);
-        }
-    }, [ authenticated ]);
+    }, [ authenticated, baseAuthenticated, disabled ]);
 
     return { authenticating: authenticating || baseAuthenticating, authenticated, error };
 }
