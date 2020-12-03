@@ -13,7 +13,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-30 17:01:45
- * Last modified  : 2020-12-02 14:31:28
+ * Last modified  : 2020-12-03 09:46:28
  */
 
 /* eslint-disable no-unused-vars */
@@ -22,7 +22,7 @@ import { lazy } from 'react';
 
 // components container.
 const Components = {
-    Separator: lazy(() => import('./Separator')),
+    Separator: lazy(() => import('modules/ui/components/form/Separator')),
     Input: lazy(() => import('semantic-ui-react').then(module => ({ default: module.Input }))),
     Select: lazy(() => import('semantic-ui-react').then(module => ({ default: module.Select }))),
     CheckBox: lazy(() => import('semantic-ui-react').then(module => ({ default: module.Checkbox }))),

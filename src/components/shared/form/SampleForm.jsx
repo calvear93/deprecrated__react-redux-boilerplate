@@ -1,4 +1,4 @@
-import FormFactory from './FormFactory';
+import { FormFactory } from 'modules/ui/components';
 import {
     SEPARATOR,
     RADIO_GROUP,

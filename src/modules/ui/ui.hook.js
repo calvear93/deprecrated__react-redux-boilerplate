@@ -7,6 +7,6 @@ export function useUI()
 {
     useEffect(() =>
     {
-        require('./styles/ui.scss');
+        import('./styles/ui.scss');
     }, []);
 }

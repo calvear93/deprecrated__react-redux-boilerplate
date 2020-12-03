@@ -1,8 +1,7 @@
 import clsx from 'clsx';
 import { Suspense, useEffect, useState } from 'react';
 import { Col, Row } from 'react-flexbox-grid';
-import { isEmpty } from 'utils/libs/object.lib';
-import validate from 'utils/validators';
+import validate from '../../utils/validators';
 import Loader from 'modules/ui/components/loader';
 import './form-factory.scss';
 
@@ -80,7 +79,7 @@ export default function FormFactory({
             onChange && onChange({
                 values,
                 validations: newValidations,
-                isValid: isEmpty(newValidations)
+                isValid: !newValidations || Object.keys(newValidations).length === 0
             });
 
             setValidations(newValidations ?? {});
@@ -129,7 +128,7 @@ export default function FormFactory({
             key,
             values: newValues,
             validations: newValidations,
-            isValid: isEmpty(newValidations)
+            isValid: !newValidations || Object.keys(newValidations).length === 0
         });
 
         setValues(newValues);

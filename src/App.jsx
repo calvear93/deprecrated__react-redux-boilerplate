@@ -1,10 +1,10 @@
+import { useEffect } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider as StoreProvider } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 import store from 'store/store';
 import AppRouter from 'routes';
 import { useUI } from 'modules/ui';
-import 'styles/app.scss';
 
 /**
  * App container.
@@ -18,6 +18,12 @@ export default function App()
 {
     // loads UI theme stylesheets.
     useUI();
+
+    useEffect(() =>
+    {
+        // asynchronous stylesheet loading.
+        import('styles/app.scss');
+    }, []);
 
     return (
         <BrowserRouter>

@@ -2,7 +2,7 @@ import DynamicBreadcrumbs from 'react-router-dynamic-breadcrumbs';
 import { RouterService } from 'modules/router';
 import { useEffect } from 'react';
 
-let paths;
+let paths = [];
 
 /**
  * Dynamic breadcrumbs for
@@ -28,7 +28,7 @@ export default function Breadcrumbs(routes = [])
     useEffect(() =>
     {
         paths = paths ?? Object.keys(routes);
-    }, routes);
+    }, [ routes ]);
 
     return (
         <DynamicBreadcrumbs
