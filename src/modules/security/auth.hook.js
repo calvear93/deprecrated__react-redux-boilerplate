@@ -18,7 +18,7 @@ import { AuthenticationService, GraphService } from './services';
  */
 export function useLogin(loginType = types.LOGIN_TYPE.REDIRECT)
 {
-    const [ disabled, setDisabled ] = useState(true);
+    const [ disabled, setDisabled ] = useState(!AuthenticationService.isAuthenticated());
     const state = useAuthentication({ disabled, loginType });
 
     function login()
@@ -47,7 +47,7 @@ export function useLogin(loginType = types.LOGIN_TYPE.REDIRECT)
  */
 export function useConditionalLogin(asyncCallback, loginType = types.LOGIN_TYPE.REDIRECT)
 {
-    const [ disabled, setDisabled ] = useState(true);
+    const [ disabled, setDisabled ] = useState(!AuthenticationService.isAuthenticated());
     const state = useConditionalAuthentication(asyncCallback, { disabled, loginType });
 
     function login()
@@ -140,8 +140,10 @@ export function useAuthentication({ disabled = false, loginType = types.LOGIN_TY
  * @returns {object} authenticating (bool),
  * authenticated (bool) and error (Error) data.
  */
-export function useConditionalAuthentication(asyncCallback, options)
+export function useConditionalAuthentication(asyncCallback, options = {})
 {
+    const { disabled } = options;
+
     const {
         authenticated: baseAuthenticated,
         authenticating: baseAuthenticating,
@@ -149,13 +151,15 @@ export function useConditionalAuthentication(asyncCallback, options)
     } = useAuthentication(options);
 
     const [ authenticated, setAuthenticated ] = useState();
-    const [ authenticating, setAuthenticating ] = useState(true);
+    const [ authenticating, setAuthenticating ] = useState(!disabled);
     const [ error, setError ] = useState(baseError);
 
     useEffect(() =>
     {
-        if (baseAuthenticated)
+        if (!disabled && baseAuthenticated)
         {
+            setAuthenticating(true);
+
             asyncCallback()
                 .then((valid) => setAuthenticated(valid))
                 .catch((error) => setError(error))
@@ -169,7 +173,7 @@ export function useConditionalAuthentication(asyncCallback, options)
         }
     }, [ authenticated ]);
 
-    return { authenticating, authenticated, error };
+    return { authenticating: authenticating || baseAuthenticating, authenticated, error };
 }
 
 /**
