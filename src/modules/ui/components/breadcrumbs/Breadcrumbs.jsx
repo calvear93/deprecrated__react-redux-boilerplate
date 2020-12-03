@@ -1,8 +1,5 @@
 import DynamicBreadcrumbs from 'react-router-dynamic-breadcrumbs';
 import { RouterService } from 'modules/router';
-import { useEffect } from 'react';
-
-let paths = [];
 
 /**
  * Dynamic breadcrumbs for
@@ -23,13 +20,8 @@ let paths = [];
  *
  * @returns {React.ReactElement} breadcrumbs.
  */
-export default function Breadcrumbs(routes = [])
+export default function Breadcrumbs({ routes = [] })
 {
-    useEffect(() =>
-    {
-        paths = paths ?? Object.keys(routes);
-    }, [ routes ]);
-
     return (
         <DynamicBreadcrumbs
             mappedRoutes={ RouterService.Breadcrumbs }
@@ -42,7 +34,7 @@ export default function Breadcrumbs(routes = [])
             LinkComponent={ ({ children }) =>
             {
                 // route isn't defined.
-                if (!paths.includes(children.props.to))
+                if (!routes[children.props.to])
                     return null;
 
                 return (
