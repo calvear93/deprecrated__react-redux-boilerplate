@@ -11,7 +11,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-04-15 19:51:39
- * Last modified  : 2020-12-03 21:07:18
+ * Last modified  : 2020-12-04 15:19:24
  */
 
 import types from './aad.types';
@@ -28,7 +28,8 @@ import types from './aad.types';
  *  If navigateToRequestAfterLogin is false.
  * @param {string} [config.logoutActionRedirect] redirect path after logout.
  * @param {string} [config.tokenRefreshUri] path for renew auth token.
- *  Should be a empty page (null React component).
+ *  Should be a empty page (null React component) and should be added to
+ *  authentication routes in Azure App Registration.
  * @param {number} [config.tokenRenewalOffset] token renewal interval.
  * @param {string} [config.navigateToRequestAfterLogin] whether app redirects to previous path after login.
  * @param {number} [config.infoCacheDurationInDays] days for store user info cached.

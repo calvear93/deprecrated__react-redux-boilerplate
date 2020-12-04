@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-23 19:53:33
- * Last modified  : 2020-12-04 13:36:17
+ * Last modified  : 2020-12-04 15:19:23
  */
 
 import * as Msal from 'msal';
@@ -40,7 +40,8 @@ export default {
      *  If navigateToRequestAfterLogin is false.
      * @param {string} args.config.logoutActionRedirect redirect path after logout.
      * @param {string} args.config.tokenRefreshUri path for renew auth token.
-     *  Should be a empty page (null React component).
+     *  Should be a empty page (null React component) and should be added to
+     *  authentication routes in Azure App Registration.
      * @param {number} args.config.tokenRenewalOffset token renewal interval.
      * @param {string} args.config.navigateToRequestAfterLogin whether app redirects to previous path after login.
      */
