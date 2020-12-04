@@ -154,13 +154,13 @@ export function useConditionalAuthentication(asyncCallback, options = {})
         error: baseError
     } = useAuthentication(options);
 
-    const [ authenticated, setAuthenticated ] = useState(baseAuthenticated);
+    const [ authenticated, setAuthenticated ] = useState(!disabled);
     const [ authenticating, setAuthenticating ] = useState(!disabled);
-    const [ error, setError ] = useState(baseError);
+    const [ error, setError ] = useState();
 
     useEffect(() =>
     {
-        if (!disabled && baseAuthenticated)
+        if (!disabled && !baseAuthenticating && baseAuthenticated && AuthenticationService.isAuthenticated())
         {
             setAuthenticating(true);
 
@@ -173,9 +173,9 @@ export function useConditionalAuthentication(asyncCallback, options = {})
                 })
                 .finally(() => setAuthenticating(false));
         }
-    }, [ authenticated, baseAuthenticated, disabled ]);
+    }, [ authenticated, baseAuthenticated, baseAuthenticating, disabled ]);
 
-    return { authenticating: authenticating || baseAuthenticating, authenticated, error };
+    return { authenticating: authenticating || baseAuthenticating, authenticated, error: error || baseError };
 }
 
 /**

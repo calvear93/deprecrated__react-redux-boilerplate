@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-23 19:53:33
- * Last modified  : 2020-12-04 09:02:42
+ * Last modified  : 2020-12-04 13:36:17
  */
 
 import * as Msal from 'msal';
@@ -89,10 +89,12 @@ export default {
      *
      * @param {object} [config] options.
      * @param {Array} [config.scopes] array of scopes allowed.
+     * @param {string} [config.loginHint] preset account email.
+     * @param {boolean} [config.forceTokenRefresh] forces to renew token on authentication.
      *
      * @returns {Promise<any>} token container.
      */
-    acquireTokenSilent({ scopes = types.DEFAULT_SCOPES } = {})
+    acquireTokenSilent({ scopes = types.DEFAULT_SCOPES, loginHint, forceTokenRefresh } = {})
     {
         if (this.Disabled)
             return null;
@@ -104,7 +106,11 @@ export default {
         // sets token refresh uri as redirect uri for iframe load.
         this.Context.config.auth.redirectUri = this.BaseConfig.auth.tokenRefreshUri;
 
-        return (this.AcquireTokenPromise = this.Context.acquireTokenSilent({ scopes }))
+        return (this.AcquireTokenPromise = this.Context.acquireTokenSilent({
+            scopes,
+            loginHint: loginHint ?? this.getUserName(),
+            forceRefresh: forceTokenRefresh
+        }))
             .finally(() => this.Context.setAcquireTokenInProgress(false));
     },
 
