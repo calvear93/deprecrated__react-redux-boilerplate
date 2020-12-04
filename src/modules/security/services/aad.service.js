@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-23 19:53:33
- * Last modified  : 2020-12-03 20:25:25
+ * Last modified  : 2020-12-04 09:02:42
  */
 
 import * as Msal from 'msal';
@@ -61,6 +61,8 @@ export default {
      * @param {object} [config] options.
      * @param {Array} [config.scopes] array of scopes allowed.
      *
+     * @throws {Error} on cache parse error.
+     *
      * @returns {object} account with cached token.
      */
     acquireTokenInCache({ scopes = types.DEFAULT_SCOPES } = {})
@@ -68,7 +70,17 @@ export default {
         if (this.Disabled)
             return null;
 
-        return this.Context.getCachedTokenInternal(scopes, this.Context.getAccount());
+        try
+        {
+            return this.Context.getCachedTokenInternal(scopes, this.Context.getAccount());
+        }
+        catch (error)
+        {
+            if (error.errorCode === 'cannot_parse_cache')
+                window.localStorage.clear();
+
+            throw error;
+        }
     },
 
     /**
@@ -197,7 +209,7 @@ export default {
                     });
 
                     // redirect method login.
-                    this.Context[type]({
+                    return this.Context[type]({
                         scopes,
                         loginHint,
                         forceRefresh: forceTokenRefresh
