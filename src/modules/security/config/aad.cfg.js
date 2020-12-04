@@ -3,11 +3,15 @@
  *
  * @see https://azuread.github.io/microsoft-authentication-library-for-js/docs/msal/modules/_configuration_.html
  *
+ * Azure Active Directory App Registration should
+ * has 'user.read' and 'openid' (for access tokens)
+ * scopes allowed.
+ *
  * @summary MSAL config file.
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-04-15 19:51:39
- * Last modified  : 2020-11-28 17:52:49
+ * Last modified  : 2020-12-03 21:07:18
  */
 
 import types from './aad.types';

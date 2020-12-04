@@ -1,7 +1,7 @@
 import { lazy, Suspense } from 'react';
 import Loader from 'modules/ui/components/loader';
 import Router, { RouterService } from 'modules/router';
-import { AuthenticationService, useAuthentication, useConditionalAuthentication } from 'modules/security';
+import { AuthenticationService, useAuthentication } from 'modules/security';
 import routes from './app.routes';
 
 // initializes routing service.
@@ -39,29 +39,7 @@ const Redirects = [
  */
 export default function AppRouter()
 {
-    // const { authenticating, authenticated } = useAuthentication();
-
-    // if (authenticating)
-    //     return <Loader message='Autenticando' />;
-
-    // if (!authenticated)
-    // {
-    //     return (
-    //         <Suspense fallback={ <Loader message='Cargando' /> }>
-    //             <UnauthorizedPage />
-    //         </Suspense>
-    //     );
-    // }
-
-    const { authenticating, authenticated } = useConditionalAuthentication(async (service) =>
-    {
-        console.log('AAAAAAAAA');
-        console.log(service.getAccount());
-        const token = await service.acquireToken();
-        console.log('>', token);
-
-        return true;
-    }, { disabled: false });
+    const { authenticating, authenticated } = useAuthentication();
 
     if (authenticating)
         return <Loader message='Autenticando' />;
