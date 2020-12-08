@@ -68,16 +68,14 @@ This is a boilerplate for React SPA application using [React](https://es.reactjs
 │   │   └── normalizers/
 │   ├── App.test.js
 │   ├── App.jsx # app initializer
+│   ├── service-worker-register.js
 │   ├── service-worker.js
-│   ├── setupTests.js
+│   ├── setupTests.js # Jest test init
 │   └── index.js
 ├── package.json
 ├── webpack.config.js # webpack config using CRACO
 ├── web.config # Azure webapp server config file
 ├── jsconfig.js # Node config for JS
-├── service-worker-register.js
-├── service-worker.js
-├── setupTests.js # Jest test init
 ├── .env.json # environment variables
 ├── .prettierrc.json # prettier rules
 ├── .eslintrc.json # eslint for JS/React/Redux
