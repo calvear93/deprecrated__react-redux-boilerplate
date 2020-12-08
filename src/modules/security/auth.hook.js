@@ -243,10 +243,10 @@ export function useAccountInfo(disabled = false)
 
  * @returns {object} loading, error and photo (base64) properties.
  */
-export function useUserPhoto(size = '648x648', disabled = false)
+export function useAccountAvatar(size = '648x648', disabled = false)
 {
     const { authenticated } = useAuthentication();
-    const [ photo, setPhoto ] = useState();
+    const [ avatar, setAvatar ] = useState();
     const [ error, setError ] = useState();
     const [ loading, setLoading ] = useState(!disabled && authenticated);
 
@@ -257,18 +257,18 @@ export function useUserPhoto(size = '648x648', disabled = false)
             const { cacheLocation, photoCacheDurationInDays } = AuthenticationService.BaseConfig.cache;
 
             cacheAsyncCallback(
-                `msal.${AuthenticationService.getId()}.photo${size}`,
+                `msal.${AuthenticationService.getId()}.avatar${size}`,
                 GraphService.photoWithSize(size),
                 {
                     expirationInDays: photoCacheDurationInDays,
                     storageType: cacheLocation
                 }
             )
-                .then((photo) => setPhoto(photo))
+                .then((photo) => setAvatar(photo))
                 .catch((error) => setError(error))
                 .finally(() => setLoading(false));
         }
     }, [ authenticated, disabled ]);
 
-    return { loading, photo, error };
+    return { loading, avatar, error };
 }

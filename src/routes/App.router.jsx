@@ -16,7 +16,9 @@ AuthenticationService.init({
     logoutActionRedirect: process.env.REACT_APP_AAD_LOGOUT_ACTION_REDIRECT,
     tokenRefreshUri: process.env.REACT_APP_AAD_TOKEN_REFRESH_URI,
     tokenRenewalOffset: process.env.REACT_APP_AAD_TOKEN_RENEWAL_OFFSET_SECONDS,
-    navigateToRequestAfterLogin: process.env.REACT_APP_AAD_NAVIGATE_TO_REQUEST_URL_AFTER_LOGIN
+    navigateToRequestAfterLogin: process.env.REACT_APP_AAD_NAVIGATE_TO_REQUEST_URL_AFTER_LOGIN,
+    infoCacheDurationInDays: process.env.REACT_APP_AAD_USER_INFO_CACHE_EXPIRATION_DAYS,
+    photoCacheDurationInDays: process.env.REACT_APP_AAD_USER_AVATAR_CACHE_EXPIRATION_DAYS
 });
 
 // not found page for default route.
