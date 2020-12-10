@@ -7,13 +7,13 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-07-04 16:42:09
- * Last modified  : 2020-11-27 17:57:26
+ * Last modified  : 2020-12-10 14:14:17
  */
 
 import { useState, Suspense } from 'react';
 import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
 import RouteChild from './RouteChild';
-import RouteService from './router.service';
+import RouteService from '../router.service';
 
 /**
  * Routing handler.

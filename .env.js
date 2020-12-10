@@ -3,7 +3,7 @@ const app = require('./package.json');
 module.exports = Promise.resolve({
   // default variables for all environments.
 	default: {
-		HTTPS: true, // local HTTPS support.
+		HTTPS: false, // local HTTPS support.
 		GENERATE_SOURCEMAP: true, // enables/disables sourcemaps generation.
 		SKIP_PREFLIGHT_CHECK: true, // avoid package from node_modules versions conflicts. Used for jest.
 		REACT_APP_DEBUG: true,
