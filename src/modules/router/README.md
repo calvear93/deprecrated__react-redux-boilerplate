@@ -11,20 +11,17 @@ Exposes a generic Router for create base app router, some hooks and a routes ser
 
 ## How To Use
 
-Should be initialized with routes and base path on App.jsx like:
+Should be initialized with RouterProvider on App.jsx like:
 ```javascript
-import { Router, routes } from 'routes';
-import { RouterService } from 'modules/router';
-
-// initializes routing service.
-RouterService.init(routes);
+import { RouterProvider } from 'modules/router';
+import AppRouter, { routes } from 'routes';
 
 export default function App()
 {
     return (
-        <BrowserRouter>
-            <Router loader={ <div>Loading</div> }/>
-        </BrowserRouter>
+        <RouterProvider routes={ routes }>
+            <AppRouter />
+        </RouterProvider>
     );
 }
 ```

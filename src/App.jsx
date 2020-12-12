@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
-import { BrowserRouter } from 'react-router-dom';
 import { Provider as StoreProvider } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
-import store from 'store/store';
-import AppRouter from 'routes';
+import store from 'store';
 import { useUI } from 'modules/ui';
+import { RouterProvider } from 'modules/router';
+import AppRouter, { routes } from 'routes';
 
 /**
  * App container.
@@ -25,12 +25,12 @@ export default function App()
     }, []);
 
     return (
-        <BrowserRouter>
+        <RouterProvider routes={ routes }>
             <StoreProvider store={ store }>
                 <AppRouter />
             </StoreProvider>
 
             <ToastContainer />
-        </BrowserRouter>
+        </RouterProvider>
     );
 }

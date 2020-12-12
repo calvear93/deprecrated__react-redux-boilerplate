@@ -1,11 +1,7 @@
 import { lazy, Suspense } from 'react';
 import Loader from 'modules/ui/components/loader';
-import Router, { RouterService } from 'modules/router';
+import { Router } from 'modules/router';
 import { AuthenticationService, useAuthentication } from 'modules/security';
-import routes from './app.routes';
-
-// initializes routing service.
-RouterService.init(routes);
 
 // initializes Microsoft Active Directory authentication service.
 AuthenticationService.init({
