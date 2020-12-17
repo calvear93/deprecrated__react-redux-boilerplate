@@ -1,4 +1,4 @@
-## Azure Active DIrectory security module using MSAL
+## Azure Active Directory security module using MSAL
 
 This folder contains AAD security module that eases application protection with Azure session JWT using MSAL library.
 Exposes multiples hooks for login, logout and secure components.
@@ -56,7 +56,6 @@ export default () => {
 ### Automatic Login
 
 ```javascript
-import { Redirect } from 'react-router-dom';
 import { useAuthentication } from 'modules/security';
 
 // react component
@@ -127,7 +126,6 @@ Both, automatic and manual login, has the possibility to add a condition after A
 The conditional validation should be an asynchronous function resolving a boolean.
 
 ```javascript
-import { Redirect } from 'react-router-dom';
 import { UserApi } from 'services/api/user';
 import { useConditionalAuthentication } from 'modules/security';
 
