@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 ## [1.3.0] - 2021-01-10
 
--   UI module: components, styling and form handler (suing React Suite).
+-   UI module: components, styling and form handler (using React Suite).
 
 ## [1.2.0] - 2020-11-29
 
