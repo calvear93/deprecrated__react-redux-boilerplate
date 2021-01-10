@@ -192,7 +192,7 @@ i.close.toastify-close-icon {
     transition: .4s ease;
 
     &:before {
-        font-family: 'Material Design Icons';
+        font-family: font(icons);
         content: '\F0159'; // mdi-close-circle
     }
 
@@ -220,7 +220,7 @@ i.close.toastify-close-icon {
                         left: 12px;
                         color: map-get($attr, 'color');
                         font-size: 2.4em;
-                        font-family: 'Material Design Icons';
+                        font-family: font(icons);
                         content: map-get($attr, 'icon');
                     }
                 }
