@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.0] - 2021-01-10
+
+-   UI module: components, styling and form handler (suing React Suite).
+
 ## [1.2.0] - 2020-11-29
 
 -   Router module: eases routes declaration and payload. Based on hooks.

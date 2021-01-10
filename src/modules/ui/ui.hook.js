@@ -7,6 +7,7 @@ export function useUI()
 {
     useEffect(() =>
     {
+        import('@mdi/font/css/materialdesignicons.css');
         import('./styles/ui.scss');
     }, []);
 }
