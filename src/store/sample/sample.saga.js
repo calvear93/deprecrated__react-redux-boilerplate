@@ -5,6 +5,8 @@ import SampleHandler from './sample.action';
  * Exec sample.
  *
  * @param {any} payload action payload.
+ *
+ * @yields {PutEffect<any>} dispatcher action.
  */
 function* exec({ payload })
 {
@@ -32,6 +34,8 @@ function* exec({ payload })
 
 /**
  * Exports saga listeners.
+ *
+ * @yields {AllEffect<any>} dispatcher action.
  */
 export default function* run()
 {
