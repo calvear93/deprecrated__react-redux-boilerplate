@@ -1,8 +1,9 @@
-# Azure Pipeline for React Single-Page application projects.
+# Azure Pipeline for dockerized React Single-Page application projects.
 #
 # Defines 2 stages:
-# 1. Building: builds the project using a environment by current branch.
-# 2. Deployment: deploys the artifact to webapp.
+# 1. Building: builds the docker image nad pushes it to
+#   Container Registry using a environment by current branch.
+# 2. Deployment: deploys the image to webapp for containers.
 #
 # Branches environments are defined below:
 # main -> production
@@ -16,7 +17,7 @@ trigger:
   batch: true
   branches:
     include:
-      - main
+      - master
       - stage
       - release/*
       - develop
@@ -24,116 +25,95 @@ trigger:
       #- feature/*
 
 variables:
-  # - group: react-redux-cd-variables
-
-  # branch: -${{ variables['Build.SourceBranch'] }}
-  # branchName: -${{ variables['Build.SourceBranchName'] }}
-  vmImageName: 'ubuntu-latest'
+  vmImageName: ubuntu-latest
   System.Debug: false
+  buildId: '' # appends only on dev build
+  version: 0.0.0 # project version from package.json
+  project: default # project name from package.json
+  containerRegistryServiceConnection: ACR-ACHS # docker hub service connection
+  containerRegistryServer: achs # repository
 
   # production environment variables definition.
-  ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/main') }}:
-    environmentName: 'PROD'
-    environment: 'DEPLOY_WEB_PROD'
-    azureSubscription: 'ASC-Project-PROD'
-    webapp: 'wa-prod-project'
+  ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/master') }}:
+    environmentName: PROD
+    environment: DEPLOY_WEB_PROD
+    azureSubscription: ASC-Project-PROD
+    webapp: wa-prod-project
     environmentBuild: production
 
   # staging environment variables definition.
   ${{ if startsWith(variables['Build.SourceBranch'], 'refs/heads/stage') }}:
-    environmentName: 'STAGING'
-    environment: 'DEPLOY_WEB_STAGING'
-    azureSubscription: 'ASC-Project-STAGING'
-    webapp: 'wa-stg-project'
+    environmentName: STAGING
+    environment: DEPLOY_WEB_STAGING
+    azureSubscription: ASC-Project-STAGING
+    webapp: wa-stg-project
     environmentBuild: staging
 
   # qa environment variables definition.
   ${{ if startsWith(variables['Build.SourceBranch'], 'refs/heads/release/') }}:
-    environmentName: 'QA'
-    environment: 'DEPLOY_WEB_QA'
-    azureSubscription: 'ASC-Project-QA'
-    webapp: 'wa-qa-project'
+    environmentName: QA
+    environment: DEPLOY_WEB_QA
+    azureSubscription: ASC-Project-QA
+    webapp: wa-qa-project
     environmentBuild: qa
 
   # development environment variables definition.
   ${{ if or(eq(variables['Build.SourceBranch'], 'refs/heads/develop'), startsWith(variables['Build.SourceBranch'], 'refs/heads/hotfix/')) }}:
-    environmentName: 'DESA'
-    environment: 'DEPLOY_WEB_DESA'
-    azureSubscription: 'ASC-Project-DESA'
-    webapp: 'wa-desa-project'
+    environmentName: DESA
+    environment: DEPLOY_WEB_DESA
+    azureSubscription: ASC-Project-DESA
+    webapp: wa-desa-project
     environmentBuild: development
+    # only dev appends buildId to resource tag.
+    buildId: .$(Build.BuildId)
 
 pool:
     vmImage: $(vmImageName)
 
 stages:
-
-  # BUILDING STAGE
+  # IMAGE BUILDING AND PUSH
   - stage: Build
-    displayName: 'Building ${{ variables.environmentName }}'
+    displayName: Build & Push ${{ variables.environmentName }}
     jobs:
     - job: Build
-
       steps:
 
-      - task: NodeTool@0
+      - script: |
+          ver=$(node -p "require('./package.json').version")
+          name=$(node -p "require('./package.json').name")
+
+          echo "##vso[task.setvariable variable=version]$ver"
+          echo "##vso[task.setvariable variable=project]$name"
+
+          echo "##vso[task.setvariable variable=version;isOutput=true]$ver"
+          echo "##vso[task.setvariable variable=project;isOutput=true]$name"
+        name: projectInfo
+        displayName: 'Retrieving package.json info'
+
+      - script: |
+          echo "Docker resource: $(containerRegistryServer)/$(project):$(version)$(buildId)-$(environmentBuild)"
+        displayName: Printing resource path
+
+      - task: Docker@2
         inputs:
-          versionSpec: '12.x'
-        displayName: 'Installing Node.js 12.x'
+          command: build
+          Dockerfile: ./Dockerfile
+          containerRegistry: $(containerRegistryServiceConnection)
+          repository: $(containerRegistryServer)/$(project)
+          tags: $(version)$(buildId)-$(environmentBuild)
+          arguments: --build-arg ENV=$(environmentBuild)
+        displayName: Building image for $(environmentBuild)
 
-      - task: Npm@1
+      - task: Docker@2
         inputs:
-          command: 'install'
-        displayName: 'Downloading dependencies'
+          command: push
+          containerRegistry: $(containerRegistryServiceConnection)
+          repository: $(containerRegistryServer)/$(project)
+          tags: $(version)$(buildId)-$(environmentBuild)
+        displayName: Pushing image
+        #condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
 
-      - task: Npm@1
-        inputs:
-          command: 'custom'
-          customCommand: 'run test:$(environmentBuild)'
-        displayName: 'Executing tests'
-
-      - task: Npm@1
-        inputs:
-          command: 'custom'
-          customCommand: 'run build:$(environmentBuild)'
-        displayName: 'Building project'
-
-      # - task: Npm@1
-      #   condition: ne(variables.environmentName, 'DESA')
-      #   inputs:
-      #     command: 'custom'
-      #     customCommand: 'run postbuild'
-      #   displayName: 'Cleaning sourcemaps'
-
-      - task: CopyFiles@2
-        inputs:
-          sourceFolder: 'build'
-          contents: '**/*'
-          targetFolder: '$(Build.ArtifactStagingDirectory)'
-          cleanTargetFolder: true
-        displayName: 'Preparing files'
-
-      - task: CopyFiles@2
-        inputs:
-          SourceFolder: '$(Build.Repository.LocalPath)'
-          Contents: 'web.config'
-          TargetFolder: '$(Build.ArtifactStagingDirectory)'
-          OverWrite: true
-        displayName: 'Setting up Web.config'
-
-      - task: ArchiveFiles@2
-        inputs:
-          rootFolderOrFile: $(Build.ArtifactStagingDirectory)
-          archiveType: 'zip'
-          archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-          includeRootFolder: false
-        displayName: 'Packaging files'
-
-      - publish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
-        artifact: artifact
-        displayName: 'Uploading files to pipeline'
-
-  # DEPLOYMENT STAGE
+  # IMAGE DEPLOYMENT
   - stage: Deploy
     displayName: 'Deployment ${{ variables.environmentName }}'
     dependsOn: Build
@@ -141,21 +121,17 @@ stages:
     - deployment: Deploy
       displayName: Deploy
       environment: $(environment)
+      variables:
+        project: $[ stageDependencies.Build.Build.outputs['projectInfo.project'] ]
+        version: $[ stageDependencies.Build.Build.outputs['projectInfo.version'] ]
       strategy:
         runOnce:
           deploy:
-
             steps:
 
-            - download: current
-              artifact: artifact
-              displayName: 'Downloading artifact'
-
-            - task: AzureRmWebAppDeployment@4
+            - task: AzureWebAppContainer@1
               inputs:
-                ConnectionType: 'AzureRM'
                 azureSubscription: $(azureSubscription)
-                appType: 'webApp'
-                WebAppName: $(webapp)
-                packageForLinux: '$(Pipeline.Workspace)/artifact/$(Build.BuildId).zip'
-              displayName: 'Deploying artifact to ${{ variables.webapp }}'
+                appName: $(webapp)
+                imageName: $(containerRegistryServer)/$(project):$(version)$(buildId)-$(environmentBuild)
+              displayName: Deploying image to $(webapp)

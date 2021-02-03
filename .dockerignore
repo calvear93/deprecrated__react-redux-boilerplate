@@ -1,0 +1,27 @@
+# node modules
+node_modules
+**/node_modules
+npm-debug.log
+
+**/.git
+**/.DS_Store
+
+build
+
+# docker files
+.dockerignore
+Dockerfile
+docker-compose.yml
+
+# dev environment and documentation
+.vscode
+web.config
+CHANGELOG.md
+README.md
+azure-pipelines.yml
+
+.eslintcache
+.eslintrc.json
+.gitignore
+.prettierrc.json
+.stylelint.json

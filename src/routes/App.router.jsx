@@ -1,6 +1,6 @@
 import { lazy, Suspense } from 'react';
 import Loader from 'modules/ui/components/loader';
-import { Router } from 'modules/router';
+import { Router } from '@calvear/react-spa-routerizer';
 import { AuthenticationService, useAuthentication } from 'modules/security';
 
 // initializes Microsoft Active Directory authentication service.

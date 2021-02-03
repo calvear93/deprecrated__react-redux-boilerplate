@@ -1,6 +1,6 @@
 import Footer from './Footer';
 import Header from './Header';
-import { RouterService } from 'modules/router';
+import { RouterService } from '@calvear/react-spa-routerizer';
 import { Breadcrumbs } from 'modules/ui/components';
 import './app-layout.scss';
 

@@ -1,4 +1,4 @@
-import { useRoutePayload } from 'modules/router';
+import { useRoutePayload } from '@calvear/react-spa-routerizer';
 
 /**
  * Header for App Layout.
