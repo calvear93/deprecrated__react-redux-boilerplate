@@ -166,11 +166,8 @@ $schemes: (
 }
 
 .Toastify__toast {
-    justify-content: center;
-    direction: ltr;
     border-radius: 8px;
     cursor: pointer;
-    -ms-flex-pack: justify;
     @include box-shadow(toast);
 }
 
