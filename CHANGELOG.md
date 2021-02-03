@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.4.0] - 2021-02-03
+
+-   Docker config added using Alpine with NGINX.
+-   Azure Pipeline for dockerized webapp added.
+
 ## [1.3.0] - 2021-01-10
 
 -   UI module: components, styling and form handler (using React Suite).
