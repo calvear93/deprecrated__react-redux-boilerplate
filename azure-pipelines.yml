@@ -27,17 +27,17 @@ trigger:
 variables:
   vmImageName: ubuntu-latest
   System.Debug: false
-  buildId: '' # appends only on dev build
+  buildId: # appends only on dev build
   version: 0.0.0 # project version from package.json
   project: default # project name from package.json
-  containerRegistryServiceConnection: ACR-ACHS # docker hub service connection
+  containerRegistryServiceConnection: ACR-ACHS # service connection name
   containerRegistryServer: achs # repository
 
   # production environment variables definition.
   ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/master') }}:
     environmentName: PROD
     environment: DEPLOY_WEB_PROD
-    azureSubscription: ASC-Project-PROD
+    azureSubscription: asc-prod-project
     webapp: wa-prod-project
     environmentBuild: production
 
@@ -45,7 +45,7 @@ variables:
   ${{ if startsWith(variables['Build.SourceBranch'], 'refs/heads/stage') }}:
     environmentName: STAGING
     environment: DEPLOY_WEB_STAGING
-    azureSubscription: ASC-Project-STAGING
+    azureSubscription: asc-stg-project
     webapp: wa-stg-project
     environmentBuild: staging
 
@@ -53,7 +53,7 @@ variables:
   ${{ if startsWith(variables['Build.SourceBranch'], 'refs/heads/release/') }}:
     environmentName: QA
     environment: DEPLOY_WEB_QA
-    azureSubscription: ASC-Project-QA
+    azureSubscription: asc-qa-project
     webapp: wa-qa-project
     environmentBuild: qa
 
@@ -61,7 +61,7 @@ variables:
   ${{ if or(eq(variables['Build.SourceBranch'], 'refs/heads/develop'), startsWith(variables['Build.SourceBranch'], 'refs/heads/hotfix/')) }}:
     environmentName: DESA
     environment: DEPLOY_WEB_DESA
-    azureSubscription: ASC-Project-DESA
+    azureSubscription: asc-desa-project
     webapp: wa-desa-project
     environmentBuild: development
     # only dev appends buildId to resource tag.

@@ -6,7 +6,7 @@
 # variables
 ARG NODE=node:14.15.4-alpine3.10
 ARG NGINX=nginx:1.19.6
-ARG APP_DIR='/app'
+ARG APP_DIR='/app/'
 
 ##
 ## STAGE 1: Node setup
@@ -36,7 +36,7 @@ FROM ${NGINX}
 ARG APP_DIR
 
 # sets NGINX
-COPY --from=builder ${APP_DIR}'/build' '/usr/share/nginx/html'
+COPY --from=builder ${APP_DIR}'build' '/usr/share/nginx/html'
 # puts config file
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
