@@ -6,7 +6,7 @@
 # 2. Deployment: deploys the image to webapp for containers.
 #
 # Branches environments are defined below:
-# main -> production
+# main/master -> production
 # stage -> staging
 # release/* -> qa
 # develop -> development
@@ -17,6 +17,7 @@ trigger:
   batch: true
   branches:
     include:
+      - main
       - master
       - stage
       - release/*
@@ -27,14 +28,14 @@ trigger:
 variables:
   vmImageName: ubuntu-latest
   System.Debug: false
-  buildId: # appends only on dev build
   version: 0.0.0 # project version from package.json
   project: default # project name from package.json
   containerRegistryServiceConnection: ACR-ACHS # service connection name
   containerRegistryServer: achs # repository
+  DECODE_PERCENTS: false
 
   # production environment variables definition.
-  ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/master') }}:
+  ${{ if or(eq(variables['Build.SourceBranch'], 'refs/heads/main'), eq(variables['Build.SourceBranch'], 'refs/heads/master')) }}:
     environmentName: PROD
     environment: DEPLOY_WEB_PROD
     azureSubscription: asc-prod-project
