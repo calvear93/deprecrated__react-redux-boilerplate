@@ -38,6 +38,7 @@ ARG APP_DIR
 # sets NGINX
 COPY --from=builder ${APP_DIR}'build' '/usr/share/nginx/html'
 # puts config file
+RUN rm /etc/nginx/conf.d/*
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 #EXPOSE 3000
