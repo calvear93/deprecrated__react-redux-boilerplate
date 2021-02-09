@@ -19,7 +19,5 @@ README.md
 azure-pipelines.yml
 
 .eslintcache
-.eslintrc.json
 .gitignore
 .prettierrc.json
-.stylelint.json

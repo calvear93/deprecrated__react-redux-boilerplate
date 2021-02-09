@@ -4,7 +4,7 @@
 ###
 
 # variables
-ARG NODE=node:14.15.4-alpine
+ARG NODE=node:15.8.0
 ARG NGINX=nginx:1.19.6-alpine
 ARG APP_DIR='/app/'
 
@@ -19,11 +19,13 @@ ARG ENV
 # working directory setup
 WORKDIR ${APP_DIR}
 COPY package*.json ${APP_DIR}
-RUN npm install --no-optional
-RUN npm cache clean --force
+RUN npm install --no-optional --force
 COPY . ${APP_DIR}
 # builds the app
 RUN npm run build:${ENV}
+
+
+
 
 ##
 ## STAGE 2: NGINX setup

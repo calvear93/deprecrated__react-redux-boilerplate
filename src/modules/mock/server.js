@@ -48,6 +48,9 @@ export default function runServer()
             this.resource('regiones');
             this.resource('provincias');
             this.resource('comunas');
+
+            this.passthrough('https://login.microsoftonline.com/**');
+            this.passthrough('https://graph.microsoft.com/**');
         }
     });
 }
