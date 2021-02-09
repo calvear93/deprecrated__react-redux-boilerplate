@@ -4,8 +4,8 @@
 ###
 
 # variables
-ARG NODE=node:14.15.4-alpine3.10
-ARG NGINX=nginx:1.19.6
+ARG NODE=node:14.15.4-alpine
+ARG NGINX=nginx:1.19.6-alpine
 ARG APP_DIR='/app/'
 
 ##
@@ -15,9 +15,6 @@ FROM ${NODE} AS builder
 
 ARG APP_DIR
 ARG ENV
-
-# alpine security updates
-RUN apk --no-cache -U upgrade
 
 # working directory setup
 WORKDIR ${APP_DIR}
@@ -37,6 +34,10 @@ ARG APP_DIR
 
 # sets NGINX
 COPY --from=builder ${APP_DIR}'build' '/usr/share/nginx/html'
+
+# alpine security updates
+RUN apk --no-cache -U upgrade
+
 # puts config file
 RUN rm /etc/nginx/conf.d/*
 COPY nginx.conf /etc/nginx/conf.d/default.conf
