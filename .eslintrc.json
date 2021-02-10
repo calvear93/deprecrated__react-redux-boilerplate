@@ -132,6 +132,7 @@
             }
         ],
         "lines-between-class-members": ["warn", "always"],
+        "no-var": "warn",
         "no-console": "warn",
         "no-debugger": "warn",
         "no-duplicate-case": "error",
