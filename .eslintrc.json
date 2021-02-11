@@ -1,4 +1,5 @@
 {
+    "reportUnusedDisableDirectives": false,
     "env": {
         "amd": true,
         "browser": true,
@@ -9,17 +10,6 @@
         "serviceworker": true,
         "worker": true
     },
-    "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended",
-        "plugin:react-redux/recommended",
-        "plugin:jsdoc/recommended",
-        "plugin:sonarjs/recommended"
-    ],
-    "globals": {
-        "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
-    },
     "parser": "babel-eslint",
     "parserOptions": {
         "ecmaFeatures": {
@@ -28,16 +18,32 @@
         "ecmaVersion": 11,
         "sourceType": "module"
     },
+    "settings": {
+        "react": {
+            "pragma": "React",
+            "version": "detect"
+        }
+    },
     "plugins": [
         "react",
         "react-redux",
         "react-hooks",
         "jsdoc",
-        "sonarjs",
+        "radar",
         "jest",
         "import"
     ],
-    "reportUnusedDisableDirectives": false,
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:react-redux/recommended",
+        "plugin:jsdoc/recommended",
+        "plugin:radar/recommended"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
     "rules": {
         "array-bracket-spacing": ["warn", "always"],
         "array-callback-return": "error",
@@ -132,7 +138,6 @@
             }
         ],
         "lines-between-class-members": ["warn", "always"],
-        "no-var": "warn",
         "no-console": "warn",
         "no-debugger": "warn",
         "no-duplicate-case": "error",
@@ -154,6 +159,7 @@
         "no-trailing-spaces": "warn",
         "no-unneeded-ternary": "warn",
         "no-unused-vars": "warn",
+        "no-var": "warn",
         "object-curly-spacing": ["warn", "always"],
         "object-shorthand": "warn",
         "padded-blocks": ["warn", "never"],
@@ -178,6 +184,10 @@
         "prefer-promise-reject-errors": "warn",
         "quote-props": ["warn", "as-needed"],
         "quotes": ["warn", "single", "avoid-escape"],
+        "radar/cognitive-complexity": ["off", 20],
+        "radar/max-switch-cases": ["off", 12],
+        "radar/no-duplicate-string": "off",
+        "radar/no-small-switch": "warn",
         "radix": ["warn", "as-needed"],
         "react-hooks/exhaustive-deps": "off",
         "react-hooks/rules-of-hooks": "warn",
@@ -263,10 +273,6 @@
         "semi": ["error", "always"],
         "semi-spacing": "warn",
         "semi-style": ["warn", "last"],
-        "sonarjs/cognitive-complexity": ["off", 20],
-        "sonarjs/max-switch-cases": ["off", 12],
-        "sonarjs/no-duplicate-string": "off",
-        "sonarjs/no-small-switch": "warn",
         "sort-imports": "off",
         "sort-keys": ["off", "asc"],
         "space-before-blocks": "warn",
@@ -310,11 +316,5 @@
             }
         ],
         "vars-on-top": "warn"
-    },
-    "settings": {
-        "react": {
-            "pragma": "React",
-            "version": "detect"
-        }
     }
 }
