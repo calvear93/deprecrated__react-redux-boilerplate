@@ -37,6 +37,7 @@
         "eslint:recommended",
         "plugin:react/recommended",
         "plugin:react-redux/recommended",
+        "plugin:eslint-comments/recommended",
         "plugin:jsdoc/recommended",
         "plugin:radar/recommended"
     ],
