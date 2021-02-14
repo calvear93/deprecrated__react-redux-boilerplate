@@ -92,7 +92,7 @@
     "build:qa": "env-cmd -e default,build,qa -r .env.js craco build",
     "build:staging": "env-cmd -e default,build,staging -r .env.js craco build",
     "build:production": "env-cmd -e default,build,production -r .env.js craco build",
-    "docker:start": "cross-var docker run -d -it -p 3000:80/tcp --name %npm_package_name% %npm_package_name%:%npm_package_version%-dev",
+    "docker:start": "cross-var docker run -d -it -p 3000:80/tcp --name %npm_package_name% %npm_package_name%:%npm_package_version%-dev %npm_package_name% %npm_package_name%:%npm_package_version%-dev",
     "docker:build": "cross-var docker build --build-arg ENV=development --tag %npm_package_name%:%npm_package_version%-dev .",
     "eslint:analyze": "eslint --ext .js,.jsx src/",
     "eslint:fix": "eslint --fix --ext .js,.jsx src/",
