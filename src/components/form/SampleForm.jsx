@@ -16,8 +16,6 @@ import { PhoneAdvancedMask, RutMask } from 'modules/ui/utils/masks';
 
 export default () => <FormFactory schema={ schema } datasets={ datasets } interceptor={ interceptor } />;
 
-/* eslint-disable sonarjs/no-small-switch */
-
 /**
  * @param {string} key input key.
  * @param {string} values current values.
@@ -28,6 +26,7 @@ export default () => <FormFactory schema={ schema } datasets={ datasets } interc
  */
 function interceptor(key, values, validations, config)
 {
+    // eslint-disable-next-line radar/no-small-switch
     switch (key)
     {
         case 'SimpleToggler':

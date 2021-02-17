@@ -1,7 +1,5 @@
 import Footer from './Footer';
 import Header from './Header';
-import { RouterService } from '@calvear/react-spa-routerizer';
-import { Breadcrumbs } from 'modules/ui/components';
 import './app-layout.scss';
 
 /**
@@ -17,8 +15,6 @@ export default function AppLayout({ children })
     return (
         <main id='app-layout'>
             <Header />
-
-            <Breadcrumbs routes={ RouterService.Breadcrumbs } />
 
             {children}
 

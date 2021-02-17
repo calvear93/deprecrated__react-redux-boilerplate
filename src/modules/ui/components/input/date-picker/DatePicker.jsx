@@ -7,8 +7,6 @@ import localeES from './locale-es';
 import 'react-modern-calendar-datepicker/lib/DatePicker.css';
 import './date-picker.scss';
 
-/* eslint-disable react/no-multi-comp */
-
 /**
  * Date Picker wrapper for
  * React Modern Calendar Datepicker.

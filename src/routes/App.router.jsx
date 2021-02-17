@@ -5,7 +5,6 @@ import { AuthenticationService, useAuthentication } from '@calvear/react-azure-m
 
 // initializes Microsoft Active Directory authentication service.
 AuthenticationService.init({
-    disabled: process.env.REACT_APP_AAD_ENABLED !== 'true',
     clientId: process.env.REACT_APP_AAD_CLIENT_ID,
     tenantId: process.env.REACT_APP_AAD_TENANT_ID,
     loginActionRedirect: process.env.REACT_APP_AAD_LOGIN_ACTION_REDIRECT,
@@ -15,7 +14,7 @@ AuthenticationService.init({
     navigateToRequestAfterLogin: process.env.REACT_APP_AAD_NAVIGATE_TO_REQUEST_URL_AFTER_LOGIN,
     infoCacheDurationInDays: process.env.REACT_APP_AAD_USER_INFO_CACHE_EXPIRATION_DAYS,
     photoCacheDurationInDays: process.env.REACT_APP_AAD_USER_AVATAR_CACHE_EXPIRATION_DAYS
-});
+}, process.env.REACT_APP_AAD_ENABLED !== 'true');
 
 // not found page for default route.
 const DefaultPage = lazy(() => import('pages/not-found'));
