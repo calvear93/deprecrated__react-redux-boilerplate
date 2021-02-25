@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-06-23 19:45:15
- * Last modified  : 2020-08-14 12:39:00
+ * Last modified  : 2021-02-25 09:31:35
  */
 
 /**
@@ -38,6 +38,6 @@ export function setHypertextReference(redirectURL)
  */
 export function openNewTab(redirectURL, focus = false)
 {
-    var win = window.open(redirectURL, '_blank');
+    const win = window.open(redirectURL, '_blank');
     focus && win && win.focus();
 }

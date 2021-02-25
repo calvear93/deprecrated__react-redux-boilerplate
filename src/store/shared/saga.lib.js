@@ -5,7 +5,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 22:43:58
- * Last modified  : 2020-11-29 20:18:50
+ * Last modified  : 2021-02-25 09:30:37
  */
 
 import { call, race, take, delay } from 'redux-saga/effects';
@@ -17,6 +17,8 @@ import storage, { StorageType } from 'utils/libs/storage.lib';
  * @param {Array} types action types.
  * @param {number} times times for wait each action type.
  * @param {number} [timeout] timeout in milliseconds (0 no timeout).
+ *
+ * @yields {Array<any>}
  *
  * @returns {IterableIterator<any>} actions results.
  */
@@ -53,6 +55,7 @@ export function* takeAny(types, times, timeout = 0)
  * @param {IterableIterator<any>} generator generator callback.
  * @param {Array} args generator function args.
  *
+ * @yields {any}
  * @throws {Error} on non valid key.
  *
  * @returns {IterableIterator<any>} cached/persisted value or result.
@@ -90,6 +93,8 @@ export function* memoCall(key, storageType, expiration, generator, ...args)
  * @param {IterableIterator<any>} generator generator callback.
  * @param {Array} args generator function args.
  *
+ * @yields {any}
+ *
  * @returns {IterableIterator<any>} cached/persisted value or result.
  */
 export function* memoCallInSessionStorage(key, expiration, generator, ...args)
@@ -105,6 +110,8 @@ export function* memoCallInSessionStorage(key, expiration, generator, ...args)
  * @param {Date | null} expiration date when value expires.
  * @param {IterableIterator<any>} generator generator callback.
  * @param {Array} args generator function args.
+ *
+ * @yields {any}
  *
  * @returns {IterableIterator<any>} cached/persisted value or result.
  */
