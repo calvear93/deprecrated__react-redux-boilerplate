@@ -100,6 +100,7 @@
     "test:production": "env-cmd -e default,production,test -r .env.js react-scripts test --watchAll=false --verbose",
     "test:coverage": "react-scripts test --coverage",
     "postbuild": "rimraf build/static/**/*.map",
+    "_npm:rebuild": "npm cache clean --force && npm rebuild && npm install",
     "_node-sass:rebuild": "npm rebuild node-sass",
     "_packages:update": "npm update --save/--save-dev",
     "_packages:force-update": "npx npm-check-updates -u",
