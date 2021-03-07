@@ -1,4 +1,5 @@
-import { all, put, takeLatest } from 'redux-saga/effects';
+import { all, takeLatest } from 'redux-saga/effects';
+import { putAction } from 'modules/store/effects';
 import SampleHandler from './sample.action';
 
 /**
@@ -15,20 +16,20 @@ function* exec({ payload })
         // const account = yield call(Service.Api);
 
         // Success action.
-        yield put(SampleHandler.Action(
+        yield putAction(
             SampleHandler.Type.COMMIT,
             payload
-        ));
+        );
     }
     catch (e)
     {
-        yield put(SampleHandler.Action(
+        yield putAction(
             SampleHandler.Type.ROLLBACK,
             {
                 stacktrace: e,
                 message: 'Operation cannot be completed'
             }
-        ));
+        );
     }
 }
 

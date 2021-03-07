@@ -5,11 +5,24 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 22:43:58
- * Last modified  : 2021-02-25 09:30:37
+ * Last modified  : 2021-03-07 20:17:41
  */
 
-import { call, race, take, delay } from 'redux-saga/effects';
+import { call, race, take, delay, put } from 'redux-saga/effects';
 import storage, { StorageType } from 'utils/libs/storage.lib';
+
+/**
+ * Dispatches an action.
+ *
+ * @param {string} type action type.
+ * @param {any} payload action payload.
+ *
+ * @yields {Array<any>}
+ */
+export function* putAction(type, payload)
+{
+    yield put({ type, payload });
+}
 
 /**
  * Waits for any action type to occur n times.

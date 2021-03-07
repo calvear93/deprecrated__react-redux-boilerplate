@@ -9,7 +9,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-07-26 13:45:06
- * Last modified  : 2020-08-08 13:43:30
+ * Last modified  : 2021-03-07 18:57:13
  */
 
 import { applyMiddleware } from 'redux';
@@ -19,14 +19,16 @@ import createSagaMiddleware from 'redux-saga';
  * Generates a middleware conditionally
  * by current debug mode.
  *
+ * @param {boolean} debug - whether redux should load redux-logger.
+ *
  * @returns {Array} middleware apply and run functions.
  */
-export default function createMiddleware()
+export default function createMiddleware(debug = false)
 {
     // creates Saga middleware factory.
     const saga = createSagaMiddleware();
 
-    if (process.env.REACT_APP_DEBUG === 'true')
+    if (debug)
     {
         const { createLogger } = require('redux-logger');
 

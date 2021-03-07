@@ -22,7 +22,8 @@ export default function SampleReducer(store = SampleDefaults, action)
 
             return {
                 ...store,
-                state: SampleHandler.State.EXECUTING
+                state: SampleHandler.State.EXECUTING,
+                data: payload
             };
 
         // action is successful.

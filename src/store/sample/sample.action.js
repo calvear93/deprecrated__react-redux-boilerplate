@@ -1,13 +1,3 @@
-import { createAction, makeUnique } from 'store/shared/action.lib';
-
-/**
- * store partition key.
- *
- * @constant
- * @type {string}
- */
-const KEY = 'SAMPLE';
-
 /**
  * Redux Action Vault.
  */
@@ -18,7 +8,7 @@ const SampleHandler =
      *
      * @memberof SampleHandler
      */
-    Key: KEY,
+    Key: 'SAMPLE',
 
     /**
      * Action Types.
@@ -41,22 +31,7 @@ const SampleHandler =
         EXECUTING: 'EXECUTING',
         READY: 'READY',
         FAILED: 'FAILED'
-    },
-
-    /**
-     * Returns the action.
-     *
-     * @param {string} type action type.
-     * @param {object} [payload] data involved in the action.
-     *
-     * @memberof SampleHandler
-     *
-     * @returns {object} action.
-     */
-    Action: (type, payload) => createAction(SampleHandler.Key, type, payload)
+    }
 };
 
-// makes action types unique depending of partition.
-makeUnique(KEY, SampleHandler.Type);
-
-export default Object.freeze(SampleHandler);
+export default SampleHandler;
