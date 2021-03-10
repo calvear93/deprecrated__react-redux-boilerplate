@@ -11,7 +11,6 @@ import SamplePartition from './sample.partition';
  */
 export default function SampleReducer(store = SampleDefaults, action)
 {
-    // action destructuring. (key, type or payload).
     const { type, payload } = action;
 
     switch (type)
@@ -42,7 +41,7 @@ export default function SampleReducer(store = SampleDefaults, action)
             };
 
         // default doesn't changes the store,
-        // so, components don't re-renders.
+        // so, components won't re-renders.
         default:
             return store;
     }
