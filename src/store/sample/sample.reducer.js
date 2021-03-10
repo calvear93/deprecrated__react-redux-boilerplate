@@ -1,5 +1,5 @@
 import { SampleDefaults } from 'store/defaults';
-import SampleHandler from './sample.action';
+import SamplePartition from './sample.partition';
 
 /**
  * Redux Actions Reducer.
@@ -17,27 +17,27 @@ export default function SampleReducer(store = SampleDefaults, action)
     switch (type)
     {
         // executes the action.
-        case SampleHandler.Type.EXEC:
+        case SamplePartition.Type.EXEC:
             delete store.error;
 
             return {
                 ...store,
-                state: SampleHandler.State.EXECUTING,
+                state: SamplePartition.State.EXECUTING,
                 data: payload
             };
 
         // action is successful.
-        case SampleHandler.Type.COMMIT:
+        case SamplePartition.Type.COMMIT:
             return {
                 ...store,
-                state: SampleHandler.State.READY
+                state: SamplePartition.State.READY
             };
 
         // action was finished with errors.
-        case SampleHandler.Type.ROLLBACK:
+        case SamplePartition.Type.ROLLBACK:
             return {
                 ...store,
-                state: SampleHandler.State.FAILED,
+                state: SamplePartition.State.FAILED,
                 error: payload
             };
 

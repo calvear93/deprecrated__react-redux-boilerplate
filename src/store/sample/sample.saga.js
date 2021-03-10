@@ -1,6 +1,6 @@
 import { all, takeLatest } from 'redux-saga/effects';
 import { putAction } from 'modules/store/effects';
-import SampleHandler from './sample.action';
+import SamplePartition from './sample.partition';
 
 /**
  * Exec sample.
@@ -17,14 +17,14 @@ function* exec({ payload })
 
         // Success action.
         yield putAction(
-            SampleHandler.Type.COMMIT,
+            SamplePartition.Type.COMMIT,
             payload
         );
     }
     catch (e)
     {
         yield putAction(
-            SampleHandler.Type.ROLLBACK,
+            SamplePartition.Type.ROLLBACK,
             {
                 stacktrace: e,
                 message: 'Operation cannot be completed'
@@ -41,6 +41,6 @@ function* exec({ payload })
 export default function* run()
 {
     yield all([ // use all only if exists two or more listeners.
-        takeLatest(SampleHandler.Type.EXEC, exec)
+        takeLatest(SamplePartition.Type.EXEC, exec)
     ]);
 }

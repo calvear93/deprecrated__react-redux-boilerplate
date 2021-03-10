@@ -1,19 +1,14 @@
 /**
- * Redux Action Vault.
+ * Redux store partition definition.
  */
-const SampleHandler =
-{
+export default {
     /**
-     * Action Store Key.
-     *
-     * @memberof SampleHandler
+     * Store partition key.
      */
     Key: 'SAMPLE',
 
     /**
-     * Action Types.
-     *
-     * @memberof SampleHandler
+     * Action types
      */
     Type: {
         EXEC: 'EXEC',
@@ -22,9 +17,7 @@ const SampleHandler =
     },
 
     /**
-     * Reducer States.
-     *
-     * @memberof SampleHandler
+     * Partition states.
      */
     State: {
         PREPARING: 'PREPARING',
@@ -33,5 +26,3 @@ const SampleHandler =
         FAILED: 'FAILED'
     }
 };
-
-export default SampleHandler;

@@ -1,5 +1,6 @@
 /**
  * Redux middleware initializer.
+ *
  * Initializes Saga with Redux Logger.
  *
  * @see https://redux-saga.js.org/
@@ -9,7 +10,7 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-07-26 13:45:06
- * Last modified  : 2021-03-07 18:57:13
+ * Last modified  : 2021-03-09 20:20:00
  */
 
 import { applyMiddleware } from 'redux';

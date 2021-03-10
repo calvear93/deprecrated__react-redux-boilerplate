@@ -97,6 +97,8 @@
 		"*.router.tsx": "routing",
 		"*.atom.js": "redux-store",
 		"*.atom.ts": "redux-store",
+		"*.partition.js": "redux-action",
+		"*.partition.ts": "redux-action",
 		"*.saga.js": "redux-store",
 		"*.saga.ts": "redux-store",
 		"*.selector.js": "redux-action",

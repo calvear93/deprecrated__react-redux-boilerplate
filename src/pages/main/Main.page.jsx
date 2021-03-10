@@ -1,5 +1,5 @@
 import './main-page.scss';
-import { SampleHandler } from 'store/sample';
+import { SamplePartition } from 'store/sample';
 import { useEffect } from 'react';
 import { useActionDispatch, usePartition } from 'modules/store/hooks';
 
@@ -11,8 +11,8 @@ import { useActionDispatch, usePartition } from 'modules/store/hooks';
 export default function MainPage()
 {
     // const dispatch = useDispatch();Ssadsadsasadsa
-    const act = useActionDispatch(SampleHandler.Type.EXEC);
-    const st = usePartition(SampleHandler);
+    const act = useActionDispatch(SamplePartition.Type.EXEC);
+    const st = usePartition(SamplePartition);
 
     console.log(st);
 

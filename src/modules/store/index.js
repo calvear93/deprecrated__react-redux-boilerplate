@@ -1,2 +1,2 @@
 export { default as createStore } from './store';
-export * from './libs/action.lib';
+export { Provider as StoreProvider } from 'react-redux';

@@ -1,6 +1,7 @@
 /**
  * Redux store initializer.
- * Initializes combined reducers
+ *
+ * Initializes combined reducers,
  * and apply Saga middleware.
  *
  * Here you should import your reducers
@@ -10,15 +11,40 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 22:41:11
- * Last modified  : 2021-03-07 19:47:47
+ * Last modified  : 2021-03-09 20:19:55
  */
 
 import { combineReducers, createStore } from 'redux';
 import { all } from 'redux-saga/effects';
 import createMiddleware from './middleware';
-import { makeUnique } from './libs/action.lib';
 
-export default function({ actions = [], reducers = {}, sagas = [], debug })
+/**
+ * Retrieves a sagas combiner generator.
+ *
+ * @param {Array<Generator<any, any, any>>} sagas
+ *
+ * @returns {*}
+ */
+function combiner(sagas)
+{
+    return function* combineSagas()
+    {
+        yield all(sagas);
+    };
+}
+
+/**
+ * Creates a new Redux store with
+ * Redux Saga as middleware.
+ *
+ * @param {object} config
+ * @param {Array<any>} config.reducers reducers
+ * @param {Array<Generator<any, any, any>>} config.sagas sagas
+ * @param {boolean} config.debug if redux-logger is enabled
+ *
+ * @returns {any} redux store
+ */
+export default function({ reducers = {}, sagas = [], debug })
 {
     // creates middleware.
     const [ middleware, saga ] = createMiddleware(debug);
@@ -26,19 +52,8 @@ export default function({ actions = [], reducers = {}, sagas = [], debug })
     // creates the store with reducers and Saga middleware.
     const store = createStore(combineReducers(reducers), middleware);
 
-    function* combineSagas()
-    {
-        yield all(sagas);
-    }
-
-    for (let action of actions)
-    {
-        // makes action types unique depending of partition.
-        makeUnique(action.Key, action.Type);
-    }
-
-    // runs Saga root middleware.
-    saga.run(combineSagas);
+    // runs saga root middleware.
+    saga.run(combiner(sagas));
 
     return store;
 }
