@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Provider as StoreProvider } from 'react-redux';
+import { StoreProvider } from '@calvear/react-redux';
 import { ToastContainer } from 'react-toastify';
 import store from 'store';
 import { useUI } from 'modules/ui';

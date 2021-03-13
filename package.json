@@ -14,6 +14,7 @@
   "repository": "https://github.com/calvear93/react-redux-boilerplate",
   "dependencies": {
     "@calvear/react-azure-msal-security": "^2.0.1",
+    "@calvear/react-redux": "^1.1.0",
     "@calvear/react-spa-routerizer": "^1.0.9",
     "@mdi/font": "^5.9.55",
     "@tippyjs/react": "^4.2.1",

@@ -1,5 +1,4 @@
-import { all, takeLatest } from 'redux-saga/effects';
-import { putAction } from 'modules/store/effects';
+import { all, takeLatest, dispatch } from '@calvear/react-redux/effects';
 import SamplePartition from './sample.partition';
 
 /**
@@ -16,14 +15,14 @@ function* exec({ payload })
         // const account = yield call(Service.Api);
 
         // Success action.
-        yield putAction(
+        yield dispatch(
             SamplePartition.Type.COMMIT,
             payload
         );
     }
     catch (e)
     {
-        yield putAction(
+        yield dispatch(
             SamplePartition.Type.ROLLBACK,
             {
                 stacktrace: e,

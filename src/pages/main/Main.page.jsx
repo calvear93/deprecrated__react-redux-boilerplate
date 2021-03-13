@@ -1,7 +1,7 @@
 import './main-page.scss';
 import { SamplePartition } from 'store/sample';
 import { useEffect } from 'react';
-import { useActionDispatch, usePartition } from 'modules/store/hooks';
+import { useActionDispatch, usePartition } from '@calvear/react-redux/hooks';
 
 /**
  * Main page.
