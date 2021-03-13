@@ -1,5 +1,5 @@
-import { all, put, takeLatest } from 'redux-saga/effects';
-import SampleHandler from './sample.action';
+import { all, takeLatest, dispatch } from '@calvear/react-redux/effects';
+import SamplePartition from './sample.partition';
 
 /**
  * Exec sample.
@@ -15,20 +15,20 @@ function* exec({ payload })
         // const account = yield call(Service.Api);
 
         // Success action.
-        yield put(SampleHandler.Action(
-            SampleHandler.Type.COMMIT,
+        yield dispatch(
+            SamplePartition.Type.COMMIT,
             payload
-        ));
+        );
     }
     catch (e)
     {
-        yield put(SampleHandler.Action(
-            SampleHandler.Type.ROLLBACK,
+        yield dispatch(
+            SamplePartition.Type.ROLLBACK,
             {
                 stacktrace: e,
                 message: 'Operation cannot be completed'
             }
-        ));
+        );
     }
 }
 
@@ -40,6 +40,6 @@ function* exec({ payload })
 export default function* run()
 {
     yield all([ // use all only if exists two or more listeners.
-        takeLatest(SampleHandler.Type.EXEC, exec)
+        takeLatest(SamplePartition.Type.EXEC, exec)
     ]);
 }
