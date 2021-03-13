@@ -55,8 +55,8 @@ module.exports = Promise.resolve({
 		REACT_APP_WEB_API_HOST: 'https://aa-qa-project.azurewebsites.net',
 		REACT_APP_AAD_CLIENT_ID: ''
 	},
-	staging: {
-		REACT_APP_ENV: 'staging',
+	stage: {
+		REACT_APP_ENV: 'stage',
 		REACT_APP_MOCK_SERVER: false,
 		REACT_APP_WEB_API_HOST: 'https://aa-stg-project.azurewebsites.net',
 		REACT_APP_AAD_CLIENT_ID: ''

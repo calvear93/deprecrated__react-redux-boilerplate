@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.5.0] - 2021-03-13
+
+-   Packages updated.
+-   Pipeline updated.
+
 ## [1.4.0] - 2021-02-03
 
 -   Docker config added using Alpine with NGINX.

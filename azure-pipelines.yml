@@ -1,17 +1,3 @@
-# Azure Pipeline for dockerized React Single-Page application projects.
-#
-# Defines 2 stages:
-# 1. Building: builds the docker image nad pushes it to
-#   Container Registry using a environment by current branch.
-# 2. Deployment: deploys the image to webapp for containers.
-#
-# Branches environments are defined below:
-# main/master -> production
-# stage -> staging
-# release/* -> qa
-# develop -> development
-# hotfix/* -> development
-# feature/* -> none
 
 trigger:
   batch: true
@@ -23,116 +9,145 @@ trigger:
       - release/*
       - develop
       - hotfix/*
+      - bugfix/*
       #- feature/*
 
 variables:
-  vmImageName: ubuntu-latest
-  System.Debug: false
-  version: 0.0.0 # project version from package.json
-  project: default # project name from package.json
-  containerRegistryServiceConnection: ACR-ACHS # service connection name
-  containerRegistryServer: achs # repository
-  DECODE_PERCENTS: false
+- template: templates/vars.template.yml
+  parameters:
+    debug: true
+    global:
+      - name: vmImage
+        value: ubuntu-latest
+    production:
+      - name: deployEnv
+        value: DEPLOY_APP_PROD
+    stage:
+      - name: deployEnv
+        value: DEPLOY_APP_STAGE
+    qa:
+      - name: deployEnv
+        value: DEPLOY_APP_QA
+    development:
+      #- group: VARS_GROUP
+      - name: deployEnv
+        value: DEPLOY_APP_DEV
 
-  # production environment variables definition.
-  ${{ if or(eq(variables['Build.SourceBranch'], 'refs/heads/main'), eq(variables['Build.SourceBranch'], 'refs/heads/master')) }}:
-    environmentName: PROD
-    environment: DEPLOY_WEB_PROD
-    azureSubscription: asc-prod-project
-    webapp: wa-prod-project
-    environmentBuild: production
-
-  # staging environment variables definition.
-  ${{ if startsWith(variables['Build.SourceBranch'], 'refs/heads/stage') }}:
-    environmentName: STAGING
-    environment: DEPLOY_WEB_STAGING
-    azureSubscription: asc-stg-project
-    webapp: wa-stg-project
-    environmentBuild: staging
-
-  # qa environment variables definition.
-  ${{ if startsWith(variables['Build.SourceBranch'], 'refs/heads/release/') }}:
-    environmentName: QA
-    environment: DEPLOY_WEB_QA
-    azureSubscription: asc-qa-project
-    webapp: wa-qa-project
-    environmentBuild: qa
-
-  # development environment variables definition.
-  ${{ if or(eq(variables['Build.SourceBranch'], 'refs/heads/develop'), startsWith(variables['Build.SourceBranch'], 'refs/heads/hotfix/')) }}:
-    environmentName: DESA
-    environment: DEPLOY_WEB_DESA
-    azureSubscription: asc-desa-project
-    webapp: wa-desa-project
-    environmentBuild: development
-    # only dev appends buildId to resource tag.
-    buildId: .$(Build.BuildId)
+name: "[$(env.name)] $(Date:yyyyMMdd)$(Rev:.r)"
 
 pool:
-    vmImage: $(vmImageName)
+    vmImage: $(vmImage)
 
 stages:
-  # IMAGE BUILDING AND PUSH
-  - stage: Build
-    displayName: Build & Push ${{ variables.environmentName }}
+  # STAGE: reads package.json info
+  - template: templates/read-project-info.stage.yml
+
+  # STAGE: execute tests and code analysis
+  - stage: QualityAssurance
+    displayName: Quality Assurance
+    condition: eq(variables['env.stages.test'], true)
     jobs:
-    - job: Build
+    # JOB: executes unit tests
+    - job: UnitTest
+      displayName: Run Unit Tests
       steps:
 
       - script: |
-          ver=$(node -p "require('./package.json').version")
-          name=$(node -p "require('./package.json').name")
+          echo $(env.name)
+        displayName: Debug
 
-          echo "##vso[task.setvariable variable=version]$ver"
-          echo "##vso[task.setvariable variable=project]$name"
-
-          echo "##vso[task.setvariable variable=version;isOutput=true]$ver"
-          echo "##vso[task.setvariable variable=project;isOutput=true]$name"
-        name: projectInfo
-        displayName: 'Retrieving package.json info'
+    # JOB: executes integration tests
+    - job: IntegrationTest
+      displayName: Run Integration Tests
+      steps:
 
       - script: |
-          echo "Docker resource: $(containerRegistryServer)/$(project):$(version)$(buildId)-$(environmentBuild)"
-        displayName: Printing resource path
+          echo $(env.name)
+        displayName: Debug
 
-      - task: Docker@2
-        inputs:
-          command: build
-          Dockerfile: ./Dockerfile
-          containerRegistry: $(containerRegistryServiceConnection)
-          repository: $(containerRegistryServer)/$(project)
-          tags: $(version)$(buildId)-$(environmentBuild)
-          arguments: --build-arg ENV=$(environmentBuild)
-        displayName: Building image for $(environmentBuild)
+    # JOB: executes code analysis
+    - job: CodeAnalysis
+      displayName: Code Analysis
+      steps:
 
-      - task: Docker@2
-        inputs:
-          command: push
-          containerRegistry: $(containerRegistryServiceConnection)
-          repository: $(containerRegistryServer)/$(project)
-          tags: $(version)$(buildId)-$(environmentBuild)
-        displayName: Pushing image
-        #condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+      - script: |
+          echo $(env.name)
+        displayName: Debug
 
-  # IMAGE DEPLOYMENT
-  - stage: Deploy
-    displayName: 'Deployment ${{ variables.environmentName }}'
-    dependsOn: Build
+  # STAGE: builds the project
+  - stage: Build
+    displayName: Build
+    dependsOn: [ ReadProjectInfo, QualityAssurance ]
+    condition: and(succeeded(), eq(variables['env.stages.build'], true))
+    variables:
+      project: $[ stageDependencies.ReadProjectInfo.Variables.outputs['name.value'] ]
+      version: $[ stageDependencies.ReadProjectInfo.Variables.outputs['version.value'] ]
     jobs:
+    # JOB: prepares workspace
+    - job: Prepare
+      displayName: Preparing environment
+      steps:
+
+      - script: |
+          echo $(env.name)
+          echo $(project)
+          echo $(version)
+        displayName: Debug
+
+    # JOB: builds the project
+    - job: Build
+      displayName: Building project
+      dependsOn: Prepare
+      steps:
+
+      - script: |
+          echo $(env.name)
+          echo $(project)
+          echo $(version)
+        displayName: Debug
+
+    # JOB: push/publish artifacts
+    - job: Publish
+      displayName: Publish artifacts
+      dependsOn: Build
+      condition: eq(variables['env.stages.publish'], true)
+      steps:
+
+      - script: |
+          echo $(env.name)
+          echo $(project)
+          echo $(version)
+        displayName: Debug
+
+  # STAGE: deploys artifacts
+  - stage: Deployment
+    displayName: Deployment
+    dependsOn: [ ReadProjectInfo, Build ]
+    condition: and(succeeded(), eq(variables['env.stages.deploy'], true))
+    variables:
+      project: $[ stageDependencies.ReadProjectInfo.Variables.outputs['name.value'] ]
+      version: $[ stageDependencies.ReadProjectInfo.Variables.outputs['version.value'] ]
+    jobs:
+    # JOB: deploys artifacts
     - deployment: Deploy
-      displayName: Deploy
-      environment: $(environment)
-      variables:
-        project: $[ stageDependencies.Build.Build.outputs['projectInfo.project'] ]
-        version: $[ stageDependencies.Build.Build.outputs['projectInfo.version'] ]
+      displayName: Deploying artifacts
+      environment: $(deployEnv)
       strategy:
         runOnce:
+          preDeploy:
+            steps:
+
+            - script: |
+                echo $(env.name)
+                echo $(project)
+                echo $(version)
+              displayName: Debug
+
           deploy:
             steps:
 
-            - task: AzureWebAppContainer@1
-              inputs:
-                azureSubscription: $(azureSubscription)
-                appName: $(webapp)
-                imageName: $(containerRegistryServer)/$(project):$(version)$(buildId)-$(environmentBuild)
-              displayName: Deploying image to $(webapp)
+            - script: |
+                echo $(env.name)
+                echo $(project)
+                echo $(version)
+              displayName: Debug
